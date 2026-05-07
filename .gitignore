@@ -1,0 +1,32 @@
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.ipynb_checkpoints/
+*.egg-info/
+dist/
+build/
+
+# Dados grandes (adapte conforme necessário)
+data/raw/*.mat
+data/raw/*.csv
+*.h5
+*.hdf5
+*.pkl
+
+# Ambientes virtuais
+.venv/
+venv/
+env/
+
+# IDE
+.vscode/
+.idea/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Resultados/checkpoints grandes (opcional — remova se quiser versionar)
+# results/
+# checkpoints/
