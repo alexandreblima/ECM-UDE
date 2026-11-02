@@ -1,0 +1,29 @@
+START calce_ecm_ude_seed48 2026-11-01T22:38:57.470867+00:00
+  epoch    1  train 0.000748  val 0.052513  lr 6.67e-05  (best 0.052513 @ ep 1)
+  epoch    2  train 0.000742  val 0.052604  lr 1.33e-04  (best 0.052513 @ ep 1)
+  epoch    3  train 0.000744  val 0.052632  lr 2.00e-04  (best 0.052513 @ ep 1)
+  epoch    4  train 0.000740  val 0.052553  lr 2.00e-04  (best 0.052513 @ ep 1)
+  epoch    5  train 0.000733  val 0.052399  lr 1.99e-04  (best 0.052399 @ ep 5)
+  epoch    6  train 0.000755  val 0.052282  lr 1.97e-04  (best 0.052282 @ ep 6)
+  epoch    7  train 0.000753  val 0.052285  lr 1.94e-04  (best 0.052282 @ ep 6)
+  epoch    8  train 0.000727  val 0.052350  lr 1.89e-04  (best 0.052282 @ ep 6)
+  epoch    9  train 0.000721  val 0.052426  lr 1.84e-04  (best 0.052282 @ ep 6)
+  epoch   10  train 0.000736  val 0.052452  lr 1.77e-04  (best 0.052282 @ ep 6)
+  epoch   11  train 0.000726  val 0.052402  lr 1.69e-04  (best 0.052282 @ ep 6)
+  epoch   12  train 0.000712  val 0.052362  lr 1.60e-04  (best 0.052282 @ ep 6)
+  epoch   13  train 0.000717  val 0.052385  lr 1.50e-04  (best 0.052282 @ ep 6)
+  epoch   14  train 0.000717  val 0.052434  lr 1.40e-04  (best 0.052282 @ ep 6)
+  early stopping at epoch 14 (no improvement for 8 epochs)
+METRICS calce ecm_ude 48 FUDS_25C {'windowed': {'mae': 13.13925954392317, 'rmse': 40.20041397253602, 'max_error': 532.261848449707, 'p99': 200.39234161376862}, 'continuous': {'mae': 13.234533193333773, 'rmse': 40.405296670027255, 'max_error': 534.212589263916, 'p99': 202.29973793029694}}
+METRICS calce ecm_ude 48 DST_25C {'windowed': {'mae': 5.634074974166903, 'rmse': 26.233686238688154, 'max_error': 746.1361885070801, 'p99': 47.2930669784544}, 'continuous': {'mae': 5.136055078685434, 'rmse': 25.908404102653545, 'max_error': 744.0602779388428, 'p99': 43.86227130889888}}
+METRICS calce ecm_ude 48 US06_25C {'windowed': {'mae': 123.42050958161289, 'rmse': 137.16916378273922, 'max_error': 679.1894435882568, 'p99': 371.14478588104225}, 'continuous': {'mae': 121.77035507027998, 'rmse': 135.5339769205032, 'max_error': 677.0315170288086, 'p99': 368.92884254455555}}
+METRICS calce ecm_ude 48 BJDST_25C {'windowed': {'mae': 123.20165549296462, 'rmse': 139.0428919189869, 'max_error': 925.2150058746338, 'p99': 306.9676685333246}, 'continuous': {'mae': 122.63408286009481, 'rmse': 138.5583847652067, 'max_error': 925.0929355621338, 'p99': 306.73821449279734}}
+METRICS calce ecm_ude 48 FUDS_0C {'windowed': {'mae': 53.05771850070774, 'rmse': 71.52649113943461, 'max_error': 643.4767246246338, 'p99': 239.6779632568359}, 'continuous': {'mae': 52.498242943591364, 'rmse': 70.9756825452463, 'max_error': 642.9920196533203, 'p99': 238.58700752258287}}
+METRICS calce ecm_ude 48 DST_0C {'windowed': {'mae': 54.708004750433616, 'rmse': 75.67392025188026, 'max_error': 675.9564876556396, 'p99': 287.28368759155273}, 'continuous': {'mae': 53.78228519644942, 'rmse': 74.75408528839357, 'max_error': 674.008846282959, 'p99': 285.72601318359386}}
+METRICS calce ecm_ude 48 US06_0C {'windowed': {'mae': 63.50002837196027, 'rmse': 85.34286248991602, 'max_error': 701.4782428741455, 'p99': 311.47508859634365}, 'continuous': {'mae': 62.8973711604837, 'rmse': 84.7488514569731, 'max_error': 700.439453125, 'p99': 310.1008200645446}}
+METRICS calce ecm_ude 48 BJDST_0C {'windowed': {'mae': 74.18845784880618, 'rmse': 113.87373823004025, 'max_error': 821.403980255127, 'p99': 497.8792560100539}, 'continuous': {'mae': 73.498765109578, 'rmse': 113.31123794314523, 'max_error': 821.0077285766602, 'p99': 497.3119735717763}}
+METRICS calce ecm_ude 48 FUDS_45C {'windowed': {'mae': 17.701278767904295, 'rmse': 56.87764964368323, 'max_error': 643.3298587799072, 'p99': 324.64482784271087}, 'continuous': {'mae': 17.651752355495343, 'rmse': 56.924983607395184, 'max_error': 643.3298587799072, 'p99': 324.64482784271087}}
+METRICS calce ecm_ude 48 DST_45C {'windowed': {'mae': 17.27278652628364, 'rmse': 53.55375830132962, 'max_error': 515.5341625213623, 'p99': 308.43663215637207}, 'continuous': {'mae': 17.716997161830438, 'rmse': 53.4433465434934, 'max_error': 515.5341625213623, 'p99': 308.4371089935303}}
+METRICS calce ecm_ude 48 US06_45C {'windowed': {'mae': 16.08741305825868, 'rmse': 52.62987280825302, 'max_error': 716.0735130310059, 'p99': 295.32026410102833}, 'continuous': {'mae': 16.249442937613964, 'rmse': 52.50626413503708, 'max_error': 716.0735130310059, 'p99': 295.3169512748717}}
+METRICS calce ecm_ude 48 BJDST_45C {'windowed': {'mae': 18.605187496420115, 'rmse': 69.76453622012505, 'max_error': 735.3312969207764, 'p99': 391.8972861766814}, 'continuous': {'mae': 18.6011342043836, 'rmse': 69.50097407820317, 'max_error': 735.3312969207764, 'p99': 391.8950247764586}}
+COMPLETE calce_ecm_ude_seed48 2026-11-01T22:39:04.055043+00:00

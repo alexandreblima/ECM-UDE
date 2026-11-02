@@ -1,0 +1,8 @@
+.DS_Store
+.Rhistory
+.venv/
+__pycache__/
+*.py[cod]
+/work/
+/datasets/
+/matplotlib-cache/

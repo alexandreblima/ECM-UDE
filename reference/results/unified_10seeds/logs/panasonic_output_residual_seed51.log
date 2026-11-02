@@ -1,0 +1,25 @@
+START panasonic_output_residual_seed51 2026-11-01T22:06:24.292629+00:00
+  epoch    1  train 0.001556  val 0.088264  lr 6.67e-05  (best 0.088264 @ ep 1)
+  epoch    2  train 0.001554  val 0.087977  lr 1.33e-04  (best 0.087977 @ ep 2)
+  epoch    3  train 0.001551  val 0.088138  lr 2.00e-04  (best 0.087977 @ ep 2)
+  epoch    4  train 0.001553  val 0.088325  lr 2.00e-04  (best 0.087977 @ ep 2)
+  epoch    5  train 0.001553  val 0.088139  lr 1.99e-04  (best 0.087977 @ ep 2)
+  epoch    6  train 0.001548  val 0.087949  lr 1.97e-04  (best 0.087949 @ ep 6)
+  epoch    7  train 0.001552  val 0.088158  lr 1.94e-04  (best 0.087949 @ ep 6)
+  epoch    8  train 0.001557  val 0.088108  lr 1.89e-04  (best 0.087949 @ ep 6)
+  epoch    9  train 0.001553  val 0.088349  lr 1.84e-04  (best 0.087949 @ ep 6)
+  epoch   10  train 0.001549  val 0.088150  lr 1.77e-04  (best 0.087949 @ ep 6)
+  epoch   11  train 0.001555  val 0.088110  lr 1.69e-04  (best 0.087949 @ ep 6)
+  epoch   12  train 0.001549  val 0.088113  lr 1.60e-04  (best 0.087949 @ ep 6)
+  epoch   13  train 0.001549  val 0.088082  lr 1.50e-04  (best 0.087949 @ ep 6)
+  epoch   14  train 0.001549  val 0.088129  lr 1.40e-04  (best 0.087949 @ ep 6)
+  early stopping at epoch 14 (no improvement for 8 epochs)
+METRICS panasonic output_residual 51 UDDS_25C {'windowed': {'mae': 42.99961315112168, 'rmse': 57.167041037954675, 'max_error': 579.7996520996094, 'p99': 176.1885523796079}, 'continuous': {'mae': 42.637331883529775, 'rmse': 56.77947911094575, 'max_error': 581.0134410858154, 'p99': 176.28034114837644}}
+METRICS panasonic output_residual 51 UDDS_10C {'windowed': {'mae': 37.604489464890136, 'rmse': 58.57467818730109, 'max_error': 705.5068016052246, 'p99': 257.8594589233398}, 'continuous': {'mae': 36.65061751718176, 'rmse': 57.74018275007661, 'max_error': 705.7816982269287, 'p99': 257.03062295913696}}
+METRICS panasonic output_residual 51 UDDS_0C {'windowed': {'mae': 96.25180170460025, 'rmse': 110.17602502499953, 'max_error': 806.023120880127, 'p99': 284.54789161682123}, 'continuous': {'mae': 94.21125042803212, 'rmse': 108.14790582812141, 'max_error': 792.8075790405273, 'p99': 282.42814540863037}}
+METRICS panasonic output_residual 51 UDDS_-10C {'windowed': {'mae': 174.05943077046908, 'rmse': 192.48103799708684, 'max_error': 696.4768171310425, 'p99': 455.51778316497786}, 'continuous': {'mae': 171.7375635715154, 'rmse': 190.15079083246442, 'max_error': 693.4871673583984, 'p99': 451.21348381042475}}
+METRICS panasonic output_residual 51 UDDS_-20C {'windowed': {'mae': 295.2075863705735, 'rmse': 329.871550633574, 'max_error': 1044.4978475570679, 'p99': 789.0204048156737}, 'continuous': {'mae': 292.8822880728723, 'rmse': 327.49798842648306, 'max_error': 1044.4166660308838, 'p99': 782.025918960571}}
+METRICS panasonic output_residual 51 US06_25C {'windowed': {'mae': 38.806131738594125, 'rmse': 53.62711554435109, 'max_error': 440.6256675720215, 'p99': 181.17788791656523}, 'continuous': {'mae': 34.06278769778815, 'rmse': 49.41898778781034, 'max_error': 426.52082443237305, 'p99': 174.0585517883305}}
+METRICS panasonic output_residual 51 LA92_25C {'windowed': {'mae': 17.493208354498538, 'rmse': 29.97695747727757, 'max_error': 508.6095333099365, 'p99': 117.66370654106139}, 'continuous': {'mae': 15.78019272517022, 'rmse': 28.292343290340796, 'max_error': 506.97851181030273, 'p99': 113.32189321517936}}
+METRICS panasonic output_residual 51 HWFET_25C {'windowed': {'mae': 39.69658703080564, 'rmse': 73.23910744219994, 'max_error': 690.0241374969482, 'p99': 392.84110069275545}, 'continuous': {'mae': 35.90173686923019, 'rmse': 70.81994369306969, 'max_error': 687.3970031738281, 'p99': 381.4375877380374}}
+COMPLETE panasonic_output_residual_seed51 2026-11-01T22:06:45.818893+00:00

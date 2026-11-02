@@ -1,0 +1,13 @@
+# Runtime used for the unified benchmark; CPU, one torch thread.
+numpy==2.2.6
+scipy==1.15.3
+torch==2.8.0
+torchdiffeq==0.2.5
+openpyxl==3.1.5
+matplotlib==3.10.6
+numba==0.61.2
+llvmlite==0.44.0
+
+# Additional NLS spreadsheets and PDF validation.
+xlrd==2.0.2
+pypdf==6.10.2

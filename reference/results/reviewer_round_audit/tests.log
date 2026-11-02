@@ -1,0 +1,20 @@
+test_every_metric_matches_persisted_voltage_and_signed_fraction (test_reviewer_round.ReviewerRoundTests) ... ok
+test_exact_wilcoxon_zeros_ties_and_tails (test_reviewer_round.ReviewerRoundTests) ... ok
+test_existing_lstm_bootstrap_is_paired_seed_percentile (test_reviewer_round.ReviewerRoundTests) ... ok
+test_fixed_coordinates_fit_bounds_and_failed_fit (test_reviewer_round.ReviewerRoundTests) ... ok
+test_interpretation_strict_majority_signed_and_zero (test_reviewer_round.ReviewerRoundTests) ... ok
+test_paired_differences_walsh_and_holm_families (test_reviewer_round.ReviewerRoundTests) ... ok
+test_principal_tables_and_all_previous_bytes (test_reviewer_round.ReviewerRoundTests) ... ok
+test_protocol_and_producer_hashes (test_reviewer_round.ReviewerRoundTests) ... ok
+test_saved_histories_selection_curves_and_fonts (test_reviewer_round.ReviewerRoundTests) ... ok
+test_wide_uses_all_three_audited_targets (test_reviewer_round.ReviewerRoundTests) ... ok
+test_all_findings_have_final_vector_pdfs (test_figures_ieee.IEEEFiguresTests) ... ok
+test_canonical_labels_and_noncolor_encodings (test_figures_ieee.IEEEFiguresTests) ... ok
+test_previous_results_manuscript_and_report_unchanged (test_figures_ieee.IEEEFiguresTests) ... ok
+test_revised_principal_series_and_unaffected_pdf_hashes (test_figures_ieee.IEEEFiguresTests) ... ok
+test_source_hashes_unchanged_and_index_resolves (test_figures_ieee.IEEEFiguresTests) ... ok
+
+----------------------------------------------------------------------
+Ran 15 tests in 0.552s
+
+OK

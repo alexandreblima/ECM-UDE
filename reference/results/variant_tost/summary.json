@@ -1,0 +1,1216 @@
+{
+  "records": [
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.8817334500727227,
+        0.807887024563847,
+        0.6533108443100986,
+        0.4153147529218444,
+        0.006073903299324002,
+        -0.12063352194694943,
+        0.7492059315707849,
+        1.2134670383086004,
+        0.24815196020824715,
+        0.44023869469921095
+      ],
+      "median_difference_mV": 0.5467747695046548,
+      "Hodges_Lehmann_pseudomedian_mV": 0.5464167581808255,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0048828125,
+        "statistic": 3.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.21545775013690616,
+        0.6030493125955019,
+        0.6747013580026291,
+        0.18167468683125065,
+        0.19575288536113078,
+        0.20366458510624597,
+        0.11491773928503335,
+        0.5380957397898953,
+        0.12204476854132196,
+        0.1558538205108846
+      ],
+      "median_difference_mV": 0.19970873523368837,
+      "Hodges_Lehmann_pseudomedian_mV": 0.21545775013690616,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.068009995098393,
+        0.6745007521541737,
+        0.7980472693022875,
+        0.17382583421628794,
+        0.32928168800978597,
+        0.352426652305752,
+        -0.02913755646768834,
+        0.5284390854190946,
+        0.02946327618727196,
+        0.22147032464354766
+      ],
+      "median_difference_mV": 0.2753760063266668,
+      "Hodges_Lehmann_pseudomedian_mV": 0.2982245402587438,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.16405098074048396,
+        0.6377777915765819,
+        0.7445401170812147,
+        0.17649812727475478,
+        0.43771424985018825,
+        0.42298222800377516,
+        -0.2205126953263914,
+        0.4773143081981459,
+        -0.15271960795561768,
+        0.35452377584897476
+      ],
+      "median_difference_mV": 0.38875300192637496,
+      "Hodges_Lehmann_pseudomedian_mV": 0.29024456817036537,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.3761368772642868,
+        0.5809435586325549,
+        0.6005083360119556,
+        0.21632144819619725,
+        0.5398825814169186,
+        0.41888481123925203,
+        -0.4072632999714756,
+        0.3995932207041051,
+        -0.36211338546604566,
+        0.5107261915384242
+      ],
+      "median_difference_mV": 0.40923901597167855,
+      "Hodges_Lehmann_pseudomedian_mV": 0.21632144819619725,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.2697834339928278,
+        0.4911773067112506,
+        0.3183314214915143,
+        0.20630503772450481,
+        0.028223918071013543,
+        -0.024687086381341317,
+        0.29034528871029863,
+        0.5502679135295736,
+        0.17486003710364884,
+        0.23870971406739727
+      ],
+      "median_difference_mV": 0.2542465740301125,
+      "Hodges_Lehmann_pseudomedian_mV": 0.2542465740301125,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.20773102124171494,
+        0.3737450423594968,
+        0.315510048422702,
+        0.13686518945006831,
+        0.039131837140006454,
+        0.01120710163311145,
+        0.19344197912643502,
+        0.47922721824656733,
+        0.12138672870326594,
+        0.1756897719151187
+      ],
+      "median_difference_mV": 0.18456587552077686,
+      "Hodges_Lehmann_pseudomedian_mV": 0.19247607199630412,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.3433100657694155,
+        0.6945554288743665,
+        0.5415619876856752,
+        0.28706587607037193,
+        0.07070729069792492,
+        0.02227778743014852,
+        0.3207320822210633,
+        0.7086074762099699,
+        0.2191580375011597,
+        0.26893448781729745
+      ],
+      "median_difference_mV": 0.3038989791457176,
+      "Hodges_Lehmann_pseudomedian_mV": 0.3207320822210633,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.02631243186995036,
+        -0.007526409620686181,
+        0.004807948427826503,
+        0.10363505600499856,
+        -0.1441966418122025,
+        -0.05932196821819602,
+        0.13172482869711288,
+        -0.05023876294021612,
+        0.060441397173711664,
+        0.09674528037687935
+      ],
+      "median_difference_mV": 0.015560190148888431,
+      "Hodges_Lehmann_pseudomedian_mV": 0.02215654389340127,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.0796316941237869,
+        0.020193169958595547,
+        -0.05434256354118183,
+        0.044375282410825,
+        -0.11581290993589466,
+        -0.03511918357925392,
+        0.04252068814571608,
+        -0.02640908132379849,
+        0.05607840483089088,
+        0.055087624383277856
+      ],
+      "median_difference_mV": 0.03135692905215581,
+      "Hodges_Lehmann_pseudomedian_mV": 0.009984220402011967,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.019991728589275226,
+        0.39389830421594496,
+        0.31743517509531927,
+        0.0638618901134862,
+        0.19683185182071128,
+        0.4637190537859368,
+        -0.6744848957162901,
+        0.16785638276920167,
+        -0.04458738706005505,
+        -0.17963142503966623
+      ],
+      "median_difference_mV": 0.11585913644134394,
+      "Hodges_Lehmann_pseudomedian_mV": 0.10841179020499325,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.03210897065559237,
+        0.41441979945692253,
+        0.34198022580987697,
+        0.07416125402848195,
+        0.20204546647831023,
+        0.48637960812889247,
+        -0.6979288674254391,
+        0.17317560414070243,
+        -0.0461386721195467,
+        -0.18232188074431832
+      ],
+      "median_difference_mV": 0.12366842908459219,
+      "Hodges_Lehmann_pseudomedian_mV": 0.1170772185669513,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.03436558130614742,
+        0.42837120142976204,
+        0.3680639462123523,
+        0.08931108197132431,
+        0.20642779918422605,
+        0.5019489721655503,
+        -0.7093612872426647,
+        0.1759097232129534,
+        -0.047177207024368784,
+        -0.18196405660486192
+      ],
+      "median_difference_mV": 0.13261040259213885,
+      "Hodges_Lehmann_pseudomedian_mV": 0.12320357241245006,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.04560119447077682,
+        0.42528584309589235,
+        0.3799966337151943,
+        0.09977854643351236,
+        0.200294404642122,
+        0.4964857249872239,
+        -0.6847070116941012,
+        0.1722473346769533,
+        -0.04655002156120247,
+        -0.1721442905381565
+      ],
+      "median_difference_mV": 0.13601294055523283,
+      "Hodges_Lehmann_pseudomedian_mV": 0.12657077627886792,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.05277772585496976,
+        0.07004996042691403,
+        0.43717982231931174,
+        0.06523811084416664,
+        0.19421076908562895,
+        0.19101073139878721,
+        0.19737362110612722,
+        0.013332258958779875,
+        -0.05272738717999914,
+        -0.09951625186134905
+      ],
+      "median_difference_mV": 0.06764403563554033,
+      "Hodges_Lehmann_pseudomedian_mV": 0.10217149517878354,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.14282266211796113,
+        0.1269831656154956,
+        0.610142776332669,
+        0.06201645541887757,
+        0.32494754270967263,
+        0.3140071810008074,
+        0.17748930069263125,
+        0.03797612099488035,
+        -0.08960188862399221,
+        -0.20103979064711197
+      ],
+      "median_difference_mV": 0.13490291386672837,
+      "Hodges_Lehmann_pseudomedian_mV": 0.13490291386672837,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.03774647108095053,
+        0.062627685662072,
+        0.45727158928646183,
+        0.07722946824172183,
+        0.1885480223210365,
+        0.18167495727539062,
+        0.22435324916801136,
+        0.00934315005367381,
+        -0.05034906377960624,
+        -0.09196258272195657
+      ],
+      "median_difference_mV": 0.06992857695189691,
+      "Hodges_Lehmann_pseudomedian_mV": 0.09550905366453222,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.053353484579425015,
+        0.06249964164663879,
+        0.5259975270175303,
+        0.09554179932341,
+        0.21261249370439117,
+        0.198189309733241,
+        0.27292580257144294,
+        0.005717755110236311,
+        -0.056794779629441905,
+        -0.10147653980019555
+      ],
+      "median_difference_mV": 0.0790207204850244,
+      "Hodges_Lehmann_pseudomedian_mV": 0.10806551147100052,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.0005997718212711334,
+        -0.00407230990640528,
+        0.004985242110763011,
+        0.002311920468343942,
+        0.028826050844955375,
+        0.03493239871246345,
+        -0.001377839646089285,
+        -0.004616619197619798,
+        -0.015159474172897092,
+        0.003988477019376546
+      ],
+      "median_difference_mV": 0.0014558461448075377,
+      "Hodges_Lehmann_pseudomedian_mV": 0.0018037012323368629,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.00042691135858063944,
+        -0.011694182473682702,
+        -0.015488507034788768,
+        0.0005143180009099524,
+        -0.005471192546501413,
+        -0.0045963374221571485,
+        0.0027678441914886776,
+        -0.0033400972123303063,
+        0.0003363442539310313,
+        -0.0023921938797712983
+      ],
+      "median_difference_mV": -0.0028661455460508023,
+      "Hodges_Lehmann_pseudomedian_mV": -0.0029490519525410264,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -8.582639020460192e-05,
+        -0.017202282046028472,
+        -0.024483974556119392,
+        -0.0007018644119227702,
+        -0.021060658598756277,
+        -0.02052483513486436,
+        0.004871242824691535,
+        -0.005756993404077093,
+        0.008897529701116014,
+        -0.011052036105311913
+      ],
+      "median_difference_mV": -0.008404514754694503,
+      "Hodges_Lehmann_pseudomedian_mV": -0.008644054218116537,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.0024087282730249626,
+        -0.01873924409701999,
+        -0.02524815929186275,
+        -0.0023756327458102078,
+        -0.03654034492166147,
+        -0.03257841448876775,
+        0.006436132842679854,
+        -0.008599657888339607,
+        0.021370794730842135,
+        -0.022727750451224438
+      ],
+      "median_difference_mV": -0.013669450992679799,
+      "Hodges_Lehmann_pseudomedian_mV": -0.012551691598517323,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.006360835448845137,
+        -0.01858177133863137,
+        -0.021541763861137042,
+        -0.0042558622903925425,
+        -0.050631934059083505,
+        -0.04025757966007859,
+        0.007734331234644287,
+        -0.011922395408021202,
+        0.03518265809719878,
+        -0.03552544279614267
+      ],
+      "median_difference_mV": -0.015252083373326286,
+      "Hodges_Lehmann_pseudomedian_mV": -0.014582303673648767,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.0023846607579898205,
+        -0.0027329203978041505,
+        0.003322789801089243,
+        0.0026970010202660433,
+        0.013681908598201176,
+        0.019073986032964285,
+        -0.0003082684099737776,
+        -0.0019009415262161156,
+        -0.004590897203001987,
+        0.003506320009051933
+      ],
+      "median_difference_mV": 0.002540830889127932,
+      "Hodges_Lehmann_pseudomedian_mV": 0.002540830889127932,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.0012559963097569238,
+        -0.0028491290671812664,
+        0.0002464464423468371,
+        0.001790232098514366,
+        0.008502037972803578,
+        0.012779281481517302,
+        0.00010434531786884804,
+        -0.0014551765730761446,
+        -0.0032149724370711397,
+        0.0024728050167031057
+      ],
+      "median_difference_mV": 0.0007512213760518804,
+      "Hodges_Lehmann_pseudomedian_mV": 0.0010183392704306016,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        0.0024309981566332795,
+        -0.005205929074961091,
+        0.0003893732675379624,
+        0.0027495483804571563,
+        0.01328740777863402,
+        0.018699588766367015,
+        0.0003883866560556726,
+        -0.0023768911302681772,
+        -0.005437522808307449,
+        0.0036384289455213548
+      ],
+      "median_difference_mV": 0.001410185712085621,
+      "Hodges_Lehmann_pseudomedian_mV": 0.0015694608239975594,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.0011057047267293285,
+        0.005688320468015817,
+        0.002188216570710111,
+        -0.0008963304457516585,
+        0.008334436888995711,
+        0.008562961256648904,
+        -0.00042385525173571637,
+        0.003751182811486231,
+        -0.0019626711054279156,
+        -0.004776989121033637
+      ],
+      "median_difference_mV": 0.0008821806594871973,
+      "Hodges_Lehmann_pseudomedian_mV": 0.0018628246812939508,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.0012702005226268298,
+        0.004701482605259599,
+        0.0007906699979711718,
+        -0.003032797403044185,
+        0.007382072261396644,
+        0.008403347849834653,
+        0.0008394177048360874,
+        0.0009237356562534771,
+        -0.0011133174915833877,
+        -0.0003808553719011343
+      ],
+      "median_difference_mV": 0.0008150438514036296,
+      "Hodges_Lehmann_pseudomedian_mV": 0.0008815766805447822,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.004679949514141413,
+        -0.011107353520166896,
+        -0.02928368172710094,
+        -0.015042840777880429,
+        -0.014039678312911974,
+        -0.010665924098724133,
+        0.00955393634393431,
+        -0.017735701296004436,
+        0.0040925118155712426,
+        -0.017441204254694753
+      ],
+      "median_difference_mV": -0.012573515916539435,
+      "Hodges_Lehmann_pseudomedian_mV": -0.011207825405072924,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.005089960009932781,
+        -0.011515153386064014,
+        -0.031063094919687728,
+        -0.015766417921888376,
+        -0.01462064904419691,
+        -0.010960605020692071,
+        0.010006905892275597,
+        -0.01863329650484502,
+        0.004344359187584246,
+        -0.018018182029415186
+      ],
+      "median_difference_mV": -0.013067901215130462,
+      "Hodges_Lehmann_pseudomedian_mV": -0.011861628257388901,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.005352121226891882,
+        -0.011766870426569653,
+        -0.03221729997056855,
+        -0.016226403074490747,
+        -0.015069831510409415,
+        -0.011168260070519409,
+        0.01028057527731363,
+        -0.019318600939570274,
+        0.00455417322400109,
+        -0.018037990977106233
+      ],
+      "median_difference_mV": -0.013418350968489534,
+      "Hodges_Lehmann_pseudomedian_mV": -0.012335361083231078,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.00550252918138483,
+        -0.011529950316315762,
+        -0.032217006275161,
+        -0.016005006745629657,
+        -0.014803799209900603,
+        -0.010903150654939964,
+        0.01010080719736095,
+        -0.019103033533369285,
+        0.004551406036554795,
+        -0.017921701943365065
+      ],
+      "median_difference_mV": -0.013166874763108183,
+      "Hodges_Lehmann_pseudomedian_mV": -0.012302781357377057,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.00424182498229797,
+        -0.012167750845243575,
+        -0.01498350958269512,
+        0.00443642049718207,
+        -0.013218428600225707,
+        -0.02077176707699735,
+        -0.0015490103393105414,
+        0.00020663214160165921,
+        -0.0002979927770958568,
+        -0.005039388512745546
+      ],
+      "median_difference_mV": -0.004640606747521758,
+      "Hodges_Lehmann_pseudomedian_mV": -0.006758210688660782,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.006806734371327394,
+        -0.02006459326067045,
+        -0.024699273940480992,
+        0.005603035273612278,
+        -0.021765435142441447,
+        -0.032574301717072984,
+        -0.001176157893553409,
+        -0.0021911673290304634,
+        0.000282814916566565,
+        -0.003863652435668996
+      ],
+      "median_difference_mV": -0.005335193403498195,
+      "Hodges_Lehmann_pseudomedian_mV": -0.011127880294850456,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.004202187093838461,
+        -0.011765308459931845,
+        -0.014480860076732327,
+        0.0047006454384508345,
+        -0.012608903395992854,
+        -0.020024840216301243,
+        -0.001823986706483538,
+        0.0003085085234033613,
+        -0.00031271565496027165,
+        -0.003505408037396407
+      ],
+      "median_difference_mV": -0.003853797565617434,
+      "Hodges_Lehmann_pseudomedian_mV": -0.006460809525476563,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "reference": "physics_gradient",
+      "differences_mV": [
+        -0.004741279503882367,
+        -0.01310097862380033,
+        -0.016331341013330558,
+        0.005677915038159398,
+        -0.014032929529420812,
+        -0.021980547154598185,
+        -0.0023021426040870097,
+        0.00010979857533399695,
+        -0.00024326903532667643,
+        -0.001406197008144261
+      ],
+      "median_difference_mV": -0.0035217110539846885,
+      "Hodges_Lehmann_pseudomedian_mV": -0.007138099282373744,
+      "lower": {
+        "p_raw": 0.0009765625,
+        "statistic": 55.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "upper": {
+        "p_raw": 0.0009765625,
+        "statistic": 0.0,
+        "n_nonzero": 10,
+        "p_holm": 0.017578125
+      },
+      "equivalent": true
+    }
+  ],
+  "estimand": "Wilcoxon signed-rank location; Hodges-Lehmann Walsh pseudomedian; under symmetry equals the difference-distribution center/median. Descriptive sample median is reported separately and is not the signed-rank statistic.",
+  "statistic": "Wplus=sum positive signed absolute ranks of shifted differences",
+  "rounding": "10decimal shifted differences, exactzeros removed before ranking; allzeros p=1",
+  "ties": "scipy.stats.rankdata average ties on nonzero absolute shifted differences",
+  "exact_method": "Exhaust all2^n assignments of signs; count tail incl equality; no normal approximation and no scipy.wilcoxon(method=exact) shortcut with ties",
+  "margin_mV": 1,
+  "Holm": "18conditions per pair per unilateral direction",
+  "library_versions": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3"
+  },
+  "implementation": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_paper_v2_seeds.py",
+  "implementation_sha256": "2058041e91407430a7787c304e01917f91f38f4f2676490fcb8de0f55ea88c9f",
+  "LSTM_bootstrap": {
+    "unit": "paired seed MAE_LSTM minus deterministic2RC MAE, windowed",
+    "n_seeds": 10,
+    "n_resamples": 20000,
+    "replacement": true,
+    "statistic": "samplemedian",
+    "interval": "percentile2.5/97.5",
+    "numpy_quantile_method": "linear(default)",
+    "RNG": "default_rng(20261101)",
+    "not_temporal_bootstrap": true
+  }
+}

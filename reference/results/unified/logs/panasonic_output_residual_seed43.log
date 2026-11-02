@@ -1,0 +1,29 @@
+START panasonic_output_residual_seed43 2026-11-01T04:29:36.471206+00:00
+  epoch    1  train 0.001551  val 0.088038  lr 6.67e-05  (best 0.088038 @ ep 1)
+  epoch    2  train 0.001552  val 0.088435  lr 1.33e-04  (best 0.088038 @ ep 1)
+  epoch    3  train 0.001550  val 0.088043  lr 2.00e-04  (best 0.088038 @ ep 1)
+  epoch    4  train 0.001553  val 0.088186  lr 2.00e-04  (best 0.088038 @ ep 1)
+  epoch    5  train 0.001552  val 0.088174  lr 1.99e-04  (best 0.088038 @ ep 1)
+  epoch    6  train 0.001559  val 0.088363  lr 1.97e-04  (best 0.088038 @ ep 1)
+  epoch    7  train 0.001555  val 0.087966  lr 1.94e-04  (best 0.087966 @ ep 7)
+  epoch    8  train 0.001553  val 0.088193  lr 1.89e-04  (best 0.087966 @ ep 7)
+  epoch    9  train 0.001553  val 0.088183  lr 1.84e-04  (best 0.087966 @ ep 7)
+  epoch   10  train 0.001559  val 0.087851  lr 1.77e-04  (best 0.087851 @ ep 10)
+  epoch   11  train 0.001555  val 0.088034  lr 1.69e-04  (best 0.087851 @ ep 10)
+  epoch   12  train 0.001553  val 0.087920  lr 1.60e-04  (best 0.087851 @ ep 10)
+  epoch   13  train 0.001552  val 0.088153  lr 1.50e-04  (best 0.087851 @ ep 10)
+  epoch   14  train 0.001553  val 0.088156  lr 1.40e-04  (best 0.087851 @ ep 10)
+  epoch   15  train 0.001547  val 0.087974  lr 1.29e-04  (best 0.087851 @ ep 10)
+  epoch   16  train 0.001555  val 0.087920  lr 1.18e-04  (best 0.087851 @ ep 10)
+  epoch   17  train 0.001548  val 0.088013  lr 1.07e-04  (best 0.087851 @ ep 10)
+  epoch   18  train 0.001550  val 0.088032  lr 9.52e-05  (best 0.087851 @ ep 10)
+  early stopping at epoch 18 (no improvement for 8 epochs)
+METRICS panasonic output_residual 43 UDDS_25C {'windowed': {'mae': 43.00984521035409, 'rmse': 57.1351757425676, 'max_error': 579.6279907226562, 'p99': 176.07727527618405}, 'continuous': {'mae': 42.37852064176958, 'rmse': 56.501047943968985, 'max_error': 580.3353786468506, 'p99': 175.85197925567624}}
+METRICS panasonic output_residual 43 UDDS_10C {'windowed': {'mae': 37.40440879597148, 'rmse': 58.483526847424436, 'max_error': 705.4071426391602, 'p99': 257.81655311584467}, 'continuous': {'mae': 36.35215921656987, 'rmse': 57.55259627656723, 'max_error': 705.3248882293701, 'p99': 256.81002140045166}}
+METRICS panasonic output_residual 43 UDDS_0C {'windowed': {'mae': 96.00276352934269, 'rmse': 109.99617357024911, 'max_error': 806.1283826828003, 'p99': 284.51900720596313}, 'continuous': {'mae': 93.86484767669825, 'rmse': 107.88228572394564, 'max_error': 792.7267551422119, 'p99': 282.4812936782837}}
+METRICS panasonic output_residual 43 UDDS_-10C {'windowed': {'mae': 173.76637500621467, 'rmse': 192.22813077770954, 'max_error': 696.574330329895, 'p99': 455.26871204376215}, 'continuous': {'mae': 171.35554089503407, 'rmse': 189.81892875495865, 'max_error': 693.4654712677002, 'p99': 451.0752964019772}}
+METRICS panasonic output_residual 43 UDDS_-20C {'windowed': {'mae': 294.8551149049399, 'rmse': 329.5567866648347, 'max_error': 1044.284701347351, 'p99': 788.5617268085479}, 'continuous': {'mae': 292.44601765193016, 'rmse': 327.1087531841396, 'max_error': 1044.2006587982178, 'p99': 781.5961384773254}}
+METRICS panasonic output_residual 43 US06_25C {'windowed': {'mae': 38.64834911931278, 'rmse': 53.55170834076275, 'max_error': 440.0409460067749, 'p99': 181.15583896636994}, 'continuous': {'mae': 33.8312593013337, 'rmse': 49.242693600089645, 'max_error': 425.8081912994385, 'p99': 173.78864288330107}}
+METRICS panasonic output_residual 43 LA92_25C {'windowed': {'mae': 17.368065659220896, 'rmse': 29.931386630259777, 'max_error': 508.49390029907227, 'p99': 117.64598250389012}, 'continuous': {'mae': 15.61020724961383, 'rmse': 28.160084913974103, 'max_error': 506.49046897888184, 'p99': 112.98681735992317}}
+METRICS panasonic output_residual 43 HWFET_25C {'windowed': {'mae': 39.46727478169516, 'rmse': 73.16587597791404, 'max_error': 689.8367404937744, 'p99': 392.68689155579256}, 'continuous': {'mae': 35.53945210669668, 'rmse': 70.61638944473245, 'max_error': 686.6884231567383, 'p99': 380.8691024780276}}
+COMPLETE panasonic_output_residual_seed43 2026-11-01T04:30:00.885373+00:00

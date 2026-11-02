@@ -1,0 +1,18 @@
+{
+  "python": "3.10.18 (main, Jun  5 2025, 08:37:47) [Clang 14.0.6 ]",
+  "platform": "macOS-26.6.2-arm64-arm-64bit",
+  "packages": {
+    "numpy": "2.2.6",
+    "scipy": "1.15.3",
+    "torch": "2.8.0",
+    "torchdiffeq": "0.2.5",
+    "matplotlib": "3.10.6",
+    "openpyxl": "3.1.5",
+    "xlrd": "2.0.2",
+    "pypdf": "6.10.2",
+    "numba": "0.61.2",
+    "llvmlite": "0.44.0"
+  },
+  "numba_llvmlite": "See pinned requirements-unified.txt: numba0.61.2/llvmlite0.44.0 supplied in original .unified_deps",
+  "validation_environment_note": "Original installed numba/llvmlite supplied via original .unified_deps path; these third-party packages are not redistributed. Install requirements.txt."
+}

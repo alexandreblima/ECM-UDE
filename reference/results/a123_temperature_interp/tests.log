@@ -1,0 +1,7 @@
+.GP optimization failure R0: {'start_index': 2, 'success': False, 'message': 'ABNORMAL: ', 'penalized_negative_log_likelihood': 1.1775255981261987, 'sigma_f': 0.3419908472658116, 'ell_C': 8.680273396455172, 'nit': 10}
+....................................B assumptions: ['Manufacturer/model unconfirmed; 1.1Ah label conflicts with measured ~2.50Ah.', '25C nominal versus 30D labels in capacity/dynamic/PCPD and 30 Degree internal PCPD path.', 'Dynamic preparation absent; z0=1,h0=+1 explicitly authorized, not measured.', 'OCV charge endpoint supplied from final rest; slight non-monotonic charge voltage retained.', 'PCPD 30min rests are approximate OCV, not certified equilibrium; no dedicated minor loops.', 'Processed repetition periods DST333/FUDS1442/US06435s differ from standard cycles; sheet naming is not independent official waveform certification.', 'M may change sign: retained without abs, clipping or target-dependent correction.']
+..
+----------------------------------------------------------------------
+Ran 39 tests in 12.251s
+
+OK

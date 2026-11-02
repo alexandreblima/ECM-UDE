@@ -1,0 +1,24 @@
+START calce_physics_gradient_seed46 2026-11-01T04:41:44.178242+00:00
+  epoch    1  train 0.000747  val 0.052442  lr 6.67e-05  (best 0.052442 @ ep 1)
+  epoch    2  train 0.000746  val 0.052455  lr 1.33e-04  (best 0.052442 @ ep 1)
+  epoch    3  train 0.000758  val 0.052538  lr 2.00e-04  (best 0.052442 @ ep 1)
+  epoch    4  train 0.000755  val 0.052584  lr 2.00e-04  (best 0.052442 @ ep 1)
+  epoch    5  train 0.000749  val 0.052615  lr 1.99e-04  (best 0.052442 @ ep 1)
+  epoch    6  train 0.000752  val 0.052628  lr 1.97e-04  (best 0.052442 @ ep 1)
+  epoch    7  train 0.000753  val 0.052613  lr 1.94e-04  (best 0.052442 @ ep 1)
+  epoch    8  train 0.000751  val 0.052601  lr 1.89e-04  (best 0.052442 @ ep 1)
+  epoch    9  train 0.000747  val 0.052630  lr 1.84e-04  (best 0.052442 @ ep 1)
+  early stopping at epoch 9 (no improvement for 8 epochs)
+METRICS calce physics_gradient 46 FUDS_25C {'windowed': {'mae': 13.248164313686724, 'rmse': 40.23177606272739, 'max_error': 532.3014259338379, 'p99': 200.3990173339835}, 'continuous': {'mae': 13.367413091425489, 'rmse': 40.45814633364105, 'max_error': 534.4212055206299, 'p99': 202.47063636779697}}
+METRICS calce physics_gradient 46 DST_25C {'windowed': {'mae': 5.840542362216578, 'rmse': 26.282197352924015, 'max_error': 746.1061477661133, 'p99': 47.59280681610088}, 'continuous': {'mae': 5.2317437554883774, 'rmse': 25.946563272390993, 'max_error': 744.173526763916, 'p99': 44.24431324005114}}
+METRICS calce physics_gradient 46 US06_25C {'windowed': {'mae': 123.73457951298087, 'rmse': 137.31967247322513, 'max_error': 679.5592308044434, 'p99': 371.3816070556639}, 'continuous': {'mae': 122.07926420286302, 'rmse': 135.6809272756834, 'max_error': 677.4766445159912, 'p99': 369.24771308898914}}
+METRICS calce physics_gradient 46 BJDST_25C {'windowed': {'mae': 123.5145121431522, 'rmse': 139.18942868341338, 'max_error': 925.5044460296631, 'p99': 307.26927280425963}, 'continuous': {'mae': 122.94035616514678, 'rmse': 138.7009066903513, 'max_error': 925.4574775695801, 'p99': 307.0933914184565}}
+METRICS calce physics_gradient 46 FUDS_0C {'windowed': {'mae': 53.91010511542411, 'rmse': 72.19988553418952, 'max_error': 644.3517208099365, 'p99': 240.4721701145172}, 'continuous': {'mae': 53.35995079497326, 'rmse': 71.66065876033412, 'max_error': 643.944263458252, 'p99': 239.36828136444083}}
+METRICS calce physics_gradient 46 DST_0C {'windowed': {'mae': 55.58987680200888, 'rmse': 76.33143691567011, 'max_error': 676.8345832824707, 'p99': 288.09762477874756}, 'continuous': {'mae': 54.67552329365229, 'rmse': 75.42336842049313, 'max_error': 674.9720573425293, 'p99': 286.66665077209484}}
+METRICS calce physics_gradient 46 US06_0C {'windowed': {'mae': 64.4147020421148, 'rmse': 85.99167537159609, 'max_error': 702.2745609283447, 'p99': 312.07940340042074}, 'continuous': {'mae': 63.831321106347346, 'rmse': 85.41906503427835, 'max_error': 701.3349533081055, 'p99': 310.8378005027771}}
+METRICS calce physics_gradient 46 BJDST_0C {'windowed': {'mae': 75.0900378641606, 'rmse': 114.40694013309502, 'max_error': 821.9921588897705, 'p99': 498.4894955158218}, 'continuous': {'mae': 74.42191843856634, 'rmse': 113.86843788716318, 'max_error': 821.7103481292725, 'p99': 498.0390119552602}}
+METRICS calce physics_gradient 46 FUDS_45C {'windowed': {'mae': 17.510442171784764, 'rmse': 56.72636547947916, 'max_error': 642.5778865814209, 'p99': 323.84171485900725}, 'continuous': {'mae': 17.472727851244127, 'rmse': 56.785395547019036, 'max_error': 642.5778865814209, 'p99': 323.84147644042815}}
+METRICS calce physics_gradient 46 DST_45C {'windowed': {'mae': 17.046690882916543, 'rmse': 53.396489796786724, 'max_error': 514.747142791748, 'p99': 307.6505661010742}, 'continuous': {'mae': 17.49517488726377, 'rmse': 53.2803316327171, 'max_error': 514.747142791748, 'p99': 307.6505661010742}}
+METRICS calce physics_gradient 46 US06_45C {'windowed': {'mae': 15.903186804601576, 'rmse': 52.48611358340128, 'max_error': 715.3682708740234, 'p99': 294.6356749534606}, 'continuous': {'mae': 16.056843534347813, 'rmse': 52.37075296253708, 'max_error': 715.3682708740234, 'p99': 294.6320128440856}}
+METRICS calce physics_gradient 46 BJDST_45C {'windowed': {'mae': 18.378344835118753, 'rmse': 69.61777540133785, 'max_error': 734.5578670501709, 'p99': 391.0608601570128}, 'continuous': {'mae': 18.363308417363864, 'rmse': 69.3547448102027, 'max_error': 734.5578670501709, 'p99': 391.0584807395934}}
+COMPLETE calce_physics_gradient_seed46 2026-11-01T04:41:44.364831+00:00

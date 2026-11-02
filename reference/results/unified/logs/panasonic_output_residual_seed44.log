@@ -1,0 +1,31 @@
+START panasonic_output_residual_seed44 2026-11-01T04:30:00.885516+00:00
+  epoch    1  train 0.001555  val 0.088474  lr 6.67e-05  (best 0.088474 @ ep 1)
+  epoch    2  train 0.001556  val 0.088519  lr 1.33e-04  (best 0.088474 @ ep 1)
+  epoch    3  train 0.001553  val 0.088422  lr 2.00e-04  (best 0.088422 @ ep 3)
+  epoch    4  train 0.001560  val 0.088557  lr 2.00e-04  (best 0.088422 @ ep 3)
+  epoch    5  train 0.001550  val 0.088202  lr 1.99e-04  (best 0.088202 @ ep 5)
+  epoch    6  train 0.001558  val 0.088227  lr 1.97e-04  (best 0.088202 @ ep 5)
+  epoch    7  train 0.001550  val 0.088404  lr 1.94e-04  (best 0.088202 @ ep 5)
+  epoch    8  train 0.001553  val 0.088018  lr 1.89e-04  (best 0.088018 @ ep 8)
+  epoch    9  train 0.001551  val 0.088234  lr 1.84e-04  (best 0.088018 @ ep 8)
+  epoch   10  train 0.001556  val 0.087901  lr 1.77e-04  (best 0.087901 @ ep 10)
+  epoch   11  train 0.001550  val 0.088062  lr 1.69e-04  (best 0.087901 @ ep 10)
+  epoch   12  train 0.001549  val 0.087722  lr 1.60e-04  (best 0.087722 @ ep 12)
+  epoch   13  train 0.001551  val 0.088153  lr 1.50e-04  (best 0.087722 @ ep 12)
+  epoch   14  train 0.001551  val 0.088062  lr 1.40e-04  (best 0.087722 @ ep 12)
+  epoch   15  train 0.001552  val 0.087966  lr 1.29e-04  (best 0.087722 @ ep 12)
+  epoch   16  train 0.001552  val 0.088085  lr 1.18e-04  (best 0.087722 @ ep 12)
+  epoch   17  train 0.001552  val 0.088047  lr 1.07e-04  (best 0.087722 @ ep 12)
+  epoch   18  train 0.001548  val 0.088076  lr 9.52e-05  (best 0.087722 @ ep 12)
+  epoch   19  train 0.001548  val 0.087892  lr 8.38e-05  (best 0.087722 @ ep 12)
+  epoch   20  train 0.001549  val 0.087811  lr 7.26e-05  (best 0.087722 @ ep 12)
+  early stopping at epoch 20 (no improvement for 8 epochs)
+METRICS panasonic output_residual 44 UDDS_25C {'windowed': {'mae': 42.93114602383358, 'rmse': 57.09311998475157, 'max_error': 579.5700550079346, 'p99': 176.027112007141}, 'continuous': {'mae': 42.363674162881026, 'rmse': 56.51916158659789, 'max_error': 580.4028511047363, 'p99': 175.90094089508057}}
+METRICS panasonic output_residual 44 UDDS_10C {'windowed': {'mae': 37.376732308270135, 'rmse': 58.44804730824852, 'max_error': 705.3627967834473, 'p99': 257.7841281890869}, 'continuous': {'mae': 36.34860695196552, 'rmse': 57.54125865441564, 'max_error': 705.3687572479248, 'p99': 256.778244972229}}
+METRICS panasonic output_residual 44 UDDS_0C {'windowed': {'mae': 95.96721724545223, 'rmse': 109.94166424649407, 'max_error': 805.9602975845337, 'p99': 284.27922248840326}, 'continuous': {'mae': 93.85173107542865, 'rmse': 107.84755821233915, 'max_error': 792.6006317138672, 'p99': 282.2665548324585}}
+METRICS panasonic output_residual 44 UDDS_-10C {'windowed': {'mae': 173.7503789737668, 'rmse': 192.20041220726418, 'max_error': 696.312427520752, 'p99': 455.0733518600463}, 'continuous': {'mae': 171.35957662453873, 'rmse': 189.80880949980192, 'max_error': 693.2306289672852, 'p99': 450.92797279357904}}
+METRICS panasonic output_residual 44 UDDS_-20C {'windowed': {'mae': 294.8769260868613, 'rmse': 329.57000027119926, 'max_error': 1044.0200567245483, 'p99': 788.6115884780883}, 'continuous': {'mae': 292.4863570836587, 'rmse': 327.13823093629026, 'max_error': 1043.9367294311523, 'p99': 781.5734577178949}}
+METRICS panasonic output_residual 44 US06_25C {'windowed': {'mae': 38.61656547548418, 'rmse': 53.51090802534534, 'max_error': 440.2315616607666, 'p99': 181.02644920349152}, 'continuous': {'mae': 33.8246281142204, 'rmse': 49.230668581336346, 'max_error': 426.02038383483887, 'p99': 173.86821746826175}}
+METRICS panasonic output_residual 44 LA92_25C {'windowed': {'mae': 17.35618479520302, 'rmse': 29.905933197494367, 'max_error': 508.4342956542969, 'p99': 117.56927728652907}, 'continuous': {'mae': 15.617091785556406, 'rmse': 28.160902879436836, 'max_error': 506.52241706848145, 'p99': 113.01690340042106}}
+METRICS panasonic output_residual 44 HWFET_25C {'windowed': {'mae': 39.44010713009258, 'rmse': 73.13886870994193, 'max_error': 689.7909641265869, 'p99': 392.64748096466707}, 'continuous': {'mae': 35.54610428604842, 'rmse': 70.62309947086295, 'max_error': 686.7671012878418, 'p99': 380.9328556060794}}
+COMPLETE panasonic_output_residual_seed44 2026-11-01T04:30:28.753673+00:00

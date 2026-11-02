@@ -1,0 +1,716 @@
+{
+  "complete": true,
+  "status": "complete",
+  "cell": "cell_B_mendeley",
+  "fit": {
+    "model": "V7m",
+    "source": "DST",
+    "target_refit": false,
+    "theta": [
+      -4.135439907254786,
+      -4.972849281049832,
+      -2.526886799081549,
+      2.275279043326776,
+      6.038878737740115,
+      0.930398894380892,
+      0.9994999999987964,
+      2.6751424264014494,
+      -0.29638796523423644,
+      -5.519905459427415,
+      -3.019465713871611,
+      -4.052687681113576,
+      -4.81206667373175,
+      -5.672780714773517,
+      -4.6967163939049605,
+      -3.569502785616071,
+      -15.656986388594818,
+      -3.4880641735617077
+    ],
+    "parameters": {
+      "R0": 0.015995626989510677,
+      "R1": 0.006923393211511072,
+      "R2": 0.07990740125032887,
+      "C1": 1405.4717975621516,
+      "C2": 5248.85657602309,
+      "tau1_s": 9.730633902212062,
+      "tau2_s": 419.4224885257044,
+      "Qnom_Ah": 2.3249752702999937,
+      "Q_ratio": 0.930398894380892,
+      "z0": 0.9994999999987964,
+      "ocv_coefficients_V": null
+    },
+    "OCV_knots_soc": [
+      -0.07791307273321091,
+      0.029828234539989812,
+      0.13756954181319053,
+      0.24531084908639122,
+      0.353052156359592,
+      0.4607934636327927,
+      0.5685347709059934,
+      0.6762760781791941,
+      0.7840173854523949,
+      0.8917586927255956,
+      0.9994999999987964
+    ],
+    "OCV_knots_V": [
+      2.6751424264014494,
+      3.231036394277896,
+      3.2350346173958826,
+      3.282707299455373,
+      3.2999336813953817,
+      3.3080318407288845,
+      3.3114642343842418,
+      3.3205480428813567,
+      3.3483284264761144,
+      3.348328585059313,
+      3.378430903406791
+    ],
+    "source_SOC_support": [
+      -0.07791307273321091,
+      0.9994999999987964
+    ],
+    "attempts": [
+      {
+        "start_index": 0,
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 500,
+        "squared_residual_V2": 6.885402988852097,
+        "theta": [
+          -4.137761051519678,
+          -4.869643007819843,
+          -2.6789309770402783,
+          2.446324165662216,
+          6.013339236052459,
+          1.0993412575032482,
+          0.9478429696509666,
+          2.6711300258478716,
+          -0.29776843369589084,
+          -5.392205014915686,
+          -3.029338631979278,
+          -4.035198363147049,
+          -4.837405697950927,
+          -5.64452882595848,
+          -4.695299113254062,
+          -3.572744037097531,
+          -19.327633834575266,
+          -3.3928872708730506
+        ]
+      },
+      {
+        "start_index": 1,
+        "success": false,
+        "message": "The maximum number of function evaluations is exceeded.",
+        "nfev": 500,
+        "squared_residual_V2": 6.88286618905775,
+        "theta": [
+          -4.133228640865784,
+          -4.947601979206851,
+          -2.562658090577263,
+          2.344847779968127,
+          6.037370857429931,
+          0.9479111117837055,
+          0.9004975,
+          2.674514544080343,
+          -0.29832425152510633,
+          -5.334548894624545,
+          -3.0329721879283267,
+          -4.034920063393736,
+          -4.829051592737519,
+          -5.668244804610063,
+          -4.695406783639473,
+          -3.5709569560882155,
+          -15.76035674515361,
+          -3.463293257858773
+        ]
+      },
+      {
+        "start_index": 2,
+        "success": true,
+        "message": "`ftol` termination condition is satisfied.",
+        "nfev": 100,
+        "squared_residual_V2": 6.881772103002601,
+        "theta": [
+          -4.135439907254786,
+          -4.972849281049832,
+          -2.526886799081549,
+          2.275279043326776,
+          6.038878737740115,
+          0.930398894380892,
+          0.9994999999987964,
+          2.6751424264014494,
+          -0.29638796523423644,
+          -5.519905459427415,
+          -3.019465713871611,
+          -4.052687681113576,
+          -4.81206667373175,
+          -5.672780714773517,
+          -4.6967163939049605,
+          -3.569502785616071,
+          -15.656986388594818,
+          -3.4880641735617077
+        ]
+      }
+    ],
+    "selected_start": 2,
+    "near_bound_parameters": [],
+    "n_parameters_near_bounds": 0
+  },
+  "loader": {
+    "source_files": {
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/1.5C 1C 0.5C.xlsx": "60c7c4f7d7bb8555de0fcfe133e692d9b087a353584ab335e3ffafae8c09a55f",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/PCPD.xls": "9d44621a6009b6b00292c3c12de0481af1c4e65c5e4eba461c1ae1352116e395",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/DST FUDS UDDS HPPC WLTS US06.xlsx": "3883d7248a389a65d5aa3d53e26605df385aa736fdfe9ed0d5b6327119d1a574"
+    },
+    "raw_current_sign": "positive charge; verified CC_Chg/CC_DChg in PCPD",
+    "current_conversion": "-raw_mA/1000",
+    "temperature_nominal_C": 25.0,
+    "qnom_method": "0.5C discharge Capacity span in 25 Degree, mAh/1000",
+    "qnom_Ah": 2.4989015833333332,
+    "capacity_current_integral_Ah": 2.498996305555374,
+    "label_capacity_Ah": 1.1,
+    "capacity_label_divergence_ratio": 2.2717287121212117,
+    "ocv_SOC_method": "discharge starts 1, integrate PCPD pulse capacities/Qnom; charge starts at same discharge endpoint",
+    "ocv_charge_supplied_SOC_percent": [
+      0.0,
+      10.091675206896591,
+      20.183600451049298,
+      30.274883222790557,
+      40.366889196460924,
+      50.45931787885576,
+      60.551581738485346,
+      70.64382093076232,
+      80.73525170661931,
+      90.82685403270133,
+      100.00000000000013
+    ],
+    "ocv_discharge_supplied_SOC_percent": [
+      100.0,
+      90.0000385537748,
+      79.99919270395478,
+      69.99916792732138,
+      59.999267589384765,
+      49.99960612930353,
+      39.99976912177508,
+      29.99965434929851,
+      19.999802897992755,
+      9.999895893697378,
+      0.0
+    ],
+    "ocv_discharge_pulse_Ah": [
+      0.0,
+      0.2500105833333333,
+      0.5000432777777777,
+      0.7500554444444443,
+      1.0000645,
+      1.2500675833333332,
+      1.5000750555555555,
+      1.7500894722222222,
+      2.0000973055555553,
+      2.2501065277777776,
+      2.5001154722222223
+    ],
+    "ocv_charge_pulse_Ah": [
+      0.0,
+      0.25001202777777776,
+      0.50003025,
+      0.7500325555555556,
+      1.000052777777778,
+      1.2500834722222223,
+      1.5001100833333334,
+      1.7501360833333335,
+      2.0001420555555556,
+      2.2501522777777776,
+      2.4774085833333332
+    ],
+    "profile_checks": {
+      "DST": {
+        "header": [
+          "Time_30D_DST_LFP",
+          "Current_30D_DST_LFP",
+          "Voltage_30D_DST_LFP",
+          "Capacity_30D_DST_LFP",
+          "Energy_30D_DST_LFP"
+        ],
+        "rows": 21862,
+        "current_min_max_A": [
+          -1.5029000000000001,
+          3.0029
+        ],
+        "capacity_resets": 393,
+        "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+        "processed_repetition_seconds": 333,
+        "repetition_correlation": 0.9999996952669129
+      },
+      "FUDS": {
+        "header": [
+          "Time",
+          "Current",
+          "Voltage",
+          "Capacity",
+          "Energy"
+        ],
+        "rows": 17464,
+        "current_min_max_A": [
+          -2.1517,
+          4.0119
+        ],
+        "capacity_resets": 893,
+        "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+        "processed_repetition_seconds": 1442,
+        "repetition_correlation": 0.9999906868725341
+      },
+      "UDDS": {
+        "header": [
+          "Time",
+          "Current",
+          "Voltage",
+          "Capacity",
+          "Energy"
+        ],
+        "rows": 21335,
+        "current_min_max_A": [
+          -0.7187,
+          2.9991999999999996
+        ],
+        "capacity_resets": 513,
+        "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+        "processed_repetition_seconds": 1370,
+        "repetition_correlation": 0.999987291534538
+      },
+      "HPPC": {
+        "header": [
+          "Time_30D_HPPC_LFP",
+          "Current_30D_HPPC_LFP",
+          "Voltage_30D_HPPC_LFP",
+          "Capacity_30D_HPPC_LFP",
+          "Energy_30D_HPPC_LFP",
+          "R dis",
+          "R char",
+          "Pdich",
+          null
+        ],
+        "rows": 48860,
+        "current_min_max_A": [
+          -3.7418,
+          3.741
+        ],
+        "capacity_resets": 30,
+        "identity": "sheet label and numerical excitation verified; no official waveform reference in local package"
+      },
+      "WLTS": {
+        "header": [
+          "Time",
+          "Current",
+          "Voltage",
+          "Capacity",
+          "Energy"
+        ],
+        "rows": 21673,
+        "current_min_max_A": [
+          -1.1257000000000001,
+          2.9471
+        ],
+        "capacity_resets": 614,
+        "identity": "sheet label and numerical excitation verified; no official waveform reference in local package"
+      },
+      "US06": {
+        "header": [
+          "Time_30D_US06_LFP",
+          "Current_30D_US06_LFP",
+          "Voltage_30D_US06_LFP",
+          "Capacity_30D_US06_LFP",
+          "Energy_30D_US06_LFP"
+        ],
+        "rows": 14008,
+        "current_min_max_A": [
+          -0.863,
+          3.8921
+        ],
+        "capacity_resets": 1094,
+        "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+        "processed_repetition_seconds": 435,
+        "repetition_correlation": 0.999999292556811
+      }
+    },
+    "initial_rc_V": [
+      0.0,
+      0.0
+    ],
+    "caveats": [
+      "Manufacturer/model unconfirmed; 1.1Ah label conflicts with measured ~2.50Ah.",
+      "25C nominal versus 30D labels in capacity/dynamic/PCPD and 30 Degree internal PCPD path.",
+      "Dynamic preparation absent; z0=1,h0=+1 explicitly authorized, not measured.",
+      "OCV charge endpoint supplied from final rest; slight non-monotonic charge voltage retained.",
+      "PCPD 30min rests are approximate OCV, not certified equilibrium; no dedicated minor loops.",
+      "Processed repetition periods DST333/FUDS1442/US06435s differ from standard cycles; sheet naming is not independent official waveform certification.",
+      "M may change sign: retained without abs, clipping or target-dependent correction."
+    ]
+  },
+  "structural_identifiability": {
+    "Q_z0_identifiable": false,
+    "reason": "Candidate source support cancels Q/z0 exactly in normalized PCHIP coordinates; Q/z0 are arbitrary within bounds and affect reported SOC labels, not voltage.",
+    "coordinate_identity": "(z-z_source_min)/(z_source_max-z_source_min)=(Ah_source_max-Ah_target)/(Ah_source_max-Ah_source_min)",
+    "numerical_fix": "Affine-equivalent normalized Ah coordinate and analytically exact PCHIP/RC Jacobian, including zero Q/z0 columns; no changed model/bounds/starts/tolerances."
+  },
+  "original_static_summary_sha256": "e2f41b8ff50de75416ce687f885a7efc6636c47bbe424c2afa26c6c36a416920",
+  "source": "DST",
+  "primary_targets": [
+    "FUDS",
+    "US06"
+  ],
+  "global_mae_mV": {
+    "DST": 7.776391229842502,
+    "FUDS": 18.081627559768684,
+    "US06": 18.224249662650244
+  },
+  "original_robustness": {
+    "robust": false,
+    "profiles": {
+      "FUDS": {
+        "V1_mae_mV": 18.842254552503018,
+        "V7m_mae_mV": 18.081627559768684,
+        "reduction": 0.04036815183739739,
+        "passes": false
+      },
+      "US06": {
+        "V1_mae_mV": 17.916811262875246,
+        "V7m_mae_mV": 18.224249662650244,
+        "reduction": -0.017159214062383406,
+        "passes": false
+      }
+    }
+  },
+  "corrected_robustness": null,
+  "metrics": [
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "global",
+      "variant": "original",
+      "n_samples": 21862,
+      "mae_mV": 7.776391229842502,
+      "rmse_mV": 17.742107169131874,
+      "max_error_mV": 589.5956691548961,
+      "p99_mV": 59.028914504757175,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "soc_lt20",
+      "variant": "original",
+      "n_samples": 4372,
+      "mae_mV": 24.054853601839273,
+      "rmse_mV": 37.34485555065586,
+      "max_error_mV": 589.5956691548961,
+      "p99_mV": 129.02747611210833,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "soc20_80",
+      "variant": "original",
+      "n_samples": 13129,
+      "mae_mV": 2.8493088803753244,
+      "rmse_mV": 4.180460664129265,
+      "max_error_mV": 16.214953442003743,
+      "p99_mV": 14.171669641858017,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "soc_gt80",
+      "variant": "original",
+      "n_samples": 4361,
+      "mae_mV": 6.290086867490905,
+      "rmse_mV": 11.280827015560165,
+      "max_error_mV": 76.66909659320842,
+      "p99_mV": 50.26605660425528,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "after_reversal_60s",
+      "variant": "original",
+      "n_samples": 21105,
+      "mae_mV": 7.662002917829485,
+      "rmse_mV": 17.67474671751132,
+      "max_error_mV": 589.5956691548961,
+      "p99_mV": 58.37514944213982,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "after_reversal_60s_soc_lt20",
+      "variant": "original",
+      "n_samples": 4229,
+      "mae_mV": 24.191257094412354,
+      "rmse_mV": 37.70666591701679,
+      "max_error_mV": 589.5956691548961,
+      "p99_mV": 130.82265192658505,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "after_reversal_60s_soc20_80",
+      "variant": "original",
+      "n_samples": 12700,
+      "mae_mV": 2.8041798958589306,
+      "rmse_mV": 4.132257240817705,
+      "max_error_mV": 16.214953442003743,
+      "p99_mV": 14.182509275860498,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "DST",
+      "scope": "after_reversal_60s_soc_gt80",
+      "variant": "original",
+      "n_samples": 4176,
+      "mae_mV": 5.696518355151576,
+      "rmse_mV": 9.329934887866216,
+      "max_error_mV": 50.849213530202334,
+      "p99_mV": 38.51574480239661,
+      "V1_global_mae_mV": 10.567660035562614
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "global",
+      "variant": "original",
+      "n_samples": 17464,
+      "mae_mV": 18.081627559768684,
+      "rmse_mV": 40.678542794398766,
+      "max_error_mV": 605.0325836914354,
+      "p99_mV": 144.00413799300955,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "soc_lt20",
+      "variant": "original",
+      "n_samples": 3791,
+      "mae_mV": 46.974421829840715,
+      "rmse_mV": 84.13946937341491,
+      "max_error_mV": 605.0325836914354,
+      "p99_mV": 345.2081200269756,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "soc20_80",
+      "variant": "original",
+      "n_samples": 10189,
+      "mae_mV": 9.830852012738976,
+      "rmse_mV": 11.51053484291121,
+      "max_error_mV": 35.18924219620079,
+      "p99_mV": 23.885530548840944,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "soc_gt80",
+      "variant": "original",
+      "n_samples": 3484,
+      "mae_mV": 10.772376403294112,
+      "rmse_mV": 14.278326410302874,
+      "max_error_mV": 74.56909659320843,
+      "p99_mV": 63.48803254379855,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "after_reversal_60s",
+      "variant": "original",
+      "n_samples": 17341,
+      "mae_mV": 17.94472528303854,
+      "rmse_mV": 40.62780988117685,
+      "max_error_mV": 605.0325836914354,
+      "p99_mV": 144.01790652929847,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "after_reversal_60s_soc_lt20",
+      "variant": "original",
+      "n_samples": 3779,
+      "mae_mV": 46.96571873299616,
+      "rmse_mV": 84.19862626473788,
+      "max_error_mV": 605.0325836914354,
+      "p99_mV": 345.26635599513776,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "after_reversal_60s_soc20_80",
+      "variant": "original",
+      "n_samples": 10141,
+      "mae_mV": 9.81258865641269,
+      "rmse_mV": 11.49460047986964,
+      "max_error_mV": 35.18924219620079,
+      "p99_mV": 23.91194512437089,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "FUDS",
+      "scope": "after_reversal_60s_soc_gt80",
+      "variant": "original",
+      "n_samples": 3421,
+      "mae_mV": 9.993150680063644,
+      "rmse_mV": 11.999944883927252,
+      "max_error_mV": 35.862786696147175,
+      "p99_mV": 29.053486846865997,
+      "V1_global_mae_mV": 18.842254552503018
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "global",
+      "variant": "original",
+      "n_samples": 14008,
+      "mae_mV": 18.224249662650244,
+      "rmse_mV": 25.105600269119833,
+      "max_error_mV": 577.2172408591383,
+      "p99_mV": 73.30393932836252,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "soc_lt20",
+      "variant": "original",
+      "n_samples": 2821,
+      "mae_mV": 25.29823806083316,
+      "rmse_mV": 44.321118066723564,
+      "max_error_mV": 577.2172408591383,
+      "p99_mV": 188.84026800478182,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "soc20_80",
+      "variant": "original",
+      "n_samples": 8381,
+      "mae_mV": 16.797022609019766,
+      "rmse_mV": 17.210314145081146,
+      "max_error_mV": 30.917613795448773,
+      "p99_mV": 29.311540944073137,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "soc_gt80",
+      "variant": "original",
+      "n_samples": 2806,
+      "mae_mV": 15.375307633143116,
+      "rmse_mV": 16.94026717667683,
+      "max_error_mV": 73.86909659320872,
+      "p99_mV": 42.591597519357244,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "after_reversal_60s",
+      "variant": "original",
+      "n_samples": 14000,
+      "mae_mV": 18.194648667722998,
+      "rmse_mV": 25.056591407231018,
+      "max_error_mV": 577.2172408591383,
+      "p99_mV": 73.26049340472399,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "after_reversal_60s_soc_lt20",
+      "variant": "original",
+      "n_samples": 2821,
+      "mae_mV": 25.29823806083316,
+      "rmse_mV": 44.321118066723564,
+      "max_error_mV": 577.2172408591383,
+      "p99_mV": 188.84026800478182,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "after_reversal_60s_soc20_80",
+      "variant": "original",
+      "n_samples": 8381,
+      "mae_mV": 16.797022609019766,
+      "rmse_mV": 17.210314145081146,
+      "max_error_mV": 30.917613795448773,
+      "p99_mV": 29.311540944073137,
+      "V1_global_mae_mV": 17.916811262875246
+    },
+    {
+      "dataset": "cell_B_mendeley",
+      "profile": "US06",
+      "scope": "after_reversal_60s_soc_gt80",
+      "variant": "original",
+      "n_samples": 2798,
+      "mae_mV": 15.219051212407757,
+      "rmse_mV": 16.543587729481047,
+      "max_error_mV": 56.202177754955954,
+      "p99_mV": 39.54066362953436,
+      "V1_global_mae_mV": 17.916811262875246
+    }
+  ],
+  "diagnostics": {
+    "DST": {
+      "ocv_boundary_samples": 0,
+      "predicted_voltage_min_max": [
+        2.584495669154896,
+        3.3806765048430214
+      ]
+    },
+    "FUDS": {
+      "ocv_boundary_samples": 258,
+      "predicted_voltage_min_max": [
+        2.582948390070415,
+        3.389889834366279
+      ]
+    },
+    "US06": {
+      "ocv_boundary_samples": 2,
+      "predicted_voltage_min_max": [
+        2.573932043747895,
+        3.3820018653505195
+      ]
+    }
+  },
+  "principal_robustness": {
+    "robust": false,
+    "profiles": {
+      "FUDS": {
+        "V1_mae_mV": 18.842254552503018,
+        "V7m_mae_mV": 18.081627559768684,
+        "reduction": 0.04036815183739739,
+        "passes": false
+      },
+      "US06": {
+        "V1_mae_mV": 17.916811262875246,
+        "V7m_mae_mV": 18.224249662650244,
+        "reduction": -0.017159214062383406,
+        "passes": false
+      }
+    }
+  },
+  "historical_decision_unchanged": true
+}

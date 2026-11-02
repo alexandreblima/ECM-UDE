@@ -1,0 +1,6 @@
+.............................B assumptions: ['Manufacturer/model unconfirmed; 1.1Ah label conflicts with measured ~2.50Ah.', '25C nominal versus 30D labels in capacity/dynamic/PCPD and 30 Degree internal PCPD path.', 'Dynamic preparation absent; z0=1,h0=+1 explicitly authorized, not measured.', 'OCV charge endpoint supplied from final rest; slight non-monotonic charge voltage retained.', 'PCPD 30min rests are approximate OCV, not certified equilibrium; no dedicated minor loops.', 'Processed repetition periods DST333/FUDS1442/US06435s differ from standard cycles; sheet naming is not independent official waveform certification.', 'M may change sign: retained without abs, clipping or target-dependent correction.']
+..
+----------------------------------------------------------------------
+Ran 31 tests in 10.713s
+
+OK

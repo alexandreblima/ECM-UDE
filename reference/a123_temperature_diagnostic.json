@@ -1,0 +1,14 @@
+{
+  "version": "a123-local-v6-diagnostic-1",
+  "registered_before_local_fitting": true,
+  "primary_protocol": "static_replication_protocol.json at commit 78fefb3; unchanged",
+  "primary": "Reuse existing DST25 V1/V5/V6/V7 fits, measured Q25 and independent OCV25 unchanged at 0,10,40,50C; no target refitting in primary criterion.",
+  "diagnostic": "For each target temperature fit V6 only on that temperature's DST; evaluate FUDS/US06 at the same temperature without additional fitting.",
+  "diagnostic_model": "V6_local uses the same fixed OCV_mean25 and measured Q25 reference as transferred V6. Fit RC, Qratio in [0.9,1.1] and z0 in [0.9,1.0] with identical three starts, tau<=3600s and optimizer from lfp_static_protocol.json.",
+  "temperature_OCV": "Read low-current target-temperature charge/discharge, measure capacity and plot OCV for diagnostic characterization only; neither primary nor local V6 substitutes these OCV/Q values.",
+  "initial_state": "Same A1-007, verify CCCV preparation for each profile; original z0=1; RC initial zero. No target voltage inversion. Reconstruct SOC from trapezoidal canonical-current integration, same 1s continuous simulator.",
+  "recovery": "(MAE_V6_transferred-MAE_V6_local)/MAE_V6_transferred; additionally (MAE_V1-MAE_V6_local)/MAE_V1. Signed, not clipped; zero denominators explicitly unavailable. Not an oracle ceiling.",
+  "criterion_exclusion": "V6_local is excluded from every primary model choice, temperature pass flag and thermal verdict.",
+  "preservation": "Keep all earlier results including blocked thermal artifacts and original report_static_replication.md byte-identical. Completed run in results/lfp_static_temperature/cell_A_a123; write report_static_temperature.md.",
+  "missing_or_mismatched_cell": "Stop rather than substitute A1-008 or another temperature."
+}

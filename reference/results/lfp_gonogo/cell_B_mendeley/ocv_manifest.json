@@ -1,0 +1,212 @@
+{
+  "cell": "cell_B_mendeley",
+  "qnom_Ah": 2.4989015833333332,
+  "points": {
+    "charge_z": [
+      -0.0004857689862558523,
+      0.09956300021908511,
+      0.19961424829133537,
+      0.29965912689838825,
+      0.39971117532228634,
+      0.49976741447634043,
+      0.5998220195791135,
+      0.6998763801299943,
+      0.7999227260484014,
+      0.8999707727140603,
+      0.9909132520302781
+    ],
+    "charge_V": [
+      2.7638,
+      3.2158,
+      3.2579,
+      3.2945,
+      3.3032,
+      3.3051,
+      3.3079,
+      3.3206,
+      3.3386,
+      3.3373,
+      3.3758
+    ],
+    "discharge_z": [
+      -0.0004857689862558523,
+      0.09956176634362812,
+      0.19960941283346312,
+      0.29965650352354256,
+      0.39970622870446293,
+      0.499753174886606,
+      0.5997983647415219,
+      0.6998459445353863,
+      0.7998947693207028,
+      0.8999518088264047,
+      1.0
+    ],
+    "discharge_V": [
+      2.7638,
+      3.1969,
+      3.2276,
+      3.2589,
+      3.2852,
+      3.2868,
+      3.2896,
+      3.3017,
+      3.3268,
+      3.328,
+      3.4743
+    ],
+    "common_SOC_interval": [
+      -0.0004857689862558523,
+      0.9909132520302781
+    ]
+  },
+  "plateau_amplitude": {
+    "SOC_interval": [
+      0.2,
+      0.8
+    ],
+    "grid_points": 6001,
+    "M_signed_min_mV": 5.898796211273538,
+    "M_signed_max_mV": 18.600425846805546,
+    "M_max_abs_mV": 18.600425846805546,
+    "M_peak_to_peak_mV": 12.701629635532008,
+    "M_mean_abs_mV": 10.913760443924387,
+    "M_RMS_mV": 11.478242105448139,
+    "negative_M_fraction_on_grid": 0.0,
+    "definition": "M=(OCV_charge-OCV_discharge)/2; amplitude for ratios is max(abs(M)) on SOC20-80"
+  },
+  "protocol": {
+    "version": "lfp-nls-gonogo-1",
+    "registered_before_model_fitting": true,
+    "primary_cell": "cell_A_a123",
+    "a123_specimen": "A1-007",
+    "a123_selection": "Lexicographically first specimen, chosen before fitting; A1-008 preserved and inventoried, not pooled or selected by performance.",
+    "replica_cell": "cell_B_mendeley",
+    "dt_seconds": 1.0,
+    "current_convention": "positive discharge",
+    "current_threshold_A": 0.02,
+    "reversal_window_seconds": 60.0,
+    "soc_strata": [
+      "z < 0.2",
+      "0.2 <= z <= 0.8",
+      "z > 0.8"
+    ],
+    "fit_profile": "DST",
+    "evaluate_profiles": [
+      "DST",
+      "FUDS",
+      "US06"
+    ],
+    "models": [
+      "V1",
+      "V2",
+      "V3",
+      "V4"
+    ],
+    "simulation": "Continuous, one initial state per profile; exact zero-order-hold RC and ESC transitions; SOC trapezoidal integration of measured current.",
+    "esc_units": "Qnom stored in Ah and converted to coulombs (3600*Qnom) in dh/dt with time in seconds; gamma dimensionless per unit SOC throughput.",
+    "initial_rc_voltage_V": [
+      0.0,
+      0.0
+    ],
+    "mendeley_initial_state": {
+      "z0": 1.0,
+      "h0": 1.0,
+      "s0": 1.0,
+      "provenance": "User authorized assumed full charge before each processed profile; preparation not present; provisional assumption, not inferred by OCV inversion."
+    },
+    "ocv_A": "1001 equal-SOC bins, median voltage, isotonic monotonic denoising, PCHIP; common interval only, boundary hold outside.",
+    "ocv_B": "11 supplied points per branch; reconstruct SOC from PCPD pulse capacities with the same measured Qnom; charge starts at discharge endpoint; PCHIP without forcing monotonicity or nonnegative M.",
+    "ocv_boundary_policy": "Hold each branch at common-interval boundary; retain unclipped SOC for stratification and count boundary samples explicitly.",
+    "parameter_bounds": {
+      "R0_R1_R2_ohm": [
+        1e-05,
+        0.5
+      ],
+      "tau1_tau2_seconds": [
+        0.1,
+        100000.0
+      ],
+      "gamma": [
+        0.001,
+        1000.0
+      ],
+      "M0_V": [
+        0.0,
+        0.1
+      ],
+      "M_scale": [
+        0.0,
+        3.0
+      ]
+    },
+    "initial_starts": [
+      {
+        "R0": 0.02,
+        "R1": 0.01,
+        "R2": 0.01,
+        "tau1": 2.0,
+        "tau2": 40.0,
+        "gamma": 1.0
+      },
+      {
+        "R0": 0.02,
+        "R1": 0.01,
+        "R2": 0.01,
+        "tau1": 10.0,
+        "tau2": 300.0,
+        "gamma": 10.0
+      },
+      {
+        "R0": 0.02,
+        "R1": 0.01,
+        "R2": 0.01,
+        "tau1": 1.0,
+        "tau2": 1000.0,
+        "gamma": 100.0
+      }
+    ],
+    "initial_M0_V": 0.001,
+    "initial_M_scale": 1.0,
+    "optimizer": {
+      "method": "trf",
+      "loss": "linear",
+      "x_scale": "jac",
+      "max_nfev": 500,
+      "ftol": 1e-08,
+      "xtol": 1e-08,
+      "gtol": 1e-08,
+      "selection": "Lowest full-profile squared residual among successful predetermined starts; no target tuning."
+    },
+    "oracle": "V4 fits degree-9 Chebyshev OCV and 2RC parameters on each evaluated profile; diagnostic leakage by design, never used in GO comparisons.",
+    "decision": {
+      "each_required_profile": [
+        "FUDS",
+        "US06"
+      ],
+      "minimum_mae_reduction": 0.1,
+      "baseline": "min(MAE_V1, MAE_V2) separately per profile",
+      "maximum_saturation_fraction_exclusive": 0.9,
+      "saturation": "fraction of all uniform-grid samples with abs(h) > 0.9",
+      "GO": "Both required profiles meet reduction >= 0.10 AND saturation < 0.90; otherwise NO-GO after a valid completed run.",
+      "global": "GO if and only if primary cell A is GO; B cannot alter global decision."
+    }
+  },
+  "protocol_sha256": "0d5bd01a9dccbe7cc414d5c2ee6ee1ea9174270021e087b80c603ab9092f2323",
+  "ocv_source_sha256": "5935b5479ebee431df963a3f58b844a749c28861b41c80bd25041e80ad1baf48",
+  "loader_sha256": "192dec8c51f475312ac8da41e732c3e15d23d524ed71eba1fd2b80ffbfa1c380",
+  "input_sha256": {
+    "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/1.5C 1C 0.5C.xlsx": "60c7c4f7d7bb8555de0fcfe133e692d9b087a353584ab335e3ffafae8c09a55f",
+    "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/PCPD.xls": "9d44621a6009b6b00292c3c12de0481af1c4e65c5e4eba461c1ae1352116e395",
+    "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/DST FUDS UDDS HPPC WLTS US06.xlsx": "3883d7248a389a65d5aa3d53e26605df385aa736fdfe9ed0d5b6327119d1a574"
+  },
+  "method": "11 supplied points per branch; reconstruct SOC from PCPD pulse capacities with the same measured Qnom; charge starts at discharge endpoint; PCHIP without forcing monotonicity or nonnegative M.",
+  "caveats": [
+    "Manufacturer/model unconfirmed; 1.1Ah label conflicts with measured ~2.50Ah.",
+    "25C nominal versus 30D labels in capacity/dynamic/PCPD and 30 Degree internal PCPD path.",
+    "Dynamic preparation absent; z0=1,h0=+1 explicitly authorized, not measured.",
+    "OCV charge endpoint supplied from final rest; slight non-monotonic charge voltage retained.",
+    "PCPD 30min rests are approximate OCV, not certified equilibrium; no dedicated minor loops.",
+    "Processed repetition periods DST333/FUDS1442/US06435s differ from standard cycles; sheet naming is not independent official waveform certification.",
+    "M may change sign: retained without abs, clipping or target-dependent correction."
+  ]
+}

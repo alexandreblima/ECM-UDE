@@ -1,0 +1,7 @@
+{
+  "primary": "NO-GO",
+  "replica": "GO",
+  "global": "NO-GO",
+  "rule": "GO if and only if primary cell A is GO; B cannot alter global decision.",
+  "protocol_sha256": "0d5bd01a9dccbe7cc414d5c2ee6ee1ea9174270021e087b80c603ab9092f2323"
+}

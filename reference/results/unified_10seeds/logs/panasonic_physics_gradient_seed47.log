@@ -1,0 +1,22 @@
+START panasonic_physics_gradient_seed47 2026-11-01T22:04:54.970410+00:00
+  epoch    1  train 0.001554  val 0.087705  lr 6.67e-05  (best 0.087705 @ ep 1)
+  epoch    2  train 0.001553  val 0.087743  lr 1.33e-04  (best 0.087705 @ ep 1)
+  epoch    3  train 0.001553  val 0.087677  lr 2.00e-04  (best 0.087677 @ ep 3)
+  epoch    4  train 0.001552  val 0.087956  lr 2.00e-04  (best 0.087677 @ ep 3)
+  epoch    5  train 0.001555  val 0.087809  lr 1.99e-04  (best 0.087677 @ ep 3)
+  epoch    6  train 0.001551  val 0.087926  lr 1.97e-04  (best 0.087677 @ ep 3)
+  epoch    7  train 0.001553  val 0.088123  lr 1.94e-04  (best 0.087677 @ ep 3)
+  epoch    8  train 0.001553  val 0.088052  lr 1.89e-04  (best 0.087677 @ ep 3)
+  epoch    9  train 0.001552  val 0.087967  lr 1.84e-04  (best 0.087677 @ ep 3)
+  epoch   10  train 0.001549  val 0.088025  lr 1.77e-04  (best 0.087677 @ ep 3)
+  epoch   11  train 0.001549  val 0.088151  lr 1.69e-04  (best 0.087677 @ ep 3)
+  early stopping at epoch 11 (no improvement for 8 epochs)
+METRICS panasonic physics_gradient 47 UDDS_25C {'windowed': {'mae': 42.908693663671905, 'rmse': 57.078698591439085, 'max_error': 579.6570777893066, 'p99': 176.06970071792603}, 'continuous': {'mae': 42.87193719799684, 'rmse': 56.98584542130117, 'max_error': 581.475019454956, 'p99': 176.58154487609863}}
+METRICS panasonic physics_gradient 47 UDDS_10C {'windowed': {'mae': 37.60571132927287, 'rmse': 58.56061626294678, 'max_error': 705.3899765014648, 'p99': 257.761869430542}, 'continuous': {'mae': 36.77305694180826, 'rmse': 57.84552793247825, 'max_error': 706.0902118682861, 'p99': 257.2467374801635}}
+METRICS panasonic physics_gradient 47 UDDS_0C {'windowed': {'mae': 96.27405726015802, 'rmse': 110.19896843553845, 'max_error': 806.0312271118164, 'p99': 284.5601558685302}, 'continuous': {'mae': 94.3503306751236, 'rmse': 108.27511672435925, 'max_error': 793.0362224578857, 'p99': 282.6596212387085}}
+METRICS panasonic physics_gradient 47 UDDS_-10C {'windowed': {'mae': 174.0953180772459, 'rmse': 192.51906522873568, 'max_error': 696.6502666473389, 'p99': 455.55179595947254}, 'continuous': {'mae': 171.88131549514895, 'rmse': 190.28507220818528, 'max_error': 693.8059329986572, 'p99': 451.439924240112}}
+METRICS panasonic physics_gradient 47 UDDS_-20C {'windowed': {'mae': 295.2455168467884, 'rmse': 329.9111207866842, 'max_error': 1044.6598529815674, 'p99': 789.0504717826841}, 'continuous': {'mae': 293.0221716713996, 'rmse': 327.6284574180867, 'max_error': 1044.5821285247803, 'p99': 782.3218107223504}}
+METRICS panasonic physics_gradient 47 US06_25C {'windowed': {'mae': 38.80939561269993, 'rmse': 53.61808903927477, 'max_error': 440.6566619873047, 'p99': 181.16604328155546}, 'continuous': {'mae': 34.1881932234442, 'rmse': 49.55065811221549, 'max_error': 426.7077445983887, 'p99': 174.37502861022972}}
+METRICS panasonic physics_gradient 47 LA92_25C {'windowed': {'mae': 17.487467863447478, 'rmse': 29.95206015225975, 'max_error': 508.520245552063, 'p99': 117.59456634521476}, 'continuous': {'mae': 15.869309663164028, 'rmse': 28.383945141927235, 'max_error': 507.3277950286865, 'p99': 113.52184295654233}}
+METRICS panasonic physics_gradient 47 HWFET_25C {'windowed': {'mae': 39.695929944428315, 'rmse': 73.20938749979595, 'max_error': 689.8860931396484, 'p99': 392.71078109741853}, 'continuous': {'mae': 36.066615536566815, 'rmse': 70.95624821289265, 'max_error': 687.8786087036133, 'p99': 381.8163394927982}}
+COMPLETE panasonic_physics_gradient_seed47 2026-11-01T22:04:57.018996+00:00

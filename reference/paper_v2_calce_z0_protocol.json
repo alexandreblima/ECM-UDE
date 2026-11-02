@@ -1,0 +1,14 @@
+{
+  "version": "paper-v2-calce-z0-1",
+  "registered_before_reevaluation": true,
+  "conditions": ["US06_25C","BJDST_25C"],
+  "priority1": "Find last same-file CCCV full-charge end before step7: recorded charge at4.2V, taper<=0.02A, then rest. z0=1 - (net_discharge_counter_at_profile_start - net_discharge_counter_at_full_charge)/2Ah. Net=Discharge_Capacity-Charge_Capacity; verify no decreasing cumulative charge/discharge counters in preparation, current sign agrees. Count all intervening stages; never infer from target dynamic endpoint.",
+  "priority2": "Only if no valid full-charge anchor: independent SP1 low-current25C OCV inverse of mean voltage in last60s of immediately preceding contiguous zero-current rest with |I|<=0.02A; require >=60s and voltage within support. No extrapolation.",
+  "failure": "Neither anchor available =>condition excluded from principal analysis, no silent z0=1 substitute.",
+  "unified": "Reevaluate all original6models, four trainables with10seeds, existing checkpoint weights and source train-only normalization. Identical target data/dt/windows/masks/solver. Update SoC=z0-(net-net0)/Qnom; do not retrain, refit RC or change preprocessing.",
+  "static": "Reuse fixed source V1/V5/V6/V7 from results/static_replication/calce. V1/V5 use corrected profile z0; V6/V7 keep source-fitted Q and z0, as confirmed. Same1s continuous simulator and original OCV25.",
+  "before_after": "Full metrics before/after; compare historical CALCE static all-primary-target criterion with corrected US06/BJDST and unchanged DST25. Preserve historical verdicts; label hypothetical revised verdict. Neural comparison described by per-seed differences, no new unregistered inference.",
+  "main_exclusions": "Old fallback results remain excluded principal; corrected conditions eligible only if rule succeeds. V5 nonphysical extrapolation remains excluded principal separately regardless of z0 success.",
+  "output": "results/calce_z0_fix, input/source/checkpoint hashes, anchor rows/counters/rest provenance, per-seed metrics, static trajectories, tablesCSV/TEX and report",
+  "preserve_old_results": true
+}

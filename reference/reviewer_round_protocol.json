@@ -1,0 +1,45 @@
+{
+  "version": "reviewer-round-1",
+  "branch": "paper-v2",
+  "registered_before_fitting": true,
+  "no_neural_training": true,
+  "A": {
+    "datasets": ["cell_A_a123", "cell_B_mendeley", "panasonic", "calce"],
+    "sources": ["DST25", "DST25_nominal", "UDDS25", "FUDS25"],
+    "targets": "Same primary matched-temperature targets as saved static tests; CALCE audit all four25C profiles using existing audit_rows priority rules; never force source z0=.8.",
+    "simulation": "Reuse exp_lfp_static.predict at1s with continuous states, zero initial RC, positive-discharge current, fixed independent/checkpoint OCV; all original metrics and masks.",
+    "V1": "Reuse saved source V1 parameters, no refit; per-profile documented/audited z0.",
+    "V6-Q": "Fit only Qratio,z0 on source, RC fixed at saved V1. Qratio[.9,1.1],z0[.9,1]. Transfer fitted Q/z0 unchanged.",
+    "V6-RC": "Fit five log RC coordinates only on source; measured Qreference and per-profile documented/audited z0 fixed. Same mathematical parameterization as V1; report numerical agreement or local-minimum differences, not independent causal evidence.",
+    "V6": "Reuse saved joint source fits including local A123 V6 diagnostics; no refit.",
+    "V6-wide": "CALCE only, joint RC/Q/z0 source NLS with z0[.7,1],Qratio[.9,1.1]. Source audit is documented; transfer fitted z0, Q, RC unchanged to audited target cycles. Baseline V1 uses audited target z0. POSITIVE iff MAEwide<=.75 MAEV1 in all DST/US06/BJDST25.",
+    "thermal": "A123 source25 fits transfer to FUDS/US06 at0/10/40/50. Local V6-Q fits each localDST but RC remains V1DST25, Qreference=measuredQ25; local V6-RC fits localDST with Q25 and z0=1 fixed. V6 local reused. V1 baseline remains saved transferredDST25 for both thermal blocks.",
+    "V6-OCVT": "A123 local only: joint V6 fit on localDST with own-temperature low-current OCV from existing load_temperature/build_curves; Qreference remains Q25 to isolate OCV substitution, Qratio[.9,1.1],z0[.9,1]. Never use FUDS/US06 to select.",
+    "bounds": {"R_ohm":[0.00001,0.5],"tau_s":[0.1,3600],"Qratio":[0.9,1.1],"z0":[0.9,1.0],"z0_CALCE_wide":[0.7,1.0]},
+    "optimizer": "Original TRF linear least_squares, x_scale=jac,max_nfev500,ftol/xtol/gtol1e-8; same3original starts projected to free coordinates; V6-Q uses Q/z0 starts only with fixedRCV1; wide uses originalz0 starts1,.95,.9; select lowest sourceSSE among converged starts. No converged start=>explicit inconclusive, never score failedtheta.",
+    "fraction": "(MAEV1-MAEvariant)/(MAEV1-MAEV6), signed/unclipped. Exactlyzero denominator=>null with warning. Nonpositive V6gain reported but excluded mechanism attribution.",
+    "interpretation": "Strict majority (>half) of positive-V6gain conditions separately in matched-temperature, thermal-transfer, thermal-local blocks; also per-cell matched-temperature descriptive counts. SOC if Qfraction>=.7 majority only; RC if RCfraction>=.7 majority only; both or neither=>conjunto. No positivegain eligible=>inconclusive. Missing fits prevent complete-block claim.",
+    "outputs": "results/param_ablation complete fits/attempts/hash manifests, per-condition/stratum metrics, trajectorynpz, tables and interpretation"
+  },
+  "B": {
+    "pairs": ["ecm_ude-physics_gradient", "output_residual-physics_gradient"],
+    "seeds": [42,43,44,45,46,47,48,49,50,51],
+    "conditions": "18principal original continuous conditions excluding CALCE US06/BJDST25 fallback; do not insert corrected target results into this registered family.",
+    "margin_mV": 1.0,
+    "tests": "Reuse exact shifted_wilcoxon from exp_paper_v2_seeds: roundshifted d10decimals,dropzeros,averageabsolute tiedranks,enumerate2^n signs; lowerd+1 greater,upperd-1 less; allzero p1. Holm18 separately pair/direction. Both adjustedp<.05 equivalence.",
+    "estimand": "Signed-rank location/pseudomedian under symmetry; report paired-difference median AND Hodges-Lehmann Walsh-average pseudomedian, distinguish descriptive median from statisticWplus. No confidence interval implied by seedrange.",
+    "bootstrap_audit": "Read exact existing implementation: resample10pairedseed differences LSTMminusdeterministic2RC,20000replacementdraws,median each,percentile2.5/97.5,RNG20261101; no temporal resampling."
+  },
+  "C": {
+    "histories": "Read80savedmodel/dataset/seed histories, selected epoch from checkpoint summary, executedepochs=historylength, final train/val from last historyepoch (not selectedweight loss); also selected-epoch losses.",
+    "figures": "One vectorPDF permodel/dataset, width3.5in,Times>=8pt,nointernaltitle,mediantrain/validation and minmax only among runs observed at each epoch; no forwardfill after earlystop, report nper epoch; no newtraining.",
+    "code_audit": "Ground NLS source interval, normalization I/V/T/SOC, loss, optimizer/scheduler, integrator states and dt, bounds/tolerances/maxevaluations/starts in exact effective source and saved provenance; report code line citations and filehashes."
+  },
+  "D": {
+    "E_mapping": {"E1":"unified/equivalence","E2":"LFP hysteresis","E3":"static transfer","E4":"A123 thermal transfer and parameter interpolation"},
+    "figure2": "Archive prior canonical versions byte-for-byte, regenerate onlyfig02 with saved10seeds LSTM median[min,max], deterministic2RC,18principal conditions; other7PDFs unchanged. Updateindex/manifest/generator.",
+    "tables": "CSV and booktabs table* TeX; E1continuous18rows 2RC,10seedmedian[min,max]physicalmodels,originalTOSTvs2RC and newTOSTvsgradient. Condition table E1all20 plus E2/E3/E4source/targets, temperatures,z0origin,trainvalidationtestrole,principal eligibility. Criteria table registeredcriterion/observed/verdict/registrationcommit; separate original best-of and V6-only descriptions, diagnosticlocal and monotone.",
+    "preservation": "Snapshot all preexisting results/manuscript/figures/rootreports before anyfits; changedfigure2/index/manifest/generator and directlyrelateddocumentation archivedexact; scientificresults neverrewritten.",
+    "deliverable": "report_reviewer_round.md; finalcommit thenSTOP"
+  }
+}

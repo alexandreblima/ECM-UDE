@@ -1,0 +1,51 @@
+{
+  "version": "a123-temperature-interpolation-1",
+  "registered_before_prediction_fitting": true,
+  "branch": "lfp-histerese",
+  "cell": "A1-007",
+  "calibration_temperatures_C": [0, 25, 50],
+  "test_temperatures_C": [10, 40],
+  "test_profiles": ["FUDS", "US06"],
+  "calibration": "Reuse saved V6_local from DST0/DST50 and saved V6 from DST25 if manifests, bounds, starts, optimizer, fixed OCV25 and Q25 reference are identical. Verify source code/input hashes. No calibration data or hyperparameter choices from 10/40C.",
+  "base_model": "Same continuous 1s ZOH ECM-2RC V6: fixed independent OCV_mean25, initial RC0, causal SOC=z0-net_Ah/Qeff; Q reference is measured low-current Q25. Target data used only after parameter predictions and GP hyperparameters have been persisted.",
+  "parameter_order": ["Qeff_Ah", "z0", "R0", "R1", "R2", "tau1_s", "tau2_s"],
+  "branch_alignment": "Use saved branches sorted fast-to-slow by tau. Predict these labels across calibration temperatures, then jointly swap R1/R2 and tau1/tau2 if predicted ordering crosses; report swaps.",
+  "transforms": "Natural log for R0/R1/R2 and tau1/tau2; identity for Qeff and z0.",
+  "bounds": {
+    "Q_ratio": [0.9, 1.1],
+    "z0": [0.9, 1.0],
+    "R0_R1_R2_ohm": [0.00001, 0.5],
+    "tau1_tau2_s": [0.1, 3600.0]
+  },
+  "P1": "Nearest nominal calibration T; ties choose lower T. Transfer all seven parameters.",
+  "P2": "Piecewise linear interpolation in nominal Celsius T of transformed parameters; no extrapolation at test T.",
+  "P3": "OLS on all three calibration points: y=a+b/(T_C+273.15) for log R and log tau; y=a+b*T_C for Qeff,z0. No target observations.",
+  "P4": {
+    "structure": "Seven independent scalar GPs; deterministic mean equals fitted P3; residual RBF in nominal Celsius T.",
+    "standardization": "Scale each transformed parameter by max(population std of its three calibration values,1e-6); zero centering unnecessary because P3 mean is subtracted.",
+    "kernel": "K_ij=sigma_f^2*exp(-(T_i-T_j)^2/(2*ell^2)); standardized residuals; fixed diagonal numerical jitter variance 1e-8. No fitted observation noise.",
+    "hyperparameter_bounds": {"sigma_f_standardized": [0.000001, 10.0], "ell_C": [1.0, 200.0]},
+    "hyperparameter_starts": [[0.1, 10.0], [0.5, 25.0], [1.0, 50.0]],
+    "objective": "Negative log marginal likelihood plus 0.5*((log ell-log25)/2)^2; weak Gaussian prior on log ell. Optimize log sigma/log ell using L-BFGS-B, maxiter1000, ftol1e-12, gtol1e-8; select minimum objective among successful fixed starts.",
+    "prior": "log ell ~ Normal(log(25 C),2^2). Penalized marginal likelihood/MAP, not unpenalized MLE. User confirmed.",
+    "point_prediction": "Posterior mean in transformed coordinates, inverse transform then project physical bounds; voltage at these central parameters supplies P4 MAE (not posterior-average voltage).",
+    "samples": 200,
+    "seed": 20261101,
+    "sample_joint": "For each independent parameter draw joint latent posterior at T=[10,40] with covariance across T. Condition on both temperatures satisfying physical bounds by rejection per parameter. Keep200 accepted joint draws, combine independent parameter draws into200 seven-parameter sets. Maximum1000000 proposals per parameter then explicit failure, no fallback.",
+    "bands": "Pointwise empirical2.5/97.5 percentiles of200 voltage trajectories; coverage=count(lower<=measured<=upper)/N. Same200 parameter sets reused for FUDS/US06 at each temperature.",
+    "uncertainty_limit": "Only GP interpolation uncertainty conditional on plug-in P3 mean/kernel and exact saved NLS parameter points. No NLS fit uncertainty, trend uncertainty, measurement noise or voltage discrepancy. Nominal95% need not achieve95% empirical voltage coverage."
+  },
+  "constraint_policy": "User confirmed: P1/P2/P3/P4 central predictions projected to physical bounds; report every projected coordinate. Posterior samples conditioned to bounds via rejection, not clipped. Parameter plots show Gaussian unconditioned marginal bands separately from physical bounds; test-conditioned samples stored for audit.",
+  "parameter_plots": "Calibration points only at0/25/50; P2/P3/P4 central curves on0..50C and P4 unconditioned Gaussian transformed2.5/97.5% marginal band, inverse transformed, with explicit labeling; bounded central lines and physical limits.",
+  "floor": "Read-only prior V6 transferred from25C, same target trajectories and MAEs.",
+  "ceiling": "Read-only prior V6_local at10/40C; oracle reference ONLY, never enters calibration or GP optimization. Not a guaranteed mathematical MAE ceiling.",
+  "decision": {
+    "fraction": "(MAE_floor-MAE_method)/(MAE_floor-MAE_ceiling); signed and unclipped. Nonpositive denominator flagged unavailable and cannot pass.",
+    "positive": "For every one of four conditions (10/40C x FUDS/US06), max(fraction_P2,fraction_P3,fraction_P4)>=0.50; best may differ per condition. P1 excluded from criterion.",
+    "P4_uncertainty": "Calibrada iff coverage is inclusively between0.85 and0.99 in ALL four conditions. Diagnostic only, does not change main verdict."
+  },
+  "preservation": "All previous result folders and reports hashed before/after and unchanged. New artifacts only in results/a123_temperature_interp and report_temperature_interp.md.",
+  "no_neural_networks": true,
+  "no_target_refits": true,
+  "output": "Complete manifests with calibration fit provenance, GP attempts/hyperparameters, transformed posterior mean/covariance, accepted parameter samples/rejection counts, central parameters/clips/swaps, point predictions, voltage bands, coverage, metrics CSV/TEX, parameter/voltage plots and report."
+}

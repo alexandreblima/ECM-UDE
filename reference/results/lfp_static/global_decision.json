@@ -1,0 +1,109 @@
+{
+  "primary": {
+    "positive": true,
+    "verdict": "POSITIVA",
+    "attribution": "MIXED/INCONCLUSIVE",
+    "profiles": {
+      "FUDS": {
+        "mae_mV": {
+          "V1": 22.371009211862074,
+          "V5": 5.790214996835565,
+          "V6": 4.109187261464616,
+          "V7": 5.679969954490019,
+          "V4": 6.215925972051271
+        },
+        "best_model": "V6",
+        "best_reduction_fraction": 0.8163164110054656,
+        "positive": true,
+        "ceiling_denominator_mV": 16.155083239810804,
+        "ceiling_recovered_fractions": {
+          "V5": 1.0263515185218377,
+          "V6": 1.1304071714960304,
+          "V7": 1.0331756890141242
+        },
+        "attribution": "SOC"
+      },
+      "US06": {
+        "mae_mV": {
+          "V1": 21.1766403652927,
+          "V5": 4.9436267721098766,
+          "V6": 4.951899744942091,
+          "V7": 4.888911875036921,
+          "V4": 4.776452929786386
+        },
+        "best_model": "V7",
+        "best_reduction_fraction": 0.7691365679019809,
+        "positive": true,
+        "ceiling_denominator_mV": 16.400187435506318,
+        "ceiling_recovered_fractions": {
+          "V5": 0.9898065895294854,
+          "V6": 0.9893021457318306,
+          "V7": 0.9931428256114277
+        },
+        "attribution": "OCV"
+      }
+    },
+    "criterion": {
+      "minimum_reduction": 0.25,
+      "positive": "For EACH of FUDS and US06, min(MAE_V5,MAE_V6,MAE_V7) <= 0.75*MAE_V1. The best model can differ between targets, as requested.",
+      "ceiling_fraction": "(MAE_V1-MAE_Vk)/(MAE_V1-MAE_previous_V4); unbounded signed ratio, not clipped. Nonpositive denominator is explicitly flagged as unavailable, never silently replaced.",
+      "attribution": "Per target compare recovered fractions V6 versus V5: V6>V5 SOC, V5>V6 OCV, equality tie. Both SOC => SOC, both OCV => OCV; otherwise mixed/inconclusive (user confirmed). If ceiling denominator nonpositive, attribution unavailable.",
+      "global": "Static transfer positive iff primary A positive; replica B cannot change global result."
+    }
+  },
+  "replica": {
+    "positive": true,
+    "verdict": "POSITIVA",
+    "attribution": "OCV",
+    "profiles": {
+      "FUDS": {
+        "mae_mV": {
+          "V1": 18.842254552503018,
+          "V5": 13.921482892557103,
+          "V6": 15.267978978354334,
+          "V7": 11.844735730295902,
+          "V4": 10.89113437571275
+        },
+        "best_model": "V7",
+        "best_reduction_fraction": 0.37137375480778445,
+        "positive": true,
+        "ceiling_denominator_mV": 7.951120176790267,
+        "ceiling_recovered_fractions": {
+          "V5": 0.6188777870959494,
+          "V6": 0.4495310716824757,
+          "V7": 0.880067042959964
+        },
+        "attribution": "OCV"
+      },
+      "US06": {
+        "mae_mV": {
+          "V1": 17.916811262875246,
+          "V5": 7.980546753368277,
+          "V6": 12.083830277506138,
+          "V7": 4.73296839292635,
+          "V4": 5.192113099162672
+        },
+        "best_model": "V7",
+        "best_reduction_fraction": 0.7358364541834876,
+        "positive": true,
+        "ceiling_denominator_mV": 12.724698163712574,
+        "ceiling_recovered_fractions": {
+          "V5": 0.7808644560106369,
+          "V6": 0.4583983769456477,
+          "V7": 1.036082954607574
+        },
+        "attribution": "OCV"
+      }
+    },
+    "criterion": {
+      "minimum_reduction": 0.25,
+      "positive": "For EACH of FUDS and US06, min(MAE_V5,MAE_V6,MAE_V7) <= 0.75*MAE_V1. The best model can differ between targets, as requested.",
+      "ceiling_fraction": "(MAE_V1-MAE_Vk)/(MAE_V1-MAE_previous_V4); unbounded signed ratio, not clipped. Nonpositive denominator is explicitly flagged as unavailable, never silently replaced.",
+      "attribution": "Per target compare recovered fractions V6 versus V5: V6>V5 SOC, V5>V6 OCV, equality tie. Both SOC => SOC, both OCV => OCV; otherwise mixed/inconclusive (user confirmed). If ceiling denominator nonpositive, attribution unavailable.",
+      "global": "Static transfer positive iff primary A positive; replica B cannot change global result."
+    }
+  },
+  "global": "POSITIVA",
+  "rule": "Static transfer positive iff primary A positive; replica B cannot change global result.",
+  "previous_files_verified_unchanged": 52
+}

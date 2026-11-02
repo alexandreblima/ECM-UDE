@@ -1,0 +1,29 @@
+START panasonic_physics_gradient_seed43 2026-11-01T04:29:07.531319+00:00
+  epoch    1  train 0.001551  val 0.088000  lr 6.67e-05  (best 0.088000 @ ep 1)
+  epoch    2  train 0.001552  val 0.088373  lr 1.33e-04  (best 0.088000 @ ep 1)
+  epoch    3  train 0.001550  val 0.088023  lr 2.00e-04  (best 0.088000 @ ep 1)
+  epoch    4  train 0.001553  val 0.088157  lr 2.00e-04  (best 0.088000 @ ep 1)
+  epoch    5  train 0.001552  val 0.088154  lr 1.99e-04  (best 0.088000 @ ep 1)
+  epoch    6  train 0.001559  val 0.088328  lr 1.97e-04  (best 0.088000 @ ep 1)
+  epoch    7  train 0.001555  val 0.087982  lr 1.94e-04  (best 0.087982 @ ep 7)
+  epoch    8  train 0.001553  val 0.088177  lr 1.89e-04  (best 0.087982 @ ep 7)
+  epoch    9  train 0.001553  val 0.088171  lr 1.84e-04  (best 0.087982 @ ep 7)
+  epoch   10  train 0.001559  val 0.087861  lr 1.77e-04  (best 0.087861 @ ep 10)
+  epoch   11  train 0.001555  val 0.088032  lr 1.69e-04  (best 0.087861 @ ep 10)
+  epoch   12  train 0.001553  val 0.087932  lr 1.60e-04  (best 0.087861 @ ep 10)
+  epoch   13  train 0.001552  val 0.088153  lr 1.50e-04  (best 0.087861 @ ep 10)
+  epoch   14  train 0.001553  val 0.088163  lr 1.40e-04  (best 0.087861 @ ep 10)
+  epoch   15  train 0.001547  val 0.087988  lr 1.29e-04  (best 0.087861 @ ep 10)
+  epoch   16  train 0.001555  val 0.087932  lr 1.18e-04  (best 0.087861 @ ep 10)
+  epoch   17  train 0.001548  val 0.088012  lr 1.07e-04  (best 0.087861 @ ep 10)
+  epoch   18  train 0.001550  val 0.088040  lr 9.52e-05  (best 0.087861 @ ep 10)
+  early stopping at epoch 18 (no improvement for 8 epochs)
+METRICS panasonic physics_gradient 43 UDDS_25C {'windowed': {'mae': 43.01464421840665, 'rmse': 57.13829968282108, 'max_error': 579.628586769104, 'p99': 176.08094692230225}, 'continuous': {'mae': 42.38259295167599, 'rmse': 56.50343943107086, 'max_error': 580.3344249725342, 'p99': 175.85475921630857}}
+METRICS panasonic physics_gradient 43 UDDS_10C {'windowed': {'mae': 37.41654074038494, 'rmse': 58.49192443276635, 'max_error': 705.4184675216675, 'p99': 257.82780885696405}, 'continuous': {'mae': 36.363853399043556, 'rmse': 57.56054169704651, 'max_error': 705.3353786468506, 'p99': 256.82241916656494}}
+METRICS panasonic physics_gradient 43 UDDS_0C {'windowed': {'mae': 96.02021141474366, 'rmse': 110.01156161818433, 'max_error': 806.1466217041016, 'p99': 284.5373320579529}, 'continuous': {'mae': 93.88204995874428, 'rmse': 107.89741234301407, 'max_error': 792.7446365356445, 'p99': 282.4991750717163}}
+METRICS panasonic physics_gradient 43 UDDS_-10C {'windowed': {'mae': 173.78533245398464, 'rmse': 192.24538077861172, 'max_error': 696.5943574905396, 'p99': 455.28882503509516}, 'continuous': {'mae': 171.3742801391311, 'rmse': 189.83596759212116, 'max_error': 693.4852600097656, 'p99': 451.0940837860104}}
+METRICS panasonic physics_gradient 43 UDDS_-20C {'windowed': {'mae': 294.8738982615602, 'rmse': 329.57373225706925, 'max_error': 1044.303297996521, 'p99': 788.5813045501708}, 'continuous': {'mae': 292.4645994232688, 'rmse': 327.1255128818813, 'max_error': 1044.2192554473877, 'p99': 781.6157007217407}}
+METRICS panasonic physics_gradient 43 US06_25C {'windowed': {'mae': 38.65175335358128, 'rmse': 53.55407708268581, 'max_error': 440.04523754119873, 'p99': 181.1581277847293}, 'continuous': {'mae': 33.833992221731506, 'rmse': 49.24444932973882, 'max_error': 425.8124828338623, 'p99': 173.78956794738798}}
+METRICS panasonic physics_gradient 43 LA92_25C {'windowed': {'mae': 17.371877329767393, 'rmse': 29.93416124959426, 'max_error': 508.49688053131104, 'p99': 117.65120744705112}, 'continuous': {'mae': 15.613056378681012, 'rmse': 28.16221307833752, 'max_error': 506.49237632751465, 'p99': 112.9919052124012}}
+METRICS panasonic physics_gradient 43 HWFET_25C {'windowed': {'mae': 39.47296140667544, 'rmse': 73.16814364841119, 'max_error': 689.8356676101685, 'p99': 392.6882028579776}, 'continuous': {'mae': 35.54465803577164, 'rmse': 70.61802230776046, 'max_error': 686.6858005523682, 'p99': 380.86934089660673}}
+COMPLETE panasonic_physics_gradient_seed43 2026-11-01T04:29:09.474489+00:00

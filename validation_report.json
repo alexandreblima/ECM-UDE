@@ -1,0 +1,28 @@
+{
+  "source_commit": "91b3a08",
+  "preregistration_commit": "d14935e",
+  "scientific_tests_passed": 9,
+  "commands_executed": [
+    "verify",
+    "validate",
+    "analysis",
+    "figure2",
+    "rescore"
+  ],
+  "relocated_working_copies": true,
+  "neural_training_performed": false,
+  "new_NLS_fitting_during_package_validation": false,
+  "rescored_numerical_values_checked": 165,
+  "maximum_allowed_absolute_difference": 1e-10,
+  "all_rescored_values_match": true,
+  "byte_identical_generated_publication_CSV": [
+    "E1.csv",
+    "criteria.csv",
+    "conditions.csv"
+  ],
+  "reference_pdfs_checked": 8,
+  "raw_data_included": false,
+  "new_environment_install_tested": false,
+  "environment": "Python3.10.18 original scientific runtime; numba/llvmlite from existing .unified_deps",
+  "external_datasets_used_only_for_validation": true
+}

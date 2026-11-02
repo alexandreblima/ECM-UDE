@@ -1,0 +1,2904 @@
+{
+  "cell": "cell_B_mendeley",
+  "complete": true,
+  "manifest": {
+    "protocol": {
+      "version": "lfp-static-transfer-1",
+      "registered_before_fitting": true,
+      "primary": "cell_A_a123",
+      "replica": "cell_B_mendeley",
+      "source": "DST",
+      "targets": [
+        "FUDS",
+        "US06"
+      ],
+      "models_fitted_on_DST_only": [
+        "V1",
+        "V5",
+        "V6",
+        "V7"
+      ],
+      "oracle": "Reuse previous V4 trajectories and fits without refitting; previous RC bounds up to 100000s differ from new fits and are explicitly reported.",
+      "data": "Same loaders, raw files, independent OCV artifacts and positive-discharge convention as lfp_gonogo; no writes to previous outputs.",
+      "simulator": "Reuse exact continuous zero-order-hold 2RC simulator, initial polarization zero, one state per complete profile.",
+      "ocv": "V1/V6 fixed OCV_mean; V5/V7 degree-9 Chebyshev on [0,1], same common-interval boundary hold as previous V4.",
+      "soc": "z=z0-net_Ah/Q; no cycle-end normalization, no inverse OCV. V6/V7 fitted Q and z0 transfer unchanged from DST to both targets (user confirmed).",
+      "stratification": "Identical original loader-SOC masks for all models, including V6/V7, to preserve comparable sample sets; fitted SOC trajectories and ranges also saved.",
+      "current_threshold_A": 0.02,
+      "post_reversal_window_seconds": 60,
+      "bounds": {
+        "R0_R1_R2_ohm": [
+          1e-05,
+          0.5
+        ],
+        "tau1_tau2_s": [
+          0.1,
+          3600.0
+        ],
+        "Q_ratio": [
+          0.9,
+          1.1
+        ],
+        "z0": [
+          0.9,
+          1.0
+        ],
+        "ocv_coefficients": "unbounded, as previous V4",
+        "report_near_bound": "distance to nearest finite bound divided by bound width < 0.0001 in optimizer coordinates",
+        "branch_labels": "Bound both taus to prevent label-switch evasion; report branches sorted fast-to-slow, slow tau2=max(tau1,tau2)<=3600."
+      },
+      "starts": [
+        {
+          "R0": 0.02,
+          "R1": 0.01,
+          "R2": 0.01,
+          "tau1": 2.0,
+          "tau2": 40.0,
+          "Q_ratio": 1.0,
+          "z0": 1.0
+        },
+        {
+          "R0": 0.02,
+          "R1": 0.01,
+          "R2": 0.01,
+          "tau1": 10.0,
+          "tau2": 300.0,
+          "Q_ratio": 1.0,
+          "z0": 0.95
+        },
+        {
+          "R0": 0.02,
+          "R1": 0.01,
+          "R2": 0.01,
+          "tau1": 1.0,
+          "tau2": 1000.0,
+          "Q_ratio": 1.0,
+          "z0": 0.9
+        }
+      ],
+      "optimizer": {
+        "method": "trf",
+        "loss": "linear",
+        "x_scale": "jac",
+        "max_nfev": 500,
+        "ftol": 1e-08,
+        "xtol": 1e-08,
+        "gtol": 1e-08,
+        "selection": "Lowest full-DST squared residual among converged predetermined starts; no target tuning."
+      },
+      "decision": {
+        "minimum_reduction": 0.25,
+        "positive": "For EACH of FUDS and US06, min(MAE_V5,MAE_V6,MAE_V7) <= 0.75*MAE_V1. The best model can differ between targets, as requested.",
+        "ceiling_fraction": "(MAE_V1-MAE_Vk)/(MAE_V1-MAE_previous_V4); unbounded signed ratio, not clipped. Nonpositive denominator is explicitly flagged as unavailable, never silently replaced.",
+        "attribution": "Per target compare recovered fractions V6 versus V5: V6>V5 SOC, V5>V6 OCV, equality tie. Both SOC => SOC, both OCV => OCV; otherwise mixed/inconclusive (user confirmed). If ceiling denominator nonpositive, attribution unavailable.",
+        "global": "Static transfer positive iff primary A positive; replica B cannot change global result."
+      }
+    },
+    "protocol_sha256": "0c4de6dbb2914e73445cbf6de7b9127ffaa99756e87223cdd7a9becdb8dd44fd",
+    "preregistration_commit": "50e85e1",
+    "execution_git_commit": "50e85e139e4040817a941785c7ae8bfeaa2c29d0",
+    "python": "3.10.18",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "dependencies": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "openpyxl": "3.1.5",
+      "xlrd": "2.0.2",
+      "matplotlib": "3.10.6"
+    },
+    "threads": {
+      "OPENBLAS_NUM_THREADS": "1",
+      "OMP_NUM_THREADS": "1"
+    },
+    "source_sha256": {
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/data_lfp.py": "192dec8c51f475312ac8da41e732c3e15d23d524ed71eba1fd2b80ffbfa1c380",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/lfp_ocv.py": "5935b5479ebee431df963a3f58b844a749c28861b41c80bd25041e80ad1baf48",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_lfp_gonogo.py": "780607447190fc192c3850e1db7cd5a277e9d45659ba459b5fee2ceb8cf4a422",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_lfp_static.py": "5216a1eea83858f245185904b3052d2d0df1cb7e3011e2877e87b4968697b514",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/lfp_static_protocol.json": "0c4de6dbb2914e73445cbf6de7b9127ffaa99756e87223cdd7a9becdb8dd44fd"
+    },
+    "old_summary_sha256": "668645e9495d4a39273b1bc7b0d58383888d20d9aef5f8b1150c2437c6f11736",
+    "old_ocv_sha256": "0c1cf75b15691e63d9eec1ea1f401685fe5507e7012caf5ae5e3be975ff65a06",
+    "previous_snapshot_path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/lfp_static/previous_artifacts_sha256.json",
+    "previous_artifact_count": 52,
+    "loader": {
+      "source_files": {
+        "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/1.5C 1C 0.5C.xlsx": "60c7c4f7d7bb8555de0fcfe133e692d9b087a353584ab335e3ffafae8c09a55f",
+        "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/PCPD.xls": "9d44621a6009b6b00292c3c12de0481af1c4e65c5e4eba461c1ae1352116e395",
+        "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/DST FUDS UDDS HPPC WLTS US06.xlsx": "3883d7248a389a65d5aa3d53e26605df385aa736fdfe9ed0d5b6327119d1a574"
+      },
+      "raw_current_sign": "positive charge; verified CC_Chg/CC_DChg in PCPD",
+      "current_conversion": "-raw_mA/1000",
+      "temperature_nominal_C": 25.0,
+      "qnom_method": "0.5C discharge Capacity span in 25 Degree, mAh/1000",
+      "qnom_Ah": 2.4989015833333332,
+      "capacity_current_integral_Ah": 2.498996305555374,
+      "label_capacity_Ah": 1.1,
+      "capacity_label_divergence_ratio": 2.2717287121212117,
+      "ocv_SOC_method": "discharge starts 1, integrate PCPD pulse capacities/Qnom; charge starts at same discharge endpoint",
+      "ocv_charge_supplied_SOC_percent": [
+        0.0,
+        10.091675206896591,
+        20.183600451049298,
+        30.274883222790557,
+        40.366889196460924,
+        50.45931787885576,
+        60.551581738485346,
+        70.64382093076232,
+        80.73525170661931,
+        90.82685403270133,
+        100.00000000000013
+      ],
+      "ocv_discharge_supplied_SOC_percent": [
+        100.0,
+        90.0000385537748,
+        79.99919270395478,
+        69.99916792732138,
+        59.999267589384765,
+        49.99960612930353,
+        39.99976912177508,
+        29.99965434929851,
+        19.999802897992755,
+        9.999895893697378,
+        0.0
+      ],
+      "ocv_discharge_pulse_Ah": [
+        0.0,
+        0.2500105833333333,
+        0.5000432777777777,
+        0.7500554444444443,
+        1.0000645,
+        1.2500675833333332,
+        1.5000750555555555,
+        1.7500894722222222,
+        2.0000973055555553,
+        2.2501065277777776,
+        2.5001154722222223
+      ],
+      "ocv_charge_pulse_Ah": [
+        0.0,
+        0.25001202777777776,
+        0.50003025,
+        0.7500325555555556,
+        1.000052777777778,
+        1.2500834722222223,
+        1.5001100833333334,
+        1.7501360833333335,
+        2.0001420555555556,
+        2.2501522777777776,
+        2.4774085833333332
+      ],
+      "profile_checks": {
+        "DST": {
+          "header": [
+            "Time_30D_DST_LFP",
+            "Current_30D_DST_LFP",
+            "Voltage_30D_DST_LFP",
+            "Capacity_30D_DST_LFP",
+            "Energy_30D_DST_LFP"
+          ],
+          "rows": 21862,
+          "current_min_max_A": [
+            -1.5029000000000001,
+            3.0029
+          ],
+          "capacity_resets": 393,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 333,
+          "repetition_correlation": 0.9999996952669129
+        },
+        "FUDS": {
+          "header": [
+            "Time",
+            "Current",
+            "Voltage",
+            "Capacity",
+            "Energy"
+          ],
+          "rows": 17464,
+          "current_min_max_A": [
+            -2.1517,
+            4.0119
+          ],
+          "capacity_resets": 893,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 1442,
+          "repetition_correlation": 0.9999906868725341
+        },
+        "UDDS": {
+          "header": [
+            "Time",
+            "Current",
+            "Voltage",
+            "Capacity",
+            "Energy"
+          ],
+          "rows": 21335,
+          "current_min_max_A": [
+            -0.7187,
+            2.9991999999999996
+          ],
+          "capacity_resets": 513,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 1370,
+          "repetition_correlation": 0.999987291534538
+        },
+        "HPPC": {
+          "header": [
+            "Time_30D_HPPC_LFP",
+            "Current_30D_HPPC_LFP",
+            "Voltage_30D_HPPC_LFP",
+            "Capacity_30D_HPPC_LFP",
+            "Energy_30D_HPPC_LFP",
+            "R dis",
+            "R char",
+            "Pdich",
+            null
+          ],
+          "rows": 48860,
+          "current_min_max_A": [
+            -3.7418,
+            3.741
+          ],
+          "capacity_resets": 30,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package"
+        },
+        "WLTS": {
+          "header": [
+            "Time",
+            "Current",
+            "Voltage",
+            "Capacity",
+            "Energy"
+          ],
+          "rows": 21673,
+          "current_min_max_A": [
+            -1.1257000000000001,
+            2.9471
+          ],
+          "capacity_resets": 614,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package"
+        },
+        "US06": {
+          "header": [
+            "Time_30D_US06_LFP",
+            "Current_30D_US06_LFP",
+            "Voltage_30D_US06_LFP",
+            "Capacity_30D_US06_LFP",
+            "Energy_30D_US06_LFP"
+          ],
+          "rows": 14008,
+          "current_min_max_A": [
+            -0.863,
+            3.8921
+          ],
+          "capacity_resets": 1094,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 435,
+          "repetition_correlation": 0.999999292556811
+        }
+      },
+      "initial_rc_V": [
+        0.0,
+        0.0
+      ],
+      "caveats": [
+        "Manufacturer/model unconfirmed; 1.1Ah label conflicts with measured ~2.50Ah.",
+        "25C nominal versus 30D labels in capacity/dynamic/PCPD and 30 Degree internal PCPD path.",
+        "Dynamic preparation absent; z0=1,h0=+1 explicitly authorized, not measured.",
+        "OCV charge endpoint supplied from final rest; slight non-monotonic charge voltage retained.",
+        "PCPD 30min rests are approximate OCV, not certified equilibrium; no dedicated minor loops.",
+        "Processed repetition periods DST333/FUDS1442/US06435s differ from standard cycles; sheet naming is not independent official waveform certification.",
+        "M may change sign: retained without abs, clipping or target-dependent correction."
+      ]
+    },
+    "cycles": {
+      "DST": {
+        "path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/DST FUDS UDDS HPPC WLTS US06.xlsx",
+        "sheet": "DST",
+        "z0": 1.0,
+        "h0": 1.0,
+        "s0": 1.0,
+        "initial_state_provenance": "User authorized assumed full charge before each processed profile; preparation not present; provisional assumption, not inferred by OCV inversion.",
+        "preceding_steps": "not provided in processed workbook; user-authorized full-charge assumption",
+        "raw_time_start_end_s": [
+          1.0,
+          21862.0
+        ],
+        "temperature": "25 C nominal; all three workbooks include 30D labels; no measured T",
+        "profile_check": {
+          "header": [
+            "Time_30D_DST_LFP",
+            "Current_30D_DST_LFP",
+            "Voltage_30D_DST_LFP",
+            "Capacity_30D_DST_LFP",
+            "Energy_30D_DST_LFP"
+          ],
+          "rows": 21862,
+          "current_min_max_A": [
+            -1.5029000000000001,
+            3.0029
+          ],
+          "capacity_resets": 393,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 333,
+          "repetition_correlation": 0.9999996952669129
+        },
+        "capacity_resets_ignored": 393,
+        "raw_samples": 21862,
+        "samples_1s": 21862,
+        "raw_dt_min_median_max_s": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "net_discharge_Ah": 2.5049587499998456,
+        "soc_min": -0.0024239316613792194,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 13,
+        "resampling": "linear I/V/T to 1s; trapezoidal current integration; no capacity-counter resets",
+        "boundary_policy": "unclipped causal SOC, no target-end capacity normalization"
+      },
+      "FUDS": {
+        "path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/DST FUDS UDDS HPPC WLTS US06.xlsx",
+        "sheet": "FUDS",
+        "z0": 1.0,
+        "h0": 1.0,
+        "s0": 1.0,
+        "initial_state_provenance": "User authorized assumed full charge before each processed profile; preparation not present; provisional assumption, not inferred by OCV inversion.",
+        "preceding_steps": "not provided in processed workbook; user-authorized full-charge assumption",
+        "raw_time_start_end_s": [
+          1.0,
+          17464.0
+        ],
+        "temperature": "25 C nominal; all three workbooks include 30D labels; no measured T",
+        "profile_check": {
+          "header": [
+            "Time",
+            "Current",
+            "Voltage",
+            "Capacity",
+            "Energy"
+          ],
+          "rows": 17464,
+          "current_min_max_A": [
+            -2.1517,
+            4.0119
+          ],
+          "capacity_resets": 893,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 1442,
+          "repetition_correlation": 0.9999906868725341
+        },
+        "capacity_resets_ignored": 893,
+        "raw_samples": 17464,
+        "samples_1s": 17464,
+        "raw_dt_min_median_max_s": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "net_discharge_Ah": 2.532378638888827,
+        "soc_min": -0.013396708289262982,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 312,
+        "resampling": "linear I/V/T to 1s; trapezoidal current integration; no capacity-counter resets",
+        "boundary_policy": "unclipped causal SOC, no target-end capacity normalization"
+      },
+      "US06": {
+        "path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/mendeley_29kw38kzwj_v1/extracted/Battery Test Data/LiFePO4 18650 Rechargeable Cell 3.3V 1100 mAh/25 Degree/DST FUDS UDDS HPPC WLTS US06.xlsx",
+        "sheet": "US06",
+        "z0": 1.0,
+        "h0": 1.0,
+        "s0": 1.0,
+        "initial_state_provenance": "User authorized assumed full charge before each processed profile; preparation not present; provisional assumption, not inferred by OCV inversion.",
+        "preceding_steps": "not provided in processed workbook; user-authorized full-charge assumption",
+        "raw_time_start_end_s": [
+          1.0,
+          14008.0
+        ],
+        "temperature": "25 C nominal; all three workbooks include 30D labels; no measured T",
+        "profile_check": {
+          "header": [
+            "Time_30D_US06_LFP",
+            "Current_30D_US06_LFP",
+            "Voltage_30D_US06_LFP",
+            "Capacity_30D_US06_LFP",
+            "Energy_30D_US06_LFP"
+          ],
+          "rows": 14008,
+          "current_min_max_A": [
+            -0.863,
+            3.8921
+          ],
+          "capacity_resets": 1094,
+          "identity": "sheet label and numerical excitation verified; no official waveform reference in local package",
+          "processed_repetition_seconds": 435,
+          "repetition_correlation": 0.999999292556811
+        },
+        "capacity_resets_ignored": 1094,
+        "raw_samples": 14008,
+        "samples_1s": 14008,
+        "raw_dt_min_median_max_s": [
+          1.0,
+          1.0,
+          1.0
+        ],
+        "net_discharge_Ah": 2.5058282638888967,
+        "soc_min": -0.0027718900983382255,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 28,
+        "resampling": "linear I/V/T to 1s; trapezoidal current integration; no capacity-counter resets",
+        "boundary_policy": "unclipped causal SOC, no target-end capacity normalization"
+      }
+    }
+  },
+  "qnom_measured_Ah": 2.4989015833333332,
+  "fits": {
+    "V1": {
+      "model": "V1",
+      "identified_on": "DST",
+      "target_refit": false,
+      "theta": [
+        -4.115546156064507,
+        -5.19053231390327,
+        -2.741241150163702,
+        1.9540681078397129,
+        5.508527035100943
+      ],
+      "parameter_names": [
+        "log_R0",
+        "log_R1",
+        "log_R2",
+        "log_tau1",
+        "log_tau2"
+      ],
+      "parameters": {
+        "R0": 0.016317026332537746,
+        "R1": 0.005569041547519851,
+        "R2": 0.06449025510979824,
+        "C1": 1267.244860539313,
+        "C2": 3826.7386242097414,
+        "tau1_s": 7.057339279224434,
+        "tau2_s": 246.78735011380454,
+        "Qnom_Ah": 2.4989015833333332,
+        "Q_ratio": 1.0,
+        "z0": 1.0,
+        "ocv_coefficients_V": null
+      },
+      "selected_start": 1,
+      "attempts": [
+        {
+          "start_index": 0,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 12,
+          "squared_residual_V2": 12.095565860373135,
+          "rmse_mV": 23.52166986955331,
+          "optimality": 0.00012567812341439776,
+          "theta": [
+            -4.115551707291509,
+            -5.190707044022957,
+            -2.7412240781253994,
+            1.9536330735524445,
+            5.5084866965989585
+          ]
+        },
+        {
+          "start_index": 1,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 18,
+          "squared_residual_V2": 12.095565840378162,
+          "rmse_mV": 23.521669850111678,
+          "optimality": 7.486403169985943e-05,
+          "theta": [
+            -4.115546156064507,
+            -5.19053231390327,
+            -2.741241150163702,
+            1.9540681078397129,
+            5.508527035100943
+          ]
+        },
+        {
+          "start_index": 2,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 14,
+          "squared_residual_V2": 12.095565877811042,
+          "rmse_mV": 23.521669886508644,
+          "optimality": 0.00041844040944016993,
+          "theta": [
+            -4.115565346670665,
+            -5.190596859099965,
+            -2.7412364764931922,
+            1.9537479124032415,
+            5.508355595102133
+          ]
+        }
+      ],
+      "n_parameters_near_bounds": 0,
+      "near_bound_parameters": [],
+      "jacobian_condition": 28.119681363342732,
+      "elapsed_seconds": 0.24392674991395324
+    },
+    "V5": {
+      "model": "V5",
+      "identified_on": "DST",
+      "target_refit": false,
+      "theta": [
+        -4.141276238047304,
+        -4.824088815499831,
+        -3.271613884245017,
+        2.5235998274801545,
+        5.547274259066267,
+        3.2215384443812676,
+        0.20387575753635717,
+        -0.10889203461259019,
+        0.10333530591934688,
+        -0.06348640051976473,
+        0.059268086008195595,
+        -0.03397238976710558,
+        0.03919485321082014,
+        -0.012498883028723,
+        0.014011251291088182
+      ],
+      "parameter_names": [
+        "log_R0",
+        "log_R1",
+        "log_R2",
+        "log_tau1",
+        "log_tau2",
+        "OCV_c0",
+        "OCV_c1",
+        "OCV_c2",
+        "OCV_c3",
+        "OCV_c4",
+        "OCV_c5",
+        "OCV_c6",
+        "OCV_c7",
+        "OCV_c8",
+        "OCV_c9"
+      ],
+      "parameters": {
+        "R0": 0.015902543117524634,
+        "R1": 0.008033870874935943,
+        "R2": 0.03794513857088682,
+        "C1": 1552.603755756993,
+        "C2": 6760.743466974465,
+        "tau1_s": 12.473418093692265,
+        "tau2_s": 256.53734769656387,
+        "Qnom_Ah": 2.4989015833333332,
+        "Q_ratio": 1.0,
+        "z0": 1.0,
+        "ocv_coefficients_V": [
+          3.2215384443812676,
+          0.20387575753635717,
+          -0.10889203461259019,
+          0.10333530591934688,
+          -0.06348640051976473,
+          0.059268086008195595,
+          -0.03397238976710558,
+          0.03919485321082014,
+          -0.012498883028723,
+          0.014011251291088182
+        ]
+      },
+      "selected_start": 0,
+      "attempts": [
+        {
+          "start_index": 0,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 23,
+          "squared_residual_V2": 2.1965361850769294,
+          "rmse_mV": 10.023611738864748,
+          "optimality": 0.0007126771849322316,
+          "theta": [
+            -4.141276238047304,
+            -4.824088815499831,
+            -3.271613884245017,
+            2.5235998274801545,
+            5.547274259066267,
+            3.2215384443812676,
+            0.20387575753635717,
+            -0.10889203461259019,
+            0.10333530591934688,
+            -0.06348640051976473,
+            0.059268086008195595,
+            -0.03397238976710558,
+            0.03919485321082014,
+            -0.012498883028723,
+            0.014011251291088182
+          ]
+        },
+        {
+          "start_index": 1,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 22,
+          "squared_residual_V2": 2.196536188155712,
+          "rmse_mV": 10.02361174588956,
+          "optimality": 0.00013344488952027334,
+          "theta": [
+            -4.141269766789909,
+            -4.824052689391227,
+            -3.2710828160076413,
+            2.523624133432395,
+            5.547807561955153,
+            3.2215461166535446,
+            0.20387405002990538,
+            -0.10889359618063883,
+            0.10333383742676502,
+            -0.06348763993932122,
+            0.059267014479035526,
+            -0.0339731999997594,
+            0.03919421183149855,
+            -0.012499274457382808,
+            0.014010972170160887
+          ]
+        },
+        {
+          "start_index": 2,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 20,
+          "squared_residual_V2": 2.1965361869413678,
+          "rmse_mV": 10.02361174311881,
+          "optimality": 0.0007952506912438918,
+          "theta": [
+            -4.141271516251559,
+            -4.824019576059129,
+            -3.271306396382385,
+            2.5236892653823992,
+            5.547669544398128,
+            3.2215429731288743,
+            0.2038746682047515,
+            -0.10889305334709483,
+            0.10333437585582604,
+            -0.06348719553162993,
+            0.05926741681549837,
+            -0.03397289904868602,
+            0.03919446214656435,
+            -0.012499121956724058,
+            0.014011087689344861
+          ]
+        }
+      ],
+      "n_parameters_near_bounds": 0,
+      "near_bound_parameters": [],
+      "jacobian_condition": 3827.962819057382,
+      "elapsed_seconds": 1.030659166048281
+    },
+    "V6": {
+      "model": "V6",
+      "identified_on": "DST",
+      "target_refit": false,
+      "theta": [
+        -4.088199831543624,
+        -2.9660657139785447,
+        -4.163304800429023,
+        8.188686530113705,
+        3.560491562012237,
+        1.028720622949584,
+        0.9709120325314246
+      ],
+      "parameter_names": [
+        "log_R0",
+        "log_R1",
+        "log_R2",
+        "log_tau1",
+        "log_tau2",
+        "Q_ratio",
+        "z0"
+      ],
+      "parameters": {
+        "R0": 0.016769394137733432,
+        "R1": 0.0155560631926389,
+        "R2": 0.0515055498017065,
+        "C1": 2261.5288875075803,
+        "C2": 69895.19914421049,
+        "tau1_s": 35.18048628604627,
+        "tau2_s": 3599.9906604223265,
+        "Qnom_Ah": 2.5706715934963684,
+        "Q_ratio": 1.028720622949584,
+        "z0": 0.9709120325314246,
+        "ocv_coefficients_V": null
+      },
+      "selected_start": 2,
+      "attempts": [
+        {
+          "start_index": 0,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 35,
+          "squared_residual_V2": 11.132677632769369,
+          "rmse_mV": 22.56601496123926,
+          "optimality": 0.014064967041867622,
+          "theta": [
+            -4.129368629041971,
+            -4.964794894445711,
+            -2.896038542767503,
+            2.3382296950454236,
+            5.722531853913309,
+            1.0199178247437561,
+            0.9788814342745452
+          ]
+        },
+        {
+          "start_index": 1,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 40,
+          "squared_residual_V2": 11.132646338648357,
+          "rmse_mV": 22.565983244516545,
+          "optimality": 0.03353312641249343,
+          "theta": [
+            -4.12951566242629,
+            -4.9762913214476,
+            -2.89524375394307,
+            2.3201377307273434,
+            5.709859623401401,
+            1.020015583828151,
+            0.9787876630840546
+          ]
+        },
+        {
+          "start_index": 2,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 36,
+          "squared_residual_V2": 11.045726291610176,
+          "rmse_mV": 22.4777167242572,
+          "optimality": 0.011349627369209163,
+          "theta": [
+            -4.088199831543624,
+            -2.9660657139785447,
+            -4.163304800429023,
+            8.188686530113705,
+            3.560491562012237,
+            1.028720622949584,
+            0.9709120325314246
+          ]
+        }
+      ],
+      "n_parameters_near_bounds": 1,
+      "near_bound_parameters": [
+        "log_tau1"
+      ],
+      "jacobian_condition": 1026.732890950045,
+      "elapsed_seconds": 0.7092651670100167
+    },
+    "V7": {
+      "model": "V7",
+      "identified_on": "DST",
+      "target_refit": false,
+      "theta": [
+        -4.179622125730224,
+        -5.309793456880383,
+        -4.2458853340471,
+        1.9896366796756502,
+        4.058699660199206,
+        1.0627666018852062,
+        0.9506112039336878,
+        3.244631576184427,
+        0.3491685881009691,
+        -0.05029966145768345,
+        0.22050846777888422,
+        -0.018376047228284478,
+        0.1376703403440637,
+        -0.005354929878564265,
+        0.07793558389993671,
+        -0.002821817640879463,
+        0.02448116749279092
+      ],
+      "parameter_names": [
+        "log_R0",
+        "log_R1",
+        "log_R2",
+        "log_tau1",
+        "log_tau2",
+        "Q_ratio",
+        "z0",
+        "OCV_c0",
+        "OCV_c1",
+        "OCV_c2",
+        "OCV_c3",
+        "OCV_c4",
+        "OCV_c5",
+        "OCV_c6",
+        "OCV_c7",
+        "OCV_c8",
+        "OCV_c9"
+      ],
+      "parameters": {
+        "R0": 0.015304289571467566,
+        "R1": 0.00494294754405971,
+        "R2": 0.014323047382529056,
+        "C1": 1479.4565990835727,
+        "C2": 4042.3641855804703,
+        "tau1_s": 7.312876362983077,
+        "tau2_s": 57.898973767507556,
+        "Qnom_Ah": 2.655749144164728,
+        "Q_ratio": 1.0627666018852062,
+        "z0": 0.9506112039336878,
+        "ocv_coefficients_V": [
+          3.244631576184427,
+          0.3491685881009691,
+          -0.05029966145768345,
+          0.22050846777888422,
+          -0.018376047228284478,
+          0.1376703403440637,
+          -0.005354929878564265,
+          0.07793558389993671,
+          -0.002821817640879463,
+          0.02448116749279092
+        ]
+      },
+      "selected_start": 2,
+      "attempts": [
+        {
+          "start_index": 0,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 24,
+          "squared_residual_V2": 1.8883635764526894,
+          "rmse_mV": 9.293897158937675,
+          "optimality": 0.0006602818830373501,
+          "theta": [
+            -4.179648790492805,
+            -5.310240654389639,
+            -4.245899534725604,
+            1.9890058817147074,
+            4.058245997232564,
+            1.025153327484421,
+            0.9861639778371586,
+            3.1930276015092978,
+            0.2637812298540819,
+            -0.1386641646826459,
+            0.14977864634149307,
+            -0.08223604351147006,
+            0.08923301712598633,
+            -0.04207853700559266,
+            0.05363205537193408,
+            -0.014234876478707066,
+            0.01770074485281002
+          ]
+        },
+        {
+          "start_index": 1,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 30,
+          "squared_residual_V2": 1.8883635741969151,
+          "rmse_mV": 9.29389715338659,
+          "optimality": 4.196983065015144e-05,
+          "theta": [
+            -4.179351806385957,
+            -4.24573893420547,
+            -5.305264953455971,
+            4.0633052071059605,
+            1.9960193009102607,
+            1.0416962981181017,
+            0.9707470853140345,
+            3.2072370036405435,
+            0.29040577807521617,
+            -0.11473977813654233,
+            0.17223451605643988,
+            -0.06437324482930167,
+            0.10545593887775016,
+            -0.03093902288666239,
+            0.06250039003187344,
+            -0.010516449140618807,
+            0.02044322238793926
+          ]
+        },
+        {
+          "start_index": 2,
+          "success": true,
+          "status": 2,
+          "message": "`ftol` termination condition is satisfied.",
+          "nfev": 26,
+          "squared_residual_V2": 1.8883635673102044,
+          "rmse_mV": 9.29389713643954,
+          "optimality": 4.496199473625544e-05,
+          "theta": [
+            -4.179622125730224,
+            -5.309793456880383,
+            -4.2458853340471,
+            1.9896366796756502,
+            4.058699660199206,
+            1.0627666018852062,
+            0.9506112039336878,
+            3.244631576184427,
+            0.3491685881009691,
+            -0.05029966145768345,
+            0.22050846777888422,
+            -0.018376047228284478,
+            0.1376703403440637,
+            -0.005354929878564265,
+            0.07793558389993671,
+            -0.002821817640879463,
+            0.02448116749279092
+          ]
+        }
+      ],
+      "n_parameters_near_bounds": 0,
+      "near_bound_parameters": [],
+      "jacobian_condition": 364790384.18534505,
+      "elapsed_seconds": 1.6805342909647152
+    }
+  },
+  "old_oracle": {
+    "DST": {
+      "trajectory_path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/lfp_gonogo/cell_B_mendeley/DST_trajectories.npz",
+      "sha256": "e5d726f29fc91ce8ae78e4d603e9287bbf050c519bcbb63440c24c8f2a52d88d",
+      "fit": {
+        "model": "V4",
+        "identified_on": "DST",
+        "oracle_target_fit": true,
+        "theta": [
+          -4.141270851215692,
+          -4.824011771528816,
+          -3.27140739102334,
+          2.5237204089756142,
+          5.547590695458837,
+          3.221541554973752,
+          0.2038749603529772,
+          -0.10889278929409743,
+          0.10333462832844327,
+          -0.06348698360406024,
+          0.05926760299179428,
+          -0.0339727584236785,
+          0.03919457542080562,
+          -0.012499052588555494,
+          0.014011138177823757
+        ],
+        "parameters": {
+          "R0": 0.01590262878207734,
+          "R1": 0.008034489860094998,
+          "C1": 1552.671353752477,
+          "R2": 0.03795297479383292,
+          "C2": 6761.486805410561,
+          "tau1_s": 12.47492224778425,
+          "tau2_s": 256.6185382945809,
+          "ocv_chebyshev_coefficients_V": [
+            3.221541554973752,
+            0.2038749603529772,
+            -0.10889278929409743,
+            0.10333462832844327,
+            -0.06348698360406024,
+            0.05926760299179428,
+            -0.0339727584236785,
+            0.03919457542080562,
+            -0.012499052588555494,
+            0.014011138177823757
+          ],
+          "ocv_domain": [
+            0.0,
+            1.0
+          ]
+        },
+        "selected_start": 2,
+        "attempts": [
+          {
+            "start": 0,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 21,
+            "squared_residual_V2": 2.1965361868923576,
+            "rmse_mV": 10.023611743006983,
+            "optimality": 0.0011417222875631516,
+            "theta": [
+              -4.141262991396003,
+              -4.824171639983352,
+              -3.2711497089350408,
+              2.523522153983961,
+              5.547512574355725,
+              3.2215450305870905,
+              0.20387448800754604,
+              -0.1088931196687315,
+              0.10333419146546453,
+              -0.06348730607286907,
+              0.05926724329165523,
+              -0.03397301447891734,
+              0.03919431880613515,
+              -0.012499207389224368,
+              0.014010996945026583
+            ]
+          },
+          {
+            "start": 1,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 24,
+            "squared_residual_V2": 2.1965361968122665,
+            "rmse_mV": 10.023611765641101,
+            "optimality": 0.0009685061216508127,
+            "theta": [
+              -4.141272861605389,
+              -4.823965195752554,
+              -3.2709768374902763,
+              2.5237060428266025,
+              5.548070670200105,
+              3.2215477397308003,
+              0.2038735538835101,
+              -0.10889410066255487,
+              0.10333342574822603,
+              -0.06348801078539798,
+              0.05926673386641045,
+              -0.033973420531731996,
+              0.03919406395649437,
+              -0.012499365925607313,
+              0.01401092239490733
+            ]
+          },
+          {
+            "start": 2,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 21,
+            "squared_residual_V2": 2.1965361867722235,
+            "rmse_mV": 10.023611742732875,
+            "optimality": 0.0009693342332344881,
+            "theta": [
+              -4.141270851215692,
+              -4.824011771528816,
+              -3.27140739102334,
+              2.5237204089756142,
+              5.547590695458837,
+              3.221541554973752,
+              0.2038749603529772,
+              -0.10889278929409743,
+              0.10333462832844327,
+              -0.06348698360406024,
+              0.05926760299179428,
+              -0.0339727584236785,
+              0.03919457542080562,
+              -0.012499052588555494,
+              0.014011138177823757
+            ]
+          }
+        ],
+        "near_bound_parameter_indices": [],
+        "jacobian_condition": 3829.4087005082156,
+        "elapsed_seconds": 1.082933416008018,
+        "success": true
+      },
+      "bounds_exemption": "Existing prior oracle, not reidentified; previous tau bound100000s"
+    },
+    "FUDS": {
+      "trajectory_path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/lfp_gonogo/cell_B_mendeley/FUDS_trajectories.npz",
+      "sha256": "bb5e889056f9570ddb293a8f738bded3dc9c132dc1c68ecf23f250e7a39aef22",
+      "fit": {
+        "model": "V4",
+        "identified_on": "FUDS",
+        "oracle_target_fit": true,
+        "theta": [
+          -4.252210114672846,
+          -4.345802206348929,
+          -0.6931471819572645,
+          2.7912031053386412,
+          10.26375399963906,
+          3.281025593585693,
+          0.1270491341464076,
+          -0.09697177091196788,
+          0.09170414083470829,
+          -0.055498793141310065,
+          0.05600886803469316,
+          -0.03273209994074443,
+          0.04216918195080131,
+          -0.015869683742576465,
+          0.01930772374581069
+        ],
+        "parameters": {
+          "R0": 0.014232743128276673,
+          "R1": 0.012961106594190449,
+          "C1": 1257.6564549470033,
+          "R2": 0.49999999930134037,
+          "C2": 57348.45495668824,
+          "tau1_s": 16.300619371439787,
+          "tau2_s": 28674.22743827707,
+          "ocv_chebyshev_coefficients_V": [
+            3.281025593585693,
+            0.1270491341464076,
+            -0.09697177091196788,
+            0.09170414083470829,
+            -0.055498793141310065,
+            0.05600886803469316,
+            -0.03273209994074443,
+            0.04216918195080131,
+            -0.015869683742576465,
+            0.01930772374581069
+          ],
+          "ocv_domain": [
+            0.0,
+            1.0
+          ]
+        },
+        "selected_start": 2,
+        "attempts": [
+          {
+            "start": 0,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 11,
+            "squared_residual_V2": 17.085959194324968,
+            "rmse_mV": 31.27863707962178,
+            "optimality": 1.7031906323502698e-05,
+            "theta": [
+              -4.34370954154894,
+              -6.1223038156601275,
+              -4.368875162121749,
+              0.07234548197566609,
+              2.9986655085052254,
+              3.2179713809665866,
+              0.18595275990548077,
+              -0.09259231329743846,
+              0.0920377904583057,
+              -0.0555046949759943,
+              0.056107536801391245,
+              -0.032753060207934316,
+              0.042244351042687776,
+              -0.01588999904552043,
+              0.01935271124355736
+            ]
+          },
+          {
+            "start": 1,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 20,
+            "squared_residual_V2": 17.08595918928182,
+            "rmse_mV": 31.278637075005626,
+            "optimality": 1.2668960627604786e-05,
+            "theta": [
+              -4.343719030457312,
+              -6.122423247640481,
+              -4.368857881073073,
+              0.07165740610339806,
+              2.998595732389717,
+              3.217971297727691,
+              0.18595276786705472,
+              -0.09259230615077481,
+              0.09203779795096009,
+              -0.05550468786213008,
+              0.05610754349625935,
+              -0.032753053064032124,
+              0.04224435589058587,
+              -0.015889992918382504,
+              0.019352713633373136
+            ]
+          },
+          {
+            "start": 2,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 65,
+            "squared_residual_V2": 17.044614674055605,
+            "rmse_mV": 31.240770211924065,
+            "optimality": 0.000508514718096098,
+            "theta": [
+              -4.252210114672846,
+              -4.345802206348929,
+              -0.6931471819572645,
+              2.7912031053386412,
+              10.26375399963906,
+              3.281025593585693,
+              0.1270491341464076,
+              -0.09697177091196788,
+              0.09170414083470829,
+              -0.055498793141310065,
+              0.05600886803469316,
+              -0.03273209994074443,
+              0.04216918195080131,
+              -0.015869683742576465,
+              0.01930772374581069
+            ]
+          }
+        ],
+        "near_bound_parameter_indices": [
+          2
+        ],
+        "jacobian_condition": 21401.4500654817,
+        "elapsed_seconds": 1.3935008749831468,
+        "success": true
+      },
+      "bounds_exemption": "Existing prior oracle, not reidentified; previous tau bound100000s"
+    },
+    "US06": {
+      "trajectory_path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/lfp_gonogo/cell_B_mendeley/US06_trajectories.npz",
+      "sha256": "29544c1a09326be705f529cd5681eacc90f747c926294f5086b0757303a22233",
+      "fit": {
+        "model": "V4",
+        "identified_on": "US06",
+        "oracle_target_fit": true,
+        "theta": [
+          -4.176970115496432,
+          -5.48850301887131,
+          -2.9656492549957507,
+          1.5124532169386256,
+          4.836545716567623,
+          3.2324156496113217,
+          0.20271123545576517,
+          -0.11208971398121861,
+          0.10122848167651434,
+          -0.06647750830285298,
+          0.05776651981086654,
+          -0.03661044924761334,
+          0.038211078497145695,
+          -0.014721829194638466,
+          0.014212953262205681
+        ],
+        "parameters": {
+          "R0": 0.015344930570384989,
+          "R1": 0.004134028106546614,
+          "C1": 1097.68229985827,
+          "R2": 0.05152700421771721,
+          "C2": 2445.9649131552183,
+          "tau1_s": 4.537849479672817,
+          "tau2_s": 126.03324439653723,
+          "ocv_chebyshev_coefficients_V": [
+            3.2324156496113217,
+            0.20271123545576517,
+            -0.11208971398121861,
+            0.10122848167651434,
+            -0.06647750830285298,
+            0.05776651981086654,
+            -0.03661044924761334,
+            0.038211078497145695,
+            -0.014721829194638466,
+            0.014212953262205681
+          ],
+          "ocv_domain": [
+            0.0,
+            1.0
+          ]
+        },
+        "selected_start": 0,
+        "attempts": [
+          {
+            "start": 0,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 22,
+            "squared_residual_V2": 2.1328474431979685,
+            "rmse_mV": 12.339337124105718,
+            "optimality": 5.4251158932761e-05,
+            "theta": [
+              -4.176970115496432,
+              -5.48850301887131,
+              -2.9656492549957507,
+              1.5124532169386256,
+              4.836545716567623,
+              3.2324156496113217,
+              0.20271123545576517,
+              -0.11208971398121861,
+              0.10122848167651434,
+              -0.06647750830285298,
+              0.05776651981086654,
+              -0.03661044924761334,
+              0.038211078497145695,
+              -0.014721829194638466,
+              0.014212953262205681
+            ]
+          },
+          {
+            "start": 1,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 21,
+            "squared_residual_V2": 2.132847447664268,
+            "rmse_mV": 12.33933713702534,
+            "optimality": 0.00043903754676011264,
+            "theta": [
+              -4.176970593089317,
+              -5.488664954509149,
+              -2.9652981381335994,
+              1.5121148514804978,
+              4.836730546946311,
+              3.232426144323176,
+              0.20270963537088452,
+              -0.11209110155913632,
+              0.1012270536026865,
+              -0.06647866736611018,
+              0.05776539597899941,
+              -0.0366112709626787,
+              0.03821032255871828,
+              -0.014722270856003208,
+              0.014212567412369424
+            ]
+          },
+          {
+            "start": 2,
+            "success": true,
+            "status": 2,
+            "message": "`ftol` termination condition is satisfied.",
+            "nfev": 19,
+            "squared_residual_V2": 2.1328474485002777,
+            "rmse_mV": 12.33933713944366,
+            "optimality": 0.0007027938917925081,
+            "theta": [
+              -4.17698643023411,
+              -5.488368167882906,
+              -2.9659545382201684,
+              1.5124721249383293,
+              4.836455565641505,
+              3.232406251044752,
+              0.2027125083035023,
+              -0.11208865667544655,
+              0.10122962836130167,
+              -0.06647660756781028,
+              0.05776743634305495,
+              -0.03660979715064774,
+              0.03821170982620322,
+              -0.014721469228073105,
+              0.014213286615726562
+            ]
+          }
+        ],
+        "near_bound_parameter_indices": [],
+        "jacobian_condition": 1901.9880136043953,
+        "elapsed_seconds": 0.6936771250329912,
+        "success": true
+      },
+      "bounds_exemption": "Existing prior oracle, not reidentified; previous tau bound100000s"
+    }
+  },
+  "global_mae_mV": {
+    "DST": {
+      "V1": 10.567660035562614,
+      "V5": 4.866549079633311,
+      "V6": 8.513876802676762,
+      "V7": 4.671927731132196,
+      "V4": 4.866550089712903
+    },
+    "FUDS": {
+      "V1": 18.842254552503018,
+      "V5": 13.921482892557103,
+      "V6": 15.267978978354334,
+      "V7": 11.844735730295902,
+      "V4": 10.89113437571275
+    },
+    "US06": {
+      "V1": 17.916811262875246,
+      "V5": 7.980546753368277,
+      "V6": 12.083830277506138,
+      "V7": 4.73296839292635,
+      "V4": 5.192113099162672
+    }
+  },
+  "state_diagnostics": {
+    "DST": {
+      "V1": {
+        "soc_min": -0.0024239316613792194,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 13,
+        "ocv_boundary_samples": 226,
+        "Qnom_Ah": 2.4989015833333332,
+        "z0_transferred": 1.0
+      },
+      "V5": {
+        "soc_min": -0.0024239316613792194,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 13,
+        "ocv_boundary_samples": 226,
+        "Qnom_Ah": 2.4989015833333332,
+        "z0_transferred": 1.0
+      },
+      "V6": {
+        "soc_min": -0.003525447673058957,
+        "soc_max": 0.9709120325314246,
+        "soc_outside_0_1_samples": 47,
+        "ocv_boundary_samples": 29,
+        "Qnom_Ah": 2.5706715934963684,
+        "z0_transferred": 0.9709120325314246
+      },
+      "V7": {
+        "soc_min": 0.00739005840350937,
+        "soc_max": 0.9506112039336878,
+        "soc_outside_0_1_samples": 0,
+        "ocv_boundary_samples": 0,
+        "Qnom_Ah": 2.655749144164728,
+        "z0_transferred": 0.9506112039336878
+      }
+    },
+    "FUDS": {
+      "V1": {
+        "soc_min": -0.013396708289262982,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 312,
+        "ocv_boundary_samples": 512,
+        "Qnom_Ah": 2.4989015833333332,
+        "z0_transferred": 1.0
+      },
+      "V5": {
+        "soc_min": -0.013396708289262982,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 312,
+        "ocv_boundary_samples": 512,
+        "Qnom_Ah": 2.4989015833333332,
+        "z0_transferred": 1.0
+      },
+      "V6": {
+        "soc_min": -0.014191877783521933,
+        "soc_max": 0.9709120325314246,
+        "soc_outside_0_1_samples": 334,
+        "ocv_boundary_samples": 328,
+        "Qnom_Ah": 2.5706715934963684,
+        "z0_transferred": 0.9709120325314246
+      },
+      "V7": {
+        "soc_min": -0.0029346701007731957,
+        "soc_max": 0.9506112039336878,
+        "soc_outside_0_1_samples": 70,
+        "ocv_boundary_samples": 67,
+        "Qnom_Ah": 2.655749144164728,
+        "z0_transferred": 0.9506112039336878
+      }
+    },
+    "US06": {
+      "V1": {
+        "soc_min": -0.0027718900983382255,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 28,
+        "ocv_boundary_samples": 150,
+        "Qnom_Ah": 2.4989015833333332,
+        "z0_transferred": 1.0
+      },
+      "V5": {
+        "soc_min": -0.0027718900983382255,
+        "soc_max": 1.0,
+        "soc_outside_0_1_samples": 28,
+        "ocv_boundary_samples": 150,
+        "Qnom_Ah": 2.4989015833333332,
+        "z0_transferred": 1.0
+      },
+      "V6": {
+        "soc_min": -0.003863691535577529,
+        "soc_max": 0.9709120325314246,
+        "soc_outside_0_1_samples": 34,
+        "ocv_boundary_samples": 32,
+        "Qnom_Ah": 2.5706715934963684,
+        "z0_transferred": 0.9709120325314246
+      },
+      "V7": {
+        "soc_min": 0.007062650262962045,
+        "soc_max": 0.9506112039336878,
+        "soc_outside_0_1_samples": 0,
+        "ocv_boundary_samples": 0,
+        "Qnom_Ah": 2.655749144164728,
+        "z0_transferred": 0.9506112039336878
+      }
+    }
+  },
+  "metrics": [
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "global",
+      "n_samples": 21862,
+      "mae_mV": 10.567660035562614,
+      "rmse_mV": 23.521669850111678,
+      "max_error_mV": 683.9829577042096,
+      "p99_mV": 105.1392407839175
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "soc_lt20",
+      "n_samples": 4372,
+      "mae_mV": 24.23439296487984,
+      "rmse_mV": 47.713177380825044,
+      "max_error_mV": 683.9829577042096,
+      "p99_mV": 206.6527791811877
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "soc20_80",
+      "n_samples": 13129,
+      "mae_mV": 4.330997369144089,
+      "rmse_mV": 5.2235164535968845,
+      "max_error_mV": 15.550257355297248,
+      "p99_mV": 11.81854274302411
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "soc_gt80",
+      "n_samples": 4361,
+      "mae_mV": 15.642227286292714,
+      "rmse_mV": 20.227295148447684,
+      "max_error_mV": 55.002623121851,
+      "p99_mV": 53.72103936177304
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "after_reversal_60s",
+      "n_samples": 21105,
+      "mae_mV": 10.506111523835038,
+      "rmse_mV": 23.67559099535449,
+      "max_error_mV": 683.9829577042096,
+      "p99_mV": 106.68370533421573
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 4229,
+      "mae_mV": 24.41999578785584,
+      "rmse_mV": 48.17434686890971,
+      "max_error_mV": 683.9829577042096,
+      "p99_mV": 207.59356187480043
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 12700,
+      "mae_mV": 4.247595515757839,
+      "rmse_mV": 5.09002309692292,
+      "max_error_mV": 13.19842455923892,
+      "p99_mV": 11.06441342782709
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 4176,
+      "mae_mV": 15.448960362445304,
+      "rmse_mV": 20.096149234937435,
+      "max_error_mV": 55.002623121851,
+      "p99_mV": 53.732916580861435
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "global",
+      "n_samples": 21862,
+      "mae_mV": 4.866549079633311,
+      "rmse_mV": 10.023611738864746,
+      "max_error_mV": 505.38749730248657,
+      "p99_mV": 32.67202893812229
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "soc_lt20",
+      "n_samples": 4372,
+      "mae_mV": 8.211356754324184,
+      "rmse_mV": 18.79119694097003,
+      "max_error_mV": 505.38749730248657,
+      "p99_mV": 43.980241818746045
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "soc20_80",
+      "n_samples": 13129,
+      "mae_mV": 3.152614107621911,
+      "rmse_mV": 3.7280791469819463,
+      "max_error_mV": 10.423575121397022,
+      "p99_mV": 8.121141002653596
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "soc_gt80",
+      "n_samples": 4361,
+      "mae_mV": 6.673188174746624,
+      "rmse_mV": 10.384368343448466,
+      "max_error_mV": 66.72053292405079,
+      "p99_mV": 39.52087446423887
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "after_reversal_60s",
+      "n_samples": 21105,
+      "mae_mV": 4.741671685207814,
+      "rmse_mV": 9.797700658692923,
+      "max_error_mV": 505.38749730248657,
+      "p99_mV": 31.124667511898718
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 4229,
+      "mae_mV": 8.21299307232669,
+      "rmse_mV": 19.003260751593356,
+      "max_error_mV": 505.38749730248657,
+      "p99_mV": 45.07069541780838
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 12700,
+      "mae_mV": 3.1091243627528096,
+      "rmse_mV": 3.6768822724213166,
+      "max_error_mV": 10.146603059897785,
+      "p99_mV": 7.963039344502878
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 4176,
+      "mae_mV": 6.191176677797095,
+      "rmse_mV": 8.850110574307065,
+      "max_error_mV": 39.90387052388211,
+      "p99_mV": 26.77432904410193
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "global",
+      "n_samples": 21862,
+      "mae_mV": 8.513876802676762,
+      "rmse_mV": 22.477716724257196,
+      "max_error_mV": 686.073993805576,
+      "p99_mV": 98.51067485906535
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "soc_lt20",
+      "n_samples": 4372,
+      "mae_mV": 27.130725982247384,
+      "rmse_mV": 48.320177404474904,
+      "max_error_mV": 686.073993805576,
+      "p99_mV": 197.32028747647715
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "soc20_80",
+      "n_samples": 13129,
+      "mae_mV": 2.919479994650969,
+      "rmse_mV": 3.6020761752506494,
+      "max_error_mV": 14.052314487789541,
+      "p99_mV": 9.227708458350746
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "soc_gt80",
+      "n_samples": 4361,
+      "mae_mV": 6.692269620720304,
+      "rmse_mV": 12.371417529586827,
+      "max_error_mV": 67.16146955095948,
+      "p99_mV": 41.89999904651678
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "after_reversal_60s",
+      "n_samples": 21105,
+      "mae_mV": 8.420775653210868,
+      "rmse_mV": 22.557309680848835,
+      "max_error_mV": 686.073993805576,
+      "p99_mV": 100.9635901437047
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 4229,
+      "mae_mV": 27.307341879682014,
+      "rmse_mV": 48.77847953012123,
+      "max_error_mV": 686.073993805576,
+      "p99_mV": 198.6383254549197
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 12700,
+      "mae_mV": 2.861986877578715,
+      "rmse_mV": 3.5036941147383596,
+      "max_error_mV": 14.052314487789541,
+      "p99_mV": 8.482916694794307
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 4176,
+      "mae_mV": 6.199829503493877,
+      "rmse_mV": 11.167173686343608,
+      "max_error_mV": 42.282650741063854,
+      "p99_mV": 32.22780857595953
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "global",
+      "n_samples": 21862,
+      "mae_mV": 4.671927731132196,
+      "rmse_mV": 9.29389713643954,
+      "max_error_mV": 467.9417149595442,
+      "p99_mV": 29.89880631881724
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "soc_lt20",
+      "n_samples": 4372,
+      "mae_mV": 8.130341785471456,
+      "rmse_mV": 18.076305832284614,
+      "max_error_mV": 467.9417149595442,
+      "p99_mV": 42.854437763482984
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "soc20_80",
+      "n_samples": 13129,
+      "mae_mV": 3.1160887741894463,
+      "rmse_mV": 3.6393249669660133,
+      "max_error_mV": 10.814038894311206,
+      "p99_mV": 7.638673571850112
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "soc_gt80",
+      "n_samples": 4361,
+      "mae_mV": 5.888718242512635,
+      "rmse_mV": 8.09696309170675,
+      "max_error_mV": 45.160942861914855,
+      "p99_mV": 23.45817775943137
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "after_reversal_60s",
+      "n_samples": 21105,
+      "mae_mV": 4.5892449914883535,
+      "rmse_mV": 9.227571980585173,
+      "max_error_mV": 467.9417149595442,
+      "p99_mV": 29.23130566895322
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 4229,
+      "mae_mV": 8.11307903233808,
+      "rmse_mV": 18.26313084899894,
+      "max_error_mV": 467.9417149595442,
+      "p99_mV": 44.191056217419096
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 12700,
+      "mae_mV": 3.087879723363543,
+      "rmse_mV": 3.610505907102379,
+      "max_error_mV": 10.814038894311206,
+      "p99_mV": 7.3921402704682
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 4176,
+      "mae_mV": 5.586621607013166,
+      "rmse_mV": 7.273847109001406,
+      "max_error_mV": 24.07888852507023,
+      "p99_mV": 19.99091943278264
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "global",
+      "n_samples": 21862,
+      "mae_mV": 4.866550089712903,
+      "rmse_mV": 10.023611742732875,
+      "max_error_mV": 505.38772921520444,
+      "p99_mV": 32.67223186545877
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "soc_lt20",
+      "n_samples": 4372,
+      "mae_mV": 8.211363948717274,
+      "rmse_mV": 18.791207729482807,
+      "max_error_mV": 505.38772921520444,
+      "p99_mV": 43.98023728625004
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "soc20_80",
+      "n_samples": 13129,
+      "mae_mV": 3.1526235822232223,
+      "rmse_mV": 3.7280859278125447,
+      "max_error_mV": 10.423676639588653,
+      "p99_mV": 8.12122302584809
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "soc_gt80",
+      "n_samples": 4361,
+      "mae_mV": 6.6731575020644085,
+      "rmse_mV": 10.384341461542745,
+      "max_error_mV": 66.72038225131472,
+      "p99_mV": 39.52077571849955
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "after_reversal_60s",
+      "n_samples": 21105,
+      "mae_mV": 4.741672102570845,
+      "rmse_mV": 9.797701903252001,
+      "max_error_mV": 505.38772921520444,
+      "p99_mV": 31.12449581776042
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 4229,
+      "mae_mV": 8.213001332779655,
+      "rmse_mV": 19.00327258647747,
+      "max_error_mV": 505.38772921520444,
+      "p99_mV": 45.07070950456249
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 12700,
+      "mae_mV": 3.10913275508138,
+      "rmse_mV": 3.6768871228029782,
+      "max_error_mV": 10.146473602653305,
+      "p99_mV": 7.962956118844331
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "DST",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 4176,
+      "mae_mV": 6.191144899161635,
+      "rmse_mV": 8.850085674338713,
+      "max_error_mV": 39.903756675499835,
+      "p99_mV": 26.7741741470211
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "global",
+      "n_samples": 17464,
+      "mae_mV": 18.842254552503018,
+      "rmse_mV": 43.69838003171456,
+      "max_error_mV": 701.980427028025,
+      "p99_mV": 120.41138336535307
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "soc_lt20",
+      "n_samples": 3791,
+      "mae_mV": 43.989735289088124,
+      "rmse_mV": 88.95863580476086,
+      "max_error_mV": 701.980427028025,
+      "p99_mV": 443.5424812005901
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "soc20_80",
+      "n_samples": 10189,
+      "mae_mV": 9.714298623207211,
+      "rmse_mV": 12.083221190029283,
+      "max_error_mV": 39.215848267868395,
+      "p99_mV": 29.401565732876584
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "soc_gt80",
+      "n_samples": 3484,
+      "mae_mV": 18.173667724489487,
+      "rmse_mV": 23.106299853156557,
+      "max_error_mV": 68.03234906723476,
+      "p99_mV": 55.99006699348634
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "after_reversal_60s",
+      "n_samples": 17341,
+      "mae_mV": 18.80414183080284,
+      "rmse_mV": 43.781632694167186,
+      "max_error_mV": 701.980427028025,
+      "p99_mV": 120.7326069620181
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 3779,
+      "mae_mV": 44.00363458763676,
+      "rmse_mV": 89.04555957611795,
+      "max_error_mV": 701.980427028025,
+      "p99_mV": 443.56173073685403
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 10141,
+      "mae_mV": 9.6765581774847,
+      "rmse_mV": 12.044428062574688,
+      "max_error_mV": 39.215848267868395,
+      "p99_mV": 29.428440048557757
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 3421,
+      "mae_mV": 18.024820784390645,
+      "rmse_mV": 22.96701816216018,
+      "max_error_mV": 68.03234906723476,
+      "p99_mV": 55.99190571075719
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "global",
+      "n_samples": 17464,
+      "mae_mV": 13.921482892557103,
+      "rmse_mV": 36.17509238247736,
+      "max_error_mV": 524.7936633404911,
+      "p99_mV": 172.3135748698167
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "soc_lt20",
+      "n_samples": 3791,
+      "mae_mV": 40.9721355527051,
+      "rmse_mV": 75.78609801599742,
+      "max_error_mV": 524.7936633404911,
+      "p99_mV": 264.7814760534842
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "soc20_80",
+      "n_samples": 10189,
+      "mae_mV": 5.720794666987018,
+      "rmse_mV": 7.000730139891979,
+      "max_error_mV": 25.11826848645926,
+      "p99_mV": 17.481163573825217
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "soc_gt80",
+      "n_samples": 3484,
+      "mae_mV": 8.470216559523967,
+      "rmse_mV": 12.913032867404322,
+      "max_error_mV": 64.62053292405079,
+      "p99_mV": 52.90933370226784
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "after_reversal_60s",
+      "n_samples": 17341,
+      "mae_mV": 13.819129740698576,
+      "rmse_mV": 36.168008682274674,
+      "max_error_mV": 524.7936633404911,
+      "p99_mV": 172.6352401309604
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 3779,
+      "mae_mV": 41.045724596686334,
+      "rmse_mV": 75.89368236840828,
+      "max_error_mV": 524.7936633404911,
+      "p99_mV": 264.78731981763127
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 10141,
+      "mae_mV": 5.702051626753313,
+      "rmse_mV": 6.982211669850106,
+      "max_error_mV": 25.11826848645926,
+      "p99_mV": 17.536436899373296
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 3421,
+      "mae_mV": 7.805095011888645,
+      "rmse_mV": 11.124042358156814,
+      "max_error_mV": 40.47257161479179,
+      "p99_mV": 28.51183493292142
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "global",
+      "n_samples": 17464,
+      "mae_mV": 15.267978978354334,
+      "rmse_mV": 43.01901147016653,
+      "max_error_mV": 700.822459517459,
+      "p99_mV": 119.08090397693563
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "soc_lt20",
+      "n_samples": 3791,
+      "mae_mV": 45.941740114029486,
+      "rmse_mV": 90.7661553876346,
+      "max_error_mV": 700.822459517459,
+      "p99_mV": 442.10006726533396
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "soc20_80",
+      "n_samples": 10189,
+      "mae_mV": 6.756637536194973,
+      "rmse_mV": 7.455919061847161,
+      "max_error_mV": 27.17945810689626,
+      "p99_mV": 16.423474390566806
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "soc_gt80",
+      "n_samples": 3484,
+      "mae_mV": 6.7828554102766105,
+      "rmse_mV": 12.228068172425877,
+      "max_error_mV": 65.06146955095949,
+      "p99_mV": 54.78035288166477
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "after_reversal_60s",
+      "n_samples": 17341,
+      "mae_mV": 15.155805479833814,
+      "rmse_mV": 43.03142040995937,
+      "max_error_mV": 700.822459517459,
+      "p99_mV": 119.15854943730623
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 3779,
+      "mae_mV": 45.94558703969051,
+      "rmse_mV": 90.84723382317868,
+      "max_error_mV": 700.822459517459,
+      "p99_mV": 442.21779764204524
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 10141,
+      "mae_mV": 6.737546009667809,
+      "rmse_mV": 7.431851412889992,
+      "max_error_mV": 27.17945810689626,
+      "p99_mV": 16.362451261947715
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 3421,
+      "mae_mV": 6.0985078394523535,
+      "rmse_mV": 10.27756120707424,
+      "max_error_mV": 43.678629682279976,
+      "p99_mV": 31.254692526958205
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "global",
+      "n_samples": 17464,
+      "mae_mV": 11.844735730295902,
+      "rmse_mV": 32.80766944058318,
+      "max_error_mV": 309.2205406451034,
+      "p99_mV": 181.8125562633521
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "soc_lt20",
+      "n_samples": 3791,
+      "mae_mV": 38.40471023103936,
+      "rmse_mV": 69.4214010689319,
+      "max_error_mV": 309.2205406451034,
+      "p99_mV": 199.27552681074886
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "soc20_80",
+      "n_samples": 10189,
+      "mae_mV": 3.706152749093313,
+      "rmse_mV": 4.597861376114553,
+      "max_error_mV": 21.35575224232733,
+      "p99_mV": 12.010097307378393
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "soc_gt80",
+      "n_samples": 3484,
+      "mae_mV": 6.745757160592899,
+      "rmse_mV": 9.459789158092867,
+      "max_error_mV": 43.06094286191487,
+      "p99_mV": 33.405377131770614
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "after_reversal_60s",
+      "n_samples": 17341,
+      "mae_mV": 11.795850310994899,
+      "rmse_mV": 32.85734271560516,
+      "max_error_mV": 309.2205406451034,
+      "p99_mV": 181.853540533093
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 3779,
+      "mae_mV": 38.47069671739474,
+      "rmse_mV": 69.52041660132318,
+      "max_error_mV": 309.2205406451034,
+      "p99_mV": 199.2759575922201
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 10141,
+      "mae_mV": 3.6949281547130663,
+      "rmse_mV": 4.5848335705623064,
+      "max_error_mV": 21.35575224232733,
+      "p99_mV": 12.011613773920706
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 3421,
+      "mae_mV": 6.34341155538809,
+      "rmse_mV": 8.44567739210622,
+      "max_error_mV": 32.927250991440445,
+      "p99_mV": 22.270181745302686
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "global",
+      "n_samples": 17464,
+      "mae_mV": 10.89113437571275,
+      "rmse_mV": 31.24077021192407,
+      "max_error_mV": 585.1068230554299,
+      "p99_mV": 117.06406648137245
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "soc_lt20",
+      "n_samples": 3791,
+      "mae_mV": 28.31646571395423,
+      "rmse_mV": 65.28746935252379,
+      "max_error_mV": 585.1068230554299,
+      "p99_mV": 321.6694509016177
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "soc20_80",
+      "n_samples": 10189,
+      "mae_mV": 5.389771772016071,
+      "rmse_mV": 6.037461055910309,
+      "max_error_mV": 23.911375747136088,
+      "p99_mV": 11.472766402382193
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "soc_gt80",
+      "n_samples": 3484,
+      "mae_mV": 8.01913450940736,
+      "rmse_mV": 12.149261659298418,
+      "max_error_mV": 75.11430436453593,
+      "p99_mV": 60.2691433270994
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "after_reversal_60s",
+      "n_samples": 17341,
+      "mae_mV": 10.754783404147316,
+      "rmse_mV": 31.148192371891756,
+      "max_error_mV": 585.1068230554299,
+      "p99_mV": 117.2023854160403
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 3779,
+      "mae_mV": 28.35209094901236,
+      "rmse_mV": 65.38233332023835,
+      "max_error_mV": 585.1068230554299,
+      "p99_mV": 321.8186103235179
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 10141,
+      "mae_mV": 5.392700522592439,
+      "rmse_mV": 6.03976597505662,
+      "max_error_mV": 23.911375747136088,
+      "p99_mV": 11.4821428888309
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "FUDS",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 3421,
+      "mae_mV": 7.21098255346126,
+      "rmse_mV": 9.36171264455358,
+      "max_error_mV": 34.97090110045331,
+      "p99_mV": 25.043501437337216
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "global",
+      "n_samples": 14008,
+      "mae_mV": 17.916811262875246,
+      "rmse_mV": 27.5929779081645,
+      "max_error_mV": 675.2059364651217,
+      "p99_mV": 51.493287825433676
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 23.346839730124216,
+      "rmse_mV": 49.86290774573356,
+      "max_error_mV": 675.2059364651217,
+      "p99_mV": 272.0340159918737
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 14.3843991584416,
+      "rmse_mV": 15.0932273421743,
+      "max_error_mV": 25.976347733864813,
+      "p99_mV": 22.941048940347578
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "soc_gt80",
+      "n_samples": 2806,
+      "mae_mV": 23.008413380177117,
+      "rmse_mV": 24.91745253307744,
+      "max_error_mV": 52.109343792114956,
+      "p99_mV": 49.589433529238875
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "after_reversal_60s",
+      "n_samples": 14000,
+      "mae_mV": 17.907844638525855,
+      "rmse_mV": 27.588903864066005,
+      "max_error_mV": 675.2059364651217,
+      "p99_mV": 51.520791363307296
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 23.346839730124216,
+      "rmse_mV": 49.86290774573356,
+      "max_error_mV": 675.2059364651217,
+      "p99_mV": 272.0340159918737
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 14.3843991584416,
+      "rmse_mV": 15.0932273421743,
+      "max_error_mV": 25.976347733864813,
+      "p99_mV": 22.941048940347578
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V1",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 2798,
+      "mae_mV": 22.978106044954423,
+      "rmse_mV": 24.886801214593003,
+      "max_error_mV": 52.109343792114956,
+      "p99_mV": 49.59106385788434
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "global",
+      "n_samples": 14008,
+      "mae_mV": 7.980546753368277,
+      "rmse_mV": 14.073062964676572,
+      "max_error_mV": 503.3495000385477,
+      "p99_mV": 36.969568232625484
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 10.497916975702655,
+      "rmse_mV": 26.115656001945815,
+      "max_error_mV": 503.3495000385477,
+      "p99_mV": 100.02640386553848
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 7.01947227751926,
+      "rmse_mV": 7.811949917816491,
+      "max_error_mV": 18.898197699246833,
+      "p99_mV": 14.286279908264387
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "soc_gt80",
+      "n_samples": 2806,
+      "mae_mV": 8.320270126456425,
+      "rmse_mV": 10.988827813501654,
+      "max_error_mV": 63.92053292405109,
+      "p99_mV": 31.71306112744531
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "after_reversal_60s",
+      "n_samples": 14000,
+      "mae_mV": 7.95090208288247,
+      "rmse_mV": 14.003514661345648,
+      "max_error_mV": 503.3495000385477,
+      "p99_mV": 36.81964548574521
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 10.497916975702655,
+      "rmse_mV": 26.115656001945815,
+      "max_error_mV": 503.3495000385477,
+      "p99_mV": 100.02640386553848
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 7.01947227751926,
+      "rmse_mV": 7.811949917816491,
+      "max_error_mV": 18.898197699246833,
+      "p99_mV": 14.286279908264387
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V5",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 2798,
+      "mae_mV": 8.172912156543415,
+      "rmse_mV": 10.524398340653397,
+      "max_error_mV": 45.394770881640234,
+      "p99_mV": 28.134520846809906
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "global",
+      "n_samples": 14008,
+      "mae_mV": 12.083830277506138,
+      "rmse_mV": 24.9687662293066,
+      "max_error_mV": 680.6995773358311,
+      "p99_mV": 61.75261582376747
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 26.51481986789939,
+      "rmse_mV": 52.19994677774109,
+      "max_error_mV": 680.6995773358311,
+      "p99_mV": 272.6337148879094
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 8.97257386031121,
+      "rmse_mV": 9.25705373366437,
+      "max_error_mV": 18.827120498248195,
+      "p99_mV": 14.307831316813418
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "soc_gt80",
+      "n_samples": 2806,
+      "mae_mV": 6.86844125327639,
+      "rmse_mV": 10.814745463903352,
+      "max_error_mV": 64.36146955095978,
+      "p99_mV": 33.29068952854665
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "after_reversal_60s",
+      "n_samples": 14000,
+      "mae_mV": 12.055928617830773,
+      "rmse_mV": 24.933120003758567,
+      "max_error_mV": 680.6995773358311,
+      "p99_mV": 60.87750818963637
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 26.51481986789939,
+      "rmse_mV": 52.19994677774109,
+      "max_error_mV": 680.6995773358311,
+      "p99_mV": 272.6337148879094
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 8.97257386031121,
+      "rmse_mV": 9.25705373366437,
+      "max_error_mV": 18.827120498248195,
+      "p99_mV": 14.307831316813418
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V6",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 2798,
+      "mae_mV": 6.713921472129515,
+      "rmse_mV": 10.325220134844514,
+      "max_error_mV": 46.58309608494804,
+      "p99_mV": 30.633327993728496
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "global",
+      "n_samples": 14008,
+      "mae_mV": 4.73296839292635,
+      "rmse_mV": 11.732056918629029,
+      "max_error_mV": 466.7400913141091,
+      "p99_mV": 30.83304768815116
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 9.419640027010566,
+      "rmse_mV": 24.363188253029392,
+      "max_error_mV": 466.7400913141091,
+      "p99_mV": 106.68625048931894
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 2.856168354356883,
+      "rmse_mV": 3.4767552158796775,
+      "max_error_mV": 11.363974975376667,
+      "p99_mV": 7.8699730016580824
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "soc_gt80",
+      "n_samples": 2806,
+      "mae_mV": 5.626895849625965,
+      "rmse_mV": 7.367808300565017,
+      "max_error_mV": 42.36094286191516,
+      "p99_mV": 18.494335115334735
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "after_reversal_60s",
+      "n_samples": 14000,
+      "mae_mV": 4.713661269964713,
+      "rmse_mV": 11.698576346906394,
+      "max_error_mV": 466.7400913141091,
+      "p99_mV": 30.570963414198744
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 9.419640027010566,
+      "rmse_mV": 24.363188253029392,
+      "max_error_mV": 466.7400913141091,
+      "p99_mV": 106.68625048931894
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 2.856168354356883,
+      "rmse_mV": 3.4767552158796775,
+      "max_error_mV": 11.363974975376667,
+      "p99_mV": 7.8699730016580824
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V7",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 2798,
+      "mae_mV": 5.532847135612629,
+      "rmse_mV": 7.079626306748467,
+      "max_error_mV": 27.41877149573435,
+      "p99_mV": 18.267892573982778
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "global",
+      "n_samples": 14008,
+      "mae_mV": 5.192113099162672,
+      "rmse_mV": 12.339337124105718,
+      "max_error_mV": 500.99265146394754,
+      "p99_mV": 33.248069232345195
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 9.800662084835478,
+      "rmse_mV": 25.309130944473317,
+      "max_error_mV": 500.99265146394754,
+      "p99_mV": 100.3376960041754
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 3.5778242544835632,
+      "rmse_mV": 4.1824491372590895,
+      "max_error_mV": 11.009815395987665,
+      "p99_mV": 8.53267137567873
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "soc_gt80",
+      "n_samples": 2806,
+      "mae_mV": 5.380508722353199,
+      "rmse_mV": 7.992381203274672,
+      "max_error_mV": 63.39486602974631,
+      "p99_mV": 32.6263219024022
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "after_reversal_60s",
+      "n_samples": 14000,
+      "mae_mV": 5.161228027019737,
+      "rmse_mV": 12.260627528798118,
+      "max_error_mV": 500.99265146394754,
+      "p99_mV": 32.72549963875832
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc_lt20",
+      "n_samples": 2821,
+      "mae_mV": 9.800662084835478,
+      "rmse_mV": 25.309130944473317,
+      "max_error_mV": 500.99265146394754,
+      "p99_mV": 100.3376960041754
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc20_80",
+      "n_samples": 8381,
+      "mae_mV": 3.5778242544835632,
+      "rmse_mV": 4.1824491372590895,
+      "max_error_mV": 11.009815395987665,
+      "p99_mV": 8.53267137567873
+    },
+    {
+      "cell": "cell_B_mendeley",
+      "profile": "US06",
+      "model": "V4",
+      "scope": "after_reversal_60s_soc_gt80",
+      "n_samples": 2798,
+      "mae_mV": 5.226511636929481,
+      "rmse_mV": 7.34419995463778,
+      "max_error_mV": 47.11017520482841,
+      "p99_mV": 29.254060105377043
+    }
+  ],
+  "decision": {
+    "positive": true,
+    "verdict": "POSITIVA",
+    "attribution": "OCV",
+    "profiles": {
+      "FUDS": {
+        "mae_mV": {
+          "V1": 18.842254552503018,
+          "V5": 13.921482892557103,
+          "V6": 15.267978978354334,
+          "V7": 11.844735730295902,
+          "V4": 10.89113437571275
+        },
+        "best_model": "V7",
+        "best_reduction_fraction": 0.37137375480778445,
+        "positive": true,
+        "ceiling_denominator_mV": 7.951120176790267,
+        "ceiling_recovered_fractions": {
+          "V5": 0.6188777870959494,
+          "V6": 0.4495310716824757,
+          "V7": 0.880067042959964
+        },
+        "attribution": "OCV"
+      },
+      "US06": {
+        "mae_mV": {
+          "V1": 17.916811262875246,
+          "V5": 7.980546753368277,
+          "V6": 12.083830277506138,
+          "V7": 4.73296839292635,
+          "V4": 5.192113099162672
+        },
+        "best_model": "V7",
+        "best_reduction_fraction": 0.7358364541834876,
+        "positive": true,
+        "ceiling_denominator_mV": 12.724698163712574,
+        "ceiling_recovered_fractions": {
+          "V5": 0.7808644560106369,
+          "V6": 0.4583983769456477,
+          "V7": 1.036082954607574
+        },
+        "attribution": "OCV"
+      }
+    },
+    "criterion": {
+      "minimum_reduction": 0.25,
+      "positive": "For EACH of FUDS and US06, min(MAE_V5,MAE_V6,MAE_V7) <= 0.75*MAE_V1. The best model can differ between targets, as requested.",
+      "ceiling_fraction": "(MAE_V1-MAE_Vk)/(MAE_V1-MAE_previous_V4); unbounded signed ratio, not clipped. Nonpositive denominator is explicitly flagged as unavailable, never silently replaced.",
+      "attribution": "Per target compare recovered fractions V6 versus V5: V6>V5 SOC, V5>V6 OCV, equality tie. Both SOC => SOC, both OCV => OCV; otherwise mixed/inconclusive (user confirmed). If ceiling denominator nonpositive, attribution unavailable.",
+      "global": "Static transfer positive iff primary A positive; replica B cannot change global result."
+    }
+  },
+  "caveats": [
+    "Manufacturer/model unconfirmed; 1.1Ah label conflicts with measured ~2.50Ah.",
+    "25C nominal versus 30D labels in capacity/dynamic/PCPD and 30 Degree internal PCPD path.",
+    "Dynamic preparation absent; z0=1,h0=+1 explicitly authorized, not measured.",
+    "OCV charge endpoint supplied from final rest; slight non-monotonic charge voltage retained.",
+    "PCPD 30min rests are approximate OCV, not certified equilibrium; no dedicated minor loops.",
+    "Processed repetition periods DST333/FUDS1442/US06435s differ from standard cycles; sheet naming is not independent official waveform certification.",
+    "M may change sign: retained without abs, clipping or target-dependent correction.",
+    "V1 reidentified under3600s RC bound, not the previous V1 numbers.",
+    "V4 prior target oracle has different RC bounds; recovered ceiling is a diagnostic comparison, not matched-bound model superiority.",
+    "Degree9 OCV unconstrained like previous V4; monotonicity/physical validity not imposed.",
+    "Q/z0 and OCV polynomial are confounded in V7; attribution is operational V5-vs-V6, not unique causal identification.",
+    "SOC masks use original loader SOC, not model-dependent fitted SOC.",
+    "Source fits all DST samples; no parameter adjustment in target cycles.",
+    "A different best model per target is allowed by the pre-fixed criterion; not a claim of one universally best transferable model."
+  ]
+}

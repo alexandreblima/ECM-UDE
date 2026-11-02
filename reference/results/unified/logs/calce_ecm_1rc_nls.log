@@ -1,0 +1,6 @@
+START calce_ecm_1rc_nls 2026-11-01T04:41:40.920018+00:00
+NLS 1 RC {'theta': [3.69799606087371, 0.3251221872493875, 0.0024713032308049756, 0.009094699507142477, -0.040593583324395305, -0.010064743021121689, -1.1417927404420798, -1.7978357739748974, 1.2590994832333424], 'params': {'ocv_coeffs': [np.float64(3.69799606087371), np.float64(0.3251221872493875), np.float64(0.0024713032308049756), np.float64(0.009094699507142477), np.float64(-0.040593583324395305), np.float64(-0.010064743021121689)], 'R0': np.float64(0.07214516974311191), 'R1': np.float64(0.01592810925712459), 'C1': np.float64(1140.0798165960919), 'soc_train_min': 0.17948236572227466, 'soc_train_max': 0.8229098320007324, 'identification_rmse_V': 0.0036053358116654444, 'identification_n_windows': 69, 'identification_success': True}, 'optimizer': 'scipy TRF nonlinear least squares', 'nfev': 11, 'message': '`ftol` termination condition is satisfied.', 'elapsed_seconds': 0.38835058303084224, 'internal_soc': True, 'eta': 1.0, 'solver': 'classical RK4', 'tau_bounds_s': [1.0, 10000.0], 'bound_hits': []}
+COMPLETE calce_ecm_1rc_nls 2026-11-01T04:41:41.397910+00:00
+START calce_ecm_1rc_nls 2026-11-01T04:47:51.026856+00:00
+RESUME results/unified/checkpoints/calce/ecm_1rc_nls.json
+COMPLETE calce_ecm_1rc_nls 2026-11-01T04:47:51.042944+00:00

@@ -1,0 +1,27 @@
+START calce_output_residual_seed51 2026-11-01T22:38:49.641724+00:00
+  epoch    1  train 0.000749  val 0.052422  lr 6.67e-05  (best 0.052422 @ ep 1)
+  epoch    2  train 0.000741  val 0.052378  lr 1.33e-04  (best 0.052378 @ ep 2)
+  epoch    3  train 0.000748  val 0.052288  lr 2.00e-04  (best 0.052288 @ ep 3)
+  epoch    4  train 0.000756  val 0.052268  lr 2.00e-04  (best 0.052268 @ ep 4)
+  epoch    5  train 0.000756  val 0.052302  lr 1.99e-04  (best 0.052268 @ ep 4)
+  epoch    6  train 0.000745  val 0.052339  lr 1.97e-04  (best 0.052268 @ ep 4)
+  epoch    7  train 0.000745  val 0.052382  lr 1.94e-04  (best 0.052268 @ ep 4)
+  epoch    8  train 0.000759  val 0.052442  lr 1.89e-04  (best 0.052268 @ ep 4)
+  epoch    9  train 0.000763  val 0.052510  lr 1.84e-04  (best 0.052268 @ ep 4)
+  epoch   10  train 0.000752  val 0.052515  lr 1.77e-04  (best 0.052268 @ ep 4)
+  epoch   11  train 0.000748  val 0.052474  lr 1.69e-04  (best 0.052268 @ ep 4)
+  epoch   12  train 0.000744  val 0.052387  lr 1.60e-04  (best 0.052268 @ ep 4)
+  early stopping at epoch 12 (no improvement for 8 epochs)
+METRICS calce output_residual 51 FUDS_25C {'windowed': {'mae': 13.135189441242302, 'rmse': 40.18609002105724, 'max_error': 532.116174697876, 'p99': 200.2337932586661}, 'continuous': {'mae': 13.198164519004022, 'rmse': 40.39562973039057, 'max_error': 534.1565608978271, 'p99': 202.22764015197663}}
+METRICS calce output_residual 51 DST_25C {'windowed': {'mae': 5.863094535360846, 'rmse': 26.26661407348668, 'max_error': 745.9554672241211, 'p99': 47.25775718688945}, 'continuous': {'mae': 5.27852345732745, 'rmse': 25.92714015169447, 'max_error': 743.9494132995605, 'p99': 43.87078285217278}}
+METRICS calce output_residual 51 US06_25C {'windowed': {'mae': 123.79720482698363, 'rmse': 137.31220671396684, 'max_error': 678.9379119873047, 'p99': 370.8090019226072}, 'continuous': {'mae': 122.12480927504778, 'rmse': 135.65789249081016, 'max_error': 676.8245697021484, 'p99': 368.63752365112293}}
+METRICS calce output_residual 51 BJDST_25C {'windowed': {'mae': 123.57796918685173, 'rmse': 139.18314870535713, 'max_error': 924.9262809753418, 'p99': 306.65088653564396}, 'continuous': {'mae': 122.98829929838622, 'rmse': 138.6796480584265, 'max_error': 924.8430728912354, 'p99': 306.4453124999995}}
+METRICS calce output_residual 51 FUDS_0C {'windowed': {'mae': 53.95937123202019, 'rmse': 72.13568346869397, 'max_error': 643.7547206878662, 'p99': 239.85114574432367}, 'continuous': {'mae': 53.396677080829114, 'rmse': 71.58398763873709, 'max_error': 643.3110237121582, 'p99': 238.72891187667832}}
+METRICS calce output_residual 51 DST_0C {'windowed': {'mae': 55.636127723649906, 'rmse': 76.26219477318114, 'max_error': 676.2785911560059, 'p99': 287.40800380706787}, 'continuous': {'mae': 54.70719971658288, 'rmse': 75.34265735544386, 'max_error': 674.3805408477783, 'p99': 285.9140396118165}}
+METRICS calce output_residual 51 US06_0C {'windowed': {'mae': 64.45335423331541, 'rmse': 85.89587598951336, 'max_error': 701.8213272094727, 'p99': 311.6822457313534}, 'continuous': {'mae': 63.85659175816247, 'rmse': 85.30917519036798, 'max_error': 700.836181640625, 'p99': 310.32391071319574}}
+METRICS calce output_residual 51 BJDST_0C {'windowed': {'mae': 75.11862768428027, 'rmse': 114.29472210530615, 'max_error': 821.6853141784668, 'p99': 498.1258857250197}, 'continuous': {'mae': 74.43512729169794, 'rmse': 113.73962788505682, 'max_error': 821.3484287261963, 'p99': 497.6009798049917}}
+METRICS calce output_residual 51 FUDS_45C {'windowed': {'mae': 17.326761972715435, 'rmse': 56.683333963634624, 'max_error': 642.5299644470215, 'p99': 323.81750345229943}, 'continuous': {'mae': 17.28652710202563, 'rmse': 56.73535921719615, 'max_error': 642.5299644470215, 'p99': 323.81739616393884}}
+METRICS calce output_residual 51 DST_45C {'windowed': {'mae': 16.87934369165096, 'rmse': 53.354851279781435, 'max_error': 514.7123336791992, 'p99': 307.6155185699463}, 'continuous': {'mae': 17.36730084629626, 'rmse': 53.24318713793047, 'max_error': 514.7123336791992, 'p99': 307.6155185699463}}
+METRICS calce output_residual 51 US06_45C {'windowed': {'mae': 15.6952392143417, 'rmse': 52.438412996031666, 'max_error': 715.2988910675049, 'p99': 294.5580947399138}, 'continuous': {'mae': 15.853057324897165, 'rmse': 52.31533965231889, 'max_error': 715.2988910675049, 'p99': 294.55442428588856}}
+METRICS calce output_residual 51 BJDST_45C {'windowed': {'mae': 18.152782214052028, 'rmse': 69.58028367967427, 'max_error': 734.515905380249, 'p99': 391.0483121871947}, 'continuous': {'mae': 18.14681045948122, 'rmse': 69.3148426619815, 'max_error': 734.515905380249, 'p99': 391.0459303855895}}
+COMPLETE calce_output_residual_seed51 2026-11-01T22:38:52.136437+00:00

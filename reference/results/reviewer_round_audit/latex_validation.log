@@ -1,0 +1,439 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.26 (TeX Live 2024) (preloaded format=pdflatex)
+ restricted \write18 enabled.
+entering extended mode
+
+(/Users/apple/.copilot/session-state/08011399-b7c0-4462-8eb7-52d70a3020c8/files
+/reviewer_tables_check.tex
+LaTeX2e <2024-11-01>
+L3 programming layer <2024-11-02>
+(/usr/local/texlive/2024/texmf-dist/tex/latex/ieeetran/IEEEtran.cls
+Document Class: IEEEtran 2015/08/26 V1.8b by Michael Shell
+-- See the "IEEEtran_HOWTO" manual for usage information.
+-- http://www.michaelshell.org/tex/ieeetran/
+(/usr/local/texlive/2024/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+-- Using 8.5in x 11in (letter) paper.
+-- Using PDF output.
+-- This is a 10 point document.
+) (/usr/local/texlive/2024/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2024/texmf-dist/tex/latex/l3backend/l3backend-pdftex.def)
+(/Users/apple/.copilot/session-state/08011399-b7c0-4462-8eb7-52d70a3020c8/files
+/reviewer_tables_check.aux)
+-- Lines per column: 58 (exact).
+
+(/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/pap
+er_ECM_UDE1/results/paper_tables/E1.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/8 42.718 [42.301, 43.054];
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/8 42.734 [42.296, 43.039];
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--12
+[]\OT1/ptm/m/n/8 43.246 [42.751, 43.630];
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ptm/m/n/8 36.658 [36.364, 36.773];
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ptm/m/n/8 36.658 [36.349, 36.768];
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--13
+[]\OT1/ptm/m/n/8 36.900 [36.730, 37.039];
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ptm/m/n/8 94.206 [93.876, 94.354];
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ptm/m/n/8 94.207 [93.852, 94.333];
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--14
+[]\OT1/ptm/m/n/8 94.432 [94.141, 94.703];
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ptm/m/n/8 34.088 [33.804, 34.188];
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ptm/m/n/8 34.087 [33.802, 34.207];
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--17
+[]\OT1/ptm/m/n/8 34.312 [34.140, 34.396];
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]\OT1/ptm/m/n/8 15.817 [15.587, 15.869];
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--17
+[]\OT1/ptm/m/n/8 15.816 [15.585, 15.882];
+
+Underfull \hbox (badness 10000) in paragraph at lines 17--18
+[]\OT1/ptm/m/n/8 15.970 [15.881, 16.066];
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]\OT1/ptm/m/n/8 35.915 [35.544, 36.076];
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]\OT1/ptm/m/n/8 35.914 [35.539, 36.090];
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--19
+[]\OT1/ptm/m/n/8 36.199 [36.087, 36.266];
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]\OT1/ptm/m/n/8 13.271 [13.103, 13.367];
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]\OT1/ptm/m/n/8 13.274 [13.102, 13.376];
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--20
+[]\OT1/ptm/m/n/8 13.252 [13.200, 13.377];
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]\OT1/ptm/m/n/8 53.340 [53.173, 53.414];
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--21
+[]\OT1/ptm/m/n/8 53.319 [53.182, 53.397];
+
+Underfull \hbox (badness 10000) in paragraph at lines 21--22
+[]\OT1/ptm/m/n/8 53.473 [52.498, 53.671];
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[]\OT1/ptm/m/n/8 54.649 [54.480, 54.725];
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--22
+[]\OT1/ptm/m/n/8 54.627 [54.490, 54.707];
+
+Underfull \hbox (badness 10000) in paragraph at lines 22--23
+[]\OT1/ptm/m/n/8 54.793 [53.782, 54.997];
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]\OT1/ptm/m/n/8 63.795 [63.607, 63.875];
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--23
+[]\OT1/ptm/m/n/8 63.772 [63.617, 63.857];
+
+Underfull \hbox (badness 10000) in paragraph at lines 23--24
+[]\OT1/ptm/m/n/8 63.950 [62.897, 64.160];
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]\OT1/ptm/m/n/8 74.375 [74.183, 74.453];
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--24
+[]\OT1/ptm/m/n/8 74.353 [74.194, 74.435];
+
+Underfull \hbox (badness 10000) in paragraph at lines 24--25
+[]\OT1/ptm/m/n/8 74.537 [73.499, 74.740];
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]\OT1/ptm/m/n/8 17.455 [17.292, 17.536];
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--25
+[]\OT1/ptm/m/n/8 17.454 [17.287, 17.515];
+
+Underfull \hbox (badness 10000) in paragraph at lines 25--26
+[]\OT1/ptm/m/n/8 17.577 [17.192, 17.839];
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]\OT1/ptm/m/n/8 17.494 [17.371, 17.593];
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--26
+[]\OT1/ptm/m/n/8 17.490 [17.367, 17.561];
+
+Underfull \hbox (badness 10000) in paragraph at lines 26--27
+[]\OT1/ptm/m/n/8 17.682 [17.170, 18.067];
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+[]\OT1/ptm/m/n/8 16.036 [15.857, 16.123];
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--27
+[]\OT1/ptm/m/n/8 16.036 [15.853, 16.104];
+
+Underfull \hbox (badness 10000) in paragraph at lines 27--28
+[]\OT1/ptm/m/n/8 16.155 [15.765, 16.423];
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]\OT1/ptm/m/n/8 18.343 [18.148, 18.440];
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--28
+[]\OT1/ptm/m/n/8 18.343 [18.147, 18.418];
+
+Underfull \hbox (badness 10000) in paragraph at lines 28--29
+[]\OT1/ptm/m/n/8 18.469 [18.047, 18.777];
+)
+
+[1{/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}{/usr/l
+ocal/texlive/2024/texmf-dist/fonts/enc/dvips/base/8r.enc}] [2]
+(/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/pap
+er_ECM_UDE1/results/paper_tables/conditions.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/8 guarded80% train/20%
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]\OT1/ptm/m/n/8 guarded80% train/20%
+
+Underfull \hbox (badness 10000) in paragraph at lines 20--20
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 38--38
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 39--39
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 40--40
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 41--41
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 42--42
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 43--43
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 44--44
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 45--45
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 10000) in paragraph at lines 73--73
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 73--73
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 74--74
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 74--74
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 75--75
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 75--75
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 76--76
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 76--76
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 92--92
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 92--92
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 93--93
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 93--93
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 94--94
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 94--94
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 95--95
+[]\OT1/ptm/m/n/8 documented[]fallback;
+
+Underfull \hbox (badness 1769) in paragraph at lines 95--95
+\OT1/ptm/m/n/8 z0=1.00000000; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 96--96
+[]\OT1/ptm/m/n/8 samefile fullcharge count
+
+Underfull \hbox (badness 1769) in paragraph at lines 96--96
+\OT1/ptm/m/n/8 z0=0.79997217; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 97--97
+[]\OT1/ptm/m/n/8 samefile fullcharge count
+
+Underfull \hbox (badness 1769) in paragraph at lines 97--97
+\OT1/ptm/m/n/8 z0=0.79997312; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 98--98
+[]\OT1/ptm/m/n/8 samefile fullcharge count
+
+Underfull \hbox (badness 1769) in paragraph at lines 98--98
+\OT1/ptm/m/n/8 z0=0.79996941; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 99--99
+[]\OT1/ptm/m/n/8 samefile fullcharge count
+
+Underfull \hbox (badness 1769) in paragraph at lines 99--99
+\OT1/ptm/m/n/8 z0=0.79994404; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 100--100
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 100--100
+\OT1/ptm/m/n/8 z0=0.83509681; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 101--101
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 101--101
+\OT1/ptm/m/n/8 z0=0.83607069; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 102--102
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 102--102
+\OT1/ptm/m/n/8 z0=0.83520495; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 103--103
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 103--103
+\OT1/ptm/m/n/8 z0=0.83520495; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 119--119
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 119--119
+\OT1/ptm/m/n/8 z0=0.82922714; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 120--120
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 120--120
+\OT1/ptm/m/n/8 z0=0.82679917; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 121--121
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 121--121
+\OT1/ptm/m/n/8 z0=0.82971471; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 122--122
+[]\OT1/ptm/m/n/8 inverse[]independent[]OCV;
+
+Underfull \hbox (badness 1769) in paragraph at lines 122--122
+\OT1/ptm/m/n/8 z0=0.82955211; V6 trans-fers fit-ted
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 153--153
+[]\OT1/ptm/m/n/8 calibration DST0/25/50
+
+Underfull \hbox (badness 10000) in paragraph at lines 154--154
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 155--155
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 156--156
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]\OT1/ptm/m/n/8 calibration DST0/25/50
+
+Underfull \hbox (badness 10000) in paragraph at lines 173--173
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 174--174
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 175--175
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]\OT1/ptm/m/n/8 CCCV z0=1 ref-er-ence; pre-dicted
+
+Underfull \hbox (badness 10000) in paragraph at lines 176--176
+[]\OT1/ptm/m/n/8 calibration DST0/25/50
+) [3] [4] [5] [6] [7]
+(/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/pap
+er_ECM_UDE1/results/paper_tables/criteria.tex
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/8 TOST +/-1 mV; ex-act shifted
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\OT1/ptm/m/n/8 Wilcoxon; both pHolm<.05; 20
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+[]\OT1/ptm/m/n/8 continuous gra-di-
+
+Underfull \hbox (badness 10000) in paragraph at lines 11--11
+\OT1/ptm/m/n/8 ent17/20,residual17/20,UDE16/20;
+
+Underfull \hbox (badness 10000) in paragraph at lines 12--12
+[]\OT1/ptm/m/n/8 see con-di-tion-wise
+
+Underfull \hbox (badness 2435) in paragraph at lines 13--13
+[]\OT1/ptm/m/n/8 ESC gain>=10% ver-sus-bestV1/V2
+
+Underfull \hbox (badness 4832) in paragraph at lines 13--13
+\OT1/ptm/m/n/8 and |h|>.9 less90% time on
+
+Underfull \hbox (badness 10000) in paragraph at lines 13--13
+[]\OT1/ptm/m/n/8 A123-1.62/-6.14%; Mende-
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--14
+[]\OT1/ptm/m/n/8 historical four-pos-i-tive; cor-rected
+
+Underfull \hbox (badness 2707) in paragraph at lines 14--14
+[]\OT1/ptm/m/n/8 A/B/Pan his-tor-i-cal-pos-
+
+Underfull \hbox (badness 10000) in paragraph at lines 14--15
+[]\OT1/ptm/m/n/8 50e85e1;78fefb3;308dc2a
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]\OT1/ptm/m/n/8 E3 wide
+
+Underfull \hbox (badness 10000) in paragraph at lines 15--15
+[]\OT1/ptm/m/n/8 DST:38.94%; US06:46.03%;
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ptm/m/n/8 E3
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+[]\OT1/ptm/m/n/8 V7m >=25% all-sameT-tar-gets;
+
+Underfull \hbox (badness 4353) in paragraph at lines 16--16
+[]\OT1/ptm/m/n/8 Mendeley4.04/-1.72%; A/Pan/CALCE
+
+Underfull \hbox (badness 10000) in paragraph at lines 16--16
+\OT1/ptm/m/n/8 sourceNL-Snon-con-verged,
+
+Underfull \hbox (badness 1527) in paragraph at lines 17--18
+[]\OT1/ptm/m/n/8 78fefb3;3d0d047 lo-cal-diag-
+
+Underfull \hbox (badness 4479) in paragraph at lines 18--18
+[]\OT1/ptm/m/n/8 E4 in-ter-po-
+
+Underfull \hbox (badness 10000) in paragraph at lines 18--18
+[]\OT1/ptm/m/n/8 P2:61.83,62.03,71.09,116.48%;
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]\OT1/ptm/m/n/8 matched[]temperature:conjunto;
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+\OT1/ptm/m/n/8 ther-mal[]transfer:conjunto;
+
+Underfull \hbox (badness 10000) in paragraph at lines 19--19
+[]\OT1/ptm/m/n/8 descriptive block-wise,
+) [8]
+(/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/pap
+er_ECM_UDE1/results/variant_tost/comparison.tex) [9]
+(/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/pap
+er_ECM_UDE1/results/training_audit/epochs.tex) [10] [11]
+(/Users/apple/.copilot/session-state/08011399-b7c0-4462-8eb7-52d70a3020c8/files
+/reviewer_tables_check.aux) )
+(see the transcript file for additional information)</usr/local/texlive/2024/te
+xmf-dist/fonts/type1/urw/times/utmr8a.pfb>
+Output written on /Users/apple/.copilot/session-state/08011399-b7c0-4462-8eb7-5
+2d70a3020c8/files/reviewer_tables_check.pdf (11 pages, 40785 bytes).
+Transcript written on /Users/apple/.copilot/session-state/08011399-b7c0-4462-8e
+b7-52d70a3020c8/files/reviewer_tables_check.log.

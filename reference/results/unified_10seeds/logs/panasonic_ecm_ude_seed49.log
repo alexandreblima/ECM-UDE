@@ -1,0 +1,20 @@
+START panasonic_ecm_ude_seed49 2026-11-01T22:08:51.455003+00:00
+  epoch    1  train 0.001559  val 0.088938  lr 6.67e-05  (best 0.088938 @ ep 1)
+  epoch    2  train 0.001552  val 0.089169  lr 1.33e-04  (best 0.088938 @ ep 1)
+  epoch    3  train 0.001536  val 0.090115  lr 2.00e-04  (best 0.088938 @ ep 1)
+  epoch    4  train 0.001524  val 0.091413  lr 2.00e-04  (best 0.088938 @ ep 1)
+  epoch    5  train 0.001512  val 0.092091  lr 1.99e-04  (best 0.088938 @ ep 1)
+  epoch    6  train 0.001506  val 0.092534  lr 1.97e-04  (best 0.088938 @ ep 1)
+  epoch    7  train 0.001509  val 0.093467  lr 1.94e-04  (best 0.088938 @ ep 1)
+  epoch    8  train 0.001502  val 0.093448  lr 1.89e-04  (best 0.088938 @ ep 1)
+  epoch    9  train 0.001486  val 0.094212  lr 1.84e-04  (best 0.088938 @ ep 1)
+  early stopping at epoch 9 (no improvement for 8 epochs)
+METRICS panasonic ecm_ude 49 UDDS_25C {'windowed': {'mae': 43.420610637798156, 'rmse': 57.488934716254484, 'max_error': 580.1352262496948, 'p99': 176.59632921218866}, 'continuous': {'mae': 43.514321316749665, 'rmse': 57.510673720321, 'max_error': 582.1735858917236, 'p99': 177.27659702301}}
+METRICS panasonic ecm_ude 49 UDDS_10C {'windowed': {'mae': 37.68676229637725, 'rmse': 58.6965957956657, 'max_error': 705.9507369995117, 'p99': 258.28549623489374}, 'continuous': {'mae': 36.9051710564808, 'rmse': 58.03200401619831, 'max_error': 706.801176071167, 'p99': 257.90721893310547}}
+METRICS panasonic ecm_ude 49 UDDS_0C {'windowed': {'mae': 96.29270616044664, 'rmse': 110.22707197898781, 'max_error': 806.4521551132202, 'p99': 284.57492351531977}, 'continuous': {'mae': 94.42015622861894, 'rmse': 108.34892655828104, 'max_error': 793.5445308685303, 'p99': 282.99172878265375}}
+METRICS panasonic ecm_ude 49 UDDS_-10C {'windowed': {'mae': 174.06312741239296, 'rmse': 192.48298721122785, 'max_error': 696.9853639602661, 'p99': 455.54507255554176}, 'continuous': {'mae': 171.89805410658778, 'rmse': 190.29219672081663, 'max_error': 694.1983699798584, 'p99': 451.638069152832}}
+METRICS panasonic ecm_ude 49 UDDS_-20C {'windowed': {'mae': 295.15593548015863, 'rmse': 329.8301937723783, 'max_error': 1044.39115524292, 'p99': 788.8747715950011}, 'continuous': {'mae': 292.9800371093468, 'rmse': 327.58946705025244, 'max_error': 1044.3174839019775, 'p99': 782.7285075187674}}
+METRICS panasonic ecm_ude 49 US06_25C {'windowed': {'mae': 38.906207387579144, 'rmse': 53.81373857595586, 'max_error': 440.81854820251465, 'p99': 181.67440414428748}, 'continuous': {'mae': 34.354511434665916, 'rmse': 49.811959577612704, 'max_error': 426.922082901001, 'p99': 174.99361038208016}}
+METRICS panasonic ecm_ude 49 LA92_25C {'windowed': {'mae': 17.6424012165661, 'rmse': 30.142812921480004, 'max_error': 509.03642177581787, 'p99': 118.12367796897881}, 'continuous': {'mae': 16.066133154432542, 'rmse': 28.623054376145728, 'max_error': 508.00371170043945, 'p99': 114.10894632339311}}
+METRICS panasonic ecm_ude 49 HWFET_25C {'windowed': {'mae': 39.80338648574008, 'rmse': 73.39754089325557, 'max_error': 690.35804271698, 'p99': 393.22652816773103}, 'continuous': {'mae': 36.252561115234776, 'rmse': 71.20818257683086, 'max_error': 688.5640621185303, 'p99': 382.5612068176273}}
+COMPLETE panasonic_ecm_ude_seed49 2026-11-01T22:09:52.901714+00:00

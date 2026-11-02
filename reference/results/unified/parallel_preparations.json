@@ -1,0 +1,67 @@
+[
+  {
+    "dataset": "panasonic",
+    "model": "lstm",
+    "seed": 44,
+    "worker_record": "results/unified/staging/seed44/worker.json",
+    "checkpoint": "results/unified/checkpoints/panasonic/lstm_seed44.pt",
+    "sha256": "8386e04aa39df583ec7eae4c9a2de48b111159eaa2e11375d2d76037d3c9b9b3"
+  },
+  {
+    "dataset": "panasonic",
+    "model": "lstm",
+    "seed": 45,
+    "worker_record": "results/unified/staging/seed45/worker.json",
+    "checkpoint": "results/unified/checkpoints/panasonic/lstm_seed45.pt",
+    "sha256": "8ebdc1e63facd274873a1719da1a5f778fecfd6e4cc50d882f5bfa13e9dd0593"
+  },
+  {
+    "dataset": "panasonic",
+    "model": "lstm",
+    "seed": 46,
+    "worker_record": "results/unified/staging/seed46/worker.json",
+    "checkpoint": "results/unified/checkpoints/panasonic/lstm_seed46.pt",
+    "sha256": "adae2557f8185525d912e609371c2e24c91ededcbb6534154e83f4db577b8e13"
+  },
+  {
+    "dataset": "calce",
+    "models": "all",
+    "worker_summary": "results/unified/staging/calce/summary.json",
+    "source_commit": "e10d552dc3cb18e7effe87ae850409b8d5f31c22",
+    "source_sha256": {
+      "analyze_f_theta.py": "c7c10d72f3ea59b416fccbd13d52cc8d9eece02c1f6a4a42da9159f60b866dc9",
+      "analyze_window_position_error.py": "22df023fc62ca9e7dbce333138ac599d924015815a8fa06e0dd94fc2ad97ed9e",
+      "audit_ocv_clip_vs_integrator.py": "cc3d8744b8eab318b4379fb2422dd8b98e223585b747a9f658490af0ac28f5dc",
+      "benchmark_computational_cost.py": "cafd4279b0662f8bd62d7bfbedcf9dd6017d95b205b2115ceef5bff6ff72b231",
+      "compare_integration_scheme.py": "304f483c68b2a75e468bdfa39ac8586ad50450a7e7c83edf8fb4c817b4ab4182",
+      "compare_ocv_curves.py": "16e2b878a3e5e10ae4e97bf6b279ce4545355a5f7ad264dc60c4037cf4a4eb38",
+      "compare_soc_trajectories.py": "5d33fff59e821db7ef8650a66dcc6dbebbe990364e275d205a14c508e8066ede",
+      "data.py": "dc78565451b5e6cebba720f0f5632fc4c50887601bdc0e87f34d866e4b4711a9",
+      "data_calce.py": "2ea9194fe85e53fca64618d17f1749b3c142ac28fa59f9d0789f25fad2e4d64e",
+      "ecm.py": "2e766a1c53d733d54a7f0edd2d1e113e858e8717ad70fbceb474ba225bdbbcf7",
+      "ecm_2rc.py": "260fd804fb6e02c177597a512794937ef1aa2bf396699f850e71e2c374b026b9",
+      "evaluation.py": "a8722c692d0448fd4d142c8f5345a805828cdb079fe32d2f8d4d80820f4333b6",
+      "exp1_soc_bias_drift_sensitivity.py": "315e0948d7c30e00ce3631a2f82f6b5f6d54ca2cbd6702e4cce11bb59a6dbec6",
+      "exp1_soc_noise_sensitivity.py": "02a3412836140e7cd20ede2089ad103e076b6d10cc6e088be368c50286e47fef",
+      "exp1_ude.py": "37801836f08f7223c19e375680745744311a0b883557b058fdd10f5d08b5c8fd",
+      "exp2_ude_temperature.py": "bc059a57feb9b83827cd4f3d884886a235240daddb76de168ef9036bba463d82",
+      "exp3_ude_cycle.py": "4822e4396ea88944b7f7632370439a2a4f991b34c43d549c91ca58dab0add33f",
+      "exp_c3_ablation.py": "b442aad24377e6479eebbf4be2d5562fd42d1513e2fb7a7f0fcd80b6701b5b1a",
+      "exp_c4_ecm2rc.py": "db707e98e903a9de2be8662e5725bd768462da4820272f6e02e094a68e1be9ca",
+      "exp_c4_ecm2rc_transfer.py": "9be9664e77f873559907cf0d4821c58deadbd7f3f59d47de7ec41ffa7316bf0e",
+      "exp_calce_benchmark.py": "4359ba348b8d9ed6e5c94922ff98e0e6ded5d18bf9f261134a968c331fb29ebf",
+      "exp_unified.py": "d2e78bbfc21f3232fb63217af03c1f3532cb354613281efa5ec1e207e9abf647",
+      "find_max_error_outlier.py": "8b85f8e359879be3f5e73ceaefa03b64f5506d0c78332aca2016839f5935d181",
+      "make_results_table.py": "cd0e059c625171feced5e3f0c02aec1982a41e1b3e644894ac2a375a0d4e0720",
+      "metrics.py": "d3f5ca38dd1b65a0593db9c608c5a4140fb1d97bbda89bfd78dff6bf266940e0",
+      "models.py": "b59768d74c5660205ff3ea16aa8454b6c1e2c7210f449a3827918a7b5ec351c7",
+      "plots_paper1.py": "23f9c54c589727122940d0b31dc5f9e4ce4de74b28e3cdecb19acc7cdd5e2b74",
+      "protocol.py": "999ae81a38e1e21425d4055c69a65bf03ad902c1e4cad415834718a3b7303b0e",
+      "test_unified_protocol.py": "2608c896e68d6010e0953fe948f5cef7ff22b7f834b435cc29ceb7fea3d89522",
+      "training.py": "97e99dc89fa061093309b7337adbdcc2e22d904c92ab6e6afcb459b045bad5f4",
+      "ude.py": "f9a7b0781c736fcc9a3ad08365c1d110a486259278c9c78cd789c3ae2edef94a",
+      "unified_dynamics.py": "29414f80efb874457a3400831cd9782458c6be278099cbcaf68752dd20d79284",
+      "utils.py": "2cc10fde4bbb4c57bf1ebf6b663a84cf401a9630d052863509fafc5ddd36717b"
+    }
+  }
+]

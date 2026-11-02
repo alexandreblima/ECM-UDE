@@ -1,0 +1,4341 @@
+{
+  "complete": true,
+  "protocol": {
+    "version": "paper-v2-calce-z0-1",
+    "registered_before_reevaluation": true,
+    "conditions": [
+      "US06_25C",
+      "BJDST_25C"
+    ],
+    "priority1": "Find last same-file CCCV full-charge end before step7: recorded charge at4.2V, taper<=0.02A, then rest. z0=1 - (net_discharge_counter_at_profile_start - net_discharge_counter_at_full_charge)/2Ah. Net=Discharge_Capacity-Charge_Capacity; verify no decreasing cumulative charge/discharge counters in preparation, current sign agrees. Count all intervening stages; never infer from target dynamic endpoint.",
+    "priority2": "Only if no valid full-charge anchor: independent SP1 low-current25C OCV inverse of mean voltage in last60s of immediately preceding contiguous zero-current rest with |I|<=0.02A; require >=60s and voltage within support. No extrapolation.",
+    "failure": "Neither anchor available =>condition excluded from principal analysis, no silent z0=1 substitute.",
+    "unified": "Reevaluate all original6models, four trainables with10seeds, existing checkpoint weights and source train-only normalization. Identical target data/dt/windows/masks/solver. Update SoC=z0-(net-net0)/Qnom; do not retrain, refit RC or change preprocessing.",
+    "static": "Reuse fixed source V1/V5/V6/V7 from results/static_replication/calce. V1/V5 use corrected profile z0; V6/V7 keep source-fitted Q and z0, as confirmed. Same1s continuous simulator and original OCV25.",
+    "before_after": "Full metrics before/after; compare historical CALCE static all-primary-target criterion with corrected US06/BJDST and unchanged DST25. Preserve historical verdicts; label hypothetical revised verdict. Neural comparison described by per-seed differences, no new unregistered inference.",
+    "main_exclusions": "Old fallback results remain excluded principal; corrected conditions eligible only if rule succeeds. V5 nonphysical extrapolation remains excluded principal separately regardless of z0 success.",
+    "output": "results/calce_z0_fix, input/source/checkpoint hashes, anchor rows/counters/rest provenance, per-seed metrics, static trajectories, tablesCSV/TEX and report",
+    "preserve_old_results": true
+  },
+  "protocol_sha256": "1e7e86c04d8ff70c8c8fd92766e2999db0e3ad5f3afaa414ad3bf1da5403f1e7",
+  "preregistration_commit": "308dc2a",
+  "source_sha256": "703d83efb2d0c56b8715c23ae1b6b977221d944166dd310a0600d078b0c2cc31",
+  "manifest": {
+    "dependencies": {
+      "numpy": "2.2.6",
+      "scipy": "1.15.3",
+      "torch": "2.8.0",
+      "openpyxl": "3.1.5"
+    },
+    "python": "3.10.18",
+    "platform": "macOS-26.6.2-arm64-arm-64bit",
+    "shared_source_sha256": {
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_unified.py": "5570859125f4ce0be6718c60b54f733c02d01709a9167d394f4bd1935fd7f78c",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/protocol.py": "999ae81a38e1e21425d4055c69a65bf03ad902c1e4cad415834718a3b7303b0e",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/data.py": "dc78565451b5e6cebba720f0f5632fc4c50887601bdc0e87f34d866e4b4711a9",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/data_calce.py": "2ea9194fe85e53fca64618d17f1749b3c142ac28fa59f9d0789f25fad2e4d64e",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_lfp_static.py": "5216a1eea83858f245185904b3052d2d0df1cb7e3011e2877e87b4968697b514",
+      "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_static_replication.py": "6bbaf2e2df5fb981eaa63d2ef9d4246affbae6cbd989d7babcb4103bc989bc6a"
+    },
+    "execution_commit": "81ac420b478ac62206db69da84b21f70ea287e67"
+  },
+  "audit_thresholds": {
+    "CV_nominal_V": 4.2,
+    "CV_min_recorded_V": 4.19,
+    "charge_taper_max_A": 0.02,
+    "rest_max_abs_current_A": 0.02,
+    "counter_decrease_tolerance_Ah": 1e-05,
+    "rest_min_positive_intervals": 2,
+    "max_interval_ratio": 2,
+    "OCV_rest_window_s": 60
+  },
+  "unified10_summary_sha256": "935c6ff2b997ab777061832d478432ba6983e80afdb90c3350cd79b721b7a76f",
+  "static_summary_sha256": "a4db5d3252b28bbad0cc530a78d1d8a69d7982cbd15fd87a5e7b470b12adaf44",
+  "calibration": {
+    "available": true,
+    "path": "../datasets/calce_20r_raw/extracted/SP1_25C_LC_OCV_11_5_2015/11_5_2015_low current OCV test_SP20-1.xlsx",
+    "sha256": "3c43eb4a2fa79256ecb66def693c62e6823a66efd68474d33b5e039ad2247dab",
+    "method": "SP1 independent 25C 0.05C discharge; trapezoidal current integration, Qnom=2Ah, z0=1; 0.002 SOC median bins; monotonic cumulative maximum",
+    "limitation": "low-current OCV approximation, different cell; fixed 25C curve reused zero-shot at all temperatures",
+    "voltage_range_V": [
+      3.311,
+      4.162
+    ]
+  },
+  "audits": {
+    "US06_25C": {
+      "eligible": true,
+      "method": "same_file_charge_count",
+      "z0": 0.7999694136592465,
+      "anchor_row": [
+        10044.267002350678,
+        3.0,
+        0.019847776740789413,
+        4.199491024017334,
+        1.996852053667715,
+        0.0
+      ],
+      "profile_first_row": [
+        12086.349845812138,
+        7.0,
+        -1.9243103452026844e-05,
+        3.9293038845062256,
+        1.996852053667715,
+        0.400061172681507
+      ],
+      "net_discharged_Ah_since_full": 0.4000611726815071,
+      "Qnom_Ah": 2.0,
+      "counter_monotonicity_verified": true,
+      "current_sign_agrees_with_counters": true,
+      "CC_to_CV_verified": true,
+      "rest_after_CV_verified": true,
+      "raw_path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/calce_20r_raw/extracted/SP2_25C_US06/11_11_2015_SP20-2_US06_80SOC.xls",
+      "sha256": "faf52bf0be8b027c0f7abaa0c08a8eccf11b7b566feb5d7739dbd789277edb53",
+      "old_z0": 1.0
+    },
+    "BJDST_25C": {
+      "eligible": true,
+      "method": "same_file_charge_count",
+      "z0": 0.79994404241519,
+      "anchor_row": [
+        10223.136326384658,
+        3.0,
+        0.019667167216539383,
+        4.199814796447754,
+        2.052720048539935,
+        0.0
+      ],
+      "profile_first_row": [
+        12265.16801577386,
+        7.0,
+        -0.11109394580125809,
+        3.9207239151000977,
+        2.052720048539935,
+        0.40011191516962
+      ],
+      "net_discharged_Ah_since_full": 0.40011191516961997,
+      "Qnom_Ah": 2.0,
+      "counter_monotonicity_verified": true,
+      "current_sign_agrees_with_counters": true,
+      "CC_to_CV_verified": true,
+      "rest_after_CV_verified": true,
+      "raw_path": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/datasets/calce_20r_raw/extracted/SP2_25C_BJDST/11_12_2015_SP20-2_BJDST_80SOC.xls",
+      "sha256": "6ff84c4fabf8897bb03d8574c6fb89069cdc164e8462f22c54b19c00dba677d7",
+      "old_z0": 1.0
+    }
+  },
+  "unified": {
+    "US06_25C": {
+      "ecm_1rc_nls": {
+        "deterministic": {
+          "before": {
+            "windowed": {
+              "mae": 123.70113902509698,
+              "rmse": 137.27495525868244,
+              "max_error": 679.4442204750605,
+              "p99": 371.2703793081327
+            },
+            "continuous": {
+              "mae": 122.04929670686755,
+              "rmse": 135.63949401918154,
+              "max_error": 677.3697125374767,
+              "p99": 369.14461422925274
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.044917418584447,
+              "rmse": 33.03351953760424,
+              "max_error": 485.5345541959597,
+              "p99": 172.2178821086813
+            },
+            "continuous": {
+              "mae": 20.74175619225978,
+              "rmse": 33.88580446793641,
+              "max_error": 485.5345412606362,
+              "p99": 171.6950787713965
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_1rc_nls.json",
+          "sha256": "36c5ff9ff924b635b4a71c3c7c7ea9370b8325b726fb272b418932f4bcfd638f"
+        }
+      },
+      "ecm_2rc_nls": {
+        "deterministic": {
+          "before": {
+            "windowed": {
+              "mae": 123.57511751702069,
+              "rmse": 137.16947052789737,
+              "max_error": 678.9724599332461,
+              "p99": 371.032544058655
+            },
+            "continuous": {
+              "mae": 121.80693809371812,
+              "rmse": 135.42866767826857,
+              "max_error": 676.9047579359864,
+              "p99": 368.88577858273254
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.001419643146292,
+              "rmse": 33.13079373520391,
+              "max_error": 486.43727563907424,
+              "p99": 173.3600835776048
+            },
+            "continuous": {
+              "mae": 20.794106670226174,
+              "rmse": 34.00083856506049,
+              "max_error": 486.4370823778414,
+              "p99": 173.01267560491186
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_2rc_nls.json",
+          "sha256": "4a572613bd2ea3b5d0303a9227f5dda6cf8aadd86e0df5fd9508660b6689e5b8"
+        }
+      },
+      "physics_gradient": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 123.62322490659456,
+              "rmse": 137.10603822320363,
+              "max_error": 679.1977882385254,
+              "p99": 371.08093738555885
+            },
+            "continuous": {
+              "mae": 121.9567297959998,
+              "rmse": 135.4537555418909,
+              "max_error": 677.070140838623,
+              "p99": 368.909864425659
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.16473097888373,
+              "rmse": 33.24479896566579,
+              "max_error": 486.051082611084,
+              "p99": 172.752981185913
+            },
+            "continuous": {
+              "mae": 20.870679338732533,
+              "rmse": 34.10620631174858,
+              "max_error": 486.051082611084,
+              "p99": 172.2305679321288
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed42.pt",
+          "sha256": "da093e57469a84929f873db2caf5aca538a3a3f282a27377856bc6cb009c24ae"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 123.63193673814085,
+              "rmse": 137.19854251977435,
+              "max_error": 679.3584823608398,
+              "p99": 371.1950826644895
+            },
+            "continuous": {
+              "mae": 121.98085349975739,
+              "rmse": 135.5634864100644,
+              "max_error": 677.2830486297607,
+              "p99": 369.06911849975575
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.120710894052024,
+              "rmse": 33.097660217230285,
+              "max_error": 485.6538772583008,
+              "p99": 172.34201431274408
+            },
+            "continuous": {
+              "mae": 20.815765768098757,
+              "rmse": 33.95076544010279,
+              "max_error": 485.6538772583008,
+              "p99": 171.8192958831786
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed43.pt",
+          "sha256": "6288b618db4ff9187e8d4a920ee03c693d9bd08f40afbb4d60f56124da5401a5"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 123.76206664724032,
+              "rmse": 137.29716168466453,
+              "max_error": 679.3029308319092,
+              "p99": 371.08471870422346
+            },
+            "continuous": {
+              "mae": 122.03316285015757,
+              "rmse": 135.5869282977538,
+              "max_error": 677.0398616790771,
+              "p99": 368.7838840484618
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.000735543505805,
+              "rmse": 33.01010082553225,
+              "max_error": 485.57233810424805,
+              "p99": 172.20480442047105
+            },
+            "continuous": {
+              "mae": 20.78665303887513,
+              "rmse": 33.917150447288435,
+              "max_error": 485.57233810424805,
+              "p99": 171.6811943054198
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed44.pt",
+          "sha256": "426098587163b4eb16c3642de75208efcd728a18588de20b345e7f8b8c770fb9"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 123.78466597939914,
+              "rmse": 137.33471884449557,
+              "max_error": 679.3279647827148,
+              "p99": 371.10576152801497
+            },
+            "continuous": {
+              "mae": 122.1112450122435,
+              "rmse": 135.67814933907025,
+              "max_error": 677.199125289917,
+              "p99": 368.93451690673817
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.016820401951588,
+              "rmse": 33.01777898361955,
+              "max_error": 485.57066917419434,
+              "p99": 172.19813346862787
+            },
+            "continuous": {
+              "mae": 20.73843111694993,
+              "rmse": 33.885951404808104,
+              "max_error": 485.57066917419434,
+              "p99": 171.67446136474598
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed45.pt",
+          "sha256": "4a615daeda3d707f2ec93554898d2bcb2cf8f89506f2ebf4b5fbbcd55c4018f1"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 123.73457951298087,
+              "rmse": 137.31967247322513,
+              "max_error": 679.5592308044434,
+              "p99": 371.3816070556639
+            },
+            "continuous": {
+              "mae": 122.07926420286302,
+              "rmse": 135.6809272756834,
+              "max_error": 677.4766445159912,
+              "p99": 369.24771308898914
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.000859977488787,
+              "rmse": 33.00187806541414,
+              "max_error": 485.4624271392822,
+              "p99": 172.14427947998038
+            },
+            "continuous": {
+              "mae": 20.701888232104153,
+              "rmse": 33.855764307536965,
+              "max_error": 485.4624271392822,
+              "p99": 171.6214084625243
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed46.pt",
+          "sha256": "7150f70596ac236849ef0dfb55def47471e9bfa592297093ae4441580931bc35"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 123.57572573638531,
+              "rmse": 137.1443847355732,
+              "max_error": 679.2948246002197,
+              "p99": 371.1354064941404
+            },
+            "continuous": {
+              "mae": 121.92466299487607,
+              "rmse": 135.5095683138509,
+              "max_error": 677.2208213806152,
+              "p99": 369.00973320007313
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.16527147839674,
+              "rmse": 33.11630235401751,
+              "max_error": 485.6710433959961,
+              "p99": 172.36610889434806
+            },
+            "continuous": {
+              "mae": 20.86080097362373,
+              "rmse": 33.97049817977464,
+              "max_error": 485.6710433959961,
+              "p99": 171.84343338012684
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed47.pt",
+          "sha256": "f95e44028d5ceedb53dc9ca0a2649102714000c4fc1091f6502b0b4c5d04a456"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 123.72212538138524,
+              "rmse": 137.3073623155946,
+              "max_error": 678.8649559020996,
+              "p99": 370.7981538772581
+            },
+            "continuous": {
+              "mae": 122.031728002593,
+              "rmse": 135.6336513965422,
+              "max_error": 676.6903400421143,
+              "p99": 368.57342720031727
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.23759968228951,
+              "rmse": 33.157938479581325,
+              "max_error": 485.684871673584,
+              "p99": 172.4528837203978
+            },
+            "continuous": {
+              "mae": 20.978614949246467,
+              "rmse": 34.04592743404471,
+              "max_error": 485.684871673584,
+              "p99": 171.9314670562743
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed48.pt",
+          "sha256": "d999ebfa11606b3f58c635abc785c2514b8399d362760d07830fe08c49100192"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 123.72638246306708,
+              "rmse": 137.29557406267685,
+              "max_error": 679.412841796875,
+              "p99": 371.25202655792214
+            },
+            "continuous": {
+              "mae": 122.06990919938787,
+              "rmse": 135.65571981852463,
+              "max_error": 677.32834815979,
+              "p99": 369.1148757934569
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.022852426662084,
+              "rmse": 33.01684996011465,
+              "max_error": 485.5165481567383,
+              "p99": 172.2145795822142
+            },
+            "continuous": {
+              "mae": 20.725310130852478,
+              "rmse": 33.87173005623545,
+              "max_error": 485.5165481567383,
+              "p99": 171.69203758239735
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed49.pt",
+          "sha256": "3308fc0985b75c3e802bf93eac0e5fcdf592cbb95ddaeea5677a0320d978b928"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 123.71542659435171,
+              "rmse": 137.28293572669972,
+              "max_error": 679.4002056121826,
+              "p99": 371.2360286712644
+            },
+            "continuous": {
+              "mae": 122.06015222267504,
+              "rmse": 135.64426607172405,
+              "max_error": 677.318811416626,
+              "p99": 369.1020584106444
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.029475645529182,
+              "rmse": 33.01875107900139,
+              "max_error": 485.51082611083984,
+              "p99": 172.20572471618638
+            },
+            "continuous": {
+              "mae": 20.7307200888883,
+              "rmse": 33.87311320949509,
+              "max_error": 485.51082611083984,
+              "p99": 171.6831588745116
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed50.pt",
+          "sha256": "28deebc4340678411e5ab3ecdea0b5a41a57a5693362cdd53108cbc1c9cbf43c"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 123.79401103494001,
+              "rmse": 137.31027398536656,
+              "max_error": 678.9569854736328,
+              "p99": 370.80981254577614
+            },
+            "continuous": {
+              "mae": 122.12184949543742,
+              "rmse": 135.65618677164636,
+              "max_error": 676.8438816070557,
+              "p99": 368.6403465270995
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.961061389641458,
+              "rmse": 32.92624097138955,
+              "max_error": 485.3634834289551,
+              "p99": 172.08760738372794
+            },
+            "continuous": {
+              "mae": 20.685455092718332,
+              "rmse": 33.79266910608845,
+              "max_error": 485.3634834289551,
+              "p99": 171.56543731689442
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed51.pt",
+          "sha256": "5c8315c06733ff06b1d43296f384467dca975ef0ca9e50250d95f19ab90ff6a6"
+        }
+      },
+      "output_residual": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 123.62097888573807,
+              "rmse": 137.10322707009487,
+              "max_error": 679.1939735412598,
+              "p99": 371.076645851135
+            },
+            "continuous": {
+              "mae": 121.95445308329566,
+              "rmse": 135.45091421844737,
+              "max_error": 677.0663261413574,
+              "p99": 368.9058113098143
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.166821040613396,
+              "rmse": 33.24656135170005,
+              "max_error": 486.0572814941406,
+              "p99": 172.75857448577875
+            },
+            "continuous": {
+              "mae": 20.872777674429777,
+              "rmse": 34.10798519089631,
+              "max_error": 486.0570430755615,
+              "p99": 172.23605155944813
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed42.pt",
+          "sha256": "c778cfe7c766ae29afab0bfd090167f570d02e4319f8cb9cc39be09aaf26d5df"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 123.64463376820444,
+              "rmse": 137.21146688459933,
+              "max_error": 679.3749332427979,
+              "p99": 371.2123966217039
+            },
+            "continuous": {
+              "mae": 121.9935078252343,
+              "rmse": 135.57637326515538,
+              "max_error": 677.2994995117188,
+              "p99": 369.0864086151122
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.110013697437992,
+              "rmse": 33.09428244886288,
+              "max_error": 485.6729507446289,
+              "p99": 172.36226081848136
+            },
+            "continuous": {
+              "mae": 20.804855679054256,
+              "rmse": 33.94671974464438,
+              "max_error": 485.6729507446289,
+              "p99": 171.83956146240223
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed43.pt",
+          "sha256": "611225057381aeebae8660ed0343a6371d2a61d4db8469016e6fd0f2ad7ce7c9"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 123.76459709126301,
+              "rmse": 137.29993381123433,
+              "max_error": 679.3084144592285,
+              "p99": 371.08933925628645
+            },
+            "continuous": {
+              "mae": 122.03583770883628,
+              "rmse": 135.58987376080296,
+              "max_error": 677.0458221435547,
+              "p99": 368.78901481628407
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.999288332922834,
+              "rmse": 33.01193684251488,
+              "max_error": 485.60333251953125,
+              "p99": 172.2356700897216
+            },
+            "continuous": {
+              "mae": 20.7847664857758,
+              "rmse": 33.91830449094497,
+              "max_error": 485.60333251953125,
+              "p99": 171.71213150024403
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed44.pt",
+          "sha256": "39c3c1b31d9c1762f0a0c5509baee1b1c78661a57542c8b12325b0115186fdd0"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 123.77446723771153,
+              "rmse": 137.3268617576872,
+              "max_error": 679.3224811553955,
+              "p99": 371.10051631927473
+            },
+            "continuous": {
+              "mae": 122.1010598908929,
+              "rmse": 135.67034570542612,
+              "max_error": 677.1941184997559,
+              "p99": 368.92921447753895
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.02683164461991,
+              "rmse": 33.02223335962336,
+              "max_error": 485.57496070861816,
+              "p99": 172.20288276672355
+            },
+            "continuous": {
+              "mae": 20.748483655713116,
+              "rmse": 33.890667070822346,
+              "max_error": 485.57496070861816,
+              "p99": 171.6790485382079
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed45.pt",
+          "sha256": "19d8ce4b13fc193671d0d4150fbb324d69218368f2d8649d9fe06c5decb52b18"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 123.75344919570655,
+              "rmse": 137.33854128107973,
+              "max_error": 679.581880569458,
+              "p99": 371.4055967330931
+            },
+            "continuous": {
+              "mae": 122.09807896178253,
+              "rmse": 135.69974718794452,
+              "max_error": 677.4992942810059,
+              "p99": 369.27156448364246
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.984911410904648,
+              "rmse": 32.99676151619261,
+              "max_error": 485.4893684387207,
+              "p99": 172.1730709075927
+            },
+            "continuous": {
+              "mae": 20.685631080451166,
+              "rmse": 33.8496617132969,
+              "max_error": 485.4893684387207,
+              "p99": 171.6502571105956
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed46.pt",
+          "sha256": "70782866317d66f7fdce052c6507c457ec93f3032d51485a7ec26a5885b54323"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 123.59881713732443,
+              "rmse": 137.16738956514064,
+              "max_error": 679.3208122253418,
+              "p99": 371.16612434387184
+            },
+            "continuous": {
+              "mae": 121.94769747726018,
+              "rmse": 135.53250690185945,
+              "max_error": 677.2468090057373,
+              "p99": 369.0397262573241
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.144696923266213,
+              "rmse": 33.10781882070221,
+              "max_error": 485.6829643249512,
+              "p99": 172.38301277160636
+            },
+            "continuous": {
+              "mae": 20.840008714330256,
+              "rmse": 33.961048034759244,
+              "max_error": 485.6829643249512,
+              "p99": 171.86054229736317
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed47.pt",
+          "sha256": "af0def3f2e47874a5ce03cb35fc5ff754f5957343242393de738eee0f40ddf65"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 123.72583742835795,
+              "rmse": 137.30979359623475,
+              "max_error": 678.8640022277832,
+              "p99": 370.7970523834226
+            },
+            "continuous": {
+              "mae": 122.03547880890042,
+              "rmse": 135.63609864598214,
+              "max_error": 676.6893863677979,
+              "p99": 368.57234954833973
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.2339259079476,
+              "rmse": 33.15578233401561,
+              "max_error": 485.67795753479004,
+              "p99": 172.4454021453856
+            },
+            "continuous": {
+              "mae": 20.97493281244535,
+              "rmse": 34.043747615710096,
+              "max_error": 485.67795753479004,
+              "p99": 171.92407608032215
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed48.pt",
+          "sha256": "d1191ebca4abd03973576a3aa66f1f6e51ec5a4f483bfa146dc31423b262a07f"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 123.72690220760526,
+              "rmse": 137.2980707419556,
+              "max_error": 679.4233322143555,
+              "p99": 371.2593030929563
+            },
+            "continuous": {
+              "mae": 122.07043873331283,
+              "rmse": 135.65825357276205,
+              "max_error": 677.3390769958496,
+              "p99": 369.12274360656727
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.0236735847598,
+              "rmse": 33.01799107795343,
+              "max_error": 485.5313301086426,
+              "p99": 172.22655773162828
+            },
+            "continuous": {
+              "mae": 20.725980808930238,
+              "rmse": 33.872678077037065,
+              "max_error": 485.5313301086426,
+              "p99": 171.70390129089344
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed49.pt",
+          "sha256": "af5f496082ffd5fc25f4c84903831168bdcca7d062662d9bb061e647b713eb9c"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 123.71224552298014,
+              "rmse": 137.2797582899605,
+              "max_error": 679.394006729126,
+              "p99": 371.23110771179176
+            },
+            "continuous": {
+              "mae": 122.05698116929365,
+              "rmse": 135.64109922823323,
+              "max_error": 677.3123741149902,
+              "p99": 369.0969944000243
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.032179275049707,
+              "rmse": 33.01926891250221,
+              "max_error": 485.5029582977295,
+              "p99": 172.19915866851798
+            },
+            "continuous": {
+              "mae": 20.733511247694178,
+              "rmse": 33.87383066546371,
+              "max_error": 485.5029582977295,
+              "p99": 171.67672157287586
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed50.pt",
+          "sha256": "d56ea5a063816f4d757528c1da20e692c657a976b2b4875d32a6f111f978325d"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 123.79720482698363,
+              "rmse": 137.31220671396684,
+              "max_error": 678.9379119873047,
+              "p99": 370.8090019226072
+            },
+            "continuous": {
+              "mae": 122.12480927504778,
+              "rmse": 135.65789249081016,
+              "max_error": 676.8245697021484,
+              "p99": 368.63752365112293
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.95871472061519,
+              "rmse": 32.9263765714163,
+              "max_error": 485.3649139404297,
+              "p99": 172.10785865783683
+            },
+            "continuous": {
+              "mae": 20.683384919482922,
+              "rmse": 33.792633597260114,
+              "max_error": 485.3649139404297,
+              "p99": 171.58599853515614
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed51.pt",
+          "sha256": "4ad94775c578ea966ebe07f3b2db834af9893c134180d33db8ab8cbafc2cc349"
+        }
+      },
+      "ecm_ude": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 123.66812146048103,
+              "rmse": 137.2217044210191,
+              "max_error": 679.1143417358398,
+              "p99": 370.96387386322
+            },
+            "continuous": {
+              "mae": 122.01009104642773,
+              "rmse": 135.57963699417434,
+              "max_error": 677.0210266113281,
+              "p99": 368.8220977783202
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.163681858968076,
+              "rmse": 33.12563684505086,
+              "max_error": 485.7149124145508,
+              "p99": 172.40613460540766
+            },
+            "continuous": {
+              "mae": 20.86685486314159,
+              "rmse": 33.98586904348265,
+              "max_error": 485.7146739959717,
+              "p99": 171.88366889953602
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed42.pt",
+          "sha256": "3c83087a07b7c32f063490a53977d70bb431192492c8d0017b3d22e101b745e3"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 123.72381437322932,
+              "rmse": 137.2570842402492,
+              "max_error": 679.3770790100098,
+              "p99": 371.19461536407454
+            },
+            "continuous": {
+              "mae": 122.05413306612267,
+              "rmse": 135.60472613545616,
+              "max_error": 677.2994995117188,
+              "p99": 369.070529937744
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.01740579253201,
+              "rmse": 33.03869498958082,
+              "max_error": 485.4235649108887,
+              "p99": 172.0857334136962
+            },
+            "continuous": {
+              "mae": 20.729454282463465,
+              "rmse": 33.8981378866327,
+              "max_error": 485.4235649108887,
+              "p99": 171.56103134155262
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed43.pt",
+          "sha256": "3a50b19b15d561f5bde0ca7a11e48930b164aaa689680b5aceaaea19ca10749f"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 123.52283686903677,
+              "rmse": 137.090022936917,
+              "max_error": 679.1496276855469,
+              "p99": 370.98395824432356
+            },
+            "continuous": {
+              "mae": 121.83849229942705,
+              "rmse": 135.42533759090563,
+              "max_error": 677.0792007446289,
+              "p99": 368.8629627227782
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.188781463190264,
+              "rmse": 33.064661168528126,
+              "max_error": 485.0625991821289,
+              "p99": 171.7490434646605
+            },
+            "continuous": {
+              "mae": 20.919186159466463,
+              "rmse": 33.93941543361221,
+              "max_error": 485.0625991821289,
+              "p99": 171.2242031097411
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed44.pt",
+          "sha256": "a05bb56d77cb538cc5c1a231654ba3349fcab2ff171494a6532a88f8a20c0f82"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 123.7742926658448,
+              "rmse": 137.3565987362064,
+              "max_error": 679.5566082000732,
+              "p99": 371.3641929626463
+            },
+            "continuous": {
+              "mae": 122.12288482540711,
+              "rmse": 135.7216667869745,
+              "max_error": 677.4837970733643,
+              "p99": 369.2413234710692
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.976684609366806,
+              "rmse": 32.983519499937366,
+              "max_error": 485.43500900268555,
+              "p99": 172.10385322570787
+            },
+            "continuous": {
+              "mae": 20.67326787032012,
+              "rmse": 33.83453530577476,
+              "max_error": 485.43500900268555,
+              "p99": 171.57968521118153
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed45.pt",
+          "sha256": "166fe004046d9a47e6447205220448abacbf967b37ab477e3f5136dce65b2f00"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 123.48113137870195,
+              "rmse": 137.041547357064,
+              "max_error": 679.1071891784668,
+              "p99": 370.91716289520247
+            },
+            "continuous": {
+              "mae": 121.79876347248282,
+              "rmse": 135.37869073113512,
+              "max_error": 677.0334243774414,
+              "p99": 368.79472732543934
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.221377879356293,
+              "rmse": 33.0930350104066,
+              "max_error": 485.2328300476074,
+              "p99": 171.8975734710692
+            },
+            "continuous": {
+              "mae": 20.949571265618587,
+              "rmse": 33.96672768095094,
+              "max_error": 485.2328300476074,
+              "p99": 171.37202262878407
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed46.pt",
+          "sha256": "d8624de91427f34d65009adfec69089f399c4592e7fe87b312e1c6637ace2432"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 123.54058875865336,
+              "rmse": 137.07228255428745,
+              "max_error": 679.1326999664307,
+              "p99": 370.9341287612913
+            },
+            "continuous": {
+              "mae": 121.85639605911962,
+              "rmse": 135.40716590282872,
+              "max_error": 677.0567893981934,
+              "p99": 368.8132858276366
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.17134303305661,
+              "rmse": 33.100546437961775,
+              "max_error": 485.3246212005615,
+              "p99": 171.9764041900634
+            },
+            "continuous": {
+              "mae": 20.89873001351365,
+              "rmse": 33.97210728927342,
+              "max_error": 485.3248596191406,
+              "p99": 171.44855499267567
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed47.pt",
+          "sha256": "14070ed7d6613351d5663157f24ede42d070c1ae3315810174c62bb733c9472f"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 123.42050958161289,
+              "rmse": 137.16916378273922,
+              "max_error": 679.1894435882568,
+              "p99": 371.14478588104225
+            },
+            "continuous": {
+              "mae": 121.77035507027998,
+              "rmse": 135.5339769205032,
+              "max_error": 677.0315170288086,
+              "p99": 368.92884254455555
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.510307791636365,
+              "rmse": 33.2601083274556,
+              "max_error": 485.8264923095703,
+              "p99": 172.64707088470448
+            },
+            "continuous": {
+              "mae": 21.21488424359375,
+              "rmse": 34.13701310486605,
+              "max_error": 485.8264923095703,
+              "p99": 172.1301269531249
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed48.pt",
+          "sha256": "8fca669e5a4a85b84bfd513a9259b027853f21b07585ad3fc376ac25975e8b98"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 123.6944609762643,
+              "rmse": 137.2377154108455,
+              "max_error": 679.2831420898438,
+              "p99": 371.10958576202376
+            },
+            "continuous": {
+              "mae": 122.02423895578985,
+              "rmse": 135.58511362552218,
+              "max_error": 677.1962642669678,
+              "p99": 368.97259712219227
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.04063953963527,
+              "rmse": 33.025391017332126,
+              "max_error": 485.4574203491211,
+              "p99": 172.13346481323228
+            },
+            "continuous": {
+              "mae": 20.75595440687137,
+              "rmse": 33.88716013268191,
+              "max_error": 485.4578971862793,
+              "p99": 171.61229133605946
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed49.pt",
+          "sha256": "3e5f752aa12b5444fb4ae46e29a68369ac262ec732fc0c0aae137f62de42817d"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 123.85451441916418,
+              "rmse": 137.4152705051461,
+              "max_error": 679.5785427093506,
+              "p99": 371.413354873657
+            },
+            "continuous": {
+              "mae": 122.21509868076363,
+              "rmse": 135.79074770338622,
+              "max_error": 677.4966716766357,
+              "p99": 369.27888870239246
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.908476516858375,
+              "rmse": 32.98168857102967,
+              "max_error": 485.71133613586426,
+              "p99": 172.40723133087144
+            },
+            "continuous": {
+              "mae": 20.592762342773167,
+              "rmse": 33.82341214738237,
+              "max_error": 485.71109771728516,
+              "p99": 171.8849182128905
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed50.pt",
+          "sha256": "13c190210bce4533303401f04ecee65fab5313941bd92017e32c8ea433b8d05e"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 123.8246612878312,
+              "rmse": 137.39181384096455,
+              "max_error": 679.2135238647461,
+              "p99": 371.05713844299294
+            },
+            "continuous": {
+              "mae": 122.18352263210721,
+              "rmse": 135.76654738013312,
+              "max_error": 677.109956741333,
+              "p99": 368.89421463012684
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.94232909754852,
+              "rmse": 32.91670743352254,
+              "max_error": 485.58855056762695,
+              "p99": 172.3186302185058
+            },
+            "continuous": {
+              "mae": 20.636078487734988,
+              "rmse": 33.766902690429085,
+              "max_error": 485.58855056762695,
+              "p99": 171.79699897766102
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed51.pt",
+          "sha256": "906bb60f09108d668b6b95a4233c70cf9121b3de6e1729b7f75d8ed4f95755c9"
+        }
+      },
+      "lstm": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 101.3205286183044,
+              "rmse": 121.83179022076763,
+              "max_error": 760.1454257965088,
+              "p99": 352.64534950256336
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 64.4407634601485,
+              "rmse": 90.74698799746648,
+              "max_error": 744.3022727966309,
+              "p99": 326.06670061747207
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed42.pt",
+          "sha256": "95fe98a94279f7399d821ce6e5ad43a61cb1446a1ad8dfd725b22a9eb689641d"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 127.83825442843417,
+              "rmse": 142.22313084086142,
+              "max_error": 704.9386501312256,
+              "p99": 382.8847789764404
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 33.84596432937788,
+              "rmse": 67.50501610212649,
+              "max_error": 668.9755916595459,
+              "p99": 335.76783180236816
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed43.pt",
+          "sha256": "de283df11b2248627a6fdb7f0379dc944c0292ba995419db79ee354b86a37a24"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 124.95941160958984,
+              "rmse": 139.18334589021632,
+              "max_error": 706.4692974090576,
+              "p99": 385.13532638549776
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 34.812816185408636,
+              "rmse": 69.50326808792322,
+              "max_error": 676.9876480102539,
+              "p99": 345.6256866455078
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed44.pt",
+          "sha256": "867ab8728e99f93fc0429260cd63628169ac8cfab4c66e4cf6d0372905be39b5"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 127.91815685970002,
+              "rmse": 142.50180003962765,
+              "max_error": 698.4822750091553,
+              "p99": 385.9465408325195
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 34.89691126538689,
+              "rmse": 68.89194067263595,
+              "max_error": 664.4227504730225,
+              "p99": 344.0218257904052
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed45.pt",
+          "sha256": "ebd800d875f14f16089fec2766ed067989a0158a4f71777851bc96d90b5f131c"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 121.70283055350465,
+              "rmse": 136.62451884310573,
+              "max_error": 704.5488357543945,
+              "p99": 380.9836292266844
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 37.00994901765359,
+              "rmse": 69.16256519012197,
+              "max_error": 670.741081237793,
+              "p99": 340.74390411376936
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed46.pt",
+          "sha256": "9fbc26f21bb6061f91a046edc898d62385721f598377e1a3a76aaf85c12b2b94"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 127.08232081724377,
+              "rmse": 141.9811610893163,
+              "max_error": 711.40456199646,
+              "p99": 382.5729942321777
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 35.779431687665024,
+              "rmse": 70.01677417168591,
+              "max_error": 682.3241710662842,
+              "p99": 343.5190296173095
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed47.pt",
+          "sha256": "893c77e47e7024ae419486b99e554e77e895c9d2a7b866fea37ce18b79843078"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 126.6657075977529,
+              "rmse": 142.20501238021347,
+              "max_error": 708.9917659759521,
+              "p99": 382.951784133911
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 37.316485033273906,
+              "rmse": 70.83251751275377,
+              "max_error": 678.3828735351562,
+              "p99": 343.40460777282715
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed48.pt",
+          "sha256": "1b6fd1a8321204a4cca7f7f42cc0ad837e40ef85c05652d477d8de344cd30d05"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 125.33515387751576,
+              "rmse": 139.9723057606645,
+              "max_error": 703.2859325408936,
+              "p99": 380.5151081085204
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 36.63426425085262,
+              "rmse": 69.29849188030464,
+              "max_error": 669.5845127105713,
+              "p99": 339.94012832641596
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed49.pt",
+          "sha256": "eccd136bcfd04ce985501cda1cd504bb1db4a7098f8a19e63ded97ad5fb7baea"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 126.61405043805372,
+              "rmse": 141.27429149693373,
+              "max_error": 704.5307159423828,
+              "p99": 385.1394557952879
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 36.30265803604195,
+              "rmse": 70.39043498190274,
+              "max_error": 670.4788208007812,
+              "p99": 346.89595222473133
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed50.pt",
+          "sha256": "fa10db5e1cbffecd568d9de09e945afb9b89bfd1382f3d474175a9bff6b18c74"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 124.26958729800384,
+              "rmse": 138.9331699201044,
+              "max_error": 701.2443542480469,
+              "p99": 381.8557262420654
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 35.64014515120609,
+              "rmse": 69.04424462734484,
+              "max_error": 665.8401489257812,
+              "p99": 341.05906486511225
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed51.pt",
+          "sha256": "b9cf633910dfc9bca91eb40465384d4c2ee544a873db8ec8cc19ee7aa7982f64"
+        }
+      }
+    },
+    "BJDST_25C": {
+      "ecm_1rc_nls": {
+        "deterministic": {
+          "before": {
+            "windowed": {
+              "mae": 123.48100134079293,
+              "rmse": 139.1454278901496,
+              "max_error": 925.3891976288143,
+              "p99": 307.16877047013236
+            },
+            "continuous": {
+              "mae": 122.9106790523066,
+              "rmse": 138.66051049342985,
+              "max_error": 925.3517069127648,
+              "p99": 307.00057607575434
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.970413043584124,
+              "rmse": 41.46854067000341,
+              "max_error": 733.4423407920076,
+              "p99": 105.24161953678727
+            },
+            "continuous": {
+              "mae": 19.482040367875655,
+              "rmse": 41.621774865290725,
+              "max_error": 733.4423386640073,
+              "p99": 105.21728740423079
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_1rc_nls.json",
+          "sha256": "36c5ff9ff924b635b4a71c3c7c7ea9370b8325b726fb272b418932f4bcfd638f"
+        }
+      },
+      "ecm_2rc_nls": {
+        "deterministic": {
+          "before": {
+            "windowed": {
+              "mae": 123.36602110501738,
+              "rmse": 139.053838951866,
+              "max_error": 925.3436853690018,
+              "p99": 307.05377325719644
+            },
+            "continuous": {
+              "mae": 122.68288173990777,
+              "rmse": 138.47251262971108,
+              "max_error": 925.3062910838703,
+              "p99": 306.9990031132951
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.898737593988898,
+              "rmse": 41.546290073899904,
+              "max_error": 734.7647055911026,
+              "p99": 106.91177061471956
+            },
+            "continuous": {
+              "mae": 19.51495895525469,
+              "rmse": 41.734442022157346,
+              "max_error": 734.7646719585841,
+              "p99": 106.86276916363737
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_2rc_nls.json",
+          "sha256": "4a572613bd2ea3b5d0303a9227f5dda6cf8aadd86e0df5fd9508660b6689e5b8"
+        }
+      },
+      "physics_gradient": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 123.4034328301875,
+              "rmse": 138.97947946224642,
+              "max_error": 925.133466720581,
+              "p99": 307.0068740844721
+            },
+            "continuous": {
+              "mae": 122.82015897465661,
+              "rmse": 138.48182702091577,
+              "max_error": 925.0636100769043,
+              "p99": 306.9284915924066
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.07816118515585,
+              "rmse": 41.63019187784419,
+              "max_error": 733.9696884155273,
+              "p99": 105.77241897582945
+            },
+            "continuous": {
+              "mae": 19.60242903978893,
+              "rmse": 41.78989785356406,
+              "max_error": 733.9696884155273,
+              "p99": 105.7480812072748
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed42.pt",
+          "sha256": "da093e57469a84929f873db2caf5aca538a3a3f282a27377856bc6cb009c24ae"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 123.41174645638621,
+              "rmse": 139.07020665679056,
+              "max_error": 925.3041744232178,
+              "p99": 307.100720405578
+            },
+            "continuous": {
+              "mae": 122.84247853344255,
+              "rmse": 138.58628016403037,
+              "max_error": 925.2688884735107,
+              "p99": 306.95026397705027
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.043927640408455,
+              "rmse": 41.518508151314364,
+              "max_error": 733.5653305053711,
+              "p99": 105.36468505859312
+            },
+            "continuous": {
+              "mae": 19.554781886155208,
+              "rmse": 41.67213610762995,
+              "max_error": 733.5653305053711,
+              "p99": 105.34034729003847
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed43.pt",
+          "sha256": "6288b618db4ff9187e8d4a920ee03c693d9bd08f40afbb4d60f56124da5401a5"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 123.54164065570714,
+              "rmse": 139.16703152588346,
+              "max_error": 925.208568572998,
+              "p99": 306.99338912963805
+            },
+            "continuous": {
+              "mae": 122.89536698905557,
+              "rmse": 138.609793580743,
+              "max_error": 924.985408782959,
+              "p99": 306.68886184692326
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.925782798124796,
+              "rmse": 41.44863218145629,
+              "max_error": 733.4437370300293,
+              "p99": 105.23993492126404
+            },
+            "continuous": {
+              "mae": 19.522088029864676,
+              "rmse": 41.63448917040018,
+              "max_error": 733.4434986114502,
+              "p99": 105.21542549133241
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed44.pt",
+          "sha256": "426098587163b4eb16c3642de75208efcd728a18588de20b345e7f8b8c770fb9"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 123.56381138601056,
+              "rmse": 139.20379871053095,
+              "max_error": 925.2340793609619,
+              "p99": 307.01591491699156
+            },
+            "continuous": {
+              "mae": 122.97293392269384,
+              "rmse": 138.69915628863828,
+              "max_error": 925.1456260681152,
+              "p99": 306.8324375152582
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.942431180295323,
+              "rmse": 41.455533494250325,
+              "max_error": 733.4427833557129,
+              "p99": 105.23461341857849
+            },
+            "continuous": {
+              "mae": 19.477686672667616,
+              "rmse": 41.61746253541514,
+              "max_error": 733.4427833557129,
+              "p99": 105.2103614807123
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed45.pt",
+          "sha256": "4a615daeda3d707f2ec93554898d2bcb2cf8f89506f2ebf4b5fbbcd55c4018f1"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 123.5145121431522,
+              "rmse": 139.18942868341338,
+              "max_error": 925.5044460296631,
+              "p99": 307.26927280425963
+            },
+            "continuous": {
+              "mae": 122.94035616514678,
+              "rmse": 138.7009066903513,
+              "max_error": 925.4574775695801,
+              "p99": 307.0933914184565
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.927747852872272,
+              "rmse": 41.444215589254945,
+              "max_error": 733.3693504333496,
+              "p99": 105.16835689544615
+            },
+            "continuous": {
+              "mae": 19.442675724958672,
+              "rmse": 41.59854419644866,
+              "max_error": 733.3693504333496,
+              "p99": 105.14405250549257
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/physics_gradient_seed46.pt",
+          "sha256": "7150f70596ac236849ef0dfb55def47471e9bfa592297093ae4441580931bc35"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 123.35553346045575,
+              "rmse": 139.01692905948687,
+              "max_error": 925.2464771270752,
+              "p99": 307.03916072845396
+            },
+            "continuous": {
+              "mae": 122.78626198462445,
+              "rmse": 138.53304741893498,
+              "max_error": 925.2111911773682,
+              "p99": 306.88039779663035
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.08818158815482,
+              "rmse": 41.533299482640956,
+              "max_error": 733.5875034332275,
+              "p99": 105.38723945617613
+            },
+            "continuous": {
+              "mae": 19.599840938062954,
+              "rmse": 41.68751595274982,
+              "max_error": 733.5875034332275,
+              "p99": 105.36290168762147
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed47.pt",
+          "sha256": "f95e44028d5ceedb53dc9ca0a2649102714000c4fc1091f6502b0b4c5d04a456"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 123.50303715467984,
+              "rmse": 139.17829633575272,
+              "max_error": 924.8473644256592,
+              "p99": 306.7102479934686
+            },
+            "continuous": {
+              "mae": 122.89719246556788,
+              "rmse": 138.65964346708614,
+              "max_error": 924.7238636016846,
+              "p99": 306.52839660644474
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.158005512708737,
+              "rmse": 41.56406179820791,
+              "max_error": 733.6435317993164,
+              "p99": 105.45704841613707
+            },
+            "continuous": {
+              "mae": 19.712077211384592,
+              "rmse": 41.7353732626932,
+              "max_error": 733.6435317993164,
+              "p99": 105.43262481689393
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed48.pt",
+          "sha256": "d999ebfa11606b3f58c635abc785c2514b8399d362760d07830fe08c49100192"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 123.50647754956816,
+              "rmse": 139.16592682030083,
+              "max_error": 925.3671169281006,
+              "p99": 307.14101791381773
+            },
+            "continuous": {
+              "mae": 122.93163468230703,
+              "rmse": 138.67670324183297,
+              "max_error": 925.3189563751221,
+              "p99": 306.964082717895
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.948350319452015,
+              "rmse": 41.455047225617285,
+              "max_error": 733.4330081939697,
+              "p99": 105.23491859435973
+            },
+            "continuous": {
+              "mae": 19.46516276488736,
+              "rmse": 41.609994367922,
+              "max_error": 733.4330081939697,
+              "p99": 105.21058082580507
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed49.pt",
+          "sha256": "3308fc0985b75c3e802bf93eac0e5fcdf592cbb95ddaeea5677a0320d978b928"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 123.49546836094663,
+              "rmse": 139.1534529677126,
+              "max_error": 925.3530502319336,
+              "p99": 307.12524890899596
+            },
+            "continuous": {
+              "mae": 122.92180786214345,
+              "rmse": 138.6653469845395,
+              "max_error": 925.3077507019043,
+              "p99": 306.95055961608836
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.955117130186117,
+              "rmse": 41.45664733103189,
+              "max_error": 733.4256172180176,
+              "p99": 105.22681236267027
+            },
+            "continuous": {
+              "mae": 19.47081136792667,
+              "rmse": 41.6111880166111,
+              "max_error": 733.4256172180176,
+              "p99": 105.20247459411561
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed50.pt",
+          "sha256": "28deebc4340678411e5ab3ecdea0b5a41a57a5693362cdd53108cbc1c9cbf43c"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 123.57454798604975,
+              "rmse": 139.18104347190138,
+              "max_error": 924.9327182769775,
+              "p99": 306.6566944122309
+            },
+            "continuous": {
+              "mae": 122.98508700667108,
+              "rmse": 138.6777412407927,
+              "max_error": 924.8499870300293,
+              "p99": 306.4513587951655
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.88835776233325,
+              "rmse": 41.382413343000195,
+              "max_error": 733.2954406738281,
+              "p99": 105.10191440582213
+            },
+            "continuous": {
+              "mae": 19.425556298535422,
+              "rmse": 41.543544612491175,
+              "max_error": 733.2954406738281,
+              "p99": 105.07745742797792
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/physics_gradient_seed51.pt",
+          "sha256": "5c8315c06733ff06b1d43296f384467dca975ef0ca9e50250d95f19ab90ff6a6"
+        }
+      },
+      "output_residual": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 123.40117507623955,
+              "rmse": 138.97670619525837,
+              "max_error": 925.1294136047363,
+              "p99": 307.0026493072504
+            },
+            "continuous": {
+              "mae": 122.81788383845347,
+              "rmse": 138.47903539171045,
+              "max_error": 925.0595569610596,
+              "p99": 306.9246101379388
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.08016102210735,
+              "rmse": 41.63154622389706,
+              "max_error": 733.9754104614258,
+              "p99": 105.77796936035094
+            },
+            "continuous": {
+              "mae": 19.604482148822985,
+              "rmse": 41.791283502970735,
+              "max_error": 733.9754104614258,
+              "p99": 105.75363159179628
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed42.pt",
+          "sha256": "c778cfe7c766ae29afab0bfd090167f570d02e4319f8cb9cc39be09aaf26d5df"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 123.4244416282145,
+              "rmse": 139.08293305133174,
+              "max_error": 925.3215789794922,
+              "p99": 307.117753028869
+            },
+            "continuous": {
+              "mae": 122.85512208577647,
+              "rmse": 138.59895254118328,
+              "max_error": 925.286054611206,
+              "p99": 306.96602821350046
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.032966153904137,
+              "rmse": 41.51568155420764,
+              "max_error": 733.5853576660156,
+              "p99": 105.38464546203551
+            },
+            "continuous": {
+              "mae": 19.543687300835366,
+              "rmse": 41.6691756943753,
+              "max_error": 733.5853576660156,
+              "p99": 105.36030769348085
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed43.pt",
+          "sha256": "611225057381aeebae8660ed0343a6371d2a61d4db8469016e6fd0f2ad7ce7c9"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 123.54414016172042,
+              "rmse": 139.16974524015058,
+              "max_error": 925.2138137817383,
+              "p99": 306.99771881103453
+            },
+            "continuous": {
+              "mae": 122.89801653733672,
+              "rmse": 138.6126541893102,
+              "max_error": 924.9911308288574,
+              "p99": 306.6919517517084
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.92390777227676,
+              "rmse": 41.449879322660294,
+              "max_error": 733.4742546081543,
+              "p99": 105.27075767517029
+            },
+            "continuous": {
+              "mae": 19.519980926846596,
+              "rmse": 41.635600017272516,
+              "max_error": 733.4742546081543,
+              "p99": 105.24641990661561
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed44.pt",
+          "sha256": "39c3c1b31d9c1762f0a0c5509baee1b1c78661a57542c8b12325b0115186fdd0"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 123.55359940663767,
+              "rmse": 139.19605595137085,
+              "max_error": 925.2293109893799,
+              "p99": 307.01029777526793
+            },
+            "continuous": {
+              "mae": 122.96272723372637,
+              "rmse": 138.69143566107297,
+              "max_error": 925.1406192779541,
+              "p99": 306.8256187438959
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.952402621388213,
+              "rmse": 41.45910258337582,
+              "max_error": 733.4473133087158,
+              "p99": 105.23931503295837
+            },
+            "continuous": {
+              "mae": 19.487748323135314,
+              "rmse": 41.62115452385801,
+              "max_error": 733.4473133087158,
+              "p99": 105.21489143371522
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed45.pt",
+          "sha256": "19d8ce4b13fc193671d0d4150fbb324d69218368f2d8649d9fe06c5decb52b18"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 123.53339115842303,
+              "rmse": 139.2080214433631,
+              "max_error": 925.5282878875732,
+              "p99": 307.2911977767938
+            },
+            "continuous": {
+              "mae": 122.95917169909113,
+              "rmse": 138.71942951092714,
+              "max_error": 925.4813194274902,
+              "p99": 307.11524963378855
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.911427320134457,
+              "rmse": 41.43994075148966,
+              "max_error": 733.3974838256836,
+              "p99": 105.19669532775816
+            },
+            "continuous": {
+              "mae": 19.42615074193725,
+              "rmse": 41.59406565156552,
+              "max_error": 733.3974838256836,
+              "p99": 105.17229080200136
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/output_residual_seed46.pt",
+          "sha256": "70782866317d66f7fdce052c6507c457ec93f3032d51485a7ec26a5885b54323"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 123.37868065097565,
+              "rmse": 139.03962580390996,
+              "max_error": 925.2760410308838,
+              "p99": 307.06917285919127
+            },
+            "continuous": {
+              "mae": 122.80932879636906,
+              "rmse": 138.55565589134676,
+              "max_error": 925.2405166625977,
+              "p99": 306.9083499908442
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.06740228756172,
+              "rmse": 41.52641134693232,
+              "max_error": 733.6025238037109,
+              "p99": 105.40301322936949
+            },
+            "continuous": {
+              "mae": 19.578832288662742,
+              "rmse": 41.68038676878215,
+              "max_error": 733.6025238037109,
+              "p99": 105.37867546081483
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed47.pt",
+          "sha256": "af0def3f2e47874a5ce03cb35fc5ff754f5957343242393de738eee0f40ddf65"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 123.50675778535197,
+              "rmse": 139.1806942689749,
+              "max_error": 924.8459339141846,
+              "p99": 306.7094278335565
+            },
+            "continuous": {
+              "mae": 122.9009601543079,
+              "rmse": 138.6620771117999,
+              "max_error": 924.7226715087891,
+              "p99": 306.5284347534174
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.15442712493751,
+              "rmse": 41.562361413553106,
+              "max_error": 733.6363792419434,
+              "p99": 105.4497432708734
+            },
+            "continuous": {
+              "mae": 19.708441906636093,
+              "rmse": 41.73361541638249,
+              "max_error": 733.6363792419434,
+              "p99": 105.42523384094179
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed48.pt",
+          "sha256": "d1191ebca4abd03973576a3aa66f1f6e51ec5a4f483bfa146dc31423b262a07f"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 123.50694391561622,
+              "rmse": 139.16834138251508,
+              "max_error": 925.3756999969482,
+              "p99": 307.1473646163934
+            },
+            "continuous": {
+              "mae": 122.932096401999,
+              "rmse": 138.67912295008983,
+              "max_error": 925.3275394439697,
+              "p99": 306.97054862976023
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.949035170397686,
+              "rmse": 41.45592403951727,
+              "max_error": 733.4456443786621,
+              "p99": 105.2474498748773
+            },
+            "continuous": {
+              "mae": 19.465789842482444,
+              "rmse": 41.61086591916227,
+              "max_error": 733.4456443786621,
+              "p99": 105.22311210632265
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed49.pt",
+          "sha256": "af5f496082ffd5fc25f4c84903831168bdcca7d062662d9bb061e647b713eb9c"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 123.49231079573319,
+              "rmse": 139.15034393259995,
+              "max_error": 925.3475666046143,
+              "p99": 307.1202421188348
+            },
+            "continuous": {
+              "mae": 122.9186632805404,
+              "rmse": 138.66225228026167,
+              "max_error": 925.302267074585,
+              "p99": 306.9455528259272
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.957904197159966,
+              "rmse": 41.45710077280879,
+              "max_error": 733.4184646606445,
+              "p99": 105.2199840545648
+            },
+            "continuous": {
+              "mae": 19.47364260182375,
+              "rmse": 41.61167766920288,
+              "max_error": 733.4184646606445,
+              "p99": 105.19573211669862
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed50.pt",
+          "sha256": "d56ea5a063816f4d757528c1da20e692c657a976b2b4875d32a6f111f978325d"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 123.57796918685173,
+              "rmse": 139.18314870535713,
+              "max_error": 924.9262809753418,
+              "p99": 306.65088653564396
+            },
+            "continuous": {
+              "mae": 122.98829929838622,
+              "rmse": 138.6796480584265,
+              "max_error": 924.8430728912354,
+              "p99": 306.4453124999995
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.885636222073405,
+              "rmse": 41.38227671462212,
+              "max_error": 733.309268951416,
+              "p99": 105.11790275573668
+            },
+            "continuous": {
+              "mae": 19.423085059919195,
+              "rmse": 41.543467310227996,
+              "max_error": 733.309268951416,
+              "p99": 105.09347915649354
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/output_residual_seed51.pt",
+          "sha256": "4ad94775c578ea966ebe07f3b2db834af9893c134180d33db8ab8cbafc2cc349"
+        }
+      },
+      "ecm_ude": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 123.4481368375015,
+              "rmse": 139.09316770391086,
+              "max_error": 925.0526428222656,
+              "p99": 306.87455654144225
+            },
+            "continuous": {
+              "mae": 122.87319911450946,
+              "rmse": 138.6038114436712,
+              "max_error": 925.0044822692871,
+              "p99": 306.7363834381098
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.08513885481854,
+              "rmse": 41.53896376207998,
+              "max_error": 733.6235046386719,
+              "p99": 105.42728424072205
+            },
+            "continuous": {
+              "mae": 19.603985395676965,
+              "rmse": 41.69570581917218,
+              "max_error": 733.6235046386719,
+              "p99": 105.40268898010194
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed42.pt",
+          "sha256": "3c83087a07b7c32f063490a53977d70bb431192492c8d0017b3d22e101b745e3"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 123.50363342406776,
+              "rmse": 139.12739139074318,
+              "max_error": 925.302267074585,
+              "p99": 307.10792064666686
+            },
+            "continuous": {
+              "mae": 122.9158710080907,
+              "rmse": 138.62728461889122,
+              "max_error": 925.2686500549316,
+              "p99": 306.9860458374018
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.943535806333887,
+              "rmse": 41.471470465611,
+              "max_error": 733.3183288574219,
+              "p99": 105.1158809661859
+            },
+            "continuous": {
+              "mae": 19.470212805439946,
+              "rmse": 41.62978833397223,
+              "max_error": 733.3183288574219,
+              "p99": 105.0891399383539
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed43.pt",
+          "sha256": "3a50b19b15d561f5bde0ca7a11e48930b164aaa689680b5aceaaea19ca10749f"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 123.30314766059496,
+              "rmse": 138.96279956317224,
+              "max_error": 925.0867366790771,
+              "p99": 306.8906974792474
+            },
+            "continuous": {
+              "mae": 122.70054210802466,
+              "rmse": 138.45023768820266,
+              "max_error": 925.0566959381104,
+              "p99": 306.73521041870066
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.11983810740969,
+              "rmse": 41.49363122683518,
+              "max_error": 732.9657077789307,
+              "p99": 104.77301597595152
+            },
+            "continuous": {
+              "mae": 19.66311698266071,
+              "rmse": 41.65925938129975,
+              "max_error": 732.9657077789307,
+              "p99": 104.7441291809076
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed44.pt",
+          "sha256": "a05bb56d77cb538cc5c1a231654ba3349fcab2ff171494a6532a88f8a20c0f82"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 123.55365609005857,
+              "rmse": 139.22562517307335,
+              "max_error": 925.5039691925049,
+              "p99": 307.2674751281732
+            },
+            "continuous": {
+              "mae": 122.98352725359962,
+              "rmse": 138.74087362791147,
+              "max_error": 925.4670143127441,
+              "p99": 307.1049118041987
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.90496206604886,
+              "rmse": 41.43091100892073,
+              "max_error": 733.3440780639648,
+              "p99": 105.13339042663512
+            },
+            "continuous": {
+              "mae": 19.41542895503328,
+              "rmse": 41.58323357078096,
+              "max_error": 733.3440780639648,
+              "p99": 105.1091194152826
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed45.pt",
+          "sha256": "166fe004046d9a47e6447205220448abacbf967b37ab477e3f5136dce65b2f00"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 123.26070391972915,
+              "rmse": 138.91477704329046,
+              "max_error": 925.0373840332031,
+              "p99": 306.8248701095575
+            },
+            "continuous": {
+              "mae": 122.66013781314585,
+              "rmse": 138.40381376005385,
+              "max_error": 925.0028133392334,
+              "p99": 306.67277336120554
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.150892316659874,
+              "rmse": 41.51606032612108,
+              "max_error": 733.1278324127197,
+              "p99": 104.92765903472838
+            },
+            "continuous": {
+              "mae": 19.693101033129135,
+              "rmse": 41.681546959691055,
+              "max_error": 733.1278324127197,
+              "p99": 104.8993206024164
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/ecm_ude_seed46.pt",
+          "sha256": "d8624de91427f34d65009adfec69089f399c4592e7fe87b312e1c6637ace2432"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 123.31945039350711,
+              "rmse": 138.94496925924037,
+              "max_error": 925.0710010528564,
+              "p99": 306.85166835784855
+            },
+            "continuous": {
+              "mae": 122.7173142149077,
+              "rmse": 138.43250719795233,
+              "max_error": 925.0390529632568,
+              "p99": 306.7609786987299
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.100308029013323,
+              "rmse": 41.522675964556484,
+              "max_error": 733.2324981689453,
+              "p99": 105.01509189605649
+            },
+            "continuous": {
+              "mae": 19.642286664157805,
+              "rmse": 41.6876693806235,
+              "max_error": 733.2324981689453,
+              "p99": 104.9865150451654
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed47.pt",
+          "sha256": "14070ed7d6613351d5663157f24ede42d070c1ae3315810174c62bb733c9472f"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 123.20165549296462,
+              "rmse": 139.0428919189869,
+              "max_error": 925.2150058746338,
+              "p99": 306.9676685333246
+            },
+            "continuous": {
+              "mae": 122.63408286009481,
+              "rmse": 138.5583847652067,
+              "max_error": 925.0929355621338,
+              "p99": 306.73821449279734
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 19.429544032754187,
+              "rmse": 41.649946992167976,
+              "max_error": 733.8135242462158,
+              "p99": 105.63530445098814
+            },
+            "continuous": {
+              "mae": 19.948259254779657,
+              "rmse": 41.81146779154764,
+              "max_error": 733.8135242462158,
+              "p99": 105.61580657958925
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed48.pt",
+          "sha256": "8fca669e5a4a85b84bfd513a9259b027853f21b07585ad3fc376ac25975e8b98"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 123.47513851479783,
+              "rmse": 139.1086808382124,
+              "max_error": 925.2009391784668,
+              "p99": 306.9947481155389
+            },
+            "continuous": {
+              "mae": 122.88688245975958,
+              "rmse": 138.6076535158793,
+              "max_error": 925.1527786254883,
+              "p99": 306.81527137756296
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.96550138568462,
+              "rmse": 41.459138910871,
+              "max_error": 733.339786529541,
+              "p99": 105.15398025512634
+            },
+            "continuous": {
+              "mae": 19.495133396481265,
+              "rmse": 41.618629608331716,
+              "max_error": 733.3400249481201,
+              "p99": 105.12850761413516
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed49.pt",
+          "sha256": "3e5f752aa12b5444fb4ae46e29a68369ac262ec732fc0c0aae137f62de42817d"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 123.63423288220604,
+              "rmse": 139.28401484809322,
+              "max_error": 925.5404472351074,
+              "p99": 307.3056125640863
+            },
+            "continuous": {
+              "mae": 123.07632034210714,
+              "rmse": 138.8094152335976,
+              "max_error": 925.4941940307617,
+              "p99": 307.13361740112254
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.83202482105685,
+              "rmse": 41.42735848669818,
+              "max_error": 733.6347103118896,
+              "p99": 105.42882919311461
+            },
+            "continuous": {
+              "mae": 19.331463086699557,
+              "rmse": 41.57518316490087,
+              "max_error": 733.6347103118896,
+              "p99": 105.40646553039491
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed50.pt",
+          "sha256": "13c190210bce4533303401f04ecee65fab5313941bd92017e32c8ea433b8d05e"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 123.60429261647771,
+              "rmse": 139.26166898471217,
+              "max_error": 925.2197742462158,
+              "p99": 306.8755054473871
+            },
+            "continuous": {
+              "mae": 123.04510207366876,
+              "rmse": 138.78487180738398,
+              "max_error": 925.1396656036377,
+              "p99": 306.6787052154536
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 18.86888415503382,
+              "rmse": 41.37834067417375,
+              "max_error": 733.5445880889893,
+              "p99": 105.33446788787779
+            },
+            "continuous": {
+              "mae": 19.376375337818637,
+              "rmse": 41.529010690194234,
+              "max_error": 733.5448265075684,
+              "p99": 105.31394004821716
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/ecm_ude_seed51.pt",
+          "sha256": "906bb60f09108d668b6b95a4233c70cf9121b3de6e1729b7f75d8ed4f95755c9"
+        }
+      },
+      "lstm": {
+        "42": {
+          "before": {
+            "windowed": {
+              "mae": 98.6253774632866,
+              "rmse": 117.91911235122227,
+              "max_error": 925.0109195709229,
+              "p99": 290.3297805786132
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 56.20645752720888,
+              "rmse": 86.30866458845131,
+              "max_error": 912.344217300415,
+              "p99": 269.85488891601494
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed42.pt",
+          "sha256": "95fe98a94279f7399d821ce6e5ad43a61cb1446a1ad8dfd725b22a9eb689641d"
+        },
+        "43": {
+          "before": {
+            "windowed": {
+              "mae": 128.61600609260523,
+              "rmse": 144.65202600474112,
+              "max_error": 946.7189311981201,
+              "p99": 319.4937705993649
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 31.72531457951902,
+              "rmse": 70.29472504486195,
+              "max_error": 904.3545722961426,
+              "p99": 270.2387714385986
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed43.pt",
+          "sha256": "de283df11b2248627a6fdb7f0379dc944c0292ba995419db79ee354b86a37a24"
+        },
+        "44": {
+          "before": {
+            "windowed": {
+              "mae": 125.15807765056816,
+              "rmse": 141.02901417819902,
+              "max_error": 945.5764293670654,
+              "p99": 317.13829994201654
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 33.422847495080596,
+              "rmse": 72.36718943801272,
+              "max_error": 910.5281829833984,
+              "p99": 276.29476547241205
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed44.pt",
+          "sha256": "867ab8728e99f93fc0429260cd63628169ac8cfab4c66e4cf6d0372905be39b5"
+        },
+        "45": {
+          "before": {
+            "windowed": {
+              "mae": 128.2662931800607,
+              "rmse": 144.52074615857498,
+              "max_error": 944.1320896148682,
+              "p99": 316.6936206817624
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 33.89726920278902,
+              "rmse": 71.8649470229659,
+              "max_error": 904.3290615081787,
+              "p99": 270.910034179687
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed45.pt",
+          "sha256": "ebd800d875f14f16089fec2766ed067989a0158a4f71777851bc96d90b5f131c"
+        },
+        "46": {
+          "before": {
+            "windowed": {
+              "mae": 121.6809069423453,
+              "rmse": 138.07270304408277,
+              "max_error": 941.425085067749,
+              "p99": 313.31346511840815
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 35.242634815096366,
+              "rmse": 71.44359868024281,
+              "max_error": 902.6682376861572,
+              "p99": 268.8548660278319
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified/checkpoints/calce/lstm_seed46.pt",
+          "sha256": "9fbc26f21bb6061f91a046edc898d62385721f598377e1a3a76aaf85c12b2b94"
+        },
+        "47": {
+          "before": {
+            "windowed": {
+              "mae": 127.11202453893888,
+              "rmse": 143.53791753687688,
+              "max_error": 945.9490776062012,
+              "p99": 316.8984794616697
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 33.83168881682688,
+              "rmse": 72.5251970548966,
+              "max_error": 911.9677543640137,
+              "p99": 276.9939041137693
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed47.pt",
+          "sha256": "893c77e47e7024ae419486b99e554e77e895c9d2a7b866fea37ce18b79843078"
+        },
+        "48": {
+          "before": {
+            "windowed": {
+              "mae": 126.83810775340227,
+              "rmse": 143.9538829460166,
+              "max_error": 949.1579532623291,
+              "p99": 320.6565761566158
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 34.86154648253155,
+              "rmse": 73.01553116670316,
+              "max_error": 913.8774871826172,
+              "p99": 279.596071243286
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed48.pt",
+          "sha256": "1b6fd1a8321204a4cca7f7f42cc0ad837e40ef85c05652d477d8de344cd30d05"
+        },
+        "49": {
+          "before": {
+            "windowed": {
+              "mae": 125.22369200128706,
+              "rmse": 141.47017198988584,
+              "max_error": 942.4135684967041,
+              "p99": 315.1462364196774
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 34.621092282813095,
+              "rmse": 71.48776236975007,
+              "max_error": 904.332160949707,
+              "p99": 270.4050636291501
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed49.pt",
+          "sha256": "eccd136bcfd04ce985501cda1cd504bb1db4a7098f8a19e63ded97ad5fb7baea"
+        },
+        "50": {
+          "before": {
+            "windowed": {
+              "mae": 126.7682395380695,
+              "rmse": 143.09535843194453,
+              "max_error": 947.035551071167,
+              "p99": 318.53689193725586
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 34.82796172550455,
+              "rmse": 73.06914846720132,
+              "max_error": 910.301685333252,
+              "p99": 276.33599281311
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed50.pt",
+          "sha256": "fa10db5e1cbffecd568d9de09e945afb9b89bfd1382f3d474175a9bff6b18c74"
+        },
+        "51": {
+          "before": {
+            "windowed": {
+              "mae": 124.63276666953267,
+              "rmse": 140.9374693899569,
+              "max_error": 942.7704811096191,
+              "p99": 315.20610809326155
+            }
+          },
+          "after": {
+            "windowed": {
+              "mae": 33.87912812299358,
+              "rmse": 71.43615274482029,
+              "max_error": 903.8503170013428,
+              "p99": 270.19925117492664
+            }
+          },
+          "checkpoint": "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/results/unified_10seeds/checkpoints/calce/lstm_seed51.pt",
+          "sha256": "b9cf633910dfc9bca91eb40465384d4c2ee544a873db8ec8cc19ee7aa7982f64"
+        }
+      }
+    }
+  },
+  "static": {
+    "US06_25C": {
+      "V1": {
+        "before_mae_mV": 130.4078054211674,
+        "after_metrics_mV": {
+          "mae": 19.988130804144085,
+          "rmse": 29.442130687843623,
+          "max_error": 443.87679109486334,
+          "p99": 137.46163957469182
+        },
+        "z0_used": 0.7999694136592465,
+        "excluded_nonphysical_V5": false
+      },
+      "V5": {
+        "before_mae_mV": 826.6481653041244,
+        "after_metrics_mV": {
+          "mae": 37.13940705760071,
+          "rmse": 85.03791533016287,
+          "max_error": 481.8356781451443,
+          "p99": 401.4552960068433
+        },
+        "z0_used": 0.7999694136592465,
+        "excluded_nonphysical_V5": false
+      },
+      "V6": {
+        "before_mae_mV": 33.2078494582158,
+        "after_metrics_mV": {
+          "mae": 33.2078494582158,
+          "rmse": 46.56433908170941,
+          "max_error": 519.0058433637588,
+          "p99": 209.5308304558486
+        },
+        "z0_used": 0.9000000000000001,
+        "excluded_nonphysical_V5": false
+      },
+      "V7": {
+        "before_mae_mV": 15.300464371943862,
+        "after_metrics_mV": {
+          "mae": 15.300464371943862,
+          "rmse": 39.75027758741498,
+          "max_error": 344.2292069460273,
+          "p99": 213.96600084308017
+        },
+        "z0_used": 0.9599308571511523,
+        "excluded_nonphysical_V5": false
+      }
+    },
+    "BJDST_25C": {
+      "V1": {
+        "before_mae_mV": 130.5139688623609,
+        "after_metrics_mV": {
+          "mae": 20.61986479333551,
+          "rmse": 39.87148414839295,
+          "max_error": 693.3165734616908,
+          "p99": 109.31650401154666
+        },
+        "z0_used": 0.79994404241519,
+        "excluded_nonphysical_V5": false
+      },
+      "V5": {
+        "before_mae_mV": 817.9542738101957,
+        "after_metrics_mV": {
+          "mae": 34.61556891148525,
+          "rmse": 93.98223712183216,
+          "max_error": 493.03068639273783,
+          "p99": 490.59980794782746
+        },
+        "z0_used": 0.79994404241519,
+        "excluded_nonphysical_V5": false
+      },
+      "V6": {
+        "before_mae_mV": 32.74072826310074,
+        "after_metrics_mV": {
+          "mae": 32.74072826310074,
+          "rmse": 52.8632323826159,
+          "max_error": 763.8663228267037,
+          "p99": 145.8230058170667
+        },
+        "z0_used": 0.9000000000000001,
+        "excluded_nonphysical_V5": false
+      },
+      "V7": {
+        "before_mae_mV": 12.74659112479021,
+        "after_metrics_mV": {
+          "mae": 12.74659112479021,
+          "rmse": 35.602105380647835,
+          "max_error": 269.7668528514061,
+          "p99": 187.26510131829806
+        },
+        "z0_used": 0.9599308571511523,
+        "excluded_nonphysical_V5": false
+      }
+    }
+  },
+  "hypothetical_static_decision": {
+    "verdict": "NEGATIVA",
+    "profiles": {
+      "DST_25C": {
+        "best_model": "V7",
+        "reduction": 0.434138293717628,
+        "passes": true,
+        "excluded_candidates": []
+      },
+      "US06_25C": {
+        "best_model": "V7",
+        "reduction": 0.2345225012850297,
+        "passes": false,
+        "excluded_candidates": []
+      },
+      "BJDST_25C": {
+        "best_model": "V7",
+        "reduction": 0.38182954871217184,
+        "passes": true,
+        "excluded_candidates": []
+      }
+    },
+    "historical_verdict_not_modified": true
+  },
+  "historical_static_decision": {
+    "verdict": "POSITIVA",
+    "profiles": {
+      "DST_25C": {
+        "best_model": "V7",
+        "best_mae_mV": 7.9251814125236955,
+        "V1_mae_mV": 14.005509340066444,
+        "relative_reduction": {
+          "V5": 0.43161459232587174,
+          "V6": -1.2405195929683235,
+          "V7": 0.434138293717628
+        },
+        "passes": true,
+        "ceiling_recovered_fractions": {
+          "V5": null,
+          "V6": null,
+          "V7": null
+        },
+        "ceiling_unavailable_reason": "No authorized target-fitted V4"
+      },
+      "US06_25C": {
+        "best_model": "V7",
+        "best_mae_mV": 15.300464371943862,
+        "V1_mae_mV": 130.4078054211674,
+        "relative_reduction": {
+          "V5": -5.33894698737063,
+          "V6": 0.7453538202643075,
+          "V7": 0.882672173475129
+        },
+        "passes": true,
+        "ceiling_recovered_fractions": {
+          "V5": null,
+          "V6": null,
+          "V7": null
+        },
+        "ceiling_unavailable_reason": "No authorized target-fitted V4"
+      },
+      "BJDST_25C": {
+        "best_model": "V7",
+        "best_mae_mV": 12.74659112479021,
+        "V1_mae_mV": 130.5139688623609,
+        "relative_reduction": {
+          "V5": -5.267177995887968,
+          "V6": 0.7491400457093685,
+          "V7": 0.9023354263463348
+        },
+        "passes": true,
+        "ceiling_recovered_fractions": {
+          "V5": null,
+          "V6": null,
+          "V7": null
+        },
+        "ceiling_unavailable_reason": "No authorized target-fitted V4"
+      }
+    }
+  },
+  "table": [
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_1rc_nls",
+      "seed": "deterministic",
+      "mode": "windowed",
+      "before_mae_mV": 123.70113902509698,
+      "after_mae_mV": 19.044917418584447,
+      "delta_mae_mV": -104.65622160651253
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_1rc_nls",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 122.04929670686755,
+      "after_mae_mV": 20.74175619225978,
+      "delta_mae_mV": -101.30754051460778
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_2rc_nls",
+      "seed": "deterministic",
+      "mode": "windowed",
+      "before_mae_mV": 123.57511751702069,
+      "after_mae_mV": 19.001419643146292,
+      "delta_mae_mV": -104.5736978738744
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_2rc_nls",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 121.80693809371812,
+      "after_mae_mV": 20.794106670226174,
+      "delta_mae_mV": -101.01283142349195
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 123.62322490659456,
+      "after_mae_mV": 19.16473097888373,
+      "delta_mae_mV": -104.45849392771083
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "42",
+      "mode": "continuous",
+      "before_mae_mV": 121.9567297959998,
+      "after_mae_mV": 20.870679338732533,
+      "delta_mae_mV": -101.08605045726728
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 123.63193673814085,
+      "after_mae_mV": 19.120710894052024,
+      "delta_mae_mV": -104.51122584408883
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "43",
+      "mode": "continuous",
+      "before_mae_mV": 121.98085349975739,
+      "after_mae_mV": 20.815765768098757,
+      "delta_mae_mV": -101.16508773165863
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 123.76206664724032,
+      "after_mae_mV": 19.000735543505805,
+      "delta_mae_mV": -104.7613311037345
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "44",
+      "mode": "continuous",
+      "before_mae_mV": 122.03316285015757,
+      "after_mae_mV": 20.78665303887513,
+      "delta_mae_mV": -101.24650981128244
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 123.78466597939914,
+      "after_mae_mV": 19.016820401951588,
+      "delta_mae_mV": -104.76784557744755
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "45",
+      "mode": "continuous",
+      "before_mae_mV": 122.1112450122435,
+      "after_mae_mV": 20.73843111694993,
+      "delta_mae_mV": -101.37281389529358
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 123.73457951298087,
+      "after_mae_mV": 19.000859977488787,
+      "delta_mae_mV": -104.73371953549209
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "46",
+      "mode": "continuous",
+      "before_mae_mV": 122.07926420286302,
+      "after_mae_mV": 20.701888232104153,
+      "delta_mae_mV": -101.37737597075886
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 123.57572573638531,
+      "after_mae_mV": 19.16527147839674,
+      "delta_mae_mV": -104.41045425798856
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "47",
+      "mode": "continuous",
+      "before_mae_mV": 121.92466299487607,
+      "after_mae_mV": 20.86080097362373,
+      "delta_mae_mV": -101.06386202125235
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 123.72212538138524,
+      "after_mae_mV": 19.23759968228951,
+      "delta_mae_mV": -104.48452569909573
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "48",
+      "mode": "continuous",
+      "before_mae_mV": 122.031728002593,
+      "after_mae_mV": 20.978614949246467,
+      "delta_mae_mV": -101.05311305334654
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 123.72638246306708,
+      "after_mae_mV": 19.022852426662084,
+      "delta_mae_mV": -104.703530036405
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "49",
+      "mode": "continuous",
+      "before_mae_mV": 122.06990919938787,
+      "after_mae_mV": 20.725310130852478,
+      "delta_mae_mV": -101.34459906853539
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 123.71542659435171,
+      "after_mae_mV": 19.029475645529182,
+      "delta_mae_mV": -104.68595094882252
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "50",
+      "mode": "continuous",
+      "before_mae_mV": 122.06015222267504,
+      "after_mae_mV": 20.7307200888883,
+      "delta_mae_mV": -101.32943213378674
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 123.79401103494001,
+      "after_mae_mV": 18.961061389641458,
+      "delta_mae_mV": -104.83294964529856
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "51",
+      "mode": "continuous",
+      "before_mae_mV": 122.12184949543742,
+      "after_mae_mV": 20.685455092718332,
+      "delta_mae_mV": -101.43639440271909
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 123.62097888573807,
+      "after_mae_mV": 19.166821040613396,
+      "delta_mae_mV": -104.45415784512467
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "42",
+      "mode": "continuous",
+      "before_mae_mV": 121.95445308329566,
+      "after_mae_mV": 20.872777674429777,
+      "delta_mae_mV": -101.08167540886589
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 123.64463376820444,
+      "after_mae_mV": 19.110013697437992,
+      "delta_mae_mV": -104.53462007076645
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "43",
+      "mode": "continuous",
+      "before_mae_mV": 121.9935078252343,
+      "after_mae_mV": 20.804855679054256,
+      "delta_mae_mV": -101.18865214618005
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 123.76459709126301,
+      "after_mae_mV": 18.999288332922834,
+      "delta_mae_mV": -104.76530875834018
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "44",
+      "mode": "continuous",
+      "before_mae_mV": 122.03583770883628,
+      "after_mae_mV": 20.7847664857758,
+      "delta_mae_mV": -101.25107122306048
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 123.77446723771153,
+      "after_mae_mV": 19.02683164461991,
+      "delta_mae_mV": -104.74763559309162
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "45",
+      "mode": "continuous",
+      "before_mae_mV": 122.1010598908929,
+      "after_mae_mV": 20.748483655713116,
+      "delta_mae_mV": -101.35257623517978
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 123.75344919570655,
+      "after_mae_mV": 18.984911410904648,
+      "delta_mae_mV": -104.76853778480191
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "46",
+      "mode": "continuous",
+      "before_mae_mV": 122.09807896178253,
+      "after_mae_mV": 20.685631080451166,
+      "delta_mae_mV": -101.41244788133136
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 123.59881713732443,
+      "after_mae_mV": 19.144696923266213,
+      "delta_mae_mV": -104.45412021405822
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "47",
+      "mode": "continuous",
+      "before_mae_mV": 121.94769747726018,
+      "after_mae_mV": 20.840008714330256,
+      "delta_mae_mV": -101.10768876292993
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 123.72583742835795,
+      "after_mae_mV": 19.2339259079476,
+      "delta_mae_mV": -104.49191152041035
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "48",
+      "mode": "continuous",
+      "before_mae_mV": 122.03547880890042,
+      "after_mae_mV": 20.97493281244535,
+      "delta_mae_mV": -101.06054599645508
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 123.72690220760526,
+      "after_mae_mV": 19.0236735847598,
+      "delta_mae_mV": -104.70322862284547
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "49",
+      "mode": "continuous",
+      "before_mae_mV": 122.07043873331283,
+      "after_mae_mV": 20.725980808930238,
+      "delta_mae_mV": -101.3444579243826
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 123.71224552298014,
+      "after_mae_mV": 19.032179275049707,
+      "delta_mae_mV": -104.68006624793043
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "50",
+      "mode": "continuous",
+      "before_mae_mV": 122.05698116929365,
+      "after_mae_mV": 20.733511247694178,
+      "delta_mae_mV": -101.32346992159947
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 123.79720482698363,
+      "after_mae_mV": 18.95871472061519,
+      "delta_mae_mV": -104.83849010636844
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "51",
+      "mode": "continuous",
+      "before_mae_mV": 122.12480927504778,
+      "after_mae_mV": 20.683384919482922,
+      "delta_mae_mV": -101.44142435556486
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 123.66812146048103,
+      "after_mae_mV": 19.163681858968076,
+      "delta_mae_mV": -104.50443960151296
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "42",
+      "mode": "continuous",
+      "before_mae_mV": 122.01009104642773,
+      "after_mae_mV": 20.86685486314159,
+      "delta_mae_mV": -101.14323618328615
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 123.72381437322932,
+      "after_mae_mV": 19.01740579253201,
+      "delta_mae_mV": -104.70640858069731
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "43",
+      "mode": "continuous",
+      "before_mae_mV": 122.05413306612267,
+      "after_mae_mV": 20.729454282463465,
+      "delta_mae_mV": -101.32467878365921
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 123.52283686903677,
+      "after_mae_mV": 19.188781463190264,
+      "delta_mae_mV": -104.3340554058465
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "44",
+      "mode": "continuous",
+      "before_mae_mV": 121.83849229942705,
+      "after_mae_mV": 20.919186159466463,
+      "delta_mae_mV": -100.91930613996058
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 123.7742926658448,
+      "after_mae_mV": 18.976684609366806,
+      "delta_mae_mV": -104.797608056478
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "45",
+      "mode": "continuous",
+      "before_mae_mV": 122.12288482540711,
+      "after_mae_mV": 20.67326787032012,
+      "delta_mae_mV": -101.449616955087
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 123.48113137870195,
+      "after_mae_mV": 19.221377879356293,
+      "delta_mae_mV": -104.25975349934565
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "46",
+      "mode": "continuous",
+      "before_mae_mV": 121.79876347248282,
+      "after_mae_mV": 20.949571265618587,
+      "delta_mae_mV": -100.84919220686423
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 123.54058875865336,
+      "after_mae_mV": 19.17134303305661,
+      "delta_mae_mV": -104.36924572559676
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "47",
+      "mode": "continuous",
+      "before_mae_mV": 121.85639605911962,
+      "after_mae_mV": 20.89873001351365,
+      "delta_mae_mV": -100.95766604560598
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 123.42050958161289,
+      "after_mae_mV": 19.510307791636365,
+      "delta_mae_mV": -103.91020178997653
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "48",
+      "mode": "continuous",
+      "before_mae_mV": 121.77035507027998,
+      "after_mae_mV": 21.21488424359375,
+      "delta_mae_mV": -100.55547082668622
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 123.6944609762643,
+      "after_mae_mV": 19.04063953963527,
+      "delta_mae_mV": -104.65382143662903
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "49",
+      "mode": "continuous",
+      "before_mae_mV": 122.02423895578985,
+      "after_mae_mV": 20.75595440687137,
+      "delta_mae_mV": -101.26828454891849
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 123.85451441916418,
+      "after_mae_mV": 18.908476516858375,
+      "delta_mae_mV": -104.9460379023058
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "50",
+      "mode": "continuous",
+      "before_mae_mV": 122.21509868076363,
+      "after_mae_mV": 20.592762342773167,
+      "delta_mae_mV": -101.62233633799046
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 123.8246612878312,
+      "after_mae_mV": 18.94232909754852,
+      "delta_mae_mV": -104.88233219028268
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "51",
+      "mode": "continuous",
+      "before_mae_mV": 122.18352263210721,
+      "after_mae_mV": 20.636078487734988,
+      "delta_mae_mV": -101.54744414437222
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 101.3205286183044,
+      "after_mae_mV": 64.4407634601485,
+      "delta_mae_mV": -36.87976515815589
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 127.83825442843417,
+      "after_mae_mV": 33.84596432937788,
+      "delta_mae_mV": -93.99229009905629
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 124.95941160958984,
+      "after_mae_mV": 34.812816185408636,
+      "delta_mae_mV": -90.1465954241812
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 127.91815685970002,
+      "after_mae_mV": 34.89691126538689,
+      "delta_mae_mV": -93.02124559431313
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 121.70283055350465,
+      "after_mae_mV": 37.00994901765359,
+      "delta_mae_mV": -84.69288153585106
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 127.08232081724377,
+      "after_mae_mV": 35.779431687665024,
+      "delta_mae_mV": -91.30288912957874
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 126.6657075977529,
+      "after_mae_mV": 37.316485033273906,
+      "delta_mae_mV": -89.34922256447899
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 125.33515387751576,
+      "after_mae_mV": 36.63426425085262,
+      "delta_mae_mV": -88.70088962666316
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 126.61405043805372,
+      "after_mae_mV": 36.30265803604195,
+      "delta_mae_mV": -90.31139240201178
+    },
+    {
+      "condition": "US06_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 124.26958729800384,
+      "after_mae_mV": 35.64014515120609,
+      "delta_mae_mV": -88.62944214679774
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_1rc_nls",
+      "seed": "deterministic",
+      "mode": "windowed",
+      "before_mae_mV": 123.48100134079293,
+      "after_mae_mV": 18.970413043584124,
+      "delta_mae_mV": -104.51058829720881
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_1rc_nls",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 122.9106790523066,
+      "after_mae_mV": 19.482040367875655,
+      "delta_mae_mV": -103.42863868443095
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_2rc_nls",
+      "seed": "deterministic",
+      "mode": "windowed",
+      "before_mae_mV": 123.36602110501738,
+      "after_mae_mV": 18.898737593988898,
+      "delta_mae_mV": -104.46728351102848
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_2rc_nls",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 122.68288173990777,
+      "after_mae_mV": 19.51495895525469,
+      "delta_mae_mV": -103.16792278465309
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 123.4034328301875,
+      "after_mae_mV": 19.07816118515585,
+      "delta_mae_mV": -104.32527164503165
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "42",
+      "mode": "continuous",
+      "before_mae_mV": 122.82015897465661,
+      "after_mae_mV": 19.60242903978893,
+      "delta_mae_mV": -103.21772993486768
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 123.41174645638621,
+      "after_mae_mV": 19.043927640408455,
+      "delta_mae_mV": -104.36781881597776
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "43",
+      "mode": "continuous",
+      "before_mae_mV": 122.84247853344255,
+      "after_mae_mV": 19.554781886155208,
+      "delta_mae_mV": -103.28769664728733
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 123.54164065570714,
+      "after_mae_mV": 18.925782798124796,
+      "delta_mae_mV": -104.61585785758234
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "44",
+      "mode": "continuous",
+      "before_mae_mV": 122.89536698905557,
+      "after_mae_mV": 19.522088029864676,
+      "delta_mae_mV": -103.3732789591909
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 123.56381138601056,
+      "after_mae_mV": 18.942431180295323,
+      "delta_mae_mV": -104.62138020571524
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "45",
+      "mode": "continuous",
+      "before_mae_mV": 122.97293392269384,
+      "after_mae_mV": 19.477686672667616,
+      "delta_mae_mV": -103.49524725002622
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 123.5145121431522,
+      "after_mae_mV": 18.927747852872272,
+      "delta_mae_mV": -104.58676429027993
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "46",
+      "mode": "continuous",
+      "before_mae_mV": 122.94035616514678,
+      "after_mae_mV": 19.442675724958672,
+      "delta_mae_mV": -103.4976804401881
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 123.35553346045575,
+      "after_mae_mV": 19.08818158815482,
+      "delta_mae_mV": -104.26735187230092
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "47",
+      "mode": "continuous",
+      "before_mae_mV": 122.78626198462445,
+      "after_mae_mV": 19.599840938062954,
+      "delta_mae_mV": -103.18642104656149
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 123.50303715467984,
+      "after_mae_mV": 19.158005512708737,
+      "delta_mae_mV": -104.3450316419711
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "48",
+      "mode": "continuous",
+      "before_mae_mV": 122.89719246556788,
+      "after_mae_mV": 19.712077211384592,
+      "delta_mae_mV": -103.18511525418329
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 123.50647754956816,
+      "after_mae_mV": 18.948350319452015,
+      "delta_mae_mV": -104.55812723011614
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "49",
+      "mode": "continuous",
+      "before_mae_mV": 122.93163468230703,
+      "after_mae_mV": 19.46516276488736,
+      "delta_mae_mV": -103.46647191741968
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 123.49546836094663,
+      "after_mae_mV": 18.955117130186117,
+      "delta_mae_mV": -104.5403512307605
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "50",
+      "mode": "continuous",
+      "before_mae_mV": 122.92180786214345,
+      "after_mae_mV": 19.47081136792667,
+      "delta_mae_mV": -103.45099649421678
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 123.57454798604975,
+      "after_mae_mV": 18.88835776233325,
+      "delta_mae_mV": -104.6861902237165
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "physics_gradient",
+      "seed": "51",
+      "mode": "continuous",
+      "before_mae_mV": 122.98508700667108,
+      "after_mae_mV": 19.425556298535422,
+      "delta_mae_mV": -103.55953070813565
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 123.40117507623955,
+      "after_mae_mV": 19.08016102210735,
+      "delta_mae_mV": -104.3210140541322
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "42",
+      "mode": "continuous",
+      "before_mae_mV": 122.81788383845347,
+      "after_mae_mV": 19.604482148822985,
+      "delta_mae_mV": -103.21340168963049
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 123.4244416282145,
+      "after_mae_mV": 19.032966153904137,
+      "delta_mae_mV": -104.39147547431035
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "43",
+      "mode": "continuous",
+      "before_mae_mV": 122.85512208577647,
+      "after_mae_mV": 19.543687300835366,
+      "delta_mae_mV": -103.3114347849411
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 123.54414016172042,
+      "after_mae_mV": 18.92390777227676,
+      "delta_mae_mV": -104.62023238944366
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "44",
+      "mode": "continuous",
+      "before_mae_mV": 122.89801653733672,
+      "after_mae_mV": 19.519980926846596,
+      "delta_mae_mV": -103.37803561049012
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 123.55359940663767,
+      "after_mae_mV": 18.952402621388213,
+      "delta_mae_mV": -104.60119678524946
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "45",
+      "mode": "continuous",
+      "before_mae_mV": 122.96272723372637,
+      "after_mae_mV": 19.487748323135314,
+      "delta_mae_mV": -103.47497891059106
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 123.53339115842303,
+      "after_mae_mV": 18.911427320134457,
+      "delta_mae_mV": -104.62196383828856
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "46",
+      "mode": "continuous",
+      "before_mae_mV": 122.95917169909113,
+      "after_mae_mV": 19.42615074193725,
+      "delta_mae_mV": -103.53302095715388
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 123.37868065097565,
+      "after_mae_mV": 19.06740228756172,
+      "delta_mae_mV": -104.31127836341393
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "47",
+      "mode": "continuous",
+      "before_mae_mV": 122.80932879636906,
+      "after_mae_mV": 19.578832288662742,
+      "delta_mae_mV": -103.23049650770632
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 123.50675778535197,
+      "after_mae_mV": 19.15442712493751,
+      "delta_mae_mV": -104.35233066041445
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "48",
+      "mode": "continuous",
+      "before_mae_mV": 122.9009601543079,
+      "after_mae_mV": 19.708441906636093,
+      "delta_mae_mV": -103.1925182476718
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 123.50694391561622,
+      "after_mae_mV": 18.949035170397686,
+      "delta_mae_mV": -104.55790874521853
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "49",
+      "mode": "continuous",
+      "before_mae_mV": 122.932096401999,
+      "after_mae_mV": 19.465789842482444,
+      "delta_mae_mV": -103.46630655951657
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 123.49231079573319,
+      "after_mae_mV": 18.957904197159966,
+      "delta_mae_mV": -104.53440659857323
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "50",
+      "mode": "continuous",
+      "before_mae_mV": 122.9186632805404,
+      "after_mae_mV": 19.47364260182375,
+      "delta_mae_mV": -103.44502067871665
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 123.57796918685173,
+      "after_mae_mV": 18.885636222073405,
+      "delta_mae_mV": -104.69233296477833
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "output_residual",
+      "seed": "51",
+      "mode": "continuous",
+      "before_mae_mV": 122.98829929838622,
+      "after_mae_mV": 19.423085059919195,
+      "delta_mae_mV": -103.56521423846704
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 123.4481368375015,
+      "after_mae_mV": 19.08513885481854,
+      "delta_mae_mV": -104.36299798268296
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "42",
+      "mode": "continuous",
+      "before_mae_mV": 122.87319911450946,
+      "after_mae_mV": 19.603985395676965,
+      "delta_mae_mV": -103.2692137188325
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 123.50363342406776,
+      "after_mae_mV": 18.943535806333887,
+      "delta_mae_mV": -104.56009761773387
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "43",
+      "mode": "continuous",
+      "before_mae_mV": 122.9158710080907,
+      "after_mae_mV": 19.470212805439946,
+      "delta_mae_mV": -103.44565820265076
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 123.30314766059496,
+      "after_mae_mV": 19.11983810740969,
+      "delta_mae_mV": -104.18330955318527
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "44",
+      "mode": "continuous",
+      "before_mae_mV": 122.70054210802466,
+      "after_mae_mV": 19.66311698266071,
+      "delta_mae_mV": -103.03742512536395
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 123.55365609005857,
+      "after_mae_mV": 18.90496206604886,
+      "delta_mae_mV": -104.6486940240097
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "45",
+      "mode": "continuous",
+      "before_mae_mV": 122.98352725359962,
+      "after_mae_mV": 19.41542895503328,
+      "delta_mae_mV": -103.56809829856634
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 123.26070391972915,
+      "after_mae_mV": 19.150892316659874,
+      "delta_mae_mV": -104.10981160306928
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "46",
+      "mode": "continuous",
+      "before_mae_mV": 122.66013781314585,
+      "after_mae_mV": 19.693101033129135,
+      "delta_mae_mV": -102.96703678001671
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 123.31945039350711,
+      "after_mae_mV": 19.100308029013323,
+      "delta_mae_mV": -104.21914236449379
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "47",
+      "mode": "continuous",
+      "before_mae_mV": 122.7173142149077,
+      "after_mae_mV": 19.642286664157805,
+      "delta_mae_mV": -103.0750275507499
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 123.20165549296462,
+      "after_mae_mV": 19.429544032754187,
+      "delta_mae_mV": -103.77211146021043
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "48",
+      "mode": "continuous",
+      "before_mae_mV": 122.63408286009481,
+      "after_mae_mV": 19.948259254779657,
+      "delta_mae_mV": -102.68582360531515
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 123.47513851479783,
+      "after_mae_mV": 18.96550138568462,
+      "delta_mae_mV": -104.50963712911322
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "49",
+      "mode": "continuous",
+      "before_mae_mV": 122.88688245975958,
+      "after_mae_mV": 19.495133396481265,
+      "delta_mae_mV": -103.39174906327831
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 123.63423288220604,
+      "after_mae_mV": 18.83202482105685,
+      "delta_mae_mV": -104.80220806114919
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "50",
+      "mode": "continuous",
+      "before_mae_mV": 123.07632034210714,
+      "after_mae_mV": 19.331463086699557,
+      "delta_mae_mV": -103.74485725540758
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 123.60429261647771,
+      "after_mae_mV": 18.86888415503382,
+      "delta_mae_mV": -104.73540846144388
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "ecm_ude",
+      "seed": "51",
+      "mode": "continuous",
+      "before_mae_mV": 123.04510207366876,
+      "after_mae_mV": 19.376375337818637,
+      "delta_mae_mV": -103.66872673585013
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "42",
+      "mode": "windowed",
+      "before_mae_mV": 98.6253774632866,
+      "after_mae_mV": 56.20645752720888,
+      "delta_mae_mV": -42.418919936077714
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "43",
+      "mode": "windowed",
+      "before_mae_mV": 128.61600609260523,
+      "after_mae_mV": 31.72531457951902,
+      "delta_mae_mV": -96.89069151308621
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "44",
+      "mode": "windowed",
+      "before_mae_mV": 125.15807765056816,
+      "after_mae_mV": 33.422847495080596,
+      "delta_mae_mV": -91.73523015548756
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "45",
+      "mode": "windowed",
+      "before_mae_mV": 128.2662931800607,
+      "after_mae_mV": 33.89726920278902,
+      "delta_mae_mV": -94.36902397727168
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "46",
+      "mode": "windowed",
+      "before_mae_mV": 121.6809069423453,
+      "after_mae_mV": 35.242634815096366,
+      "delta_mae_mV": -86.43827212724894
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "47",
+      "mode": "windowed",
+      "before_mae_mV": 127.11202453893888,
+      "after_mae_mV": 33.83168881682688,
+      "delta_mae_mV": -93.280335722112
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "48",
+      "mode": "windowed",
+      "before_mae_mV": 126.83810775340227,
+      "after_mae_mV": 34.86154648253155,
+      "delta_mae_mV": -91.97656127087072
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "49",
+      "mode": "windowed",
+      "before_mae_mV": 125.22369200128706,
+      "after_mae_mV": 34.621092282813095,
+      "delta_mae_mV": -90.60259971847397
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "50",
+      "mode": "windowed",
+      "before_mae_mV": 126.7682395380695,
+      "after_mae_mV": 34.82796172550455,
+      "delta_mae_mV": -91.94027781256494
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "unified",
+      "model": "lstm",
+      "seed": "51",
+      "mode": "windowed",
+      "before_mae_mV": 124.63276666953267,
+      "after_mae_mV": 33.87912812299358,
+      "delta_mae_mV": -90.7536385465391
+    },
+    {
+      "condition": "US06_25C",
+      "family": "static",
+      "model": "V1",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 130.4078054211674,
+      "after_mae_mV": 19.988130804144085,
+      "delta_mae_mV": -110.41967461702333
+    },
+    {
+      "condition": "US06_25C",
+      "family": "static",
+      "model": "V5",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 826.6481653041244,
+      "after_mae_mV": 37.13940705760071,
+      "delta_mae_mV": -789.5087582465237
+    },
+    {
+      "condition": "US06_25C",
+      "family": "static",
+      "model": "V6",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 33.2078494582158,
+      "after_mae_mV": 33.2078494582158,
+      "delta_mae_mV": 0.0
+    },
+    {
+      "condition": "US06_25C",
+      "family": "static",
+      "model": "V7",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 15.300464371943862,
+      "after_mae_mV": 15.300464371943862,
+      "delta_mae_mV": 0.0
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "static",
+      "model": "V1",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 130.5139688623609,
+      "after_mae_mV": 20.61986479333551,
+      "delta_mae_mV": -109.8941040690254
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "static",
+      "model": "V5",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 817.9542738101957,
+      "after_mae_mV": 34.61556891148525,
+      "delta_mae_mV": -783.3387048987104
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "static",
+      "model": "V6",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 32.74072826310074,
+      "after_mae_mV": 32.74072826310074,
+      "delta_mae_mV": 0.0
+    },
+    {
+      "condition": "BJDST_25C",
+      "family": "static",
+      "model": "V7",
+      "seed": "deterministic",
+      "mode": "continuous",
+      "before_mae_mV": 12.74659112479021,
+      "after_mae_mV": 12.74659112479021,
+      "delta_mae_mV": 0.0
+    }
+  ]
+}
