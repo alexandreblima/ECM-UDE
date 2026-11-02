@@ -1,4 +1,0 @@
-dataset,profile,scope,status,n_evaluated_samples,V1_global_mae_mV,mae_mV,rmse_mV,max_error_mV,p99_mV
-panasonic,US06_25C,global,INCONCLUSIVE_NLS,0,33.18665916053026,,,,
-panasonic,LA92_25C,global,INCONCLUSIVE_NLS,0,16.99919155089693,,,,
-panasonic,HWFET_25C,global,INCONCLUSIVE_NLS,0,26.91450629352744,,,,

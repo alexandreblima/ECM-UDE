@@ -32,7 +32,7 @@
     "utils"
   ],
   "files_sha256": {
-    "README.md": "a6ff99ef1ee3a35a8b27d89b4dc6ab93fb386bb05195e1bb582a004a3a0e8866",
+    "README.md": "c4d5898c3a76ef7d1f82a474c8d4d33d9bb52066600b2e01261ff2143bb8b1fa",
     "environment.json": "1979a67c6fb2812b78c080f9a41eb88bb7bd1eef0aab74e6b60a8288235e2bf4",
     "raw_data_manifest.json": "bdaa2244f183938f9cd371fe05977e0e663ed5d43bfef7a57961b710aa4f618d",
     "reference/a123_temperature_diagnostic.json": "09ab71e2b45bd71a4a5649f2913e8f31e876017a2719362f7e299707b237a8fc",
@@ -881,9 +881,19 @@
     "reference/ude.py": "f9a7b0781c736fcc9a3ad08365c1d110a486259278c9c78cd789c3ae2edef94a",
     "reference/unified_dynamics.py": "29414f80efb874457a3400831cd9782458c6be278099cbcaf68752dd20d79284",
     "reference/utils.py": "2cc10fde4bbb4c57bf1ebf6b663a84cf401a9630d052863509fafc5ddd36717b",
-    "reproduce.py": "6033a91d1fad8f8d97806f975cc2c722ed1deb8b84b834636d66ed78e8220710",
+    "reproduce.py": "56f5b1a59708613192659e0e63dd4c1d94af24c79854e769f160d62bb8a28a5c",
     "requirements.txt": "752d907ceb5c9d0613bf01de0a5d62b5cc7bb9438fa70dce18e86db0cb43d15a",
     "validation_report.json": "362d49b73f3c290d5a3f0458f864d3c7a96dad31c2dcd109031968f233065570",
-    ".gitignore": "e6fa06e8b81a6bb073e94c30e213d7129db74da86ad220236ef8db2f9550295d"
+    ".gitignore": "f7a2dc09219ba40ec48ac4619bd2bd375b552d69342d3ea95471349f900bd6fe"
+  },
+  "dependency_distribution": {
+    "release_tag": "reviewer-round-dependencies-v1",
+    "asset": "reviewer-round-dependencies.tar.gz",
+    "sha256": "96597122dc6d3c4841c23ac7f66cdc08219140ba47c99001e97daee093bd9c07",
+    "directories": [
+      "reference/results",
+      "reference/figures_ieee"
+    ],
+    "raw_data_included": false
   }
 }

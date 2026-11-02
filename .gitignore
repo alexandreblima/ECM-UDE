@@ -6,3 +6,7 @@ __pycache__/
 /work/
 /datasets/
 /matplotlib-cache/
+/reference/results/
+/reference/figures_ieee/
+/reviewer-round-dependencies.tar.gz
+/reviewer-round-dependencies.tar.gz.sha256

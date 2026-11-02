@@ -19,13 +19,25 @@ def digest(path: Path) -> str:
     return hashlib.sha256(path.read_bytes()).hexdigest()
 
 
-def verify_bundle() -> dict:
+def verify_bundle(require_dependencies: bool = True) -> dict:
     manifest = JSON_LOADS((BUNDLE/"bundle_manifest.json").read_text())
+    verified, missing = 0, []
     for relative, expected in manifest["files_sha256"].items():
         path = BUNDLE/relative
+        dependency = relative.startswith(("reference/results/", "reference/figures_ieee/"))
+        if not path.is_file() and dependency:
+            missing.append(relative)
+            continue
         if not path.is_file() or digest(path) != expected:
             raise RuntimeError(f"Missing or modified bundle input: {relative}")
-    print(f"SHA-256 OK: {len(manifest['files_sha256'])} packaged files.")
+        verified += 1
+    print(f"SHA-256 OK: {verified} available files.")
+    if missing:
+        message = (f"{len(missing)} dependency files are not installed. Download and extract "
+                   "reviewer-round-dependencies.tar.gz from the GitHub Release; see README section 2.")
+        if require_dependencies:
+            raise FileNotFoundError(message)
+        print(message)
     return manifest
 
 
@@ -108,7 +120,7 @@ def main() -> None:
                         help="External datasets directory (never copied into the bundle)")
     parser.add_argument("--work", type=Path, help="New, nonexisting work directory")
     args = parser.parse_args()
-    manifest = verify_bundle()
+    manifest = verify_bundle(require_dependencies=args.command != "verify")
     if args.command == "verify":
         return
     work = (args.work or BUNDLE/"work"/f"{args.command}-{time.time_ns()}").resolve()

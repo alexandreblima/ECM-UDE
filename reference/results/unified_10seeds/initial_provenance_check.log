@@ -1,6 +1,0 @@
-Traceback (most recent call last):
-  File "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_paper_v2_seeds.py", line 194, in <module>
-    main()
-  File "/Users/apple/Dropbox/Documentos/Academia/PESQUISA/baterias/SciML/pipelines/paper_ECM_UDE1/exp_paper_v2_seeds.py", line 139, in main
-    raise ValueError(f"Unified source differs: {path}")
-ValueError: Unified source differs: exp_unified.py

@@ -11,20 +11,20 @@ This standalone package corresponds to commit **91b3a08** on branch
 - **C:** an audit of 80 saved training histories and eight IEEE learning curves;
 - **D:** the ten-seed Figure 2 and E1, condition, and criterion tables.
 
-Raw data, the manuscript, credentials, the Git database, and new neural-network
-training are not included. Earlier results supplied here are **frozen inputs**
-to this round; this is not a package for rerunning every paper experiment from
-scratch.
+Raw data, the manuscript, credentials, and new neural-network training are
+not included. The Git repository contains code and documentation only.
+Saved results and reference figures are distributed separately as a
+**GitHub Release asset**. They are frozen inputs to this round; this is not
+a package for rerunning every paper experiment from scratch.
 
 Source repository: [alexandreblima/ECM-UDE](https://github.com/alexandreblima/ECM-UDE).
 
 Read [reference/report_reviewer_round.md](reference/report_reviewer_round.md)
-for the original scientific report. Reference outputs are available in:
-
-- [parameter ablation](reference/results/param_ablation/);
-- [paired variant TOST](reference/results/variant_tost/);
-- [training audit](reference/results/training_audit/);
-- [publication tables](reference/results/paper_tables/).
+for the original scientific report. After installing the release dependencies,
+reference outputs are under `reference/results/param_ablation/`,
+`reference/results/variant_tost/`, `reference/results/training_audit/`, and
+`reference/results/paper_tables/`. Reference PDFs are under
+`reference/figures_ieee/`. These directories are ignored by Git.
 
 ## 1. Environment
 
@@ -54,7 +54,28 @@ distribution and use `\input{.../results/paper_tables/E1.tex}` in your document.
 
 ## 2. Verify and reproduce without raw data
 
-The following commands use only saved results and checkpoints:
+First download the two assets from
+[the reviewer-round-dependencies-v1 release](https://github.com/alexandreblima/ECM-UDE/releases/tag/reviewer-round-dependencies-v1)
+into the repository root, then verify and extract them:
+
+```bash
+# Requires the GitHub CLI; alternatively download through the release page.
+gh release download reviewer-round-dependencies-v1 \
+  --repo alexandreblima/ECM-UDE \
+  --pattern 'reviewer-round-dependencies.tar.gz*'
+
+# macOS:
+shasum -a 256 -c reviewer-round-dependencies.tar.gz.sha256
+# Linux alternative: sha256sum -c reviewer-round-dependencies.tar.gz.sha256
+tar -xzf reviewer-round-dependencies.tar.gz
+```
+
+The archive restores `reference/results/` and `reference/figures_ieee/`.
+No raw datasets are included. Check the checksum before extracting.
+On Windows, verify SHA-256 using your preferred utility and extract the tar.gz
+with a compatible archive tool.
+
+The following commands then use only saved results and checkpoints:
 
 ```bash
 python reproduce.py verify
@@ -64,8 +85,10 @@ python reproduce.py figure2
 python reproduce.py tables-only
 ```
 
-- `verify`: checks SHA-256 hashes of all distributed files, without importing
-  scientific libraries.
+- `verify`: checks SHA-256 hashes of available distributed files, without
+  importing scientific libraries, and reports missing release dependencies.
+  All other commands require the complete dependency set and fail explicitly
+  if it is missing.
 - `validate`: runs scientific checks covering parameters, metrics, explained
   fractions, Wilcoxon zeros/ties, Holm correction, bootstrap intervals, and
   training histories; also validates vector PDFs. It does not require the
@@ -199,8 +222,9 @@ tested either; dependency versions are pinned to support that step.
 
 ## 5. Portability, integrity, and provenance
 
-- `reference/` preserves the original scientific code and copied results;
-  their bytes were not edited to replace paths.
+- `reference/` preserves the original scientific code; release assets supply
+  the original saved results and figures. Their bytes were not edited to
+  replace paths.
 - `reproduce.py` translates absolute manifest path prefixes **in memory**
   to the working copy and external dataset directory.
 - The original `git show d14935e:reviewer_round_protocol.json` check is replaced,
