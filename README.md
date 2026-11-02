@@ -1,21 +1,40 @@
-# ECM-UDE: reproducing the latest reviewer round
+# ECM-UDE
 
 ## Scope
 
-This standalone package corresponds to commit **91b3a08** on branch
-`paper-v2`. The protocol was registered **before fitting**, in commit
-**d14935e**. It contains the materials needed for the latest reviewer round:
+This repository provides code to reproduce selected analyses of lithium-ion
+battery voltage prediction. The analyses compare equivalent-circuit models
+(ECMs), which represent the battery using resistors and capacitors, with
+previously trained machine-learning models.
 
-- **A:** NLS parameter ablations V6-Q/V6-RC, CALCE V6-wide, and A123 V6-OCVT;
-- **B:** seed-paired TOST comparisons between variants, with a +/-1 mV margin;
-- **C:** an audit of 80 saved training histories and eight IEEE learning curves;
-- **D:** the ten-seed Figure 2 and E1, condition, and criterion tables.
+The code supports four tasks:
 
-Raw data, the manuscript, credentials, and new neural-network training are
-not included. The Git repository contains code and documentation only.
-Saved results and reference figures are distributed separately as a
-**GitHub Release asset**. They are frozen inputs to this round; this is not
-a package for rerunning every paper experiment from scratch.
+1. **Identify which battery parameters explain prediction improvements.**
+   Refit capacity and initial state of charge, resistance-capacitance
+   parameters, or both using nonlinear least squares (NLS), then evaluate
+   predictions on other current profiles and temperatures.
+2. **Compare model accuracy statistically.** Test whether the voltage errors
+   of physics-gradient, output-residual, and ECM-UDE models are equivalent
+   within +/-1 mV, using paired results from ten random seeds.
+3. **Inspect previously completed training runs.** Reconstruct training and
+   validation curves and report the epochs selected by early stopping.
+4. **Generate publication tables and figures.** Rebuild numerical comparisons
+   and the figure comparing equivalent-circuit models with a long short-term
+   memory (LSTM) neural network.
+
+The repository contains code, experiment protocols, and documentation.
+Saved model parameters, training histories, numerical results, and reference
+figures are supplied separately in the **GitHub Release** linked in Section 2.
+These files allow the statistical analyses, training audit, tables, and figures
+to be reproduced **without raw data or neural-network retraining**.
+Rerunning the NLS parameter fits additionally requires the public battery
+datasets described in Section 3.
+
+This package covers the analyses listed above, not every experiment in the
+broader research project. It does not provide commands to retrain the neural
+networks. For provenance, the scientific source version is commit **91b3a08**
+of the original project's `paper-v2` branch; its experiment protocol was
+registered before fitting in commit **d14935e**.
 
 Source repository: [alexandreblima/ECM-UDE](https://github.com/alexandreblima/ECM-UDE).
 
