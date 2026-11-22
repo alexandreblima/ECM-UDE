@@ -1,0 +1,38 @@
+[
+  {
+    "dataset": "panasonic",
+    "variant": "output_residual",
+    "seed": 42,
+    "epochs_completed": 30,
+    "early_stopping": false,
+    "checkpoint": "results/reviewer_round2/A/a3/checkpoints/panasonic/output_residual_seed42.pt",
+    "checkpoint_sha256": "522dd4340b6d3d5674b956bf50674d752f6ae371f72b2946dc981064d7627605"
+  },
+  {
+    "dataset": "panasonic",
+    "variant": "ecm_ude",
+    "seed": 42,
+    "epochs_completed": 30,
+    "early_stopping": false,
+    "checkpoint": "results/reviewer_round2/A/a3/checkpoints/panasonic/ecm_ude_seed42.pt",
+    "checkpoint_sha256": "0204b8ed459c358addd5ccb69515cdfe6250791ac87cfb3421b7a9544a946c37"
+  },
+  {
+    "dataset": "calce",
+    "variant": "output_residual",
+    "seed": 42,
+    "epochs_completed": 30,
+    "early_stopping": false,
+    "checkpoint": "results/reviewer_round2/A/a3/checkpoints/calce/output_residual_seed42.pt",
+    "checkpoint_sha256": "dd2c06ae29024035959128f69e8cfa20739f946af48abf966ebb5c60b2b18bdf"
+  },
+  {
+    "dataset": "calce",
+    "variant": "ecm_ude",
+    "seed": 42,
+    "epochs_completed": 30,
+    "early_stopping": false,
+    "checkpoint": "results/reviewer_round2/A/a3/checkpoints/calce/ecm_ude_seed42.pt",
+    "checkpoint_sha256": "075d5b90193ed321988b4bdb2fa11c58eed3c8b5cabd8c307efa499e720b2a1c"
+  }
+]

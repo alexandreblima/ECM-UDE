@@ -1,0 +1,27 @@
+% Standalone circuit figure for the IEEE Access manuscript.
+% Compile once with pdflatex to produce fig_ecm_circuit.pdf, then include it in the paper.
+\documentclass[border=2pt]{standalone}
+\usepackage{amsmath}
+\usepackage{times}
+\usepackage[american]{circuitikz}
+\begin{document}
+\begin{circuitikz}[american voltages, font=\footnotesize, line width=0.7pt]
+\coordinate (srcB) at (0,0);
+\coordinate (srcT) at (0,1.6);
+\coordinate (r0L)  at (0.45,1.6);
+\coordinate (r0R)  at (1.75,1.6);
+\coordinate (rcL)  at (2.45,1.6);
+\coordinate (rcR)  at (4.45,1.6);
+\coordinate (pos)  at (5.15,1.6);
+\coordinate (neg)  at (5.15,0);
+\draw (srcB) to[V,invert,l_={$\mathrm{OCV}(z)$}] (srcT);
+\draw (srcT) -- (r0L) to[R,l={$R_0$}] (r0R) -- (rcL);
+\draw (rcL) -- (2.45,2.20) to[R,l={$R_1$}] (4.45,2.20) -- (rcR);
+\draw (rcL) -- (2.45,1.00) to[C] (4.45,1.00) -- (rcR);
+\node[font=\footnotesize] at (3.85,1.18) {$C_1$};
+\draw (rcR) -- (pos) (pos) to[open,v^={$\hat V(t)$}] (neg) (neg) -- (srcB);
+\draw[-latex,thick] (4.60,1.85) -- node[above=1mm] {$I(t)$} (5.05,1.85);
+\fill (pos) circle (1.3pt);
+\fill (neg) circle (1.3pt);
+\end{circuitikz}
+\end{document}

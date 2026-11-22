@@ -1,0 +1,20 @@
+{
+  "inputs_sha256": {
+    "results/unified_10seeds/summary.json": "935c6ff2b997ab777061832d478432ba6983e80afdb90c3350cd79b721b7a76f",
+    "results/unified_10seeds/statistics.json": "89b013f12b92f66dec7eda900fb701c53b02cc2a1c449fce0a1ccbc20f4f889f",
+    "results/paper_tables/E1.csv": "40d36643d994bec80534406127a911f8cf0fa5a2d825971c71aac50fb9a4e6e8",
+    "results/training_audit/epochs.csv": "db48d2dfb45d732329f909563332eb2249e9e01168c0d9580487688ff0d13940",
+    "exp_unified.py": "5570859125f4ce0be6718c60b54f733c02d01709a9167d394f4bd1935fd7f78c",
+    "exp_paper_v2_seeds.py": "2058041e91407430a7787c304e01917f91f38f4f2676490fcb8de0f55ea88c9f"
+  },
+  "no_training": true,
+  "code_audit": {
+    "audited_rows": 54,
+    "matches": 54,
+    "divergences": [],
+    "paper_table_sha256": "40d36643d994bec80534406127a911f8cf0fa5a2d825971c71aac50fb9a4e6e8",
+    "interpretation": "E maps to EQ; N maps to ND. Holm is applied separately to both one-sided tests."
+  },
+  "n_learning_curve_rows": 6,
+  "n_histories": 60
+}

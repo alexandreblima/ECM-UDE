@@ -1,0 +1,74 @@
+{
+  "saved_summary": {
+    "path": "results/unified_10seeds/summary.json",
+    "sha256": "935c6ff2b997ab777061832d478432ba6983e80afdb90c3350cd79b721b7a76f"
+  },
+  "raw_source_inputs": {
+    "panasonic/UDDS_25C": {
+      "path": "datasets/25degC_UDDS_Pan18650PF.mat",
+      "sha256": "cb9d830727474c17a8eb624bfd16bbf1f4c306c8d32f831ed58ccdb820f0376a"
+    },
+    "calce/FUDS_25C": {
+      "path": "../datasets/calce_20r_raw/extracted/SP2_25C_FUDS/11_06_2015_SP20-2_FUDS_80SOC.xls",
+      "sha256": "8c24e60e4032af8d4279942141cec74ac34640c3368015f28efa76f989589d33"
+    }
+  },
+  "nls_warm_starts": {
+    "panasonic": {
+      "path": "results/unified/checkpoints/panasonic/ecm_1rc_nls.json",
+      "sha256": "cab6e516884d1065ed7e5b2e308fef7ab0d6d28f3ddc4da0d7d70053ddec243a"
+    },
+    "calce": {
+      "path": "results/unified/checkpoints/calce/ecm_1rc_nls.json",
+      "sha256": "36c5ff9ff924b635b4a71c3c7c7ea9370b8325b726fb272b418932f4bcfd638f"
+    }
+  },
+  "source_sha256": {
+    "reviewer_round2_a3.py": "a6643b5e76953425331b0171f10c3a7147861656497202a6b9774e231477f364",
+    "exp_unified.py": "5570859125f4ce0be6718c60b54f733c02d01709a9167d394f4bd1935fd7f78c",
+    "protocol.py": "999ae81a38e1e21425d4055c69a65bf03ad902c1e4cad415834718a3b7303b0e",
+    "training.py": "97e99dc89fa061093309b7337adbdcc2e22d904c92ab6e6afcb459b045bad5f4",
+    "data.py": "dc78565451b5e6cebba720f0f5632fc4c50887601bdc0e87f34d866e4b4711a9",
+    "models.py": "b59768d74c5660205ff3ea16aa8454b6c1e2c7210f449a3827918a7b5ec351c7",
+    "unified_dynamics.py": "29414f80efb874457a3400831cd9782458c6be278099cbcaf68752dd20d79284"
+  },
+  "checkpoints": [
+    {
+      "dataset": "panasonic",
+      "variant": "output_residual",
+      "seed": 42,
+      "epochs_completed": 30,
+      "early_stopping": false,
+      "checkpoint": "results/reviewer_round2/A/a3/checkpoints/panasonic/output_residual_seed42.pt",
+      "checkpoint_sha256": "522dd4340b6d3d5674b956bf50674d752f6ae371f72b2946dc981064d7627605"
+    },
+    {
+      "dataset": "panasonic",
+      "variant": "ecm_ude",
+      "seed": 42,
+      "epochs_completed": 30,
+      "early_stopping": false,
+      "checkpoint": "results/reviewer_round2/A/a3/checkpoints/panasonic/ecm_ude_seed42.pt",
+      "checkpoint_sha256": "0204b8ed459c358addd5ccb69515cdfe6250791ac87cfb3421b7a9544a946c37"
+    },
+    {
+      "dataset": "calce",
+      "variant": "output_residual",
+      "seed": 42,
+      "epochs_completed": 30,
+      "early_stopping": false,
+      "checkpoint": "results/reviewer_round2/A/a3/checkpoints/calce/output_residual_seed42.pt",
+      "checkpoint_sha256": "dd2c06ae29024035959128f69e8cfa20739f946af48abf966ebb5c60b2b18bdf"
+    },
+    {
+      "dataset": "calce",
+      "variant": "ecm_ude",
+      "seed": 42,
+      "epochs_completed": 30,
+      "early_stopping": false,
+      "checkpoint": "results/reviewer_round2/A/a3/checkpoints/calce/ecm_ude_seed42.pt",
+      "checkpoint_sha256": "075d5b90193ed321988b4bdb2fa11c58eed3c8b5cabd8c307efa499e720b2a1c"
+    }
+  ],
+  "training_validation_mae_sha256": "20bf31f08ec23711353ed34a3d72754459dbc393dea6aeca7128709520c94136"
+}

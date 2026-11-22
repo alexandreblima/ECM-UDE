@@ -1,0 +1,18 @@
+{
+  "version": "paper-v2-static-monotone-1",
+  "registered_before_fitting": true,
+  "datasets": ["cell_A_a123","cell_B_mendeley","panasonic","calce"],
+  "sources": {"cell_A_a123":"DST","cell_B_mendeley":"DST","panasonic":"UDDS_25C","calce":"FUDS_25C"},
+  "data": "Same loaders/data/source and all targets as previous static tests; A123/Mendeley25C DST/FUDS/US06; Panasonic/CALCE all previous same- and cross-temperature targets. Temperature secondary only. CALCE also evaluate corrected-z0 variants from step3, mark original versus corrected clearly; V7m keeps source-fitted z0 for all targets.",
+  "model": "V7m same2RC/Q/z0 with OCV monotonic piecewise cubic PCHIP on11equally spaced nodes over source SOC support. Voltages v_k=v0+cumsum(softplus(increment_raw_k)), k1..10. Positive increments, no target-voltage use.",
+  "support": "For each candidate Q/z0 compute min/max causal SOC on full source; use those endpoints for node grid and constant boundary hold outside. At target evaluation support fixed from fitted source only, not expanded using target SOC.",
+  "bounds": {"R0_R1_R2_ohm":[0.00001,0.5],"tau1_tau2_s":[0.1,3600.0],"Q_ratio":[0.9,1.1],"z0":[0.9,1.0],"v0_V":[1.0,5.0],"raw_increment":[-20.0,1.0]},
+  "optimizer": "TRF linear least squares, x_scalejac, max_nfev500, ftol/xtol/gtol1e-8. Same3RC/Q/z0starts aslfp_static_protocol.json; initialize11OCVnode values from fixed low-current/checkpoint curve, isotonic regression then increments floored1e-5 and inverse softplus. Select smallest source SSE among converged starts.",
+  "no_target_tuning": true,
+  "branch_labels": "Both taus bounded; sort branches fast/slow on reporting.",
+  "criterion": "For each cell/dataset originally POSITIVE at same temperature, robustness iff V7m reduces MAE>=25% against original staticV1 on EVERY primary same-temperature target. A123 originalV1 refit tau<=3600. No best-of-other-model escape. Historical verdict unchanged.",
+  "calce_reporting": "Historical criterion using original V1 fallback AND corrected comparison using step3V1; corrected version is principal, both reported. Physical V7m target z0 stays fitted source. Do not mix corrected baseline with old label without disclosure.",
+  "metrics": "Same continuous globalMAE/RMSE/max/P99 and SOC/reversal scopes; original/corrected baseline-SOC masks identified. Relative gains signed, no clipping.",
+  "outputs": "results/static_monotone, complete manifest, source fits/attempts/bound hits, monotonic OCVnode/support plots, voltage/error figures, tablesCSV/TEX, report",
+  "preserve_old_results": true
+}

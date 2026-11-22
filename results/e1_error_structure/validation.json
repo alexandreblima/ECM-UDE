@@ -1,0 +1,6920 @@
+{
+  "tolerance_mV": 1e-06,
+  "all_passed": true,
+  "count": 576,
+  "maximum_absolute_difference_mV": 0.0,
+  "records": [
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 43.14845307218712,
+        "reproduced_mae_mV": 43.14845307218712,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 36.755181323070595,
+        "reproduced_mae_mV": 36.755181323070595,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 94.28746543466693,
+        "reproduced_mae_mV": 94.28746543466693,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 171.7870659336609,
+        "reproduced_mae_mV": 171.7870659336609,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 292.9064898342574,
+        "reproduced_mae_mV": 292.9064898342574,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 34.217263472479765,
+        "reproduced_mae_mV": 34.217263472479765,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 15.903045836151705,
+        "reproduced_mae_mV": 15.903045836151705,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 36.08027218950039,
+        "reproduced_mae_mV": 36.08027218950039,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 42.66113618924627,
+        "reproduced_mae_mV": 42.66113618924627,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 36.263114216945134,
+        "reproduced_mae_mV": 36.263114216945134,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 93.81575090888443,
+        "reproduced_mae_mV": 93.81575090888443,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 171.30300028702305,
+        "reproduced_mae_mV": 171.30300028702305,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 292.39159503370735,
+        "reproduced_mae_mV": 292.39159503370735,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 31.1198503033473,
+        "reproduced_mae_mV": 31.1198503033473,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 14.591730642745972,
+        "reproduced_mae_mV": 14.591730642745972,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 35.00460525640847,
+        "reproduced_mae_mV": 35.00460525640847,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 42.54882732485687,
+        "reproduced_mae_mV": 42.54882732485687,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 36.67931430124748,
+        "reproduced_mae_mV": 36.67931430124748,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 94.25367263875108,
+        "reproduced_mae_mV": 94.25367263875108,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 171.78244241424844,
+        "reproduced_mae_mV": 171.78244241424844,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 292.88522042942327,
+        "reproduced_mae_mV": 292.88522042942327,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 34.07549236183378,
+        "reproduced_mae_mV": 34.07549236183378,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 15.822673986665377,
+        "reproduced_mae_mV": 15.822673986665377,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 35.91460141532879,
+        "reproduced_mae_mV": 35.91460141532879,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 42.38259295167599,
+        "reproduced_mae_mV": 42.38259295167599,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 36.363853399043556,
+        "reproduced_mae_mV": 36.363853399043556,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 93.88204995874428,
+        "reproduced_mae_mV": 93.88204995874428,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 171.3742801391311,
+        "reproduced_mae_mV": 171.3742801391311,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 292.4645994232688,
+        "reproduced_mae_mV": 292.4645994232688,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 33.833992221731506,
+        "reproduced_mae_mV": 33.833992221731506,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 15.613056378681012,
+        "reproduced_mae_mV": 15.613056378681012,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 35.54465803577164,
+        "reproduced_mae_mV": 35.54465803577164,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 42.35868892077026,
+        "reproduced_mae_mV": 42.35868892077026,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 36.36409545900031,
+        "reproduced_mae_mV": 36.36409545900031,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 93.87621504998476,
+        "reproduced_mae_mV": 93.87621504998476,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 171.3848247838306,
+        "reproduced_mae_mV": 171.3848247838306,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 292.5078988475198,
+        "reproduced_mae_mV": 292.5078988475198,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 33.82130532441931,
+        "reproduced_mae_mV": 33.82130532441931,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 15.61684533911406,
+        "reproduced_mae_mV": 15.61684533911406,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 35.54571491278088,
+        "reproduced_mae_mV": 35.54571491278088,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 42.96201298021526,
+        "reproduced_mae_mV": 42.96201298021526,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 36.67641776411632,
+        "reproduced_mae_mV": 36.67641776411632,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 94.21508799874866,
+        "reproduced_mae_mV": 94.21508799874866,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 171.6858241024623,
+        "reproduced_mae_mV": 171.6858241024623,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 292.74185927915136,
+        "reproduced_mae_mV": 292.74185927915136,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 34.1404914786691,
+        "reproduced_mae_mV": 34.1404914786691,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 15.851683868174518,
+        "reproduced_mae_mV": 15.851683868174518,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 35.944051135302175,
+        "reproduced_mae_mV": 35.944051135302175,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 42.80196660422474,
+        "reproduced_mae_mV": 42.80196660422474,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 36.772950198975366,
+        "reproduced_mae_mV": 36.772950198975366,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 94.35361150167255,
+        "reproduced_mae_mV": 94.35361150167255,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 171.90584255256567,
+        "reproduced_mae_mV": 171.90584255256567,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 293.06407887726067,
+        "reproduced_mae_mV": 293.06407887726067,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 34.17973699056936,
+        "reproduced_mae_mV": 34.17973699056936,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 15.867941406932124,
+        "reproduced_mae_mV": 15.867941406932124,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 36.07624752688988,
+        "reproduced_mae_mV": 36.07624752688988,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 42.87193719799684,
+        "reproduced_mae_mV": 42.87193719799684,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 36.77305694180826,
+        "reproduced_mae_mV": 36.77305694180826,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 94.3503306751236,
+        "reproduced_mae_mV": 94.3503306751236,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 171.88131549514895,
+        "reproduced_mae_mV": 171.88131549514895,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 293.0221716713996,
+        "reproduced_mae_mV": 293.0221716713996,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 34.1881932234442,
+        "reproduced_mae_mV": 34.1881932234442,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 15.869309663164028,
+        "reproduced_mae_mV": 15.869309663164028,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 36.066615536566815,
+        "reproduced_mae_mV": 36.066615536566815,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 42.88062265470125,
+        "reproduced_mae_mV": 42.88062265470125,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 36.663355846025006,
+        "reproduced_mae_mV": 36.663355846025006,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 94.19730617319219,
+        "reproduced_mae_mV": 94.19730617319219,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 171.71486508216807,
+        "reproduced_mae_mV": 171.71486508216807,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 292.85634531054393,
+        "reproduced_mae_mV": 292.85634531054393,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 34.10584102488046,
+        "reproduced_mae_mV": 34.10584102488046,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 15.826013146715278,
+        "reproduced_mae_mV": 15.826013146715278,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 35.94553956556877,
+        "reproduced_mae_mV": 35.94553956556877,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 42.300854278441065,
+        "reproduced_mae_mV": 42.300854278441065,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 36.36707531669091,
+        "reproduced_mae_mV": 36.36707531669091,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 93.89171714319984,
+        "reproduced_mae_mV": 93.89171714319984,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 171.42073979838963,
+        "reproduced_mae_mV": 171.42073979838963,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 292.5804438886427,
+        "reproduced_mae_mV": 292.5804438886427,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 33.80424352113634,
+        "reproduced_mae_mV": 33.80424352113634,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 15.586905936185975,
+        "reproduced_mae_mV": 15.586905936185975,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 35.54395363902481,
+        "reproduced_mae_mV": 35.54395363902481,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 43.05377262593605,
+        "reproduced_mae_mV": 43.05377262593605,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 36.6083149937176,
+        "reproduced_mae_mV": 36.6083149937176,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 94.1117595872047,
+        "reproduced_mae_mV": 94.1117595872047,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 171.60595571203456,
+        "reproduced_mae_mV": 171.60595571203456,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 292.7414596600704,
+        "reproduced_mae_mV": 292.7414596600704,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 34.10133026845946,
+        "reproduced_mae_mV": 34.10133026845946,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 15.810917371115899,
+        "reproduced_mae_mV": 15.810917371115899,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 35.915859536023014,
+        "reproduced_mae_mV": 35.915859536023014,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 42.6333434065104,
+        "reproduced_mae_mV": 42.6333434065104,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 36.65300971106153,
+        "reproduced_mae_mV": 36.65300971106153,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 94.22230246413743,
+        "reproduced_mae_mV": 94.22230246413743,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 171.76029132196663,
+        "reproduced_mae_mV": 171.76029132196663,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 292.91781351566846,
+        "reproduced_mae_mV": 292.91781351566846,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 34.0592813777791,
+        "reproduced_mae_mV": 34.0592813777791,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 15.777719920153517,
+        "reproduced_mae_mV": 15.777719920153517,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 35.89809844028467,
+        "reproduced_mae_mV": 35.89809844028467,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 42.549427096678144,
+        "reproduced_mae_mV": 42.549427096678144,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 36.6788873898889,
+        "reproduced_mae_mV": 36.6788873898889,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 94.25358681236088,
+        "reproduced_mae_mV": 94.25358681236088,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 171.78485114252146,
+        "reproduced_mae_mV": 171.78485114252146,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 292.8915812648721,
+        "reproduced_mae_mV": 292.8915812648721,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 34.07787702259177,
+        "reproduced_mae_mV": 34.07787702259177,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 15.823929982975134,
+        "reproduced_mae_mV": 15.823929982975134,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 35.91703241348542,
+        "reproduced_mae_mV": 35.91703241348542,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 42.37852064176958,
+        "reproduced_mae_mV": 42.37852064176958,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 36.35215921656987,
+        "reproduced_mae_mV": 36.35215921656987,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 93.86484767669825,
+        "reproduced_mae_mV": 93.86484767669825,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 171.35554089503407,
+        "reproduced_mae_mV": 171.35554089503407,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 292.44601765193016,
+        "reproduced_mae_mV": 292.44601765193016,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 33.8312593013337,
+        "reproduced_mae_mV": 33.8312593013337,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 15.61020724961383,
+        "reproduced_mae_mV": 15.61020724961383,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 35.53945210669668,
+        "reproduced_mae_mV": 35.53945210669668,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 42.363674162881026,
+        "reproduced_mae_mV": 42.363674162881026,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 36.34860695196552,
+        "reproduced_mae_mV": 36.34860695196552,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 93.85173107542865,
+        "reproduced_mae_mV": 93.85173107542865,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 171.35957662453873,
+        "reproduced_mae_mV": 171.35957662453873,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 292.4863570836587,
+        "reproduced_mae_mV": 292.4863570836587,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 33.8246281142204,
+        "reproduced_mae_mV": 33.8246281142204,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 15.617091785556406,
+        "reproduced_mae_mV": 15.617091785556406,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 35.54610428604842,
+        "reproduced_mae_mV": 35.54610428604842,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 42.96432490068361,
+        "reproduced_mae_mV": 42.96432490068361,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 36.67693208211723,
+        "reproduced_mae_mV": 36.67693208211723,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 94.21438613433673,
+        "reproduced_mae_mV": 94.21438613433673,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 171.6834484697165,
+        "reproduced_mae_mV": 171.6834484697165,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 292.73760341686096,
+        "reproduced_mae_mV": 292.73760341686096,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 34.143188479689364,
+        "reproduced_mae_mV": 34.143188479689364,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 15.853474100273033,
+        "reproduced_mae_mV": 15.853474100273033,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 35.94680068368263,
+        "reproduced_mae_mV": 35.94680068368263,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 42.83079265506969,
+        "reproduced_mae_mV": 42.83079265506969,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 36.767479006428864,
+        "reproduced_mae_mV": 36.767479006428864,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 94.33255084307379,
+        "reproduced_mae_mV": 94.33255084307379,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 171.869302207644,
+        "reproduced_mae_mV": 171.869302207644,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 293.0134469432016,
+        "reproduced_mae_mV": 293.0134469432016,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 34.19341889916756,
+        "reproduced_mae_mV": 34.19341889916756,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 15.876443444904927,
+        "reproduced_mae_mV": 15.876443444904927,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 36.089534934668514,
+        "reproduced_mae_mV": 36.089534934668514,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 42.906869596709306,
+        "reproduced_mae_mV": 42.906869596709306,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 36.7684606043861,
+        "reproduced_mae_mV": 36.7684606043861,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 94.32980583998874,
+        "reproduced_mae_mV": 94.32980583998874,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 171.8487370806602,
+        "reproduced_mae_mV": 171.8487370806602,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 292.9819140917395,
+        "reproduced_mae_mV": 292.9819140917395,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 34.207267209477166,
+        "reproduced_mae_mV": 34.207267209477166,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 15.882088944645545,
+        "reproduced_mae_mV": 15.882088944645545,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 36.08531512533318,
+        "reproduced_mae_mV": 36.08531512533318,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 42.87924481505516,
+        "reproduced_mae_mV": 42.87924481505516,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 36.666123690216494,
+        "reproduced_mae_mV": 36.666123690216494,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 94.20217741601688,
+        "reproduced_mae_mV": 94.20217741601688,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 171.72130121501075,
+        "reproduced_mae_mV": 171.72130121501075,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 292.8640796417786,
+        "reproduced_mae_mV": 292.8640796417786,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 34.10553275647049,
+        "reproduced_mae_mV": 34.10553275647049,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 15.826117492033147,
+        "reproduced_mae_mV": 15.826117492033147,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 35.94592795222483,
+        "reproduced_mae_mV": 35.94592795222483,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 42.296237659243445,
+        "reproduced_mae_mV": 42.296237659243445,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 36.36373521947858,
+        "reproduced_mae_mV": 36.36373521947858,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 93.88596014979576,
+        "reproduced_mae_mV": 93.88596014979576,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 171.4121401405013,
+        "reproduced_mae_mV": 171.4121401405013,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 292.5685214932347,
+        "reproduced_mae_mV": 292.5685214932347,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 33.80234257961013,
+        "reproduced_mae_mV": 33.80234257961013,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 15.585450759612899,
+        "reproduced_mae_mV": 15.585450759612899,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 35.54157674789454,
+        "reproduced_mae_mV": 35.54157674789454,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 43.03861315176315,
+        "reproduced_mae_mV": 43.03861315176315,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 36.60865133797153,
+        "reproduced_mae_mV": 36.60865133797153,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 94.12065711690582,
+        "reproduced_mae_mV": 94.12065711690582,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 171.6273265067654,
+        "reproduced_mae_mV": 171.6273265067654,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 292.7766423181676,
+        "reproduced_mae_mV": 292.7766423181676,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 34.09673937125646,
+        "reproduced_mae_mV": 34.09673937125646,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 15.807702398678828,
+        "reproduced_mae_mV": 15.807702398678828,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 35.910422013214706,
+        "reproduced_mae_mV": 35.910422013214706,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 42.637331883529775,
+        "reproduced_mae_mV": 42.637331883529775,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 36.65061751718176,
+        "reproduced_mae_mV": 36.65061751718176,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 94.21125042803212,
+        "reproduced_mae_mV": 94.21125042803212,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 171.7375635715154,
+        "reproduced_mae_mV": 171.7375635715154,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 292.8822880728723,
+        "reproduced_mae_mV": 292.8822880728723,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 34.06278769778815,
+        "reproduced_mae_mV": 34.06278769778815,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 15.78019272517022,
+        "reproduced_mae_mV": 15.78019272517022,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 35.90173686923019,
+        "reproduced_mae_mV": 35.90173686923019,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 43.430560774929596,
+        "reproduced_mae_mV": 43.430560774929596,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 36.894772051384386,
+        "reproduced_mae_mV": 36.894772051384386,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 94.32168263384948,
+        "reproduced_mae_mV": 94.32168263384948,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 171.61839143350795,
+        "reproduced_mae_mV": 171.61839143350795,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 292.509083552159,
+        "reproduced_mae_mV": 292.509083552159,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 34.34527579582661,
+        "reproduced_mae_mV": 34.34527579582661,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 16.030405007907092,
+        "reproduced_mae_mV": 16.030405007907092,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 36.257911481098205,
+        "reproduced_mae_mV": 36.257911481098205,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 43.190479976239835,
+        "reproduced_mae_mV": 43.190479976239835,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 36.96690271163906,
+        "reproduced_mae_mV": 36.96690271163906,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 94.55655071089845,
+        "reproduced_mae_mV": 94.55655071089845,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 172.01205793070767,
+        "reproduced_mae_mV": 172.01205793070767,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 293.04554298190135,
+        "reproduced_mae_mV": 293.04554298190135,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 34.32516952844276,
+        "reproduced_mae_mV": 34.32516952844276,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 15.986801421040509,
+        "reproduced_mae_mV": 15.986801421040509,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 36.23921346464601,
+        "reproduced_mae_mV": 36.23921346464601,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 43.01199976508036,
+        "reproduced_mae_mV": 43.01199976508036,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 37.03879681700294,
+        "reproduced_mae_mV": 37.03879681700294,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 94.67426231928705,
+        "reproduced_mae_mV": 94.67426231928705,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 172.1293649009118,
+        "reproduced_mae_mV": 172.1293649009118,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 293.10840718353177,
+        "reproduced_mae_mV": 293.10840718353177,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 34.13963674591083,
+        "reproduced_mae_mV": 34.13963674591083,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 15.932355387536761,
+        "reproduced_mae_mV": 15.932355387536761,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 36.087276900466556,
+        "reproduced_mae_mV": 36.087276900466556,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 43.37732773313711,
+        "reproduced_mae_mV": 43.37732773313711,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 36.858092450947574,
+        "reproduced_mae_mV": 36.858092450947574,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 94.38891383296495,
+        "reproduced_mae_mV": 94.38891383296495,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 171.86232222973706,
+        "reproduced_mae_mV": 171.86232222973706,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 292.95818072734755,
+        "reproduced_mae_mV": 292.95818072734755,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 34.3467965163936,
+        "reproduced_mae_mV": 34.3467965163936,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 15.988549057624587,
+        "reproduced_mae_mV": 15.988549057624587,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 36.23111701137255,
+        "reproduced_mae_mV": 36.23111701137255,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 42.80804050752406,
+        "reproduced_mae_mV": 42.80804050752406,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 36.9687030843365,
+        "reproduced_mae_mV": 36.9687030843365,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 94.68289318968233,
+        "reproduced_mae_mV": 94.68289318968233,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 172.34355680241586,
+        "reproduced_mae_mV": 172.34355680241586,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 293.6039614586776,
+        "reproduced_mae_mV": 293.6039614586776,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 34.20796090864037,
+        "reproduced_mae_mV": 34.20796090864037,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 15.90707324407213,
+        "reproduced_mae_mV": 15.90707324407213,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 36.146954817587805,
+        "reproduced_mae_mV": 36.146954817587805,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 42.75130367604989,
+        "reproduced_mae_mV": 42.75130367604989,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 36.9767215269145,
+        "reproduced_mae_mV": 36.9767215269145,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 94.70275732742935,
+        "reproduced_mae_mV": 94.70275732742935,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 172.30429772315273,
+        "reproduced_mae_mV": 172.30429772315273,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 293.4410564826388,
+        "reproduced_mae_mV": 293.4410564826388,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 34.16350613706286,
+        "reproduced_mae_mV": 34.16350613706286,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 15.88051676479714,
+        "reproduced_mae_mV": 15.88051676479714,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 36.08889332399696,
+        "reproduced_mae_mV": 36.08889332399696,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 43.62982858627203,
+        "reproduced_mae_mV": 43.62982858627203,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 36.77827358531004,
+        "reproduced_mae_mV": 36.77827358531004,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 94.1681686167245,
+        "reproduced_mae_mV": 94.1681686167245,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 171.49435238684168,
+        "reproduced_mae_mV": 171.49435238684168,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 292.44908201057245,
+        "reproduced_mae_mV": 292.44908201057245,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 34.39618631359076,
+        "reproduced_mae_mV": 34.39618631359076,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 16.019455125841713,
+        "reproduced_mae_mV": 16.019455125841713,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 36.266271647789836,
+        "reproduced_mae_mV": 36.266271647789836,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 43.514321316749665,
+        "reproduced_mae_mV": 43.514321316749665,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 36.9051710564808,
+        "reproduced_mae_mV": 36.9051710564808,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 94.42015622861894,
+        "reproduced_mae_mV": 94.42015622861894,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 171.89805410658778,
+        "reproduced_mae_mV": 171.89805410658778,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 292.9800371093468,
+        "reproduced_mae_mV": 292.9800371093468,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 34.354511434665916,
+        "reproduced_mae_mV": 34.354511434665916,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 16.066133154432542,
+        "reproduced_mae_mV": 16.066133154432542,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 36.252561115234776,
+        "reproduced_mae_mV": 36.252561115234776,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 43.301924586144295,
+        "reproduced_mae_mV": 43.301924586144295,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 36.73035976225892,
+        "reproduced_mae_mV": 36.73035976225892,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 94.14122286339197,
+        "reproduced_mae_mV": 94.14122286339197,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 171.45323610407894,
+        "reproduced_mae_mV": 171.45323610407894,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 292.37934627460436,
+        "reproduced_mae_mV": 292.37934627460436,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 34.27619030556311,
+        "reproduced_mae_mV": 34.27619030556311,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 15.932304099819165,
+        "reproduced_mae_mV": 15.932304099819165,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 36.13501757352417,
+        "reproduced_mae_mV": 36.13501757352417,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_25C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 43.07358210120961,
+        "reproduced_mae_mV": 43.07358210120961,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_10C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 36.80886353157241,
+        "reproduced_mae_mV": 36.80886353157241,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_0C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 94.44377278878098,
+        "reproduced_mae_mV": 94.44377278878098,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-10C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 172.1148150978156,
+        "reproduced_mae_mV": 172.1148150978156,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "UDDS_-20C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 293.4285397072069,
+        "reproduced_mae_mV": 293.4285397072069,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "US06_25C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 34.2979910918465,
+        "reproduced_mae_mV": 34.2979910918465,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "LA92_25C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 15.953409692068636,
+        "reproduced_mae_mV": 15.953409692068636,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "panasonic",
+      "condition": "HWFET_25C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 36.16703292810197,
+        "reproduced_mae_mV": 36.16703292810197,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 13.328092819514689,
+        "reproduced_mae_mV": 13.328092819514689,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 5.2033113325070035,
+        "reproduced_mae_mV": 5.2033113325070035,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 53.325938150831284,
+        "reproduced_mae_mV": 53.325938150831284,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 54.637703294536784,
+        "reproduced_mae_mV": 54.637703294536784,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 63.790346887080645,
+        "reproduced_mae_mV": 63.790346887080645,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 74.37845351809422,
+        "reproduced_mae_mV": 74.37845351809422,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 17.477323334355486,
+        "reproduced_mae_mV": 17.477323334355486,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 17.510917574228813,
+        "reproduced_mae_mV": 17.510917574228813,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 16.0605552857995,
+        "reproduced_mae_mV": 16.0605552857995,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_1rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 18.367881539654057,
+        "reproduced_mae_mV": 18.367881539654057,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 13.257600474114481,
+        "reproduced_mae_mV": 13.257600474114481,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 5.10155700525513,
+        "reproduced_mae_mV": 5.10155700525513,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 53.22567300472414,
+        "reproduced_mae_mV": 53.22567300472414,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 54.54248993577128,
+        "reproduced_mae_mV": 54.54248993577128,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 63.6823966194868,
+        "reproduced_mae_mV": 63.6823966194868,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 74.29723372033264,
+        "reproduced_mae_mV": 74.29723372033264,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 17.545486504953118,
+        "reproduced_mae_mV": 17.545486504953118,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 17.679588081469625,
+        "reproduced_mae_mV": 17.679588081469625,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 16.18356762665726,
+        "reproduced_mae_mV": 16.18356762665726,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_2rc_nls",
+      "seed": null,
+      "validation": {
+        "saved_mae_mV": 18.51559490295304,
+        "reproduced_mae_mV": 18.51559490295304,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 13.17325142652315,
+        "reproduced_mae_mV": 13.17325142652315,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 5.0421351200503,
+        "reproduced_mae_mV": 5.0421351200503,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 53.24885838861516,
+        "reproduced_mae_mV": 53.24885838861516,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 54.54249905056159,
+        "reproduced_mae_mV": 54.54249905056159,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 63.68034982213299,
+        "reproduced_mae_mV": 63.68034982213299,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 74.24882954196707,
+        "reproduced_mae_mV": 74.24882954196707,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 17.516806749596864,
+        "reproduced_mae_mV": 17.516806749596864,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 17.536491482375578,
+        "reproduced_mae_mV": 17.536491482375578,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 16.10846772765558,
+        "reproduced_mae_mV": 16.10846772765558,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 18.408917941294263,
+        "reproduced_mae_mV": 18.408917941294263,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 13.289802045707242,
+        "reproduced_mae_mV": 13.289802045707242,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 5.152052451155008,
+        "reproduced_mae_mV": 5.152052451155008,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 53.25717147347004,
+        "reproduced_mae_mV": 53.25717147347004,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 54.563000740847635,
+        "reproduced_mae_mV": 54.563000740847635,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 63.71150561428488,
+        "reproduced_mae_mV": 63.71150561428488,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 74.29699199672802,
+        "reproduced_mae_mV": 74.29699199672802,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 17.515163090369903,
+        "reproduced_mae_mV": 17.515163090369903,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 17.558183244274076,
+        "reproduced_mae_mV": 17.558183244274076,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 16.100992435582317,
+        "reproduced_mae_mV": 16.100992435582317,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 18.41305950541555,
+        "reproduced_mae_mV": 18.41305950541555,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 13.227319142904626,
+        "reproduced_mae_mV": 13.227319142904626,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 5.183955599375548,
+        "reproduced_mae_mV": 5.183955599375548,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 53.341409956762035,
+        "reproduced_mae_mV": 53.341409956762035,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 54.64610885737627,
+        "reproduced_mae_mV": 54.64610885737627,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 63.785082464005065,
+        "reproduced_mae_mV": 63.785082464005065,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 74.3592443865097,
+        "reproduced_mae_mV": 74.3592443865097,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 17.401520852313503,
+        "reproduced_mae_mV": 17.401520852313503,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 17.457003552038913,
+        "reproduced_mae_mV": 17.457003552038913,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 15.965258205546364,
+        "reproduced_mae_mV": 15.965258205546364,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 18.25144423171554,
+        "reproduced_mae_mV": 18.25144423171554,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 13.265302169541066,
+        "reproduced_mae_mV": 13.265302169541066,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 5.2018568257793145,
+        "reproduced_mae_mV": 5.2018568257793145,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 53.37089944595903,
+        "reproduced_mae_mV": 53.37089944595903,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 54.68096573303934,
+        "reproduced_mae_mV": 54.68096573303934,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 63.82416254992673,
+        "reproduced_mae_mV": 63.82416254992673,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 74.40369479387186,
+        "reproduced_mae_mV": 74.40369479387186,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 17.414574523242475,
+        "reproduced_mae_mV": 17.414574523242475,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 17.453209704113114,
+        "reproduced_mae_mV": 17.453209704113114,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 15.98268650825921,
+        "reproduced_mae_mV": 15.98268650825921,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 18.269749501128338,
+        "reproduced_mae_mV": 18.269749501128338,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 13.367413091425489,
+        "reproduced_mae_mV": 13.367413091425489,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 5.2317437554883774,
+        "reproduced_mae_mV": 5.2317437554883774,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 53.35995079497326,
+        "reproduced_mae_mV": 53.35995079497326,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 54.67552329365229,
+        "reproduced_mae_mV": 54.67552329365229,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 63.831321106347346,
+        "reproduced_mae_mV": 63.831321106347346,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 74.42191843856634,
+        "reproduced_mae_mV": 74.42191843856634,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 17.472727851244127,
+        "reproduced_mae_mV": 17.472727851244127,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 17.49517488726377,
+        "reproduced_mae_mV": 17.49517488726377,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 16.056843534347813,
+        "reproduced_mae_mV": 16.056843534347813,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 18.363308417363864,
+        "reproduced_mae_mV": 18.363308417363864,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 13.275925041787701,
+        "reproduced_mae_mV": 13.275925041787701,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 5.137438779005917,
+        "reproduced_mae_mV": 5.137438779005917,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 53.2077155226058,
+        "reproduced_mae_mV": 53.2077155226058,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 54.51023391313143,
+        "reproduced_mae_mV": 54.51023391313143,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 63.65780632240485,
+        "reproduced_mae_mV": 63.65780632240485,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 74.24350418005471,
+        "reproduced_mae_mV": 74.24350418005471,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 17.535798049918963,
+        "reproduced_mae_mV": 17.535798049918963,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 17.59309695902733,
+        "reproduced_mae_mV": 17.59309695902733,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 16.12259015747259,
+        "reproduced_mae_mV": 16.12259015747259,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 18.44009725431052,
+        "reproduced_mae_mV": 18.44009725431052,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 13.10280836463666,
+        "reproduced_mae_mV": 13.10280836463666,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 5.093534390539718,
+        "reproduced_mae_mV": 5.093534390539718,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 53.172727839307655,
+        "reproduced_mae_mV": 53.172727839307655,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 54.48021406387486,
+        "reproduced_mae_mV": 54.48021406387486,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 63.606732447726365,
+        "reproduced_mae_mV": 63.606732447726365,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 74.1834721212721,
+        "reproduced_mae_mV": 74.1834721212721,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 17.454378734389216,
+        "reproduced_mae_mV": 17.454378734389216,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 17.539507861137807,
+        "reproduced_mae_mV": 17.539507861137807,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 16.025089688445952,
+        "reproduced_mae_mV": 16.025089688445952,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 18.32820840181216,
+        "reproduced_mae_mV": 18.32820840181216,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 13.318871770890256,
+        "reproduced_mae_mV": 13.318871770890256,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 5.213521617810696,
+        "reproduced_mae_mV": 5.213521617810696,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 53.34414415873104,
+        "reproduced_mae_mV": 53.34414415873104,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 54.65733634034854,
+        "reproduced_mae_mV": 54.65733634034854,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 63.81066262684677,
+        "reproduced_mae_mV": 63.81066262684677,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 74.39852129624512,
+        "reproduced_mae_mV": 74.39852129624512,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 17.453613850401794,
+        "reproduced_mae_mV": 17.453613850401794,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 17.48948082172309,
+        "reproduced_mae_mV": 17.48948082172309,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 16.03573078195767,
+        "reproduced_mae_mV": 16.03573078195767,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 18.342071772658127,
+        "reproduced_mae_mV": 18.342071772658127,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 13.316212462187345,
+        "reproduced_mae_mV": 13.316212462187345,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 5.210965813380443,
+        "reproduced_mae_mV": 5.210965813380443,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 53.33860019721191,
+        "reproduced_mae_mV": 53.33860019721191,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 54.65090568833079,
+        "reproduced_mae_mV": 54.65090568833079,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 63.803985562447,
+        "reproduced_mae_mV": 63.803985562447,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 74.3914626915631,
+        "reproduced_mae_mV": 74.3914626915631,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 17.45520589218906,
+        "reproduced_mae_mV": 17.45520589218906,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 17.49307901626532,
+        "reproduced_mae_mV": 17.49307901626532,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 16.037051452600632,
+        "reproduced_mae_mV": 16.037051452600632,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 18.34341773280391,
+        "reproduced_mae_mV": 18.34341773280391,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 13.202941508125056,
+        "reproduced_mae_mV": 13.202941508125056,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 5.278904312699352,
+        "reproduced_mae_mV": 5.278904312699352,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 53.41411828508381,
+        "reproduced_mae_mV": 53.41411828508381,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 54.72521789861229,
+        "reproduced_mae_mV": 54.72521789861229,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 63.87462974913958,
+        "reproduced_mae_mV": 63.87462974913958,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 74.4530489936413,
+        "reproduced_mae_mV": 74.4530489936413,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 17.291566490538376,
+        "reproduced_mae_mV": 17.291566490538376,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 17.37116449873193,
+        "reproduced_mae_mV": 17.37116449873193,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 15.856562732934561,
+        "reproduced_mae_mV": 15.856562732934561,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "physics_gradient",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 18.148216656489364,
+        "reproduced_mae_mV": 18.148216656489364,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 13.17214572179642,
+        "reproduced_mae_mV": 13.17214572179642,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 5.040864919527674,
+        "reproduced_mae_mV": 5.040864919527674,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 53.24417843910102,
+        "reproduced_mae_mV": 53.24417843910102,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 54.537409090551655,
+        "reproduced_mae_mV": 54.537409090551655,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 63.6749977009061,
+        "reproduced_mae_mV": 63.6749977009061,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 74.24332701278568,
+        "reproduced_mae_mV": 74.24332701278568,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 17.512564924614566,
+        "reproduced_mae_mV": 17.512564924614566,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 17.52968474800425,
+        "reproduced_mae_mV": 17.52968474800425,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 16.10426554056174,
+        "reproduced_mae_mV": 16.10426554056174,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 18.40417666179038,
+        "reproduced_mae_mV": 18.40417666179038,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 13.295490366175258,
+        "reproduced_mae_mV": 13.295490366175258,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 5.1567539337602675,
+        "reproduced_mae_mV": 5.1567539337602675,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 53.24606411994987,
+        "reproduced_mae_mV": 53.24606411994987,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 54.55148558746157,
+        "reproduced_mae_mV": 54.55148558746157,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 63.69973874385831,
+        "reproduced_mae_mV": 63.69973874385831,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 74.28546204641171,
+        "reproduced_mae_mV": 74.28546204641171,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 17.50299533952466,
+        "reproduced_mae_mV": 17.50299533952466,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 17.538118651013406,
+        "reproduced_mae_mV": 17.538118651013406,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 16.089227127122385,
+        "reproduced_mae_mV": 16.089227127122385,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 18.39995852679175,
+        "reproduced_mae_mV": 18.39995852679175,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 13.229507359475337,
+        "reproduced_mae_mV": 13.229507359475337,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 5.18474626937352,
+        "reproduced_mae_mV": 5.18474626937352,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 53.312126275034935,
+        "reproduced_mae_mV": 53.312126275034935,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 54.61504576245658,
+        "reproduced_mae_mV": 54.61504576245658,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 63.752865164034496,
+        "reproduced_mae_mV": 63.752865164034496,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 74.32702738023454,
+        "reproduced_mae_mV": 74.32702738023454,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 17.386537342730808,
+        "reproduced_mae_mV": 17.386537342730808,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 17.43230427809843,
+        "reproduced_mae_mV": 17.43230427809843,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 15.950777345469632,
+        "reproduced_mae_mV": 15.950777345469632,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 18.235112890702208,
+        "reproduced_mae_mV": 18.235112890702208,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 13.264405839095314,
+        "reproduced_mae_mV": 13.264405839095314,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 5.19882402837627,
+        "reproduced_mae_mV": 5.19882402837627,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 53.35585660518115,
+        "reproduced_mae_mV": 53.35585660518115,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 54.665199315117455,
+        "reproduced_mae_mV": 54.665199315117455,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 63.80793614685224,
+        "reproduced_mae_mV": 63.80793614685224,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 74.38768978712623,
+        "reproduced_mae_mV": 74.38768978712623,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 17.419010943739657,
+        "reproduced_mae_mV": 17.419010943739657,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 17.458812739386726,
+        "reproduced_mae_mV": 17.458812739386726,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 15.98738715369766,
+        "reproduced_mae_mV": 15.98738715369766,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 18.275427416166497,
+        "reproduced_mae_mV": 18.275427416166497,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 13.375747528314484,
+        "reproduced_mae_mV": 13.375747528314484,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 5.239125827749774,
+        "reproduced_mae_mV": 5.239125827749774,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 53.345911116660346,
+        "reproduced_mae_mV": 53.345911116660346,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 54.66090264460809,
+        "reproduced_mae_mV": 54.66090264460809,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 63.81625127483694,
+        "reproduced_mae_mV": 63.81625127483694,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 74.40711463935644,
+        "reproduced_mae_mV": 74.40711463935644,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 17.4595094226439,
+        "reproduced_mae_mV": 17.4595094226439,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 17.473409452121327,
+        "reproduced_mae_mV": 17.473409452121327,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 16.04423463095182,
+        "reproduced_mae_mV": 16.04423463095182,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 18.349275487834444,
+        "reproduced_mae_mV": 18.349275487834444,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 13.28448800304435,
+        "reproduced_mae_mV": 13.28448800304435,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 5.145842126855752,
+        "reproduced_mae_mV": 5.145842126855752,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 53.19704959850708,
+        "reproduced_mae_mV": 53.19704959850708,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 54.49927330811074,
+        "reproduced_mae_mV": 54.49927330811074,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 63.64663806233433,
+        "reproduced_mae_mV": 63.64663806233433,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 74.23260102939977,
+        "reproduced_mae_mV": 74.23260102939977,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 17.515026282841966,
+        "reproduced_mae_mV": 17.515026282841966,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 17.56052265731026,
+        "reproduced_mae_mV": 17.56052265731026,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 16.10256531725629,
+        "reproduced_mae_mV": 16.10256531725629,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 18.41811670715592,
+        "reproduced_mae_mV": 18.41811670715592,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 13.102384509384924,
+        "reproduced_mae_mV": 13.102384509384924,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 5.094373808244554,
+        "reproduced_mae_mV": 5.094373808244554,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 53.18228177565159,
+        "reproduced_mae_mV": 53.18228177565159,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 54.49022096976714,
+        "reproduced_mae_mV": 54.49022096976714,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 63.61701302300368,
+        "reproduced_mae_mV": 63.61701302300368,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 74.19357292846946,
+        "reproduced_mae_mV": 74.19357292846946,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 17.452829724049906,
+        "reproduced_mae_mV": 17.452829724049906,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 17.538331703244253,
+        "reproduced_mae_mV": 17.538331703244253,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 16.02326570173947,
+        "reproduced_mae_mV": 16.02326570173947,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 18.32590625920807,
+        "reproduced_mae_mV": 18.32590625920807,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 13.322622953701742,
+        "reproduced_mae_mV": 13.322622953701742,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 5.2144453534669495,
+        "reproduced_mae_mV": 5.2144453534669495,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 53.326408457435036,
+        "reproduced_mae_mV": 53.326408457435036,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 54.6387030438437,
+        "reproduced_mae_mV": 54.6387030438437,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 63.7913440259072,
+        "reproduced_mae_mV": 63.7913440259072,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 74.37941826271175,
+        "reproduced_mae_mV": 74.37941826271175,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 17.453820482543396,
+        "reproduced_mae_mV": 17.453820482543396,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 17.48728965439406,
+        "reproduced_mae_mV": 17.48728965439406,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 16.036039290481074,
+        "reproduced_mae_mV": 16.036039290481074,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 18.34218157123346,
+        "reproduced_mae_mV": 18.34218157123346,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 13.314249791081917,
+        "reproduced_mae_mV": 13.314249791081917,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 5.2098524958888595,
+        "reproduced_mae_mV": 5.2098524958888595,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 53.34269270902748,
+        "reproduced_mae_mV": 53.34269270902748,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 54.65525004751837,
+        "reproduced_mae_mV": 54.65525004751837,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 63.808539735671,
+        "reproduced_mae_mV": 63.808539735671,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 74.39601409759966,
+        "reproduced_mae_mV": 74.39601409759966,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 17.454907899411964,
+        "reproduced_mae_mV": 17.454907899411964,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 17.493361831181886,
+        "reproduced_mae_mV": 17.493361831181886,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 16.036738736945672,
+        "reproduced_mae_mV": 16.036738736945672,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 18.343174463768584,
+        "reproduced_mae_mV": 18.343174463768584,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 13.198164519004022,
+        "reproduced_mae_mV": 13.198164519004022,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 5.27852345732745,
+        "reproduced_mae_mV": 5.27852345732745,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 53.396677080829114,
+        "reproduced_mae_mV": 53.396677080829114,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 54.70719971658288,
+        "reproduced_mae_mV": 54.70719971658288,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 63.85659175816247,
+        "reproduced_mae_mV": 63.85659175816247,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 74.43512729169794,
+        "reproduced_mae_mV": 74.43512729169794,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 17.28652710202563,
+        "reproduced_mae_mV": 17.28652710202563,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 17.36730084629626,
+        "reproduced_mae_mV": 17.36730084629626,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 15.853057324897165,
+        "reproduced_mae_mV": 15.853057324897165,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "output_residual",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 18.14681045948122,
+        "reproduced_mae_mV": 18.14681045948122,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 13.1995638583931,
+        "reproduced_mae_mV": 13.1995638583931,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 5.121766814174087,
+        "reproduced_mae_mV": 5.121766814174087,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 53.26885011720444,
+        "reproduced_mae_mV": 53.26885011720444,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 54.57460802121718,
+        "reproduced_mae_mV": 54.57460802121718,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 63.714715403439136,
+        "reproduced_mae_mV": 63.714715403439136,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 74.29443073643785,
+        "reproduced_mae_mV": 74.29443073643785,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 17.569584475451833,
+        "reproduced_mae_mV": 17.569584475451833,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 17.67931414449354,
+        "reproduced_mae_mV": 17.67931414449354,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 16.14621419873653,
+        "reproduced_mae_mV": 16.14621419873653,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 42,
+      "validation": {
+        "saved_mae_mV": 18.462271425873688,
+        "reproduced_mae_mV": 18.462271425873688,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 13.282275636086556,
+        "reproduced_mae_mV": 13.282275636086556,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 5.172245621113603,
+        "reproduced_mae_mV": 5.172245621113603,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 53.65106977768598,
+        "reproduced_mae_mV": 53.65106977768598,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 54.97742054030456,
+        "reproduced_mae_mV": 54.97742054030456,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 64.13987681571464,
+        "reproduced_mae_mV": 64.13987681571464,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 74.72227783982392,
+        "reproduced_mae_mV": 74.72227783982392,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 17.585213050796817,
+        "reproduced_mae_mV": 17.585213050796817,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 17.685166409889572,
+        "reproduced_mae_mV": 17.685166409889572,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 16.16362012124439,
+        "reproduced_mae_mV": 16.16362012124439,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 43,
+      "validation": {
+        "saved_mae_mV": 18.47555914706219,
+        "reproduced_mae_mV": 18.47555914706219,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 13.232127091332453,
+        "reproduced_mae_mV": 13.232127091332453,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 5.129613035834367,
+        "reproduced_mae_mV": 5.129613035834367,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 53.658845131857355,
+        "reproduced_mae_mV": 53.658845131857355,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 54.988089083186146,
+        "reproduced_mae_mV": 54.988089083186146,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 64.15314641021742,
+        "reproduced_mae_mV": 64.15314641021742,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 74.7392410202249,
+        "reproduced_mae_mV": 74.7392410202249,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 17.838700674632815,
+        "reproduced_mae_mV": 17.838700674632815,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 18.06714632837158,
+        "reproduced_mae_mV": 18.06714632837158,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 16.422529794832826,
+        "reproduced_mae_mV": 16.422529794832826,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 44,
+      "validation": {
+        "saved_mae_mV": 18.77744175873307,
+        "reproduced_mae_mV": 18.77744175873307,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 13.368937225546064,
+        "reproduced_mae_mV": 13.368937225546064,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 5.2462321081901395,
+        "reproduced_mae_mV": 5.2462321081901395,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 53.43476133607252,
+        "reproduced_mae_mV": 53.43476133607252,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 54.755126987067825,
+        "reproduced_mae_mV": 54.755126987067825,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 63.91347363189806,
+        "reproduced_mae_mV": 63.91347363189806,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 74.50347334030538,
+        "reproduced_mae_mV": 74.50347334030538,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 17.47981263408664,
+        "reproduced_mae_mV": 17.47981263408664,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 17.51522615953199,
+        "reproduced_mae_mV": 17.51522615953199,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 16.059915976500932,
+        "reproduced_mae_mV": 16.059915976500932,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 45,
+      "validation": {
+        "saved_mae_mV": 18.365291300451748,
+        "reproduced_mae_mV": 18.365291300451748,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 13.223216449613286,
+        "reproduced_mae_mV": 13.223216449613286,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 5.115930845552483,
+        "reproduced_mae_mV": 5.115930845552483,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 53.55678264679397,
+        "reproduced_mae_mV": 53.55678264679397,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 54.8775687601306,
+        "reproduced_mae_mV": 54.8775687601306,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 64.03774890553157,
+        "reproduced_mae_mV": 64.03774890553157,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 74.62221284320846,
+        "reproduced_mae_mV": 74.62221284320846,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 17.666938620329756,
+        "reproduced_mae_mV": 17.666938620329756,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 17.82012242997344,
+        "reproduced_mae_mV": 17.82012242997344,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 16.24539155666885,
+        "reproduced_mae_mV": 16.24539155666885,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 46,
+      "validation": {
+        "saved_mae_mV": 18.575920911068255,
+        "reproduced_mae_mV": 18.575920911068255,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 13.216603073569505,
+        "reproduced_mae_mV": 13.216603073569505,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 5.102319595426663,
+        "reproduced_mae_mV": 5.102319595426663,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 53.67143457639174,
+        "reproduced_mae_mV": 53.67143457639174,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 54.99661352126032,
+        "reproduced_mae_mV": 54.99661352126032,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 64.1597552945704,
+        "reproduced_mae_mV": 64.1597552945704,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 74.73998990504194,
+        "reproduced_mae_mV": 74.73998990504194,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 17.72680878131775,
+        "reproduced_mae_mV": 17.72680878131775,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 17.90710414002814,
+        "reproduced_mae_mV": 17.90710414002814,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 16.30426511474798,
+        "reproduced_mae_mV": 16.30426511474798,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 47,
+      "validation": {
+        "saved_mae_mV": 18.63828656404376,
+        "reproduced_mae_mV": 18.63828656404376,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 13.234533193333773,
+        "reproduced_mae_mV": 13.234533193333773,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 5.136055078685434,
+        "reproduced_mae_mV": 5.136055078685434,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 52.498242943591364,
+        "reproduced_mae_mV": 52.498242943591364,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 53.78228519644942,
+        "reproduced_mae_mV": 53.78228519644942,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 62.8973711604837,
+        "reproduced_mae_mV": 62.8973711604837,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 73.498765109578,
+        "reproduced_mae_mV": 73.498765109578,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 17.651752355495343,
+        "reproduced_mae_mV": 17.651752355495343,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 17.716997161830438,
+        "reproduced_mae_mV": 17.716997161830438,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 16.249442937613964,
+        "reproduced_mae_mV": 16.249442937613964,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 48,
+      "validation": {
+        "saved_mae_mV": 18.6011342043836,
+        "reproduced_mae_mV": 18.6011342043836,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 13.26863300795004,
+        "reproduced_mae_mV": 13.26863300795004,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 5.1871125364868975,
+        "reproduced_mae_mV": 5.1871125364868975,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 53.51200054150024,
+        "reproduced_mae_mV": 53.51200054150024,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 54.830511944489245,
+        "reproduced_mae_mV": 54.830511944489245,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 63.986572350059724,
+        "reproduced_mae_mV": 63.986572350059724,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 74.57076863092207,
+        "reproduced_mae_mV": 74.57076863092207,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 17.466946109360574,
+        "reproduced_mae_mV": 17.466946109360574,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 17.527456942717972,
+        "reproduced_mae_mV": 17.527456942717972,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 16.045073932011345,
+        "reproduced_mae_mV": 16.045073932011345,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 49,
+      "validation": {
+        "saved_mae_mV": 18.347789527768363,
+        "reproduced_mae_mV": 18.347789527768363,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 13.376653859361056,
+        "reproduced_mae_mV": 13.376653859361056,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 5.267044218211334,
+        "reproduced_mae_mV": 5.267044218211334,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 53.294012810151855,
+        "reproduced_mae_mV": 53.294012810151855,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 54.60476701621124,
+        "reproduced_mae_mV": 54.60476701621124,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 63.75680835542263,
+        "reproduced_mae_mV": 63.75680835542263,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 74.3449126700019,
+        "reproduced_mae_mV": 74.3449126700019,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 17.40247850500906,
+        "reproduced_mae_mV": 17.40247850500906,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 17.403477127641327,
+        "reproduced_mae_mV": 17.403477127641327,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 15.986702388821026,
+        "reproduced_mae_mV": 15.986702388821026,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 50,
+      "validation": {
+        "saved_mae_mV": 18.28662295317447,
+        "reproduced_mae_mV": 18.28662295317447,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_25C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 13.299686788501935,
+        "reproduced_mae_mV": 13.299686788501935,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_25C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 5.333991937082629,
+        "reproduced_mae_mV": 5.333991937082629,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_0C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 53.23448686004414,
+        "reproduced_mae_mV": 53.23448686004414,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_0C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 54.542896017867974,
+        "reproduced_mae_mV": 54.542896017867974,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_0C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 63.69266569253472,
+        "reproduced_mae_mV": 63.69266569253472,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_0C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 74.28090470310315,
+        "reproduced_mae_mV": 74.28090470310315,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "FUDS_45C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 17.192050238677027,
+        "reproduced_mae_mV": 17.192050238677027,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "DST_45C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 17.170124708084817,
+        "reproduced_mae_mV": 17.170124708084817,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "US06_45C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 15.764600150212605,
+        "reproduced_mae_mV": 15.764600150212605,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    },
+    {
+      "dataset": "calce",
+      "condition": "BJDST_45C",
+      "model": "ecm_ude",
+      "seed": 51,
+      "validation": {
+        "saved_mae_mV": 18.04674011668917,
+        "reproduced_mae_mV": 18.04674011668917,
+        "absolute_difference_mV": 0.0,
+        "passed": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,352 @@
+{
+  "protocol_id": "ieee_access_paper0_reviewer_round2",
+  "status": "registered_before_new_model_fitting",
+  "amendments": [
+    {
+      "id": "amendment_001",
+      "justification": "Clarify the registered A Holm families: the 18 principal E1 conditions span both cells (eight Panasonic plus ten CALCE), rather than 18 conditions within each cell. Adjustment will be over all 18 conditions per variant/comparison/metric; no hypotheses, data, fitting, or selection rules change."
+    },
+    {
+      "id": "amendment_002",
+      "justification": "Part A3 was required in the original request but omitted from the addendum's abbreviated execution list. Run it after A4 and before B, preserving the stated A2, A1, A4, B, C order while not dropping the registered A3 diagnostic."
+    },
+    {
+      "id": "amendment_003",
+      "justification": "The read-only HG2 audit verified the preceding full-charge/rest records for every registered profile and found duplicate timestamps but no negative intervals. Record the exact causal z0 anchors and deterministic timestamp sanitation before Part B fitting."
+    },
+    {
+      "id": "amendment_004",
+      "justification": "Post-fit A4a aggregation exposed an implementation error that grouped the two variants together before validating the five-seed families. Correct the aggregation to retain variant-specific 18-condition Holm families as already registered; no data, model fits, hypotheses, or selection rules change."
+    },
+    {
+      "id": "amendment_005",
+      "justification": "The read-only HG2 data layout prefixes MAT profile filenames with timestamps. Resolve each preregistered profile by its unique exact basename suffix, preserving the selected records and charge anchors; no conditions or modeling decisions change."
+    },
+    {
+      "id": "amendment_006",
+      "justification": "Finalize the read-only C0 audit by recording exact M50T source/target episode selectors and SHA256 hashes before any Part C fitting. This resolves the registered common selection rule without changing its hypotheses, criteria, cell decisions, or exclusions."
+    },
+    {
+      "id": "amendment_007",
+      "justification": "The first Part C smoke fit completed its one-seed/two-epoch model runs but failed while serializing heterogeneous NLS and neural metric rows. Preserve its checkpoint hashes and partial-output hash, correct the CSV writer to include the union of columns, and rerun the smoke in a fresh directory; no data, model, training, or inference criteria change."
+    },
+    {
+      "id": "amendment_008",
+      "justification": "Reconcile the A4 loss summary with the selected saved checkpoints. The existing runner reports the final epoch's training loss, while the training helper restores the best-validation checkpoint before returning. Recompute normalized train/validation window MSE and continuous source-split MAE from the saved A4a/A4b checkpoints, alongside the same NLS baseline, then correct the A report and summary table if needed. No retraining, hypotheses, data, seeds, or selection criteria change."
+    },
+    {
+      "id": "amendment_009",
+      "justification": "Register the requested no-retraining M50T aging and HPPC transfer evaluations before calculating any Part F metric; preserve C0 cells, checkpoints, calibration, and cell-level inference. The locally inventoried C/20 diagnostics may not include a later measurement for an eligible cell, so do not claim a capacity recalibration unless a later preceding diagnostic is observed."
+    },
+    {
+      "id": "amendment_010",
+      "justification": "Register exploratory corrections to Part F before calculating new metrics. Recompute the source-block target MAE with the same full-episode mask as later aging targets; restrict HPPC evaluation to the source identification SOC range and report results with and without W3. No models are retrained or recalibrated."
+    }
+  ],
+  "registration_scope": {
+    "parts": ["A1", "A2", "A3", "A4", "B", "C"],
+    "execution_order": ["A2", "A1", "A4a", "A4b", "A3", "B", "C"],
+    "a3_order_note": "A3 was retained from the original request and is placed after A4 to preserve the addendum's explicit A2, A1, A4, B, C order.",
+    "part_b_dependency": "Part B A1/A2 ablations follow its base checkpoint training because they require those checkpoints.",
+    "outputs_root": "results/reviewer_round2/",
+    "existing_results_policy": "Read-only; never overwrite. Record SHA256 for every saved result, checkpoint, history, and raw input used.",
+    "quick_run_gate": "Before each long fitting batch, run one seed for two epochs and verify output paths, checkpoint format, and metric shapes.",
+    "report_dates": "No calendar dates in paper-facing reports; describe event order only."
+  },
+  "statistics": {
+    "unit_a": "seed, paired within condition",
+    "unit_c": "cell; per-cell seed medians are the inferential observations",
+    "primary_metric": "continuous-simulation MAE in mV",
+    "equivalence_margin_mV": 1.0,
+    "tost": "Use exp_paper_v2_seeds.shifted_wilcoxon for exact one-sided signed-rank tests: lower tail on differences + 1 mV with alternative greater, upper tail on differences - 1 mV with alternative less. TOST p is the larger tail p.",
+    "multiple_testing": "Apply exp_unified.holm separately to the lower-tail and upper-tail p-value families; report both raw and adjusted tails and their maxima as raw and adjusted TOST p-values.",
+    "other_paired_test": "Use exp_unified.paired for exact two-sided paired Wilcoxon comparisons. Report the actual sample count from the input vectors; do not rely on the helper's legacy n=5 metadata for ten-seed analyses.",
+    "implementation_reference": [
+      "exp_unified.py",
+      "exp_paper_v2_seeds.py",
+      "test_paper_v2.py"
+    ],
+    "a_families": "For each variant, comparison, and metric, adjust over the common 18-condition principal E1 family spanning both cells (eight Panasonic plus ten CALCE). D1-only saved-result analyses retain their registered 20/18-condition families.",
+    "b_families": "For each cell, model, reference, and metric, adjust over the eight B target conditions plus the held-out source-validation condition (nine conditions).",
+    "c_families": "For each reference (physics-gradient primary; ECM-2RC secondary), adjust the two neural variants over valid cells."
+  },
+  "training": {
+    "a_cells": {
+      "NCA": "Panasonic NCR18650PF, panasonic",
+      "NMC": "Samsung INR18650-20R, calce"
+    },
+    "a_conditions": {
+      "principal_18": [
+        "panasonic/UDDS_25C",
+        "panasonic/UDDS_10C",
+        "panasonic/UDDS_0C",
+        "panasonic/UDDS_-10C",
+        "panasonic/UDDS_-20C",
+        "panasonic/US06_25C",
+        "panasonic/LA92_25C",
+        "panasonic/HWFET_25C",
+        "calce/FUDS_25C",
+        "calce/DST_25C",
+        "calce/FUDS_0C",
+        "calce/DST_0C",
+        "calce/US06_0C",
+        "calce/BJDST_0C",
+        "calce/FUDS_45C",
+        "calce/DST_45C",
+        "calce/US06_45C",
+        "calce/BJDST_45C"
+      ],
+      "exclude_from_primary_family": [
+        "calce/US06_25C",
+        "calce/BJDST_25C"
+      ]
+    },
+    "common_training": {
+      "source": "Existing per-cell E1 source profile and temporal 80/20 split with the existing overlap guard band.",
+      "optimizer": "Adam",
+      "learning_rate": 0.0002,
+      "weight_decay": 0.00001,
+      "gradient_clip": 0.5,
+      "maximum_epochs": 30,
+      "early_stopping_patience": 8,
+      "lr_schedule": "Existing three-epoch warmup and cosine decay.",
+      "normalization": "Source-training samples only; apply source statistics unchanged to held-out and target profiles.",
+      "seeds_a1_a2": [42, 43, 44, 45, 46, 47, 48, 49, 50, 51],
+      "seed_a3": 42,
+      "metrics": "Continuous simulation; source metrics use only the held-out validation interval."
+    }
+  },
+  "A1": {
+    "hypothesis": "Neural corrections can improve source/transfer voltage prediction when the first-order NLS physics is fixed.",
+    "models": ["output_residual", "ecm_ude"],
+    "initialization": "The same per-cell first-order NLS warm-start used by the joint model.",
+    "frozen_parameters": ["R0", "R1", "C1", "six OCV coefficients", "coulombic efficiency eta"],
+    "trainable_parameters": ["all neural correction weights and biases", "output gain"],
+    "seeds": "common_training.seeds_a1_a2",
+    "comparisons": [
+      {
+        "reference": "deterministic first-order NLS circuit without a network",
+        "test": "TOST +/-1 mV with Holm over the 18 principal conditions; report the signed MAE difference."
+      },
+      {
+        "reference": "saved jointly trained model of the same variant and seed",
+        "test": "Paired per-seed condition differences; report raw and Holm-adjusted statistics."
+      }
+    ]
+  },
+  "A2": {
+    "hypothesis": "Zeroing the trained neural correction will quantify its causal contribution while retaining the jointly trained physical parameters.",
+    "models": ["output_residual", "ecm_ude"],
+    "seeds": "common_training.seeds_a1_a2",
+    "procedure": [
+      "Verify and record the SHA256 of each original checkpoint.",
+      "Reproduce continuous MAE from each saved checkpoint before ablation.",
+      "Set only the neural correction weights, biases, and output gain to zero; retain the physical parameter values.",
+      "Evaluate the same checkpoints/data masks without fitting."
+    ],
+    "comparisons": [
+      "MAE(with network) - MAE(network zeroed), TOST +/-1 mV with Holm.",
+      "The same signed difference and TOST for RMSE and maximum absolute error.",
+      "TOST equivalence of zeroed ECM-UDE versus physics-gradient."
+    ],
+    "holm_family": "For each variant, comparison, and metric, adjust over the same 18 principal E1 conditions spanning NCA and NMC.",
+    "checkpoint_reproduction_test": "Exact saved-checkpoint MAE reproduction is required before accepting any zero-network comparison."
+  },
+  "A3": {
+    "purpose": "Descriptive diagnostic separating optimization failure from limited generalization.",
+    "models": ["output_residual", "ecm_ude"],
+    "cells": ["NCA", "NMC"],
+    "seed": 42,
+    "maximum_epochs": 30,
+    "early_stopping": false,
+    "reported": "Training and validation MAE at every epoch; no inferential criterion."
+  },
+  "A4": {
+    "purpose": "Test whether the original neural-correction training curves are caused by small output initialization gain or a limited optimization budget.",
+    "models": ["output_residual", "ecm_ude"],
+    "cells": ["NCA", "NMC"],
+    "seeds": [42, 43, 44, 45, 46],
+    "frozen_physics": "Same physical freeze as A1.",
+    "A4a": {
+      "output_gain_initial": 1.0,
+      "reference_output_gain_initial": 0.01,
+      "other_settings": "Same as common_training."
+    },
+    "A4b": {
+      "output_gain_initial": 1.0,
+      "learning_rate": 0.002,
+      "maximum_epochs": 150,
+      "early_stopping_patience": 30,
+      "other_settings": "A4a settings except the explicitly changed learning rate and budget; retain three-epoch linear warmup and cosine decay recomputed over the 150-epoch horizon, with the existing minimum LR factor and remaining optimizer settings."
+    },
+    "reported": [
+      "Final source-training loss and relative reduction versus the deterministic first-order NLS circuit evaluated on the same training windows.",
+      "Continuous MAE in all 18 principal conditions.",
+      "TOST +/-1 mV versus first-order NLS with Holm over the 18 conditions.",
+      "Training and validation learning curves."
+    ],
+    "interpretation_rules": [
+      "If training loss does not decrease even in A4b, interpret as no learned structure found with these inputs and this architecture.",
+      "If training loss decreases but target MAE does not improve, interpret as limited generalization.",
+      "If target MAE improves beyond 1 mV, restrict the paper conclusion to the original training procedure and report the sensitivity result."
+    ]
+  },
+  "B": {
+    "cell": "LG HG2, H-NMC",
+    "signal_source": "Use the MAT files consistently for time, current, voltage, temperature, and Ah. Do not use MAT Wh; if Wh is needed for an audit, read it only from CSV.",
+    "current_sign": "Positive during charge and negative during discharge; preserve this sign for the repository's canonical convention.",
+    "time_cleaning": "Reject nonfinite time/signal rows; stable-sort by Time; for duplicate timestamps retain the first row; linearly resample current, voltage, temperature, and Ah onto a 0.1 s grid starting at the first retained timestamp. The registered dynamic files have no negative time intervals.",
+    "z0_rule": "Set z0=1 only after the immediately preceding matching charge file reaches at least 4.19 V, tapers to <=0.05 A, then records >=1800 s at abs(current)<=0.02 A; require the profile's initial voltage within 0.05 V of the charge-rest endpoint. Starting from that anchor, SOC(t)=clip(1 + integral(I dt)/(Qnom*3600),0,1), using only samples up to t.",
+    "z0_charge_sequence": {
+      "551_UDDS_25C": "551_Charge2",
+      "551_Mixed1_25C": "551_Charge6",
+      "551_LA92_25C": "551_Charge4",
+      "551_US06_25C": "551_Charge5",
+      "610_UDDS_-20C": "610_Charge8",
+      "596_UDDS_-10C": "596_Charge2",
+      "589_UDDS_0C": "589_Charge2",
+      "576_UDDS_10C": "576_Charge2",
+      "556_UDDS_40C": "556_Charge2"
+    },
+    "source": "551_UDDS at 25 degC, with temporal 80/20 training/validation split.",
+    "source_evaluation": "Held-out validation portion only.",
+    "targets": [
+      "551_Mixed1 at 25 degC (pre-registered replacement for missing HWFET 25 degC)",
+      "551_LA92 at 25 degC",
+      "551_US06 at 25 degC",
+      "610_UDDS at -20 degC",
+      "596_UDDS at -10 degC",
+      "589_UDDS at 0 degC",
+      "576_UDDS at 10 degC",
+      "556_UDDS at 40 degC"
+    ],
+    "target_count": 8,
+    "replacement": {
+      "unavailable_condition": "HWFET 25 degC: 551_HWFET CSV/MAT has 6002 resting samples, approximately 600 seconds, with zero current.",
+      "substitute": "Mixed1 25 degC, 551_Mixed1.",
+      "rationale": "The dataset README identifies Mixed1 as a sequence of UDDS, HWFET, LA92, and US06 segments; the requested original HWFET export contains no drive-cycle current.",
+      "z0_verification": "Verify 551_Charge6 full-charge cutoff and subsequent rested voltage before assigning z0=1."
+    },
+    "capacity": "Use the 25 degC 551_Cap_1C measurement.",
+    "ocv": "Use the discharge branch of the cell's 25 degC C/20 549_C20DisCh curve, following the CALCE low-rate calibration/binning rule; report the selected branch. Do not use the 10 degC MG1-labeled C/20, HPPC, or discharge CSVs.",
+    "data_exclusions": [
+      "Exclude the four 10 degC CSVs identified as LG MG1.",
+      "Mixed3 is absent at 0 and 10 degC and is not a target.",
+      "Use only Wh from CSV; never use the corrupted MAT Wh channel."
+    ],
+    "models": ["second-order ECM by NLS", "physics_gradient", "output_residual", "ecm_ude", "lstm"],
+    "seeds": "42 through 51 for stochastic models; LSTM is contextual.",
+    "ablations": ["A1 frozen-physics comparison", "A2 zero-network evaluation after each B neural checkpoint is saved"],
+    "statistical_family": "Eight targets plus the held-out source-validation interval."
+  },
+  "C": {
+    "cell_population": ["G1", "V4", "V5", "W3", "W4", "W5", "W7", "W8", "W9", "W10"],
+    "C0_selection": {
+      "diagnostics": "Order each cell's C/20 and HPPC diagnostic records by measured event sequence. The first candidate block must follow both initial diagnostics.",
+      "block_rule": "Select the earliest UDDS SOC20-80 aging block after both diagnostics. For W5, the N25 block precedes the first HPPC; the next block after both diagnostics is N75.",
+      "fragment_merge": "Order fragments by Test_Time. Join only boundaries with increasing time gap <=1.5 s and net charge/discharge Ah counter discontinuity <=0.01 Ah; otherwise split and exclude any profile crossing the gap.",
+      "complete_profile": "A bounded, contiguous, variable-current UDDS step with median sampling interval 0.05-0.2 s, current range >=2 A, current standard deviation >=0.5 A, and duration >=1369 s. Do not use a profile truncated at an export boundary.",
+      "source": "The earliest complete profile in the selected block with a prior same-file rested SOC reference.",
+      "targets": "All later complete profiles in that same block with a prior same-file SOC reference; no cross-block or later-aging target.",
+      "capacity": "The closest preceding C/20 discharge capacity measurement for that cell.",
+      "ocv": "The cell's own C/20 discharge branch; HPPC discharge OCV is an alternative only if the C/20 branch is unusable, with the reason recorded.",
+      "z0": "Use the last same-file rest following the SOC20-80 charge step (SOC reference 0.8), and integrate measured net current/Ah only up to each profile start. No post-profile values may enter z0.",
+      "exclusion_rules": [
+        "No C/20 or HPPC diagnostic before the selected block.",
+        "No usable same-file causal SOC reference.",
+        "No complete source and at least one complete target profile in the same block.",
+        "Invalid/nonfinite voltage, current, time, or Ah; negative/nonmonotone time not resolved by chronological fragment merge.",
+        "Fewer than six valid cells after all exclusions: stop Part C before fitting."
+      ],
+      "exact_episode_manifest": {
+        "path": "results/reviewer_round2/C/c0_segments.json",
+        "sha256": "a7a855ae906e4ce38a1a91ca0f063ad7a7c19e82fbfd250faaeeac2c97c6bd8f",
+        "valid_cells": ["G1", "V4", "V5", "W3", "W7", "W8", "W10"],
+        "source_profiles": 7,
+        "target_profiles": 33,
+        "exact_paths_rows_and_input_hashes": "Recorded per cell in the referenced manifest."
+      },
+      "failed_smoke_attempt": {
+        "manifest_path": "results/reviewer_round2/C/smoke/attempt_manifest.json",
+        "manifest_sha256": "87beee8412391c9a90ba16d921834048d12e94918646cefbd272df0d34caa82e",
+        "excluded_from_analysis": true
+      },
+      "audit_result": {
+        "valid_cells": ["G1", "V4", "V5", "W3", "W7", "W8", "W10"],
+        "valid_count": 7,
+        "excluded": {
+          "W4": "Only one complete UDDS episode follows a same-file rest reference; no later target in the selected N25 block.",
+          "W5": "N25 precedes the first HPPC. The first post-diagnostic N75 profile is truncated at the observed block start and has no same-file reference/second target.",
+          "W9": "The first post-diagnostic N25 file starts inside a UDDS step, has no same-file reference, and supplies no later complete source-target pair."
+        },
+        "decision": "Seven valid cells meet the minimum of six; proceed with C1-C3."
+      }
+    },
+    "models": ["second-order ECM by NLS", "physics_gradient", "output_residual", "ecm_ude"],
+    "seeds": [42, 43, 44, 45, 46],
+    "primary_inference": "For each valid cell and neural variant, median across seeds of target-aggregated continuous MAE difference versus physics_gradient; exact Wilcoxon TOST +/-1 mV over cells; Holm over two variants.",
+    "secondary_inference": "Repeat against second-order ECM NLS.",
+    "variance_ratio": "Between-cell variance of per-cell seed medians divided by the mean within-cell variance across seed differences.",
+    "figure": "Per-cell seed points and cell median for each variant, with +/-1 mV reference band."
+  },
+  "F": {
+    "purpose": "Evaluate transfer across later aging blocks and to HPPC without fitting or updating any model weights or circuit/OCV parameters.",
+    "cells": ["G1", "V4", "V5", "W3", "W7", "W8", "W10"],
+    "excluded_cells": ["W4", "W5", "W9"],
+    "models": ["ecm_2rc_nls", "physics_gradient", "output_residual", "ecm_ude"],
+    "seeds": [42, 43, 44, 45, 46],
+    "source": "Use the exact C0 selected source, source normalization, 105 saved checkpoints and seven saved 2RC NLS fits; verify SHA256 against the C manifest before evaluation. No retraining or parameter fitting.",
+    "F1": {
+      "selection": "For each eligible cell identify UDDS blocks strictly later than its C0 source block using observed absolute acquisition chronology from the files, not N-label order. Group fragments by actual named export family, sort by recorded time, and apply the C0 step-14 bounded complete-episode, continuity, sampling, current and same-file prior step-11 reference rules unchanged. Retain all eligible episodes; record every excluded block or episode and reason, and do not bridge missing fragments. Group eligible later blocks by their chronological position per cell, including empty/excluded positions in the position numbering.",
+      "capacity": "Use the measured step-5 C/20 discharge capacity of the latest chronologically preceding same-cell C/20 diagnostic. If the sole available preceding diagnosis is the source diagnosis, use that same value in both arms and explicitly report that a later capacity update is unavailable; do not infer capacity from labels or other cells. Exclude a block from both arms if chronological precedence or a valid capacity cannot be established.",
+      "arms": {
+        "fixed": "Use source Qn and the source model, physical parameters and OCV, and calculate z0 from the same-file 0.8 rest with source Qn.",
+        "updated_capacity": "Change only Qn to the latest earlier C/20 capacity in the SOC reconstruction, including causal z0, and model simulation; leave source normalization, model weights, circuit parameters and OCV unchanged."
+      },
+      "metric": "Continuous MAE over all selected episodes in each cell and block, weighted by sample count; report each model, seed, arm, capacity and input/episode provenance. Compare aging MAE to the C same-block target aggregate for the same cell/model/seed; summarize paired change and updated-minus-fixed effect by chronological block position.",
+      "inference": "For each block position and arm, compute per-cell medians over five paired seeds of MAE(neural)-MAE(physics_gradient), and repeat against deterministic ECM-2RC. Exact Wilcoxon TOST +/-1 mV; Holm over the two neural variants separately for each position, arm and reference. One-sided Wilcoxon superiority is exploratory and Holm-adjusted in the same families. Report raw and adjusted one-sided and TOST p values, n cells and all cell differences. If a valid test cannot be performed report the reason; never replace it with a success-shaped value."
+    },
+    "F2": {
+      "selection": "Use each eligible cell's C0 preceding HPPC diagnostic; begin at the first sample of step 4, the rest after the full CC/CV charge, and include all subsequent recorded HPPC discharge, bipolar pulses and rests to the end of the diagnostic. Require preceding step 3 to reach at least 4.19 V with charge current tapered to at most 0.051 A, and step 4 to have at least 3500 s rest with abs(I)<=0.02 A. Reject profiles lacking these anchors.",
+      "z0": "Set SOC=1 at the first sample of the verified post-full-charge rest. Integrate charge-positive current forward using source Qn and only information up to each sample; do not use later current to set z0.",
+      "simulation": "Run continuously from the post-charge rest with zero initial RC states using source Qn, source OCV, and each unmodified C model. Resample on the same 0.1 s grid used by C; retain source normalization and document any temperature fallback and missing or discontinuous data.",
+      "masks": "Report sample-weighted MAE for full HPPC; SOC in [0.2,0.8] and outside that interval; pulse steps of duration at most 15 s with abs(I)>0.02 A; and rest samples with abs(I)<=0.02 A. Longer discharge steps are part of the full/SOC metrics but not the pulse-only metric. Identify pulse steps from the raw step runs, before interpolation, and report sample counts.",
+      "inference": "On complete-profile MAE use exactly the F1 cell-level TOST and exploratory superiority procedure, separately by reference and with Holm over the two variants. Report descriptive MAEs by SOC and pulse/rest masks."
+    },
+    "outputs": "Write new artifacts to results/reviewer_round2/F/ with hashes of inputs, checkpoints and outputs; add explicitly labeled registered/exploratory F rows to E/synthesis.csv and E/synthesis.tex while preserving existing results. Paper-facing reports contain no calendar dates."
+  },
+  "G_exploratory_corrections": {
+    "outputs_root": "results/reviewer_round2/F2/",
+    "scope": "All G1-G3 results are exploratory; preserve the saved C and F artifacts. The E synthesis is explicitly updated as requested, with previous versions and hashes retained under F2.",
+    "models": ["ecm_2rc_nls", "physics_gradient", "output_residual", "ecm_ude"],
+    "seeds": [42, 43, 44, 45, 46],
+    "G1": {
+      "cells": ["G1", "V4", "W3", "W7", "W8", "W10"],
+      "baseline": "Reevaluate all C0 source-block target episodes, not the source training episode, using unchanged C checkpoints, source normalization and calibration. Reset RC only at each episode start as in F1, simulate continuously, include every regridded sample, and aggregate absolute error with sample-count weighting.",
+      "comparison": "For each cell, model and seed subtract the newly recalculated full-episode source-block target MAE from the saved fixed-arm F1 later-block full-episode target MAE. Report seed-level rows, per-cell seed medians, and the median across cells per model and chronological position. Do not mix the former C window-mask baseline with full-episode targets.",
+      "capacity_arm": "Report fixed calibration only; no later C/20 exists and the prior capacity-update arm was identical. Retain the old F outputs untouched."
+    },
+    "G2": {
+      "cells": ["G1", "V4", "V5", "W3", "W7", "W8", "W10"],
+      "simulation": "Reproduce F HPPC simulation continuously from the verified full-charge rest at SOC=1, with source Qn and the saved unchanged NLS and five neural seeds. Apply masks only after the full simulation; retain F pulse and rest definitions and 0.1 s sampling.",
+      "common_soc_mask": "For each cell take the intersection of the stored source 1RC and 2RC NLS soc_train_min/soc_train_max intervals, representing the common source-identification range. Apply the same inclusive mask to every model and seed using the F charge-counted nominal-Q SOC trajectory, not a model-specific or future-informed mask. Report both recorded intervals, intersection, sample counts and fractions of the full HPPC. If the intersection or any requested pulse/rest mask is empty, report the failure explicitly rather than fabricate an estimate.",
+      "metrics": "MAE for all in-range samples, and separately for the intersection with F pulse and rest masks; report counts and fractions for each. Preserve and quote F full-profile numbers as not interpretable for neural corrections because of OCV extrapolation.",
+      "inference": "For each of the full-in-range, pulse-in-range and rest-in-range masks, and for cohorts with all seven cells and without W3, compare per-cell median over paired seeds of neural minus physics-gradient, and neural minus deterministic ECM-2RC. Exact Wilcoxon TOST +/-1 mV and one-sided superiority/inferiority; Holm over two variants separately for each mask, cohort, reference and one-sided tail. All inference is exploratory. Preserve the existing caveat about W3's diagnostic association."
+    },
+    "G3": "Replace the redundant F1 updated-capacity and full-HPPC synthesis entries with G1 fixed-calibration and G2 in-range results, including the W3 sensitivity. Keep preregistered F1 target contrasts distinguished from the exploratory G1 correction and G2 tests. Add the warning that five seeds with Holm over 18 conditions imply a minimum adjusted unilateral p of 18/32, so 0/0/0 is not evidence of no effect."
+  },
+  "saved_artifact_hashes": {
+    "D_manifest": {
+      "path": "results/reviewer_round2/D/manifest.json",
+      "inputs_sha256": {
+        "results/unified_10seeds/summary.json": "935c6ff2b997ab777061832d478432ba6983e80afdb90c3350cd79b721b7a76f",
+        "results/unified_10seeds/statistics.json": "89b013f12b92f66dec7eda900fb701c53b02cc2a1c449fce0a1ccbc20f4f889f",
+        "results/paper_tables/E1.csv": "40d36643d994bec80534406127a911f8cf0fa5a2d825971c71aac50fb9a4e6e8",
+        "results/training_audit/epochs.csv": "db48d2dfb45d732329f909563332eb2249e9e01168c0d9580487688ff0d13940",
+        "exp_unified.py": "5570859125f4ce0be6718c60b54f733c02d01709a9167d394f4bd1935fd7f78c",
+        "exp_paper_v2_seeds.py": "2058041e91407430a7787c304e01917f91f38f4f2676490fcb8de0f55ea88c9f"
+      }
+    },
+    "additional_checkpoint_and_raw_data_hashes": "Record in each part's manifest before evaluation/fitting; do not copy or modify source artifacts."
+  }
+}

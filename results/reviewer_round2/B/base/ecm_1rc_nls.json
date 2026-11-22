@@ -1,0 +1,36 @@
+{
+  "params": {
+    "ocv_coeffs": [
+      3.6400352017620516,
+      0.6076812312522964,
+      -0.15285440789620033,
+      0.09273588025726018,
+      -0.06413420469403455,
+      0.021393914569137203
+    ],
+    "R0": 0.019851050514444843,
+    "R1": 0.014645873116677954,
+    "C1": 1194.6764497398406,
+    "soc_train_min": 0.23048272456416516,
+    "soc_train_max": 1.0,
+    "identification_rmse_V": 0.008390058033478889,
+    "identification_n_windows": 248,
+    "identification_success": true
+  },
+  "theta": [
+    3.6400352017620516,
+    0.6076812312522964,
+    -0.15285440789620033,
+    0.09273588025726018,
+    -0.06413420469403455,
+    0.021393914569137203,
+    -1.7022165054976186,
+    -1.834284732657539,
+    1.2429655700168754
+  ],
+  "ocv_initialization": "C/20 discharge branch at 25 C; degree-5 Chebyshev fit",
+  "optimizer": "scipy least_squares TRF",
+  "nfev": 10,
+  "message": "`ftol` termination condition is satisfied.",
+  "identification_success": true
+}

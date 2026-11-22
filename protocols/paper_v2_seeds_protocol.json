@@ -1,0 +1,33 @@
+{
+  "version": "paper-v2-unified-10seeds-1",
+  "registered_before_new_training": true,
+  "original": "results/unified/summary.json and protocol.py; source/checkpoint/input hashes must match",
+  "seeds": [42,43,44,45,46,47,48,49,50,51],
+  "reuse": "Copy original summary and deterministic NLS checkpoints into new output; reuse first five per-seed metrics/checkpoints read-only, train only47..51. Same exp_unified.run_dataset, hyperparameters, loaders, normalization, train/validation masks and seed handling.",
+  "trainable_models": ["physics_gradient","output_residual","ecm_ude","lstm"],
+  "datasets": ["panasonic","calce"],
+  "primary_metric": "mae mV",
+  "primary_mode": "continuous",
+  "secondary_mode": "windowed",
+  "conditions": "Original20:8Panasonic+12CALCE; flag CALCE US06/BJDST25 fallback as excluded from principal scientific claims but retain them in pre-fixed20-condition multiplicity family.",
+  "TOST": {
+    "difference": "MAE_trainable_seed minus deterministic ECM2RC MAE, using same condition and mode",
+    "margin_mV": 1.0,
+    "lower": "Exact one-sided Wilcoxon signed-rank on d+1 with alternative greater (H0 location<=-1)",
+    "upper": "Exact one-sided Wilcoxon signed-rank on d-1 with alternative less (H0 location>=+1)",
+    "implementation": "Round shifted differences to10 decimals; remove zeros, average tied absolute ranks, exhaust all2^n sign permutations. Allzero =>p1. Record both p-values and n_nonzero.",
+    "multiplicity": "Holm over20conditions separately for each model, mode and one-sided direction. Equivalence iff BOTH adjusted p<0.05. No NLS seed replication.",
+    "models": ["physics_gradient","output_residual","ecm_ude"],
+    "alpha": 0.05,
+    "interpretation": "TOST concerns seed-distribution location under signed-rank symmetry assumptions, not equivalence across independent cells. Neither nonsignificance nor failed equivalence demonstrates benefit."
+  },
+  "LSTM": {
+    "mode": "windowed only",
+    "effect": "Median paired seed MAE difference LSTM minus deterministic ECM2RC",
+    "bootstrap": "20000 resamples of10 seed differences with replacement, percentile2.5/97.5CI, RNG20261101; no p-value or equivalence test",
+    "no_cross_mode_comparison": true
+  },
+  "output": "results/unified_10seeds; complete summary, per-seed checkpoints/logs, table CSV/TEX, statistics JSON, report. Original results remain byte-identical.",
+  "source_validation": "Original source heldout is early-stopping validation, not independent final source test.",
+  "no_hyperparameter_changes": true
+}

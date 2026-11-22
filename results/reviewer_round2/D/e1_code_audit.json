@@ -1,0 +1,7 @@
+{
+  "audited_rows": 54,
+  "matches": 54,
+  "divergences": [],
+  "paper_table_sha256": "40d36643d994bec80534406127a911f8cf0fa5a2d825971c71aac50fb9a4e6e8",
+  "interpretation": "E maps to EQ; N maps to ND. Holm is applied separately to both one-sided tests."
+}

@@ -1,0 +1,26 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\caption{Exploratory synthesis of registered errors and one-sided superiority tests.}
+\label{tab:reviewer-round2-synthesis}
+\begin{tabular}{lllll}
+\toprule
+Configuration & Variant & Status & vs. physics-gradient & vs. ECM-2RC \\
+\midrule
+Protocolo original — NCA & output_residual & PG PR+EX; NLS PR+EX & 0/8/0; -0.001 [-0.015,0.003] & 0/5/7; 0.414 [0.073,2.967] \\
+Protocolo original — NCA & ecm_ude & PG PR+EX; NLS PR+EX & 0/8/6; 0.290 [0.185,0.547] & 0/4/8; 0.644 [0.585,3.192] \\
+Protocolo original — NMC Samsung & output_residual & PG PR+EX; NLS PR+EX & 0/10/0; -0.005 [-0.013,0.001] & 4/10/0; 0.036 [-0.189,0.094] \\
+Protocolo original — NMC Samsung & ecm_ude & PG PR+EX; NLS PR+EX & 0/10/0; 0.097 [0.016,0.136] & 0/10/1; 0.042 [-0.047,0.268] \\
+Protocolo original — LG HG2 & output_residual & PG PR+EX; NLS PR+EX & 0/9/0; -0.004 [-0.010,-0.000] & 0/8/8; 0.334 [-0.020,1.200] \\
+Protocolo original — LG HG2 & ecm_ude & PG PR+EX; NLS PR+EX & 8/3/0; -1.227 [-5.126,-0.027] & 6/4/3; -0.682 [-4.825,1.189] \\
+Protocolo original — LG M50T & output_residual & PG PR+EX; NLS PR+EX & 1/1/0; -0.001 [-0.001,-0.001] & 1/1/0; -0.143 [-0.143,-0.143] \\
+Protocolo original — LG M50T & ecm_ude & PG PR+EX; NLS PR+EX & 1/0/0; -0.482 [-0.482,-0.482] & 1/0/0; -0.643 [-0.643,-0.643] \\
+A4b — NCA & output_residual & PG EX; NLS PR+EX & 0/0/0; -0.795 [-1.045,-0.546] & 0/0/0; -0.557 [-0.747,2.252] \\
+A4b — NCA & ecm_ude & PG EX; NLS PR+EX & 0/0/0; -0.539 [-13.823,5.835] & 0/0/0; -0.248 [-14.099,5.901] \\
+A4b — NMC Samsung & output_residual & PG EX; NLS PR+EX & 0/0/0; -0.121 [-1.348,1.010] & 0/0/0; -0.082 [-1.348,0.784] \\
+A4b — NMC Samsung & ecm_ude & PG EX; NLS PR+EX & 0/0/0; 0.005 [-1.067,6.793] & 0/0/0; 0.050 [-0.961,6.609] \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\footnotesize Counts are superior/equivalent/inferior tests with Holm-adjusted $p<0.05$; the tests are not mutually exclusive. Differences are medians across condition-level medians and their min--max range (mV). M50T counts refer to the single population-level contrast over seven cells; descriptive cell directions are reported separately. PR: preregistered TOST; EX: exploratory superiority.}
+\end{table*}

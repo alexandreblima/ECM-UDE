@@ -1,0 +1,3 @@
+dataset,profile,scope,status,n_evaluated_samples,V1_global_mae_mV,mae_mV,rmse_mV,max_error_mV,p99_mV
+cell_A_a123,FUDS,global,INCONCLUSIVE_NLS,0,22.371009211862074,,,,
+cell_A_a123,US06,global,INCONCLUSIVE_NLS,0,21.1766403652927,,,,

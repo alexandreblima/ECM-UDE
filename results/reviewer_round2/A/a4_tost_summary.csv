@@ -1,0 +1,5 @@
+experiment,variant,conditions,holm_equivalent_conditions,median_condition_difference_mV,conditions_improved_by_more_than_1mV,conditions_worsened_by_more_than_1mV
+A4A,output_residual,18,0,-0.55677704843567,3,0
+A4A,ecm_ude,18,0,7.8984108090174985,4,11
+A4B,output_residual,18,0,-1.0609711333403098,10,0
+A4B,ecm_ude,18,0,-0.03639499421923098,6,8

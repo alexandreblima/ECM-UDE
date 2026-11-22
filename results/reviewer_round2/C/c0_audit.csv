@@ -1,0 +1,11 @@
+cell,first_post_diagnostic_block,diagnostic_and_fragment_audit,complete_source_target_pair,capacity_ah,decision
+G1,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.099-0.101 s; max Ah discontinuity 0.0005",yes,4.903030,include
+V4,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.100 s; no Ah discontinuity",yes,4.868689,include
+V5,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.099-0.101 s; max Ah discontinuity 0.0005",yes,4.860165,include
+W3,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.099-1.000 s; max Ah discontinuity 0.0006",yes,4.820700,include
+W4,N25,"C/20 and HPPC precede block; one fragment; only one complete UDDS episode after same-file SOC reference",no,4.822398,exclude_no_target
+W5,N75,"N25 precedes first HPPC; N75 is first block after both diagnostics; one dynamic episode begins mid-step without same-file reference",no,4.832414,exclude_truncated_no_pair
+W7,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.099-0.999 s; max Ah discontinuity 0.0008",yes,4.882482,include
+W8,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.099-1.001 s; max Ah discontinuity 0.0008",yes,4.876809,include
+W9,N25,"C/20 and HPPC precede block; one fragment; starts mid-UDDS step without same-file reference and has no later profile",no,4.874209,exclude_truncated_no_pair
+W10,N25,"C/20 and HPPC precede block; ten fragments; no internal nonmonotone times; boundary gaps 0.099-1.000 s; max Ah discontinuity 0.0004",yes,4.865831,include

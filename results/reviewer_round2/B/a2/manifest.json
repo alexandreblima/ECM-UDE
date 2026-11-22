@@ -1,0 +1,82 @@
+{
+  "base_metrics_sha256": "7ed474607bd81462a7480c01111a59d64fc00ed146e3980ae2487a0535968c10",
+  "data_audit_sha256": "224bfadccc1f7657e9aba47720320a3c7ba3a0e1ca489e439d64d4f959d53847",
+  "raw_inputs": {
+    "UDDS_25C_source": {
+      "path": "25degC/10-28-18_17.44 551_UDDS_25degC_LGHG2.mat",
+      "sha256": "2beafcb42b5eec07ffa465b95abce1746d90504c440113276dc07f8b8a958b77",
+      "charge_id": "551_Charge2",
+      "charge_sha256": "62b11888092949f3e8fec10888d8cab9334f1eebbb3b6ddec6f2e03cac97bdfa"
+    },
+    "Mixed1_25C": {
+      "path": "25degC/10-29-18_14.41 551_Mixed1_25degC_LGHG2.mat",
+      "sha256": "8e05da70b31c3f8b10d34592cce193daae0478ccabf9112bef59c778cdc3b74d",
+      "charge_id": "551_Charge6",
+      "charge_sha256": "3d69303d040b85c5bd3d19ecd560a3ec354c7f35c16e1b771cec45c9f02059d5"
+    },
+    "LA92_25C": {
+      "path": "25degC/10-29-18_03.53 551_LA92_25degC_LGHG2.mat",
+      "sha256": "43b9803b858e44ad29e7dcfa59fb395ebb06560732fac86b5fc0c1dc5bb62dcf",
+      "charge_id": "551_Charge4",
+      "charge_sha256": "7241f3c08ca16730e53141daf61e616faa2bda256f55906a59feba533ec19ffc"
+    },
+    "US06_25C": {
+      "path": "25degC/10-29-18_10.08 551_US06_25degC_LGHG2.mat",
+      "sha256": "87eb8d7a735e6b54c582f663c21bcc06037390feb773770b9901163878c50485",
+      "charge_id": "551_Charge5",
+      "charge_sha256": "77baa564542e7c7b242027f64781edbb84dcc5ebe8dac13dd545161964f57f30"
+    },
+    "UDDS_-20C": {
+      "path": "n20degC/12-24-18_11.30 610_UDDS_n20degC_LGHG2.mat",
+      "sha256": "30bd81b4ced80a042697f880d634ccf5863731d8fee67cfb17dd78c342abcd76",
+      "charge_id": "610_Charge8",
+      "charge_sha256": "95e37d201123b0e8f94396f067fb161947fd47900c9b71c12c57d89dcb5784e8"
+    },
+    "UDDS_-10C": {
+      "path": "n10degC/12-07-18_23.49 596_UDDS_n10degC_LGHG2.mat",
+      "sha256": "b9119d610690118aef0558db76005422ce07f65426f1eb7a114bf1cdb7f3afe3",
+      "charge_id": "596_Charge2",
+      "charge_sha256": "828067a088a0b88c5592b9d154bc9376f8ef54405b42c6c9614da0d2f3e9df9c"
+    },
+    "UDDS_0C": {
+      "path": "0degC/11-30-18_01.23 589_UDDS_0degC_LGHG2.mat",
+      "sha256": "a3e4fe8d27d99d5bf12ec60e5016e1145a6b814cfcf2fd591e9ee43c9e7a2568",
+      "charge_id": "589_Charge2",
+      "charge_sha256": "c38ad40434d2dcd253240e332270ba2ec0ba33e054c7587e140fb740000765ef"
+    },
+    "UDDS_10C": {
+      "path": "10degC/11-20-18_03.10 576_UDDS_10degC_LGHG2.mat",
+      "sha256": "f01c711df9063c5a7b844b8dc7d1fe908aeb0fde1d2f5f3b8a7893af697da391",
+      "charge_id": "576_Charge2",
+      "charge_sha256": "39be5076e4262772fb9882a575bf933fafe1fce9df2b20e3367bc533d91c3a84"
+    },
+    "UDDS_40C": {
+      "path": "40degC/11-06-18_00.10 556_UDDS_40degC_LGHG2.mat",
+      "sha256": "a38de6d1db2976f96b3b276da91655e5a2dfd71c10f26c78ca370f0f0629bc64",
+      "charge_id": "556_Charge2",
+      "charge_sha256": "b5585e245d5a9e2d8c7ce665d81309035d273cc9cc16ea334c3dc30286f2776f"
+    }
+  },
+  "checkpoint_sha256": {
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed42.pt": "cb4c22e2871d3f60fbf8ac9b63f8e0a20b5aa54c3dcd93f2276e1dea2b6637e2",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed43.pt": "085e5550496535ec77da8098ad824bd92dbfef6af3cb00aaa0ed000e352c9a9e",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed44.pt": "7fda84091b7c07a65afffc0e24ad650affae1a5223555ef3dc694ee93a05dd7a",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed45.pt": "3a4442a047812f35fcaebd5704880bcc671abf97a56b949145945eee79c8906b",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed46.pt": "0e644bf00691ddfb59bba1e399a392cd380d826d39830d98c1ff7a0d38027fac",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed47.pt": "1115573c0faf19ea6b7f337890c0eaed74addabd644b08c61fb9ddc56434ebce",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed48.pt": "341f1b839990bdd73857257ad2c82c17f52f42d3b016d3affc7e05dadb138ae6",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed49.pt": "644ddb4c1fea47204c597e167c03580bf5da1bd4b41a47c81fcfe438d98319eb",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed50.pt": "4d04240fbf97592f9fde3e0613e32c2a8268f3961d45896394fd1a0828de24a9",
+    "results/reviewer_round2/B/base/checkpoints/output_residual_seed51.pt": "abdf736982d3ed649c8fb32b2b7249f9c265a7724737950c5dedf2c6ce539b3a",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed42.pt": "67eeb74013b4e2689d2f71984995774ecead54ab2d210ccfeef0ae3cd401c845",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed43.pt": "0cdded85f08995e65bdc432f42417cd6ad06699e9b96aa51d035cc60eeb80278",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed44.pt": "15d8fd5a3027ee60e9d938c6a9ae1de0546be7e91e90746e64b5a525ded24d97",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed45.pt": "10f711834c8e5d7ca95aad9c99f172029ff69f36d4eec69efc6b7597b23c7c18",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed46.pt": "3f3bbb5bfa60028a072f0a57b533e8a7201b0c2957dc94ee80d4f320f79aaecb",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed47.pt": "e3b90663006696d29a915c80bd13613d578a5450abc138e34187601952133f84",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed48.pt": "d74f0bc7854e89df1cb923f9af28ceaa127eaad8d6b25eddcbbdb97b98314256",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed49.pt": "15f36b4ef43f50b43299273dea1f860643ab6069e07a71433e146a6ffe96fe2e",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed50.pt": "beea40ca3c38cf04a21c0029605480e1e9eed17fbf763145874e2648508d15ff",
+    "results/reviewer_round2/B/base/checkpoints/ecm_ude_seed51.pt": "e7b4827c873635e06517db89c74260236bb94ca0a05421ed15045481ec37a857"
+  }
+}

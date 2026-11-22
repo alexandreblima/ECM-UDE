@@ -1,0 +1,9 @@
+datasets/
+__pycache__/
+.pytest_cache/
+.venv/
+figures_ieee/
+generated_tables/
+figure_sources/*.aux
+figure_sources/*.log
+figure_sources/*.pdf

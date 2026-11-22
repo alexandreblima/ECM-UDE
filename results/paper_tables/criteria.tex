@@ -1,0 +1,22 @@
+\begin{table*}[!t]
+\centering
+\footnotesize
+\caption{Registered criteria, observations and unchanged historical decisions.}
+\label{tab:reviewer-criteria}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{p{0.08\textwidth} p{0.23\textwidth} p{0.25\textwidth} p{0.15\textwidth} p{0.18\textwidth}}
+\toprule
+experiment & registered\_criterion & observed & verdict & registration\_commit \\
+\midrule
+E1 vs2RC & TOST +/-1 mV; exact shifted Wilcoxon; both pHolm<.05; 20 conditions/model/direction & continuous gradient17/20,residual17/20,UDE16/20; principal15/18,15/18,14/18 & partial equivalence, not universal & d5cdc37 \\
+E1 variants & paired seeds42-51; TOST +/-1mV; Holm18 perpair/direction & ecm\_ude:18/18; output\_residual:18/18 & see conditionwise EQ/ND & d14935e \\
+E2 & ESC gain>=10\% versusbestV1/V2 and |h|>.9 less90\% time on BOTHtargets & A123-1.62/-6.14\%; Mendeley13.19/23.97\%; saturation passes & A NO-GO; B GO; primary NO-GO & da67c21 \\
+E3 historical & BestV5/V6/V7 gain>=25\% on ALLsameTtargets & historical fourpositive; corrected CALCE US0623.45\% fails & A/B/Pan historicalpositive; correctedCALCE negative & 50e85e1;78fefb3;308dc2a audit \\
+E3 wide CALCE & V6wide z0[.7,1]; >=25\% vs auditedV1 on all3targets & DST:38.94\%; US06:46.03\%; BJDST:44.15\% & POSITIVO & d14935e \\
+E3 monotone & V7m >=25\% allsameTtargets; source-only 500evaluations/3starts & Mendeley4.04/-1.72\%; A/Pan/CALCE sourceNLSnonconverged, Q/z0unidentifiable & Mendeley negative; others inconclusive & 8a0e2e2;3c149a8 failurepolicy \\
+E4 transfer & >=25\% bestV5/V6/V7 vsV1 bothprofiles in>=3/4temperatures & 0/4 pass; localV6diagnostic not in criterion & NEGATIVA & 78fefb3;3d0d047 localdiagnostic \\
+E4 interpolation & BestP2/P3/P4 >=50\% floor-to-local recovery all4heldoutconditions & P2:61.83,62.03,71.09,116.48\%; P4coverage not calibrated & POSITIVO & b2d945c \\
+Ablation descriptive & >=70\% jointgain majority positivegain conditions; both/neither=>joint & matched\_temperature:conjunto; thermal\_transfer:conjunto; thermal\_local:parametros RC & descriptive blockwise, not causal proof & d14935e \\
+\bottomrule
+\end{tabular}
+\end{table*}

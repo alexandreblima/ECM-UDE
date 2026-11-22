@@ -1,0 +1,210 @@
+{
+  "exploratory": true,
+  "retraining_neural_models": false,
+  "ocv_comparison_method": "C/20 branch medians in 0.002-SOC bins; monotonic upper envelope; mean OCV is the pointwise mean on common SOC support. HPPC uses median voltage and SOC in the last 30 s of each >=600 s rest with |current|<=0.02 A.",
+  "c20": {
+    "path": "25degC/10-26-18_09.29 549_C20DisCh_25degC_LGHG2.mat",
+    "sha256": "570746af29365dbe2aa7850a8b095bf4f131a6692a1c47dc065141dfc789260d",
+    "samples": 2421,
+    "discharge_samples": 1097,
+    "charge_samples": 1203,
+    "discharge_soc_coverage": [
+      0.001377700938760551,
+      0.9986064905614581
+    ],
+    "charge_soc_coverage": [
+      0.0012046975365244128,
+      0.9990710992508264
+    ],
+    "mean_curve_soc_coverage": [
+      0.001377700938760551,
+      0.9973777009387605
+    ]
+  },
+  "hppc": {
+    "path": "25degC/10-25-18_07.39 549_HPPC_25degC_LGHG2.mat",
+    "sha256": "eb3fdfa111a9761d825ce164d8108c09be3129e039eb1fd1c95ba1f3520fcc75",
+    "rest_threshold_A": 0.02,
+    "minimum_rest_duration_s": 600.0,
+    "voltage_window_s": 30.0,
+    "rest_period_count": 47,
+    "rest_duration_min_s": 609.906005859375,
+    "rest_duration_max_s": 3600.006001442671,
+    "soc_coverage": [
+      0.006994156624907821,
+      0.9976720165752266
+    ]
+  },
+  "capacity_ah": 2.72639,
+  "udds_source": {
+    "z0": 1.0,
+    "charge_anchor": {
+      "charge_id": "551_Charge2",
+      "cutoff_current_A": 0.04853,
+      "path": "25degC/10-28-18_14.16 551_Charge2.mat",
+      "peak_voltage_V": 4.19995,
+      "profile_initial_voltage_V": 4.18464,
+      "rest_duration_s": 3601.009999215603,
+      "rest_voltage_V": 4.18579,
+      "samples": 213,
+      "sha256": "62b11888092949f3e8fec10888d8cab9334f1eebbb3b6ddec6f2e03cac97bdfa",
+      "start_rest_voltage_difference_V": -0.0011499999999999844,
+      "verified_full_charge_and_rest": true
+    },
+    "net_discharged_ah": 2.5921344959585992,
+    "discharge_throughput_ah": 3.8157209907968554,
+    "charge_throughput_ah": 1.2235864948382553,
+    "calculated_final_soc": 0.04924295645208521,
+    "soc_samples": 159656,
+    "duration_s": 15965.5,
+    "initial_voltage_V": 4.184639930725098,
+    "final_voltage_V": 3.201040029525757,
+    "continuous_mae_mV": 20.680493142199666,
+    "validation_mae_mV": 80.6924190599733,
+    "error_by_soc_segment_validation": [
+      {
+        "segment": "SOC_0.2_to_0.8_plateau",
+        "samples": 5577,
+        "soc_min": 0.2000039964914322,
+        "soc_max": 0.23272021114826202,
+        "mae_mV": 8.62261670206499,
+        "mean_signed_error_mV": -8.584509450763587
+      },
+      {
+        "segment": "SOC_below_0.2_end_discharge",
+        "samples": 26591,
+        "soc_min": 0.049244966357946396,
+        "soc_max": 0.1999993622303009,
+        "mae_mV": 95.80780726463107,
+        "mean_signed_error_mV": -95.80780726463107
+      }
+    ]
+  },
+  "nls_original_checkpoint": "results/reviewer_round2/B/base/ecm_2rc_nls.json",
+  "nls_original_sha256": "786dab39689f7d78ae669f4eaec734d3d52910546b88b788b7c1a4870dc5836a",
+  "mean_ocv_2rc_fit": {
+    "params": {
+      "ocv_coeffs": [
+        3.640383482421546,
+        0.6071424099645959,
+        -0.1524501149448067,
+        0.0924856870900379,
+        -0.06401969395770153,
+        0.0213593202071845
+      ],
+      "R0": 0.013559917923484795,
+      "R1": 0.0069067583548743,
+      "C1": 35.80099875468307,
+      "R2": 0.014491297386122377,
+      "C2": 1390.9044861017294,
+      "soc_train_min": 0.23048272456416516,
+      "soc_train_max": 1.0,
+      "identification_rmse_V": 0.008179056376903197,
+      "identification_n_windows": 248,
+      "identification_success": true
+    },
+    "theta": [
+      3.640383482421546,
+      0.6071424099645959,
+      -0.1524501149448067,
+      0.0924856870900379,
+      -0.06401969395770153,
+      0.0213593202071845,
+      -1.8677429391920768,
+      -2.160725738286671,
+      -0.6068305957881243,
+      -1.8388927309946126,
+      1.304404576867172
+    ],
+    "ocv_initialization": "Mean of matched 0.002-SOC median C/20 charge/discharge curves; degree-5 Chebyshev fit",
+    "optimizer": "scipy least_squares TRF",
+    "nfev": 38,
+    "message": "`ftol` termination condition is satisfied.",
+    "identification_success": true
+  },
+  "mean_ocv_2rc_params": {
+    "ocv_coeffs": [
+      3.640383482421546,
+      0.6071424099645959,
+      -0.1524501149448067,
+      0.0924856870900379,
+      -0.06401969395770153,
+      0.0213593202071845
+    ],
+    "R0": 0.013559917923484795,
+    "R1": 0.0069067583548743,
+    "C1": 35.80099875468307,
+    "R2": 0.014491297386122377,
+    "C2": 1390.9044861017294,
+    "soc_train_min": 0.23048272456416516,
+    "soc_train_max": 1.0,
+    "identification_rmse_V": 0.008179056376903197,
+    "identification_n_windows": 248,
+    "identification_success": true
+  },
+  "fit_parameter_comparison": {
+    "maximum_absolute_ocv_coefficient_change": 2.9507972065800914e-08,
+    "maximum_absolute_R_C_parameter_change": 1.8551948805622942e-05,
+    "original_training_soc_min": 0.23048272456416516,
+    "original_training_soc_max": 1.0,
+    "interpretation": "The alternate initialization converged to practically the same fitted 2RC parameters; the NLS identification windows do not cover SOC below the recorded training minimum."
+  },
+  "model_order_changes": [],
+  "sensitivity_order_changed_conditions": 0,
+  "raw_inputs": {
+    "UDDS_25C_source": {
+      "path": "25degC/10-28-18_17.44 551_UDDS_25degC_LGHG2.mat",
+      "sha256": "2beafcb42b5eec07ffa465b95abce1746d90504c440113276dc07f8b8a958b77",
+      "charge_id": "551_Charge2",
+      "charge_sha256": "62b11888092949f3e8fec10888d8cab9334f1eebbb3b6ddec6f2e03cac97bdfa"
+    },
+    "Mixed1_25C": {
+      "path": "25degC/10-29-18_14.41 551_Mixed1_25degC_LGHG2.mat",
+      "sha256": "8e05da70b31c3f8b10d34592cce193daae0478ccabf9112bef59c778cdc3b74d",
+      "charge_id": "551_Charge6",
+      "charge_sha256": "3d69303d040b85c5bd3d19ecd560a3ec354c7f35c16e1b771cec45c9f02059d5"
+    },
+    "LA92_25C": {
+      "path": "25degC/10-29-18_03.53 551_LA92_25degC_LGHG2.mat",
+      "sha256": "43b9803b858e44ad29e7dcfa59fb395ebb06560732fac86b5fc0c1dc5bb62dcf",
+      "charge_id": "551_Charge4",
+      "charge_sha256": "7241f3c08ca16730e53141daf61e616faa2bda256f55906a59feba533ec19ffc"
+    },
+    "US06_25C": {
+      "path": "25degC/10-29-18_10.08 551_US06_25degC_LGHG2.mat",
+      "sha256": "87eb8d7a735e6b54c582f663c21bcc06037390feb773770b9901163878c50485",
+      "charge_id": "551_Charge5",
+      "charge_sha256": "77baa564542e7c7b242027f64781edbb84dcc5ebe8dac13dd545161964f57f30"
+    },
+    "UDDS_-20C": {
+      "path": "n20degC/12-24-18_11.30 610_UDDS_n20degC_LGHG2.mat",
+      "sha256": "30bd81b4ced80a042697f880d634ccf5863731d8fee67cfb17dd78c342abcd76",
+      "charge_id": "610_Charge8",
+      "charge_sha256": "95e37d201123b0e8f94396f067fb161947fd47900c9b71c12c57d89dcb5784e8"
+    },
+    "UDDS_-10C": {
+      "path": "n10degC/12-07-18_23.49 596_UDDS_n10degC_LGHG2.mat",
+      "sha256": "b9119d610690118aef0558db76005422ce07f65426f1eb7a114bf1cdb7f3afe3",
+      "charge_id": "596_Charge2",
+      "charge_sha256": "828067a088a0b88c5592b9d154bc9376f8ef54405b42c6c9614da0d2f3e9df9c"
+    },
+    "UDDS_0C": {
+      "path": "0degC/11-30-18_01.23 589_UDDS_0degC_LGHG2.mat",
+      "sha256": "a3e4fe8d27d99d5bf12ec60e5016e1145a6b814cfcf2fd591e9ee43c9e7a2568",
+      "charge_id": "589_Charge2",
+      "charge_sha256": "c38ad40434d2dcd253240e332270ba2ec0ba33e054c7587e140fb740000765ef"
+    },
+    "UDDS_10C": {
+      "path": "10degC/11-20-18_03.10 576_UDDS_10degC_LGHG2.mat",
+      "sha256": "f01c711df9063c5a7b844b8dc7d1fe908aeb0fde1d2f5f3b8a7893af697da391",
+      "charge_id": "576_Charge2",
+      "charge_sha256": "39be5076e4262772fb9882a575bf933fafe1fce9df2b20e3367bc533d91c3a84"
+    },
+    "UDDS_40C": {
+      "path": "40degC/11-06-18_00.10 556_UDDS_40degC_LGHG2.mat",
+      "sha256": "a38de6d1db2976f96b3b276da91655e5a2dfd71c10f26c78ca370f0f0629bc64",
+      "charge_id": "556_Charge2",
+      "charge_sha256": "b5585e245d5a9e2d8c7ce665d81309035d273cc9cc16ea334c3dc30286f2776f"
+    }
+  }
+}

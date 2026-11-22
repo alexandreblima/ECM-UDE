@@ -1,0 +1,48 @@
+{
+  "version": "lfp-static-transfer-1",
+  "registered_before_fitting": true,
+  "primary": "cell_A_a123",
+  "replica": "cell_B_mendeley",
+  "source": "DST",
+  "targets": ["FUDS", "US06"],
+  "models_fitted_on_DST_only": ["V1", "V5", "V6", "V7"],
+  "oracle": "Reuse previous V4 trajectories and fits without refitting; previous RC bounds up to 100000s differ from new fits and are explicitly reported.",
+  "data": "Same loaders, raw files, independent OCV artifacts and positive-discharge convention as lfp_gonogo; no writes to previous outputs.",
+  "simulator": "Reuse exact continuous zero-order-hold 2RC simulator, initial polarization zero, one state per complete profile.",
+  "ocv": "V1/V6 fixed OCV_mean; V5/V7 degree-9 Chebyshev on [0,1], same common-interval boundary hold as previous V4.",
+  "soc": "z=z0-net_Ah/Q; no cycle-end normalization, no inverse OCV. V6/V7 fitted Q and z0 transfer unchanged from DST to both targets (user confirmed).",
+  "stratification": "Identical original loader-SOC masks for all models, including V6/V7, to preserve comparable sample sets; fitted SOC trajectories and ranges also saved.",
+  "current_threshold_A": 0.02,
+  "post_reversal_window_seconds": 60,
+  "bounds": {
+    "R0_R1_R2_ohm": [0.00001, 0.5],
+    "tau1_tau2_s": [0.1, 3600.0],
+    "Q_ratio": [0.9, 1.1],
+    "z0": [0.9, 1.0],
+    "ocv_coefficients": "unbounded, as previous V4",
+    "report_near_bound": "distance to nearest finite bound divided by bound width < 0.0001 in optimizer coordinates",
+    "branch_labels": "Bound both taus to prevent label-switch evasion; report branches sorted fast-to-slow, slow tau2=max(tau1,tau2)<=3600."
+  },
+  "starts": [
+    {"R0": 0.02, "R1": 0.01, "R2": 0.01, "tau1": 2.0, "tau2": 40.0, "Q_ratio": 1.0, "z0": 1.0},
+    {"R0": 0.02, "R1": 0.01, "R2": 0.01, "tau1": 10.0, "tau2": 300.0, "Q_ratio": 1.0, "z0": 0.95},
+    {"R0": 0.02, "R1": 0.01, "R2": 0.01, "tau1": 1.0, "tau2": 1000.0, "Q_ratio": 1.0, "z0": 0.9}
+  ],
+  "optimizer": {
+    "method": "trf",
+    "loss": "linear",
+    "x_scale": "jac",
+    "max_nfev": 500,
+    "ftol": 1e-8,
+    "xtol": 1e-8,
+    "gtol": 1e-8,
+    "selection": "Lowest full-DST squared residual among converged predetermined starts; no target tuning."
+  },
+  "decision": {
+    "minimum_reduction": 0.25,
+    "positive": "For EACH of FUDS and US06, min(MAE_V5,MAE_V6,MAE_V7) <= 0.75*MAE_V1. The best model can differ between targets, as requested.",
+    "ceiling_fraction": "(MAE_V1-MAE_Vk)/(MAE_V1-MAE_previous_V4); unbounded signed ratio, not clipped. Nonpositive denominator is explicitly flagged as unavailable, never silently replaced.",
+    "attribution": "Per target compare recovered fractions V6 versus V5: V6>V5 SOC, V5>V6 OCV, equality tie. Both SOC => SOC, both OCV => OCV; otherwise mixed/inconclusive (user confirmed). If ceiling denominator nonpositive, attribution unavailable.",
+    "global": "Static transfer positive iff primary A positive; replica B cannot change global result."
+  }
+}

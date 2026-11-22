@@ -1,0 +1,33 @@
+\begin{table*}[t]
+\centering
+\footnotesize
+\setlength{\tabcolsep}{2pt}
+\caption{Exploratory synthesis of registered errors and one-sided superiority tests.}
+\label{tab:reviewer-round2-synthesis}
+\begin{tabular}{lllll}
+\toprule
+Configuration & Variant & Status PG/NLS & vs. physics-gradient & vs. ECM-2RC \\
+\midrule
+Original — NCA & output\_residual & PR+EX/PR+EX & 0/8/0; -0.001 [-0.015,0.003] & 0/5/7; 0.414 [0.073,2.967] \\
+Original — NCA & ecm\_ude & PR+EX/PR+EX & 0/8/6; 0.290 [0.185,0.547] & 0/4/8; 0.644 [0.585,3.192] \\
+Original — Samsung NMC & output\_residual & PR+EX/PR+EX & 0/10/0; -0.005 [-0.013,0.001] & 4/10/0; 0.036 [-0.189,0.094] \\
+Original — Samsung NMC & ecm\_ude & PR+EX/PR+EX & 0/10/0; 0.097 [0.016,0.136] & 0/10/1; 0.042 [-0.047,0.268] \\
+Original — LG HG2 & output\_residual & PR+EX/PR+EX & 0/9/0; -0.004 [-0.010,-0.000] & 0/8/8; 0.334 [-0.020,1.200] \\
+Original — LG HG2 & ecm\_ude & PR+EX/PR+EX & 8/3/0; -1.227 [-5.126,-0.027] & 6/4/3; -0.682 [-4.825,1.189] \\
+Original — LG M50T & output\_residual & PR+EX/PR+EX & 1/1/0; -0.001 [-0.001,-0.001] & 1/1/0; -0.143 [-0.143,-0.143] \\
+Original — LG M50T & ecm\_ude & PR+EX/PR+EX & 1/0/0; -0.482 [-0.482,-0.482] & 1/0/0; -0.643 [-0.643,-0.643] \\
+A4b — NCA & output\_residual & EX/PR+EX & 0/0/0; -0.795 [-1.045,-0.546] & 0/0/0; -0.557 [-0.747,2.252] \\
+A4b — NCA & ecm\_ude & EX/PR+EX & 0/0/0; -0.539 [-13.823,5.835] & 0/0/0; -0.248 [-14.099,5.901] \\
+A4b — NMC Samsung & output\_residual & EX/PR+EX & 0/0/0; -0.121 [-1.348,1.010] & 0/0/0; -0.082 [-1.348,0.784] \\
+A4b — NMC Samsung & ecm\_ude & EX/PR+EX & 0/0/0; 0.005 [-1.067,6.793] & 0/0/0; 0.050 [-0.961,6.609] \\
+M50T F1 1 fixed (n=6) & output\_residual & PR+EX/PR+EX & 1/1/0; -0.003 [-0.004,-0.001] & 0/1/0; 0.346 [-0.952,0.553] \\
+M50T F1 1 fixed (n=6) & ecm\_ude & PR+EX/PR+EX & 0/1/0; 0.337 [-1.975,0.663] & 0/0/0; 0.694 [-2.925,1.129] \\
+M50T F1 1 updated (n=6) & output\_residual & PR+EX/PR+EX & 1/1/0; -0.003 [-0.004,-0.001] & 0/1/0; 0.346 [-0.952,0.553] \\
+M50T F1 1 updated (n=6) & ecm\_ude & PR+EX/PR+EX & 0/1/0; 0.337 [-1.975,0.663] & 0/0/0; 0.694 [-2.925,1.129] \\
+M50T F2 HPPC (n=7) & output\_residual & PR+EX/PR+EX & 0/1/1; 0.005 [-0.001,0.006] & 0/1/1; 0.420 [0.372,0.639] \\
+M50T F2 HPPC (n=7) & ecm\_ude & PR+EX/PR+EX & 0/0/1; 3.550 [-0.980,3.702] & 0/0/1; 3.903 [-0.343,4.054] \\
+\bottomrule
+\end{tabular}
+\vspace{2pt}
+\parbox{\textwidth}{\footnotesize Counts are superior/equivalent/inferior tests with Holm-adjusted $p<0.05$; the tests are not mutually exclusive. Differences are medians across condition-level medians and their min--max range (mV). M50T counts refer to single population-level contrasts; F ranges are across cell medians, with sample sizes shown. The F1 number is the later-block position; updated denotes updated capacity. PR: preregistered TOST; EX: exploratory one-sided tests.}
+\end{table*}

@@ -1,0 +1,62 @@
+{
+  "version": "lfp-nls-gonogo-1",
+  "registered_before_model_fitting": true,
+  "primary_cell": "cell_A_a123",
+  "a123_specimen": "A1-007",
+  "a123_selection": "Lexicographically first specimen, chosen before fitting; A1-008 preserved and inventoried, not pooled or selected by performance.",
+  "replica_cell": "cell_B_mendeley",
+  "dt_seconds": 1.0,
+  "current_convention": "positive discharge",
+  "current_threshold_A": 0.02,
+  "reversal_window_seconds": 60.0,
+  "soc_strata": ["z < 0.2", "0.2 <= z <= 0.8", "z > 0.8"],
+  "fit_profile": "DST",
+  "evaluate_profiles": ["DST", "FUDS", "US06"],
+  "models": ["V1", "V2", "V3", "V4"],
+  "simulation": "Continuous, one initial state per profile; exact zero-order-hold RC and ESC transitions; SOC trapezoidal integration of measured current.",
+  "esc_units": "Qnom stored in Ah and converted to coulombs (3600*Qnom) in dh/dt with time in seconds; gamma dimensionless per unit SOC throughput.",
+  "initial_rc_voltage_V": [0.0, 0.0],
+  "mendeley_initial_state": {
+    "z0": 1.0,
+    "h0": 1.0,
+    "s0": 1.0,
+    "provenance": "User authorized assumed full charge before each processed profile; preparation not present; provisional assumption, not inferred by OCV inversion."
+  },
+  "ocv_A": "1001 equal-SOC bins, median voltage, isotonic monotonic denoising, PCHIP; common interval only, boundary hold outside.",
+  "ocv_B": "11 supplied points per branch; reconstruct SOC from PCPD pulse capacities with the same measured Qnom; charge starts at discharge endpoint; PCHIP without forcing monotonicity or nonnegative M.",
+  "ocv_boundary_policy": "Hold each branch at common-interval boundary; retain unclipped SOC for stratification and count boundary samples explicitly.",
+  "parameter_bounds": {
+    "R0_R1_R2_ohm": [0.00001, 0.5],
+    "tau1_tau2_seconds": [0.1, 100000.0],
+    "gamma": [0.001, 1000.0],
+    "M0_V": [0.0, 0.1],
+    "M_scale": [0.0, 3.0]
+  },
+  "initial_starts": [
+    {"R0": 0.02, "R1": 0.01, "R2": 0.01, "tau1": 2.0, "tau2": 40.0, "gamma": 1.0},
+    {"R0": 0.02, "R1": 0.01, "R2": 0.01, "tau1": 10.0, "tau2": 300.0, "gamma": 10.0},
+    {"R0": 0.02, "R1": 0.01, "R2": 0.01, "tau1": 1.0, "tau2": 1000.0, "gamma": 100.0}
+  ],
+  "initial_M0_V": 0.001,
+  "initial_M_scale": 1.0,
+  "optimizer": {
+    "method": "trf",
+    "loss": "linear",
+    "x_scale": "jac",
+    "max_nfev": 500,
+    "ftol": 1e-8,
+    "xtol": 1e-8,
+    "gtol": 1e-8,
+    "selection": "Lowest full-profile squared residual among successful predetermined starts; no target tuning."
+  },
+  "oracle": "V4 fits degree-9 Chebyshev OCV and 2RC parameters on each evaluated profile; diagnostic leakage by design, never used in GO comparisons.",
+  "decision": {
+    "each_required_profile": ["FUDS", "US06"],
+    "minimum_mae_reduction": 0.10,
+    "baseline": "min(MAE_V1, MAE_V2) separately per profile",
+    "maximum_saturation_fraction_exclusive": 0.90,
+    "saturation": "fraction of all uniform-grid samples with abs(h) > 0.9",
+    "GO": "Both required profiles meet reduction >= 0.10 AND saturation < 0.90; otherwise NO-GO after a valid completed run.",
+    "global": "GO if and only if primary cell A is GO; B cannot alter global decision."
+  }
+}
