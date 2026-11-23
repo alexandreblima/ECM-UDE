@@ -13,9 +13,9 @@ from public_integrity import verify
 
 ROOT = Path(__file__).resolve().parent
 MODELS = {
-    "physics_gradient": ("black", "-", "o", "Physics gradient"),
-    "output_residual": ("0.35", "--", "s", "Output residual"),
-    "ecm_ude": ("0.55", "-.", "^", "ECM-UDE"),
+    "physics_gradient": (ieee.COLORS[0], "-", "o", "Physics gradient"),
+    "output_residual": (ieee.COLORS[1], "--", "s", "Output residual"),
+    "ecm_ude": (ieee.COLORS[2], "-.", "^", "ECM-UDE"),
 }
 
 
@@ -54,9 +54,10 @@ def main():
                     matrix[i, :len(curve)] = (curve/curve[0]-1)*100
                 x = np.arange(1, matrix.shape[1]+1)
                 ax.fill_between(x, np.nanmin(matrix, axis=0), np.nanmax(matrix, axis=0),
-                                color=color, alpha=.08, linewidth=0)
+                                color=color, alpha=.10, linewidth=0)
+                width = 1.8 if model == "physics_gradient" else 1
                 ax.plot(x, np.nanmedian(matrix, axis=0), color=color, linestyle=linestyle,
-                        marker=marker, markersize=3, markevery=3, linewidth=1, label=name)
+                        marker=marker, markersize=3, markevery=3, linewidth=width, label=name)
                 ax.axvline(np.median([run["best_epoch"] for run in runs]), color=color,
                            linestyle=linestyle, linewidth=.55, alpha=.45)
             ax.set_xlim(.5, 23.5)
